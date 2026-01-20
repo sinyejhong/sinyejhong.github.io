@@ -158,27 +158,27 @@ const areaConfig = areaKey
             areaKey === "embodied" &&
             "hover:border-purple-700 hover:bg-purple-50/50",
     ]}
+    onclick={!isDirector && areaConfig
+        ? `window.location.href='${areaConfig.url}'`
+        : undefined}
 >
-    <!-- Research Watermark (Publication Style) - Now Clickable! -->
+    <!-- Research Watermark (Publication Style) -->
     {
         areaConfig && (
-            <a
-                href={areaConfig.url}
+            <div
                 class:list={[
-                    "absolute -bottom-6 -right-2 flex flex-col items-end gap-1 p-4 opacity-5 group-hover:opacity-20 transition-all duration-500 z-10",
+                    "absolute -bottom-6 -right-2 flex flex-col items-end gap-1 p-4 opacity-5 group-hover:opacity-20 transition-all duration-500 z-10 pointer-events-none",
                     areaConfig.textClass,
                     areaConfig.spacingClass,
                 ]}
-                onclick="event.stopPropagation()"
-                title={`Explore ${areaConfig.label}`}
             >
-                <div class="w-40 h-40 transform rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110 pointer-events-none">
+                <div class="w-40 h-40 transform rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110">
                     <Fragment set:html={areaConfig.icon} />
                 </div>
-                <span class="text-sm font-bold tracking-widest uppercase text-right pr-2 pb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 pointer-events-none">
+                <span class="text-sm font-bold tracking-widest uppercase text-right pr-2 pb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
                     {areaConfig.label}
                 </span>
-            </a>
+            </div>
         )
     }
 
@@ -418,6 +418,7 @@ const areaConfig = areaKey
                             <a
                                 href={`mailto:${email}`}
                                 class={`flex items-center justify-center gap-2 text-sm font-medium text-slate-400 transition-colors group/link hover:underline ${areaConfig ? areaConfig.emailHover : "group-hover:text-slate-800"}`}
+                                onclick="event.stopPropagation()"
                             >
                                 <svg
                                     class="w-4 h-4 transition-colors text-slate-400 group-hover/link:text-slate-600"
