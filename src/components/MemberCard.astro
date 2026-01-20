@@ -158,9 +158,11 @@ const areaConfig = areaKey
             areaKey === "embodied" &&
             "hover:border-purple-700 hover:bg-purple-50/50",
     ]}
-    onclick={!isDirector && areaConfig
-        ? `window.location.href='${areaConfig.url}'`
-        : undefined}
+    onclick={isDirector
+        ? "if(!event.target.closest('a')) window.location.href='/about'"
+        : areaConfig
+          ? `if(!event.target.closest('a')) window.location.href='${areaConfig.url}'`
+          : undefined}
 >
     <!-- Research Watermark (Publication Style) -->
     {
@@ -418,7 +420,6 @@ const areaConfig = areaKey
                             <a
                                 href={`mailto:${email}`}
                                 class={`flex items-center justify-center gap-2 text-sm font-medium text-slate-400 transition-colors group/link hover:underline ${areaConfig ? areaConfig.emailHover : "group-hover:text-slate-800"}`}
-                                onclick="event.stopPropagation()"
                             >
                                 <svg
                                     class="w-4 h-4 transition-colors text-slate-400 group-hover/link:text-slate-600"
