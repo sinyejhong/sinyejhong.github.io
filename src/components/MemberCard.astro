@@ -51,6 +51,7 @@ const topicTags = topic
 const researchAreaConfig = {
     perception: {
         label: "Resilient Perception",
+        url: "/research#perception",
         bgClass: "bg-blue-100",
         textClass: "text-blue-700",
         spacingClass: "gap-1",
@@ -75,6 +76,7 @@ const researchAreaConfig = {
     },
     aiot: {
         label: "Industrial AIoT",
+        url: "/research#inspection",
         bgClass: "bg-emerald-100",
         textClass: "text-emerald-700",
         spacingClass: "-space-y-2",
@@ -99,6 +101,7 @@ const researchAreaConfig = {
     },
     embodied: {
         label: "Embodied AI",
+        url: "/research#robotics",
         bgClass: "bg-purple-100",
         textClass: "text-purple-700",
         spacingClass: "gap-1",
@@ -156,23 +159,26 @@ const areaConfig = areaKey
             "hover:border-purple-700 hover:bg-purple-50/50",
     ]}
 >
-    <!-- Research Watermark (Publication Style) -->
+    <!-- Research Watermark (Publication Style) - Now Clickable! -->
     {
         areaConfig && (
-            <div
+            <a
+                href={areaConfig.url}
                 class:list={[
-                    "absolute -bottom-6 -right-2 flex flex-col items-end gap-1 p-4 opacity-5 group-hover:opacity-20 transition-all duration-500 pointer-events-none z-0",
+                    "absolute -bottom-6 -right-2 flex flex-col items-end gap-1 p-4 opacity-5 group-hover:opacity-20 transition-all duration-500 z-10",
                     areaConfig.textClass,
                     areaConfig.spacingClass,
                 ]}
+                onclick="event.stopPropagation()"
+                title={`Explore ${areaConfig.label}`}
             >
-                <div class="w-40 h-40 transform rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110">
+                <div class="w-40 h-40 transform rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110 pointer-events-none">
                     <Fragment set:html={areaConfig.icon} />
                 </div>
-                <span class="text-sm font-bold tracking-widest uppercase text-right pr-2 pb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <span class="text-sm font-bold tracking-widest uppercase text-right pr-2 pb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 pointer-events-none">
                     {areaConfig.label}
                 </span>
-            </div>
+            </a>
         )
     }
 
