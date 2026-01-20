@@ -1,0 +1,106 @@
+---
+interface Props {
+    title: string;
+    event: string;
+    year: number;
+    category: string;
+}
+
+const { title, event, year, category } = Astro.props;
+
+// Category configuration with colors matching the existing design
+const categoryConfig: Record<
+    string,
+    {
+        icon: string;
+        borderColor: string;
+        bgGradient: string;
+        badgeBg: string;
+        badgeText: string;
+        iconBg: string;
+    }
+> = {
+    merit: {
+        icon: "🏅",
+        borderColor: "border-l-amber-500",
+        bgGradient: "bg-gradient-to-br from-white via-white to-amber-50/30",
+        badgeBg: "bg-amber-100",
+        badgeText: "text-amber-700",
+        iconBg: "bg-amber-50",
+    },
+    paper: {
+        icon: "📄",
+        borderColor: "border-l-blue-500",
+        bgGradient: "bg-gradient-to-br from-white via-white to-blue-50/30",
+        badgeBg: "bg-blue-100",
+        badgeText: "text-blue-700",
+        iconBg: "bg-blue-50",
+    },
+    competition: {
+        icon: "🏆",
+        borderColor: "border-l-emerald-500",
+        bgGradient: "bg-gradient-to-br from-white via-white to-emerald-50/30",
+        badgeBg: "bg-emerald-100",
+        badgeText: "text-emerald-700",
+        iconBg: "bg-emerald-50",
+    },
+};
+
+const config = categoryConfig[category] || categoryConfig.merit;
+
+// Category labels
+const categoryLabels: Record<string, string> = {
+    merit: "Merit Award",
+    paper: "Paper Award",
+    competition: "Competition",
+};
+---
+
+<div
+    class:list={[
+        "group p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-default h-full",
+        "border-l-4",
+        config.borderColor,
+        config.bgGradient,
+    ]}
+>
+    <div class="flex items-start gap-4">
+        <!-- Icon with background -->
+        <div
+            class:list={[
+                "flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-2xl",
+                config.iconBg,
+            ]}
+        >
+            <span role="img" aria-hidden="true">{config.icon}</span>
+        </div>
+
+        <div class="flex-1 min-w-0">
+            <!-- Meta badges -->
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+                <span class="text-sm font-bold text-accent">{year}</span>
+                <span
+                    class:list={[
+                        "text-xs font-semibold px-2.5 py-0.5 rounded-full",
+                        config.badgeBg,
+                        config.badgeText,
+                    ]}
+                >
+                    {categoryLabels[category] || category.replace("_", " ")}
+                </span>
+            </div>
+
+            <!-- Title with hover effect -->
+            <h3
+                class="text-lg font-semibold text-navy mb-1.5 group-hover:text-accent transition-colors duration-200 line-clamp-2"
+            >
+                {title}
+            </h3>
+
+            <!-- Event -->
+            <p class="text-sm text-gray-600 line-clamp-2">
+                {event}
+            </p>
+        </div>
+    </div>
+</div>

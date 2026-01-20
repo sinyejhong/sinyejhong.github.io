@@ -1,0 +1,225 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+
+const courses = [
+    {
+        code: "SI5011701",
+        name: "Multimedia Information Systems",
+        level: "Graduate",
+        semester: "Spring 2026",
+        description:
+            "Advanced exploration of Multimodal Machine Learning (MMML), emphasizing mathematical foundations and state-of-the-art models for integrating linguistic, acoustic, and visual data streams.",
+        tags: ["Multimodal Learning", "MMML", "Cross-Modal AI"]
+    },
+    {
+        code: "SI5102701",
+        name: "AI-Based Visual Inspection",
+        level: "Graduate",
+        semester: "Spring 2026",
+        description:
+            "Practical application of advanced AI techniques for precision visual analysis. Covers medical lesion detection and industrial defect inspection using real-world datasets for hands-on model training.",
+        tags: ["Visual Inspection", "Medical AI", "Industrial AI"]
+    },
+    {
+        code: "SI5033701",
+        name: "Automated Sensing and Smart Data Acquisition",
+        level: "Graduate",
+        semester: "Fall 2025",
+        description:
+            "In-depth study of sensor fusion technologies and practical data processing for autonomous perception through real-world, problem-based projects.",
+        tags: ["Sensor Fusion", "IoT", "Autonomous Systems"]
+    },
+    {
+        code: "SI5007701",
+        name: "Deep Learning Based Image Recognition",
+        level: "Graduate",
+        semester: "Fall 2025",
+        description:
+            "Advanced course focused on researching and deploying contemporary image recognition solutions through independent study and practical model implementation.",
+        tags: ["Computer Vision", "Deep Learning", "AI Deployment"]
+    },
+];
+---
+
+<BaseLayout
+    title="Teaching"
+    description="Courses taught by Dr. Sin-Ye Jhong at NTUST"
+>
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-navy to-navy-light text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1
+                class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
+            >
+                Teaching
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Courses taught at National Taiwan University of Science and
+                Technology
+            </p>
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="section-padding bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="Courses"
+                subtitle="Graduate and undergraduate courses"
+            />
+
+            <div class="space-y-4">
+                {
+                    courses.map((course) => (
+                        <div class="group relative bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg hover:border-accent/30 transition-all duration-300 ease-in-out">
+                            <!-- Hover Line Indicator -->
+                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-accent transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 rounded-l-xl origin-center"></div>
+
+                            <div class="flex flex-col md:flex-row md:items-start gap-6">
+                                <!-- Course Code & Semester Block (Left) -->
+                                <div class="md:w-48 flex-shrink-0 flex flex-col items-start gap-2">
+                                    <span class="font-mono text-sm font-bold text-navy bg-navy/5 px-3 py-1.5 rounded-lg border border-navy/10 group-hover:bg-navy/10 transition-colors">
+                                        {course.code}
+                                    </span>
+                                    <div class="flex flex-wrap gap-2">
+                                         <span class:list={[
+                                            "inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium",
+                                            course.level === "Graduate" ? "bg-purple-50 text-purple-700 border border-purple-100" : "bg-blue-50 text-blue-700 border border-blue-100"
+                                        ]}>
+                                            {course.level}
+                                        </span>
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200">
+                                            {course.semester}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Course Content (Middle) -->
+                                <div class="flex-grow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="text-xl font-heading font-bold text-navy group-hover:text-accent transition-colors">
+                                            {course.name}
+                                        </h3>
+                                    </div>
+                                    
+                                    <p class="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700">
+                                        {course.description}
+                                    </p>
+
+                                    <!-- Tags -->
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        {course.tags && course.tags.map(tag => (
+                                            <span class="text-xs font-medium text-gray-500 bg-gray-50 px-2 py-1 rounded hover:bg-gray-100 transition-colors italic">#{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Philosophy -->
+    <section class="section-padding bg-gray-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader title="Teaching Philosophy" />
+
+            <div class="prose prose-lg max-w-none">
+                <div class="p-8 bg-white rounded-2xl shadow-sm">
+                    <blockquote
+                        class="text-xl text-navy italic border-l-4 border-accent pl-6 mb-6"
+                    >
+                        "My goal is to inspire students to explore the frontiers
+                        of AI and robotics, combining rigorous theoretical
+                        foundations with hands-on practical experience."
+                    </blockquote>
+
+                    <div class="grid md:grid-cols-3 gap-6 mt-8">
+                        <div class="text-center p-4">
+                            <div
+                                class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                            >
+                                <svg
+                                    class="w-8 h-8 text-accent"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-navy mb-2">
+                                Innovation
+                            </h3>
+                            <p class="text-sm text-gray-text">
+                                Encouraging creative problem-solving and novel
+                                approaches
+                            </p>
+                        </div>
+
+                        <div class="text-center p-4">
+                            <div
+                                class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                            >
+                                <svg
+                                    class="w-8 h-8 text-accent"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-navy mb-2">
+                                Hands-On
+                            </h3>
+                            <p class="text-sm text-gray-text">
+                                Learning by doing through projects and
+                                experiments
+                            </p>
+                        </div>
+
+                        <div class="text-center p-4">
+                            <div
+                                class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                            >
+                                <svg
+                                    class="w-8 h-8 text-accent"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-navy mb-2">
+                                Collaboration
+                            </h3>
+                            <p class="text-sm text-gray-text">
+                                Building teamwork and communication skills
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

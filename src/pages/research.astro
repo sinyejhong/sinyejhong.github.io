@@ -1,0 +1,356 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+
+const researchAreas = [
+  {
+    id: "perception",
+    title: "Resilient Perception & Multimodal Fusion",
+    icon: `<svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>`,
+    overview:
+      "Achieving reliable autonomy in complex, dynamic, and unstructured environments. We develop robust perception architectures that function effectively under adverse weather opacity and low-light scenarios. Our strategy relies on multimodal sensor fusion (LiDAR, Radar, Camera, Thermal, DVS) to enhance safety and navigation precision for autonomous vehicles and UAVs.",
+    image: "/images/research/research1.png",
+    topics: [
+      {
+        name: "Multimodal Sensor Fusion",
+        desc: "Cross-Attention and Spatiotemporal architectures combining Camera, LiDAR, Radar, and Thermal data.",
+      },
+      {
+        name: "All-Weather Perception",
+        desc: "Robust object detection algorithms designed specifically for rain, fog, and nighttime scenarios.",
+      },
+      {
+        name: "2D/3D Object Detection",
+        desc: "High-precision 3D localization and tracking systems applied to autonomous driving and V2X.",
+      },
+      {
+        name: "UAV Perception",
+        desc: "Efficient Visual Odometry (VO) and small-object detection optimized for drones.",
+      },
+    ],
+    keywords: [
+      "Radar",
+      "Lidar",
+      "Nighttime",
+      "Point Cloud",
+      "Sensor Fusion",
+      "Object tracking",
+      "Visible Camera",
+      "Thermal Camera",
+      "Visual Odometry",
+      "Re-Localization",
+      "Image Segmentation",
+      "Intelligent Vehicles",
+      "Multispectral Imaging",
+      "Autonomous Driving",
+      "2D/3D Object Detection",
+      "Dynamic Vision Sensor (DVS)",
+      "Unmanned Aerial Vehicle (UAV)",
+      "Adverse Weather Condition",
+      "Vehicle-to-Everything (V2X)",
+      "Advanced Driver Assistance Systems (ADAS)",
+      "Simultaneous Localization and Mapping (SLAM)",
+    ],
+  },
+  {
+    id: "inspection",
+    title: "Intelligent Visual Inspection & AIoT",
+    icon: `<svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>`,
+    overview:
+      "Bridging high-performance algorithms with real-world deployment. We specialize in Industrial Inspection and Healthcare Diagnostics, utilizing lightweight deep learning and domain adaptation to solve data scarcity. Our work in Human-Centric Computing prioritizes trust, privacy, and explainable AI (XAI).",
+    image: "/images/research/research2.png",
+    topics: [
+      {
+        name: "Smart Diagnostics",
+        desc: "Automated inspection for medical imaging (X-ray, dermatology) and industrial manufacturing.",
+      },
+      {
+        name: "Edge-Cloud Collaboration",
+        desc: "Distributed frameworks optimizing real-time processing and privacy across edge devices.",
+      },
+      {
+        name: "Biometrics & Security",
+        desc: "Advanced palm-vein recognition, face anti-spoofing, and robust data hiding techniques.",
+      },
+      {
+        name: "Generative Defect AI",
+        desc: "Using Diffusion Models to synthesize defect samples for few-shot learning in manufacturing.",
+      },
+    ],
+    keywords: [
+      "X-ray",
+      "Healthcare",
+      "Microscope",
+      "Data Hiding",
+      "Generative AI",
+      "Industrial Data",
+      "Defect Detection",
+      "Fault Diagnostics",
+      "Scalp Inspection",
+      "Face Recognition",
+      "Fracture Detection",
+      "Smart Manufacturing",
+      "Coffee Beans Defect",
+      "HDR Reconstruction",
+      "Explainable AI (xAI)",
+      "Edge-Cloud computing",
+      "Skin Type Classification",
+      "Cloud-edge Collaboration",
+      "Embedded AI applications",
+      "Medical Image Processing",
+      "Biometric Identification System",
+      "Finger/Plam Vein Recognition",
+      "Infrared Electrical Equipment Image",
+    ],
+  },
+  {
+    id: "robotics",
+    title: "Embodied Intelligence & Generative Robotics",
+    icon: `<svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>`,
+    overview:
+      "Closing the semantic gap between human instructions and robot actions. By integrating LLMs and VLMs with robotic control, we empower agents to perform natural language navigation, hazard assessment, and multi-agent cooperation in human-centric environments.",
+    image: "/images/research/research3.png",
+    topics: [
+      {
+        name: "Vision-Language Nav",
+        desc: "Semantic mapping and path planning based on natural language instructions (VLN).",
+      },
+      {
+        name: "VLA Models",
+        desc: "End-to-end Vision-Language-Action models mapping inputs directly to robotic control.",
+      },
+      {
+        name: "Multi-Agent Systems",
+        desc: "Using LLMs to orchestrate communication and strategy among multiple robotic agents.",
+      },
+      {
+        name: "Proactive Safety",
+        desc: "Language-driven reasoning for identifying environmental risks and safe navigation.",
+      },
+    ],
+    keywords: [
+      "Robotics",
+      "Path Planning",
+      "Risk Assessment",
+      "Safe Navigation",
+      "Task Allocation",
+      "Semantic Mapping",
+      "Visual Grounding",
+      "Multi-Robot System",
+      "Scene Understanding",
+      "End-to-End Control",
+      "Multimodal Learning",
+      "Spatial Reasoning",
+      "Instruction Following",
+      "Semantic Understanding",
+      "Collaborative Planning",
+      "Multi-Agent Cooperation",
+      "Zero-Shot Generalization",
+      "Vision-Language Model (VLM)",
+      "Large Language Model (LLM)",
+      "Vision-Language-Action (VLA)",
+      "Proactive Hazard Awareness",
+      "Human-Robot Interaction (HRI)",
+      "Environmental Adaptability",
+      "Vision-Language Navigation (VLN)",
+    ],
+  },
+];
+
+const themes = {
+  perception: {
+    bg: "bg-blue-50",
+    accent: "bg-blue-600",
+    text: "text-blue-900",
+    subtext: "text-blue-700",
+    border: "border-blue-100",
+    hover: "hover:border-blue-300 hover:shadow-blue-900/5",
+    icon: "text-blue-600",
+    gradient: "from-blue-600 to-blue-800",
+    tag: "text-blue-700 bg-blue-100/50 hover:bg-blue-600 hover:text-white",
+  },
+  inspection: {
+    bg: "bg-emerald-50",
+    accent: "bg-emerald-600",
+    text: "text-emerald-900",
+    subtext: "text-emerald-700",
+    border: "border-emerald-100",
+    hover: "hover:border-emerald-300 hover:shadow-emerald-900/5",
+    icon: "text-emerald-600",
+    gradient: "from-emerald-600 to-emerald-800",
+    tag: "text-emerald-700 bg-emerald-100/50 hover:bg-emerald-600 hover:text-white",
+  },
+  robotics: {
+    bg: "bg-purple-50",
+    accent: "bg-purple-600",
+    text: "text-purple-900",
+    subtext: "text-purple-700",
+    border: "border-purple-100",
+    hover: "hover:border-purple-300 hover:shadow-purple-900/5",
+    icon: "text-purple-600",
+    gradient: "from-purple-600 to-purple-800",
+    tag: "text-purple-700 bg-purple-100/50 hover:bg-purple-600 hover:text-white",
+  },
+};
+---
+
+<BaseLayout
+  title="Research Areas"
+  description="Exploring Resilient Perception, Industrial AIoT, and Embodied Intelligence"
+>
+  <!-- Hero Section -->
+  <section class="relative bg-navy text-white py-24 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-20">
+      <div
+        class="absolute inset-0 bg-[url('/images/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"
+      >
+      </div>
+    </div>
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+    >
+      <h1
+        class="text-5xl md:text-6xl font-heading font-bold mb-6 tracking-tight"
+      >
+        Research Frontiers
+      </h1>
+      <p
+        class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed"
+      >
+        Pioneering the future of <span class="text-blue-400 font-medium"
+          >Perception</span
+        >,
+        <span class="text-emerald-400 font-medium">Industry</span>, and
+        <span class="text-purple-400 font-medium">Embodied AI</span>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sticky Navigation -->
+  <nav class="sticky top-20 z-40 mx-auto w-fit">
+    <div
+      class="bg-white/90 backdrop-blur-xl border border-white/40 ring-1 ring-black/5 shadow-lg rounded-full px-2 py-1.5"
+    >
+      <div class="flex space-x-1">
+        {
+          researchAreas.map((area) => {
+            const hoverTheme = {
+              perception: "hover:text-blue-600 hover:bg-blue-50",
+              inspection: "hover:text-emerald-600 hover:bg-emerald-50",
+              robotics: "hover:text-purple-600 hover:bg-purple-50",
+            }[area.id];
+
+            return (
+              <a
+                href={`#${area.id}`}
+                class={`px-4 py-2 rounded-full text-sm font-medium text-gray-500 transition-all duration-300 ${hoverTheme}`}
+              >
+                {area.title.split("&")[0]}
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </nav>
+
+  <!-- Research Pillars -->
+  <div class="bg-white">
+    {
+      researchAreas.map((area, index) => {
+        const theme = themes[area.id as keyof typeof themes];
+        return (
+          <section
+            id={area.id}
+            class={`section-padding scroll-mt-24 ${index % 2 !== 0 ? "bg-gray-50/50" : "bg-white"}`}
+          >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="grid lg:grid-cols-2 gap-16 items-start">
+                {/* Visual Side (Sticky) */}
+                <div
+                  class={`relative lg:sticky lg:top-32 ${index % 2 !== 0 ? "lg:order-2" : ""}`}
+                >
+                  <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+                    <div
+                      class={`absolute inset-0 bg-gradient-to-br ${theme.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 z-10`}
+                    />
+                    <img
+                      src={area.image}
+                      alt={area.title}
+                      class="w-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  {/* Decorative Badge */}
+                  <div
+                    class={`absolute -bottom-6 -right-6 w-24 h-24 rounded-2xl ${theme.bg} flex items-center justify-center shadow-lg transform rotate-12 transition-transform group-hover:rotate-0 border-4 border-white`}
+                  >
+                    <div class={`w-20 h-20 ${theme.icon}`}>
+                      <Fragment set:html={area.icon} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content Side */}
+                <div class={`${index % 2 !== 0 ? "lg:order-1" : ""}`}>
+                  <div class="flex items-center gap-3 mb-6">
+                    <span
+                      class={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.bg} ${theme.subtext}`}
+                    >
+                      Research Pillar 0{index + 1}
+                    </span>
+                  </div>
+
+                  <h2 class="text-4xl font-heading font-bold text-navy mb-6">
+                    {area.title}
+                  </h2>
+
+                  <p class="text-lg text-gray-600 leading-relaxed mb-10 text-justify">
+                    {area.overview}
+                  </p>
+
+                  {/* Interactive Topic Grid */}
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    {area.topics.map((topic) => (
+                      <div
+                        class={`p-5 rounded-2xl bg-white border ${theme.border} ${theme.hover} transition-all duration-300 group cursor-default`}
+                      >
+                        <h4
+                          class={`font-semibold text-lg mb-2 ${theme.text} group-hover:translate-x-1 transition-transform`}
+                        >
+                          {topic.name}
+                        </h4>
+                        <p class="text-sm text-gray-500 leading-relaxed text-justify">
+                          {topic.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Key Technologies Block */}
+                  {area.keywords && (
+                    <div class="mt-8">
+                      <h4
+                        class={`text-xs font-bold uppercase tracking-widest mb-4 ${theme.subtext} opacity-80`}
+                      >
+                        Key Technologies
+                      </h4>
+                      <div class="flex flex-wrap gap-2">
+                        {area.keywords.map((keyword) => (
+                          <span
+                            class={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 cursor-default border border-transparent grow text-center ${theme.tag}`}
+                          >
+                            {keyword}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })
+    }
+  </div>
+</BaseLayout>

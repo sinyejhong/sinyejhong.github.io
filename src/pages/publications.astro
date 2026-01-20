@@ -1,0 +1,355 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import PublicationItem from "../components/PublicationItem.astro";
+import publications from "../data/publications.json";
+
+// Sort by year descending
+const sortedPubs = [...publications].sort((a, b) => b.year - a.year);
+const journals = sortedPubs.filter((p) => p.type === "journal");
+const conferences = sortedPubs.filter((p) => p.type === "conference");
+const patents = sortedPubs.filter((p) => p.type === "patent");
+
+// Group by year for section headers
+const years = [...new Set(sortedPubs.map((p) => p.year))].sort((a, b) => b - a);
+const pubsByYear = years.map((year) => ({
+    year,
+    pubs: sortedPubs.filter((p) => p.year === year),
+}));
+---
+
+<BaseLayout
+    title="Publications"
+    description="Academic publications from ASI² LAB"
+>
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-navy to-navy-light text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1
+                class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
+            >
+                Publications
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Our research contributions to journals, conferences, and patents
+            </p>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="px-6 py-3 bg-white/10 rounded-xl backdrop-blur-sm">
+                    <span class="text-2xl font-bold text-accent"
+                        >{journals.length}</span
+                    >
+                    <span class="text-gray-300 ml-2">Journals</span>
+                </div>
+                <div class="px-6 py-3 bg-white/10 rounded-xl backdrop-blur-sm">
+                    <span class="text-2xl font-bold text-accent"
+                        >{conferences.length}</span
+                    >
+                    <span class="text-gray-300 ml-2">Conferences</span>
+                </div>
+                <div class="px-6 py-3 bg-white/10 rounded-xl backdrop-blur-sm">
+                    <span class="text-2xl font-bold text-accent"
+                        >{patents.length}</span
+                    >
+                    <span class="text-gray-300 ml-2">Patents</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Bar -->
+    <section
+        class="sticky top-12 lg:top-14 z-40 bg-white border-b border-gray-border shadow-sm"
+    >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <!-- Search Input -->
+            <div class="mb-4">
+                <div class="relative max-w-xl mx-auto">
+                    <svg
+                        class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        ></path>
+                    </svg>
+                    <input
+                        type="text"
+                        id="pub-search"
+                        placeholder="Search by title, author, or keyword..."
+                        class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-sm"
+                    />
+                    <button
+                        id="search-clear"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2" id="pub-filters">
+                <button
+                    class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
+                    data-filter="all"
+                >
+                    All (<span class="filter-count">{sortedPubs.length}</span>)
+                </button>
+                <button
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    data-filter="journal"
+                >
+                    Journals (<span class="filter-count">{journals.length}</span>)
+                </button>
+                <button
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    data-filter="conference"
+                >
+                    Conferences (<span class="filter-count">{conferences.length}</span>)
+                </button>
+                <button
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    data-filter="patent"
+                >
+                    Patents (<span class="filter-count">{patents.length}</span>)
+                </button>
+            </div>
+
+            <!-- Search Results Info -->
+            <div id="search-info" class="text-center mt-3 text-sm text-gray-500 hidden">
+                <span id="search-count">0</span> results found for "<span id="search-term"></span>"
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications List with Year Headers -->
+    <section class="section-padding bg-gray-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="publications-list">
+                {
+                    pubsByYear.map(({ year, pubs }) => (
+                        <div class="year-group mb-8" data-year={year}>
+                            <!-- Year Header -->
+                            <div class="year-header flex items-center gap-4 mb-6 sticky top-32 lg:top-36 z-30 bg-gray-bg py-2">
+                                <div class="text-2xl font-bold text-navy">{year}</div>
+                                <div class="flex-1 h-px bg-gradient-to-r from-accent/50 to-transparent"></div>
+                                <span class="text-sm text-gray-400 font-medium year-count">
+                                    {pubs.length} publications
+                                </span>
+                            </div>
+
+                            <!-- Publications in this year -->
+                            <div class="space-y-4">
+                                {pubs.map((pub) => (
+                                    <div
+                                        class="publication-item"
+                                        data-type={pub.type}
+                                        data-year={pub.year}
+                                        data-area={pub.researchArea || ""}
+                                        data-title={pub.title.toLowerCase()}
+                                        data-authors={pub.authors.join(" ").toLowerCase()}
+                                        data-venue={pub.venue.toLowerCase()}
+                                    >
+                                        <PublicationItem
+                                            title={pub.title}
+                                            authors={pub.authors}
+                                            venue={pub.venue}
+                                            venueDetail={pub.venueDetail}
+                                            year={pub.year}
+                                            type={pub.type}
+                                            badges={pub.badges}
+                                            doi={pub.doi}
+                                            link={pub.link}
+                                            highlight={pub.highlight}
+                                            researchArea={pub.researchArea}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results" class="hidden text-center py-12">
+                <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <p class="text-gray-500 text-lg">No publications found matching your search.</p>
+                <button id="clear-search" class="mt-4 text-accent hover:underline font-medium">
+                    Clear search
+                </button>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<script>
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const pubItems = document.querySelectorAll(".publication-item");
+    const yearGroups = document.querySelectorAll(".year-group");
+    const searchInput = document.getElementById("pub-search") as HTMLInputElement;
+    const searchClear = document.getElementById("search-clear");
+    const searchInfo = document.getElementById("search-info");
+    const searchCount = document.getElementById("search-count");
+    const searchTerm = document.getElementById("search-term");
+    const noResults = document.getElementById("no-results");
+    const clearSearchBtn = document.getElementById("clear-search");
+
+    let currentFilter = "all";
+    let currentSearch = "";
+
+    function updateView() {
+        let visibleCount = 0;
+        const searchLower = currentSearch.toLowerCase();
+
+        // Filter items
+        pubItems.forEach((item) => {
+            const type = item.getAttribute("data-type");
+            const title = item.getAttribute("data-title") || "";
+            const authors = item.getAttribute("data-authors") || "";
+            const venue = item.getAttribute("data-venue") || "";
+
+            const matchesFilter = currentFilter === "all" || type === currentFilter;
+            const matchesSearch =
+                !currentSearch ||
+                title.includes(searchLower) ||
+                authors.includes(searchLower) ||
+                venue.includes(searchLower);
+
+            if (matchesFilter && matchesSearch) {
+                item.classList.remove("hidden");
+                visibleCount++;
+            } else {
+                item.classList.add("hidden");
+            }
+        });
+
+        // Update year group visibility
+        yearGroups.forEach((group) => {
+            const visibleInGroup = group.querySelectorAll(
+                ".publication-item:not(.hidden)"
+            ).length;
+            const yearCountEl = group.querySelector(".year-count");
+            
+            if (visibleInGroup === 0) {
+                group.classList.add("hidden");
+            } else {
+                group.classList.remove("hidden");
+                if (yearCountEl) {
+                    yearCountEl.textContent = `${visibleInGroup} publication${visibleInGroup !== 1 ? 's' : ''}`;
+                }
+            }
+        });
+
+        // Update search info
+        if (currentSearch) {
+            searchInfo?.classList.remove("hidden");
+            if (searchCount) searchCount.textContent = String(visibleCount);
+            if (searchTerm) searchTerm.textContent = currentSearch;
+            searchClear?.classList.remove("hidden");
+        } else {
+            searchInfo?.classList.add("hidden");
+            searchClear?.classList.add("hidden");
+        }
+
+        // Show/hide no results
+        if (visibleCount === 0) {
+            noResults?.classList.remove("hidden");
+        } else {
+            noResults?.classList.add("hidden");
+        }
+
+        // Update filter button counts based on search
+        filterBtns.forEach((btn) => {
+            const filter = btn.getAttribute("data-filter");
+            const countEl = btn.querySelector(".filter-count");
+            if (!countEl) return;
+
+            let count = 0;
+            pubItems.forEach((item) => {
+                const type = item.getAttribute("data-type");
+                const title = item.getAttribute("data-title") || "";
+                const authors = item.getAttribute("data-authors") || "";
+                const venue = item.getAttribute("data-venue") || "";
+
+                const matchesFilter = filter === "all" || type === filter;
+                const matchesSearch =
+                    !currentSearch ||
+                    title.includes(searchLower) ||
+                    authors.includes(searchLower) ||
+                    venue.includes(searchLower);
+
+                if (matchesFilter && matchesSearch) count++;
+            });
+
+            countEl.textContent = String(count);
+        });
+    }
+
+    // Filter button click
+    filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            // Update active button
+            filterBtns.forEach((b) => {
+                b.classList.remove(
+                    "active",
+                    "bg-accent",
+                    "text-white",
+                    "shadow-lg",
+                    "shadow-accent/30"
+                );
+                b.classList.add(
+                    "bg-gray-100",
+                    "text-gray-700",
+                    "hover:bg-gray-200"
+                );
+            });
+            btn.classList.add(
+                "active",
+                "bg-accent",
+                "text-white",
+                "shadow-lg",
+                "shadow-accent/30"
+            );
+            btn.classList.remove(
+                "bg-gray-100",
+                "text-gray-700",
+                "hover:bg-gray-200"
+            );
+
+            currentFilter = btn.getAttribute("data-filter") || "all";
+            updateView();
+        });
+    });
+
+    // Search input
+    let searchTimeout: number;
+    searchInput?.addEventListener("input", () => {
+        clearTimeout(searchTimeout);
+        searchTimeout = window.setTimeout(() => {
+            currentSearch = searchInput.value.trim();
+            updateView();
+        }, 200);
+    });
+
+    // Clear search
+    function clearSearch() {
+        if (searchInput) searchInput.value = "";
+        currentSearch = "";
+        updateView();
+    }
+
+    searchClear?.addEventListener("click", clearSearch);
+    clearSearchBtn?.addEventListener("click", clearSearch);
+</script>

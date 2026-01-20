@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "title": "AI瑕疵檢查系統開發 (AI Defect Inspection System Development)",
+        "funder": "AAEON Technology Inc. (研揚科技股份有限公司)",
+        "duration": "2025.09 - 2026.09",
+        "role": "Principal Investigator (計畫主持人)",
+        "status": "ongoing",
+        "type": "industry",
+        "description": "Development of Advanced AI-Driven Automated Optical Inspection (AOI) Systems for PCBA Quality Assurance.",
+        "pillar": "inspection",
+        "logo": "/images/Logo/AAEON.png"
+    },
+    {
+        "id": 2,
+        "title": "智慧頭皮影像分析平台優化暨跨國系統建置計畫 (Smart Scalp Image Analysis Platform Optimization & Global System Deployment)",
+        "funder": "MacroHi Ltd. (美科實業股份有限公司)",
+        "duration": "2025.08 - 2026.07",
+        "role": "Co-Principal Investigator (計畫共同主持人)",
+        "status": "ongoing",
+        "type": "industry",
+        "description": "Optimization of AI-powered scalp analysis platform and deployment of cross-national cloud systems.",
+        "pillar": "perception",
+        "logo": "/images/Logo/macrohi.png"
+    },
+    {
+        "id": 3,
+        "title": "智慧文件分析系統暨LLM導入應用 (Smart Document Analysis System & LLM Implementation)",
+        "funder": "AAEON Technology Inc. (研揚科技股份有限公司)",
+        "duration": "2025.08 - 2027.02",
+        "role": "Co-Principal Investigator (計畫共同主持人)",
+        "status": "ongoing",
+        "type": "industry",
+        "description": "Integration of Large Language Models (LLM) for intelligent enterprise document processing.",
+        "pillar": "robotics",
+        "logo": "/images/Logo/AAEON.png"
+    },
+    {
+        "id": 4,
+        "title": "影像 AI 模型與 4D 雷達融合之前方物件偵測與意圖預判 (Fusion of Image AI Models and 4D Radar for Front Object Detection and Intent Prediction)",
+        "funder": "Automotive Research & Testing Center (ARTC) (財團法人車輛研究測試中心)",
+        "duration": "2025.03 - 2025.11",
+        "role": "Co-Principal Investigator (計畫協同主持人)",
+        "status": "completed",
+        "type": "government",
+        "description": "Multi-sensor fusion (Camera + 4D Radar) for advanced driver assistance systems (ADAS).",
+        "pillar": "perception",
+        "logo": "/images/Logo/ARTC.png"
+    },
+    {
+        "id": 5,
+        "title": "固定設備、管線與轉動機械之AI技術服務 (AI Technical Services for Fixed Equipment, Pipelines, and Rotating Machinery)",
+        "funder": "CPC Corporation (台灣中油股份有限公司)",
+        "duration": "2024.09 - 2025.09",
+        "role": "Co-Principal Investigator (計畫協同主持人)",
+        "status": "completed",
+        "type": "industry",
+        "description": "AI-based predictive maintenance and monitoring for industrial infrastructure.",
+        "pillar": "inspection",
+        "logo": "/images/Logo/CPC.png"
+    },
+    {
+        "id": 6,
+        "title": "智慧頭皮影像分析平台之研製 (Development of Smart Scalp Image Analysis Platform)",
+        "funder": "MacroHi Ltd. (美科實業股份有限公司)",
+        "duration": "2024.10 - 2025.02",
+        "role": "Researcher (研究員)",
+        "status": "completed",
+        "type": "industry",
+        "description": "R&D of core algorithms for automated scalp health assessment.",
+        "pillar": "perception",
+        "logo": "/images/Logo/macrohi.png"
+    },
+    {
+        "id": 7,
+        "title": "異質AI應用研究(多模態大型語言專案-AI Agent技術) (Heterogeneous AI Application Research: Multimodal LLM - AI Agent Technology)",
+        "funder": "Institute for Information Industry (III) (財團法人資訊工業策進會)",
+        "duration": "2024.06 - 2024.10",
+        "role": "Researcher (研究員)",
+        "status": "completed",
+        "type": "government",
+        "description": "Research on multimodal Large Language Models and comprehensive AI Agent architectures.",
+        "pillar": "robotics",
+        "logo": "/images/Logo/III.png"
+    },
+    {
+        "id": 8,
+        "title": "適用於異質環境的頭皮檢測技術之研究與開發建構零售暨服務業數據共享創新服務計畫 (Scalp Detection Technology for Heterogeneous Environments & Data Sharing Service)",
+        "funder": "MacroHi Ltd. (美科實業股份有限公司)",
+        "duration": "2024.03 - 2024.08",
+        "role": "Researcher (研究員)",
+        "status": "completed",
+        "type": "industry",
+        "description": "Development of robust scalp detection tech for retail and service industry data ecosystems.",
+        "pillar": "perception",
+        "logo": "/images/Logo/macrohi.png"
+    },
+    {
+        "id": 9,
+        "title": "探索基於MVS的無人機同步定位與地圖建構計畫 (Exploration of MVS-based SLAM for UAVs)",
+        "funder": "Novatek Microelectronics Corp. (聯詠科技股份有限公司)",
+        "duration": "2024.01 - 2024.12",
+        "role": "Researcher (研究員)",
+        "status": "completed",
+        "type": "industry",
+        "description": "SLAM algorithm development using Multi-View Stereo (MVS) for autonomous drones.",
+        "pillar": "robotics",
+        "logo": "/images/Logo/novatek.jpg"
+    },
+    {
+        "id": 10,
+        "title": "異質融合偵測側後方模組研究 (Research on Heterogeneous Fusion Module for Rear-Side Detection)",
+        "funder": "Automotive Research & Testing Center (ARTC) (財團法人車輛研究測試中心)",
+        "duration": "2024.01 - 2024.11",
+        "role": "Researcher (研究員)",
+        "status": "completed",
+        "type": "government",
+        "description": "Sensor fusion module development for vehicle rear-side blind spot detection.",
+        "pillar": "perception",
+        "logo": "/images/Logo/ARTC.png"
+    }
+]

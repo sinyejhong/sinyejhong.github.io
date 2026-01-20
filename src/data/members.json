@@ -1,0 +1,208 @@
+[
+    {
+        "id": 0,
+        "name": "Dr. Sin-Ye Jhong",
+        "photo": "/images/members/sinyejhong2.jpg",
+        "role": "ASI² Lab Director",
+        "affiliations": [
+            "Assistant Professor, GIMT, NTUST",
+            "AI Application Consultant, Power Data Co., Ltd."
+        ],
+        "topic": "Computer Vision & Image Processing, Machine/Deep Learning, Multimodal Fusion, Robot Perception & Navigation, Human-Robot Interaction, Generative AI, Agentic AI, Smart IoT, Intelligent Unmanned Vehicles, Smart Manufacturing, Intelligent Robotics",
+        "status": "director",
+        "email": "sinyejhong@mail.ntust.edu.tw",
+        "links": [
+            {
+                "label": "Google Scholar",
+                "url": "https://scholar.google.com/citations?user=0aR6RcIAAAAJ&hl=zh-TW",
+                "icon": "scholar"
+            },
+            {
+                "label": "Faculty Profile",
+                "url": "https://innc.ntust.edu.tw/p/405-1111-137656,c11515.php?Lang=zh-tw",
+                "icon": "university"
+            },
+            {
+                "label": "NSTC Researcher",
+                "url": "https://arspb.nstc.gov.tw/NSCWebFront/modules/talentSearch/talentSearch.do?action=initBasic&rsNo=8ef9a4d44c0245c09942f8aa25de49df&LANG=chi",
+                "icon": "id-card"
+            }
+        ],
+        "research_group": "ASI² Lab"
+    },
+    {
+        "id": 1,
+        "name": "Hui-Che Hsu",
+        "photo": "/images/members/Huichehsu.jpg",
+        "role": "Ph.D. Student",
+        "topic": "Defect Detection, Robot Navigation, UAV Perception",
+        "status": "current",
+        "email": "abc91315@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 4,
+        "name": "Shang-Lin Li",
+        "photo": "/images/members/Shang-Lin Li.jpg",
+        "role": "Ph.D. Student",
+        "topic": "Industrial AI",
+        "status": "current",
+        "email": "abc91315@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 5,
+        "name": "Le Trong Nhan",
+        "photo": "/images/members/Letrongnhan.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "M11302816@mail.ntust.edu.tw",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 6,
+        "name": "Cheng-Yen Hsieh",
+        "photo": "/images/members/Chengyenhsieh.jpg",
+        "role": "Master's Student",
+        "topic": "Embodied AI",
+        "status": "current",
+        "email": "chengyen0206@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Embodied Intelligence"
+    },
+    {
+        "id": 7,
+        "name": "Cheng-wei Chen",
+        "photo": "/images/members/Chengweichen.png",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "M11302816@mail.ntust.edu.tw",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 8,
+        "name": "Chang-Hsun Tsai",
+        "photo": "/images/members/Changhsuntsai.jpg",
+        "role": "Master's Student",
+        "topic": "Industrial AI",
+        "status": "current",
+        "email": "goosbytsai1124@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 9,
+        "name": "Zheng-Rong Ye",
+        "photo": "/images/members/Zhengrongye.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "m11302102@mail.ntust.edu.tw",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 10,
+        "name": "Wei-Ling Xu",
+        "photo": "/images/members/Weilingxu.jpg",
+        "role": "Master's Student",
+        "topic": "Industrial AI",
+        "status": "current",
+        "email": "R1343008@ms.niu.edu.tw",
+        "coadvisor": "宜大資工所共同指導",
+        "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 11,
+        "name": "Ting-Yu Chen",
+        "photo": "/images/members/Tingyuchen.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "blck0404@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 12,
+        "name": "Jun-Guang Zhu",
+        "photo": "/images/members/Junguangzhu.jpg",
+        "role": "Master's Student",
+        "topic": "Industrial AI",
+        "status": "current",
+        "email": "zhuguang1010414@gmail.com",
+        "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 13,
+        "name": "Doan Xuan Duy Phuc",
+        "photo": "/images/members/Doanxuanduyphuc.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "duyphucdx@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 14,
+        "name": "Bo-Hong Pan",
+        "photo": "/images/members/Bohongpan.jpg",
+        "role": "Master's Student",
+        "topic": "Embodied AI",
+        "status": "current",
+        "email": "m11402146@gapps.ntust.edu.tw",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Embodied Intelligence"
+    },
+    {
+        "id": 15,
+        "name": "Yu-Wen Chen",
+        "photo": "/images/members/Yuwenchen.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "angel22143334@gmail.com",
+        "coadvisor": "臺科大AI所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 16,
+        "name": "Shih-Yi Wen",
+        "photo": "/images/members/Shihyiwen.jpg",
+        "role": "Master's Student",
+        "topic": "Industrial AI",
+        "status": "current",
+        "email": "m11402140@ntust.mail.edu.tw",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 17,
+        "name": "Hsieh Yen Yu",
+        "photo": "/images/members/Yenyuhsieh.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "tommy911108@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 18,
+        "name": "Po-Shao Liu",
+        "photo": "/images/members/Poshaoliu.jpg",
+        "role": "Master's Student",
+        "topic": "Embodied AI",
+        "status": "current",
+        "email": "allen88787@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Embodied Intelligence"
+    }
+]

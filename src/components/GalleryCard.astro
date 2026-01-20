@@ -1,0 +1,294 @@
+---
+interface Props {
+    image: string;
+    title: string;
+    description: string;
+    category: string;
+}
+
+const { image, title, description, category } = Astro.props;
+
+// Category color mapping - only 2 categories now
+const categoryColors: Record<
+    string,
+    { bg: string; text: string; border: string; icon: string }
+> = {
+    Activity: {
+        bg: "bg-amber-100",
+        text: "text-amber-800",
+        border: "border-amber-200",
+        icon: "calendar",
+    },
+    Equipment: {
+        bg: "bg-blue-100",
+        text: "text-blue-800",
+        border: "border-blue-200",
+        icon: "cpu",
+    },
+};
+
+const colors = categoryColors[category] || categoryColors["Activity"];
+const uniqueId = `gallery-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<!-- Clickable Card that opens lightbox -->
+<div
+    class="gallery-card group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100 hover:border-gray-200"
+    onclick={`document.getElementById('${uniqueId}').showModal(); document.body.style.overflow = 'hidden';`}
+>
+    <!-- Image Container -->
+    <div class="relative aspect-[4/3] overflow-hidden">
+        <img
+            src={image}
+            alt={title}
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+        />
+
+        <!-- Gradient Overlay -->
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"
+        >
+        </div>
+
+        <!-- Category Badge -->
+        <div class="absolute top-4 left-4 z-10">
+            <span
+                class:list={[
+                    "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm border",
+                    colors.bg,
+                    colors.text,
+                    colors.border,
+                ]}
+            >
+                {
+                    colors.icon === "calendar" && (
+                        <svg
+                            class="w-3.5 h-3.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            />
+                        </svg>
+                    )
+                }
+                {
+                    colors.icon === "cpu" && (
+                        <svg
+                            class="w-3.5 h-3.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m14 0h2M3 15h2m14 0h2M9 9h6v6H9V9z"
+                            />
+                        </svg>
+                    )
+                }
+                {category}
+            </span>
+        </div>
+
+        <!-- Content Overlay -->
+        <div
+            class="absolute bottom-0 left-0 right-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
+        >
+            <h3
+                class="text-lg font-bold text-white mb-2 line-clamp-2 drop-shadow-lg"
+            >
+                {title}
+            </h3>
+            <p
+                class="text-sm text-white/80 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+            >
+                {description}
+            </p>
+        </div>
+
+        <!-- Expand Icon -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100"
+        >
+            <div
+                class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30"
+            >
+                <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                    ></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lightbox Modal (News Style) -->
+<dialog
+    id={uniqueId}
+    class="lightbox-modal fixed inset-0 m-auto bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] p-0 overflow-hidden backdrop:bg-navy/90 backdrop:backdrop-blur-sm"
+    onclick="var rect = this.getBoundingClientRect(); var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width); if (!isInDialog) { this.close(); }"
+    onclose="document.body.style.overflow = ''"
+>
+    <!-- Close Button -->
+    <button
+        onclick={`document.getElementById('${uniqueId}').close()`}
+        class="absolute top-4 right-4 z-20 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-navy transition-colors"
+    >
+        <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+    <!-- Scrollable Content -->
+    <div class="overflow-y-auto max-h-[90vh] p-8 custom-scrollbar">
+        <!-- Badges & Header -->
+        <div class="flex items-center gap-3 mb-6">
+            <span
+                class:list={[
+                    "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wide",
+                    colors.bg,
+                    colors.text,
+                    colors.border,
+                ]}
+            >
+                {
+                    colors.icon === "calendar" && (
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            />
+                        </svg>
+                    )
+                }
+                {
+                    colors.icon === "cpu" && (
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m14 0h2M3 15h2m14 0h2M9 9h6v6H9V9z"
+                            />
+                        </svg>
+                    )
+                }
+                {category}
+            </span>
+            <span class="text-sm text-gray-400 font-medium"
+                >ASI² Lab Gallery</span
+            >
+        </div>
+
+        <!-- Title -->
+        <h3
+            class="text-2xl md:text-3xl font-heading font-bold text-navy mb-6 leading-tight"
+        >
+            {title}
+        </h3>
+
+        <!-- Description -->
+        <div
+            class="prose prose-lg text-gray-600 mb-8 max-w-none leading-relaxed"
+        >
+            {description}
+        </div>
+
+        <!-- Image Container -->
+        <div
+            class="rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm"
+        >
+            <img
+                src={image}
+                alt={title}
+                class="w-full h-auto max-h-[70vh] object-contain mx-auto"
+            />
+        </div>
+    </div>
+</dialog>
+
+<style>
+    .gallery-card {
+        transform-style: preserve-3d;
+    }
+
+    .gallery-card:hover {
+        transform: translateY(-4px);
+    }
+
+    /* Modal Animation */
+    .lightbox-modal[open] {
+        animation: fadeInScale 0.3s ease-out forwards;
+    }
+
+    .lightbox-modal::backdrop {
+        /* Tailwind classes handle this now, but keeping for backup */
+        background-color: rgba(16, 27, 57, 0.9);
+        backdrop-filter: blur(4px);
+    }
+
+    @keyframes fadeInScale {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Custom Scrollbar for Modal content */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f3f4f6;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+</style>

@@ -1,0 +1,1443 @@
+﻿---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import PIAwardCard from "../components/PIAwardCard.astro";
+import TimelineCard from "../components/TimelineCard.astro";
+import awards from "../data/awards.json";
+
+// Sort awards by year descending and exclude student merit awards
+const sortedAwards = [...awards]
+    .filter((a) => a.category !== "student_merit")
+    .sort((a, b) => b.year - a.year);
+const meritAwards = sortedAwards.filter((a) => a.category === "merit");
+const paperAwards = sortedAwards.filter((a) => a.category === "paper");
+const competitionAwards = sortedAwards.filter(
+    (a) => a.category === "competition",
+);
+
+// Helper function to get border color class by category
+const getBorderColor = (category: string) => {
+    switch (category) {
+        case "merit":
+            return "border-l-amber-500";
+        case "paper":
+            return "border-l-blue-500";
+        case "competition":
+            return "border-l-emerald-500";
+        default:
+            return "border-l-gray-500";
+    }
+};
+
+// Helper function to get text color class by category
+const getTextColor = (category: string) => {
+    switch (category) {
+        case "merit":
+            return "text-amber-600";
+        case "paper":
+            return "text-blue-600";
+        case "competition":
+            return "text-green-600";
+        default:
+            return "text-gray-600";
+    }
+};
+---
+
+<BaseLayout
+    title="About PI"
+    description="Learn about Dr. Sin-Ye Jhong, director of the ASI² LAB"
+>
+    <!-- Hero Section -->
+    <section
+        class="relative bg-gradient-to-br from-navy via-navy to-navy-light text-white py-16 md:py-24 overflow-hidden"
+    >
+        <!-- Decorative Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-20 -right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"
+            >
+            </div>
+        </div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16"
+            >
+                <!-- Photo (Left) -->
+                <div class="flex-shrink-0">
+                    <div
+                        class="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-accent shadow-2xl group"
+                    >
+                        <img
+                            src="/images/members/sinyejhong.jpg"
+                            alt="Dr. Sin-Ye Jhong"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <!-- Subtle overlay on hover -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info (Right) -->
+                <div class="text-center md:text-left">
+                    <h1
+                        class="text-4xl md:text-5xl font-heading font-bold mb-3 text-white"
+                    >
+                        Dr. Sin-Ye Jhong
+                    </h1>
+                    <p class="text-lg mb-1">
+                        <span class="text-accent font-medium"
+                            >Assistant Professor</span
+                        ><span class="text-gray-300">, GIMT, NTUST</span>
+                    </p>
+                    <p class="text-lg mb-6">
+                        <span class="text-accent font-medium"
+                            >AI Application Consultant</span
+                        ><span class="text-gray-300"
+                            >, Power Data Co., Ltd.</span
+                        >
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div
+                        class="flex flex-wrap justify-center md:justify-start gap-3 mb-4"
+                    >
+                        <a
+                            href="mailto:sinyejhong@mail.ntust.edu.tw"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-light text-white rounded-lg transition-all duration-200 cursor-pointer hover:shadow-lg"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                ></path>
+                            </svg>
+                            Contact
+                        </a>
+                        <a
+                            href="/document/CV.pdf"
+                            target="_blank"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all duration-200 cursor-pointer"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                ></path>
+                            </svg>
+                            Download CV
+                        </a>
+                        <a
+                            href="https://innc.ntust.edu.tw/p/405-1111-137656,c11515.php?Lang=zh-tw"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all duration-200 cursor-pointer"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                ></path>
+                            </svg>
+                            Faculty Profile
+                        </a>
+                    </div>
+
+                    <!-- Social & Academic Links -->
+                    <div
+                        class="flex flex-wrap justify-center md:justify-start gap-3"
+                    >
+                        <a
+                            href="https://scholar.google.com/citations?user=0aR6RcIAAAAJ&hl=zh-TW"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all duration-200 cursor-pointer"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"
+                                ></path>
+                            </svg>
+                            Google Scholar
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/sin-ye-jhong-864593128"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all duration-200 cursor-pointer"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                ></path>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a
+                            href="https://orcid.org/0000-0003-4481-1633"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all duration-200 cursor-pointer"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"
+                                ></path>
+                            </svg>
+                            ORCID
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography -->
+    <section class="section-padding bg-gray-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader title="Biography" />
+
+            <div
+                class="bg-white rounded-xl p-8 shadow-sm text-base leading-relaxed text-gray-700 space-y-2 text-justify"
+            >
+                <p>
+                    <span class="font-bold text-navy">Sin-Ye Jhong</span> received
+                    the Ph.D. degree in Engineering Science from National Cheng Kung
+                    University (NCKU), Tainan, Taiwan, in <span
+                        class="text-blue-600 font-semibold">2024</span
+                    >. From <span class="text-blue-600 font-semibold">2023</span
+                    > to <span class="text-blue-600 font-semibold">2024</span>,
+                    he was a Research Fellow with the Smart Electric Vehicle
+                    Center, National Taiwan University of Science and Technology
+                    (NTUST), Taipei, Taiwan. In <span
+                        class="text-blue-600 font-semibold">2024</span
+                    >, he was also a Visiting Scholar with the University of
+                    South Florida (USF), Tampa, FL, USA, supported by the <span
+                        class="text-[#d83d70] font-bold"
+                        >Graduate Students Study Abroad Fellowship (千里馬計畫)</span
+                    > from the National Science and Technology Council (國科會). He
+                    previously served as an Assistant Professor with the Department
+                    of Artificial Intelligence at Tamkang University in <span
+                        class="text-blue-600 font-semibold">2025</span
+                    >. Currently, he is an Assistant Professor with the Graduate
+                    Institute of Intelligent Manufacturing Technology at NTUST.
+                    His research interests include computer vision, deep
+                    learning, multimodal learning, Artificial Intelligence of
+                    Things (AIoT), robot perception & navigation, and
+                    human-robot interaction.
+                </p>
+                <p class="indent-8">
+                    Dr. Jhong’s research excellence has been widely recognized.
+                    In <span class="text-blue-600 font-semibold">2025</span>, he
+                    was the recipient of <span class="text-[#d83d70] font-bold"
+                        >four prestigious Best Ph.D. Thesis Awards</span
+                    >, conferred by the IEEE Tainan Section, the IET Taipei
+                    Local Network, the Taiwan Association of Systems Science and
+                    Engineering (中華民國系統學會), and the Taiwan Consumer
+                    Electronics Society (消費電子學會). He has established a
+                    prolific publication record with <span
+                        class="text-[#d83d70] font-bold">over 15 papers</span
+                    > in top-tier SCI journals, including <span class="italic"
+                        >IEEE Trans. Consumer Electronics</span
+                    >, <span class="italic"
+                        >IEEE Trans. Instrumentation and Measurement</span
+                    > and <span class="italic"
+                        >ACM Trans. Multimedia Computing, Communications, and
+                        Applications</span
+                    >. In addition to journal publications, Dr. Jhong has
+                    received numerous accolades at international conferences.
+                    His recent achievements in <span
+                        class="text-blue-600 font-semibold">2025</span
+                    > include the <span class="text-[#d83d70] font-bold"
+                        >Outstanding Presentation Award</span
+                    > at IEEE AVSS, the <span class="text-[#d83d70] font-bold"
+                        >First Prize Best Student Paper</span
+                    > and <span class="text-[#d83d70] font-bold"
+                        >Second Prize Best Paper</span
+                    > at Automation, the <span class="text-[#d83d70] font-bold"
+                        >Second Prize Best Paper</span
+                    > at CACS, and the <span class="text-[#d83d70] font-bold"
+                        >Best Paper Honorable Mention</span
+                    > at ARIS.
+                </p>
+                <p class="indent-8">
+                    Dedicated to bridging the gap between theoretical research
+                    and practical application, Dr. Jhong has guided his research
+                    team to win <span class="text-[#d83d70] font-bold"
+                        >over 30 awards</span
+                    > in major national competitions. These include <span
+                        class="text-[#d83d70] font-bold">top prizes</span
+                    > in the NCHU Capstone Competition for AI Empowerment and Robotics
+                    Applications in Manufacturing (<span
+                        class="text-blue-600 font-semibold">2025</span
+                    >), the International ICT Innovative Services Awards (<span
+                        class="text-blue-600 font-semibold">2025</span
+                    >), the National Electronics Creative Design Competition (<span
+                        class="text-blue-600 font-semibold">2018</span
+                    >–<span class="text-blue-600 font-semibold">2025</span>),
+                    and the Intel® DevCup x OpenVINO™ Toolkit Competition (<span
+                        class="text-blue-600 font-semibold">2021</span
+                    >, <span class="text-blue-600 font-semibold">2022</span>).
+                    He has participated in <span
+                        class="text-[#d83d70] font-bold"
+                        >over 20 industry-academic and NSTC projects</span
+                    >, holding <span class="text-[#d83d70] font-bold"
+                        >2 U.S. patents</span
+                    >, <span class="text-[#d83d70] font-bold"
+                        >10 Taiwan patents</span
+                    >, and <span class="text-[#d83d70] font-bold"
+                        >1 Chinese patent</span
+                    >. He is also an active member of the academic community,
+                    having served as a Session Chair for conferences such as
+                    ARIS, CACS, Automation, ICCE-TW, and ICETA, and was honored
+                    with the <span class="text-[#d83d70] font-bold"
+                        >Best Service Award</span
+                    > at ICETA 2021.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader title="Education" />
+
+            <div class="space-y-6">
+                <TimelineCard
+                    title="Ph.D. in Engineering Science"
+                    organization="National Cheng Kung University (NCKU)"
+                    organizationUrl="https://www.es.ncku.edu.tw/esncku/zh/"
+                    period="2019 - 2024"
+                    location="Tainan, Taiwan"
+                    iconType="phd"
+                    category="education"
+                    watermarkLogo="/images/Logo/NCKU.png"
+                />
+
+                <TimelineCard
+                    title="M.S. in Automation Technology"
+                    organization="National Taipei University of Technology (NTUT)"
+                    organizationUrl="https://giat.ntut.edu.tw/"
+                    period="2017 - 2019"
+                    location="Taipei, Taiwan"
+                    iconType="masters"
+                    category="education"
+                    watermarkLogo="/images/Logo/NTUT.png"
+                    watermarkOffset={{ bottom: "0.25rem", right: "0.75rem" }}
+                />
+
+                <TimelineCard
+                    title="B.S. in Electrical Engineering"
+                    organization="Chinese Culture University (PCCU)"
+                    organizationUrl="https://ee.pccu.edu.tw/"
+                    period="2013 - 2017"
+                    location="Taipei, Taiwan"
+                    iconType="bachelors"
+                    category="education"
+                    watermarkLogo="/images/Logo/PCCU.png"
+                    watermarkOffset={{ bottom: "0.5rem", right: "0rem" }}
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="section-padding bg-gray-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader title="Work Experience" />
+
+            <div class="space-y-6">
+                <TimelineCard
+                    title="Assistant Professor"
+                    organization="National Taiwan University of Science and Technology (NTUST)"
+                    organizationUrl="https://www.ntust.edu.tw/"
+                    period="2025 - Present"
+                    location="Taipei, Taiwan"
+                    department="Graduate Institute of Intelligent Manufacturing Technology"
+                    iconType="professor"
+                    isCurrent={true}
+                    category="work"
+                />
+
+                <TimelineCard
+                    title="AI Application Consultant"
+                    organization="Power Data Co., Ltd. (勝力數智股份有限公司)"
+                    organizationUrl="https://www.powerdata.com.tw/"
+                    period="2025 - Present"
+                    location="Yunlin, Taiwan"
+                    department="Strategic Technical Advisory & Digital Transformation"
+                    iconType="industry"
+                    isCurrent={true}
+                    category="work"
+                />
+
+                <TimelineCard
+                    title="Assistant Professor"
+                    organization="Tamkang University (TKU)"
+                    organizationUrl="https://www.tku.edu.tw/"
+                    period="2025"
+                    location="New Taipei, Taiwan"
+                    department="Department of Artificial Intelligence"
+                    iconType="professor"
+                    category="work"
+                />
+
+                <TimelineCard
+                    title="Research Fellow"
+                    organization="National Taiwan University of Science and Technology (NTUST)"
+                    organizationUrl="https://www.ntust.edu.tw/"
+                    period="2023 - 2025"
+                    location="Taipei, Taiwan"
+                    department="Smart Electric Vehicle (SEV) Research Center"
+                    iconType="research"
+                    category="work"
+                />
+
+                <TimelineCard
+                    title="Visiting Scholar"
+                    organization="University of South Florida (USF)"
+                    organizationUrl="https://www.usf.edu/"
+                    period="2024"
+                    location="Tampa, Florida, USA"
+                    department="Department of Electrical Engineering"
+                    iconType="visiting"
+                    category="work"
+                />
+
+                <TimelineCard
+                    title="Vice Chair"
+                    organization="IET Taipei Local Network"
+                    organizationUrl="https://www.iettaiwan.org.tw/news_detail_78.htm"
+                    period="2019"
+                    location="Taipei, Taiwan"
+                    department="Young Professionals Group"
+                    iconType="leadership"
+                    category="work"
+                />
+
+                <TimelineCard
+                    title="Computer Vision R&D Intern"
+                    organization="Real Touch Corp. Ltd. (健中資訊股份有限公司)"
+                    organizationUrl="https://realtouchapp.com/"
+                    period="2016 - 2017"
+                    location="New Taipei, Taiwan"
+                    department="Product R&D Department"
+                    iconType="industry"
+                    category="work"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Activities -->
+    <section id="professional-activities" class="section-padding bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader title="Professional Activities" />
+
+            <p class="text-gray-text text-center mb-8 -mt-4">
+                Contributing to the academic community through editorial
+                service, conference leadership, invited presentations, and
+                professional engagement.
+            </p>
+
+            <!-- Editorial & Reviewer Service (Tabbed Interface) -->
+            <div
+                class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8"
+            >
+                <div class="p-4 border-b border-gray-100 bg-gray-50">
+                    <h3
+                        class="text-lg font-bold text-primary flex items-center gap-2"
+                    >
+                        <span class="text-xl">📝</span> Editorial & Reviewer Service
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Serving as a peer reviewer for leading academic journals
+                        and international conferences
+                    </p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div
+                    class="flex flex-wrap gap-2 p-4 border-b border-gray-100"
+                    id="reviewer-filters"
+                >
+                    <button
+                        class="reviewer-filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
+                        data-filter="journal"
+                    >
+                        Journal <span class="reviewer-count-journal"></span>
+                    </button>
+                    <button
+                        class="reviewer-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        data-filter="conference"
+                    >
+                        Conference <span class="reviewer-count-conference"
+                        ></span>
+                    </button>
+                </div>
+
+                <!-- Reviewer List -->
+                <div class="p-4 space-y-2" id="reviewer-list">
+                    <!-- Journal Reviewers -->
+                    <div
+                        class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
+                        data-category="journal"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, IEEE Transactions on Consumer Electronics
+                            (TCE)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
+                        data-category="journal"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, ACM Transactions on Multimedia Computing,
+                            Communications, and Applications (TOMM)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
+                        data-category="journal"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, International Journal of Intelligent
+                            Systems (IJIS)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
+                        data-category="journal"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, Applied Computational Intelligence and
+                            Soft Computing (ACISC)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
+                        data-category="journal"
+                    >
+                        <span class="text-gray-700">Reviewer, Sensors</span>
+                    </div>
+                    <div
+                        class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
+                        data-category="journal"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, Journal of Information Science and
+                            Engineering (JISE)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
+                        data-category="journal"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, Sensors and Materials (SM)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
+                        data-category="journal"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, Journal of Imaging Science and Technology
+                            (JIST)</span
+                        >
+                    </div>
+
+                    <!-- Conference Reviewers -->
+                    <div
+                        class="reviewer-item hidden py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-teal-500 hover:bg-gray-100 transition-colors"
+                        data-category="conference"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, IEEE International Conference on Robotics
+                            and Automation (ICRA)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item hidden py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-teal-500 hover:bg-gray-100 transition-colors"
+                        data-category="conference"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, International Conference on Automation
+                            Technology (Automation)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item hidden py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-teal-500 hover:bg-gray-100 transition-colors"
+                        data-category="conference"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, International Automatic Control
+                            Conference (CACS)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item hidden py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-teal-500 hover:bg-gray-100 transition-colors"
+                        data-category="conference"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, IEEE International Conference on Consumer
+                            Electronics-Taiwan (ICCE-TW)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item hidden py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-teal-500 hover:bg-gray-100 transition-colors"
+                        data-category="conference"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, IEEE International Symposium on
+                            Intelligent Signal Processing and Communications
+                            Systems (ISPACS)</span
+                        >
+                    </div>
+                    <div
+                        class="reviewer-item hidden py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-teal-500 hover:bg-gray-100 transition-colors"
+                        data-category="conference"
+                    >
+                        <span class="text-gray-700"
+                            >Reviewer, IET International Conference on
+                            Engineering Technologies and Applications (ICETA)</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Memberships -->
+            <div
+                class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8"
+            >
+                <div class="p-4 border-b border-gray-100 bg-gray-50">
+                    <h3
+                        class="text-lg font-bold text-primary flex items-center gap-2"
+                    >
+                        <span class="text-xl">🏛️</span> Professional Memberships
+                    </h3>
+                </div>
+
+                <div class="p-4 space-y-2">
+                    <div
+                        class="py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-indigo-500 hover:bg-gray-100 transition-colors"
+                    >
+                        <span class="text-gray-700"
+                            >Member, IEEE – Institute of Electrical and
+                            Electronics Engineers</span
+                        >
+                    </div>
+                    <div
+                        class="py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-indigo-500 hover:bg-gray-100 transition-colors"
+                    >
+                        <span class="text-gray-700"
+                            >Member, ACM – Association for Computing Machinery</span
+                        >
+                    </div>
+                    <div
+                        class="py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-indigo-500 hover:bg-gray-100 transition-colors"
+                    >
+                        <span class="text-gray-700"
+                            >Member, TASSE – Taiwan Association of Systems
+                            Science and Engineering (中華民國系統學會)</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service & Engagement (Tabbed Interface) -->
+            <div
+                class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8"
+            >
+                <div class="p-4 border-b border-gray-100 bg-gray-50">
+                    <h3
+                        class="text-lg font-bold text-primary flex items-center gap-2"
+                    >
+                        <span class="text-xl">🎯</span> Service & Engagement
+                    </h3>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div
+                    class="flex flex-wrap gap-2 p-4 border-b border-gray-100"
+                    id="pa-filters"
+                >
+                    <button
+                        class="pa-filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
+                        data-filter="thesis"
+                    >
+                        Thesis Committee
+                    </button>
+                    <button
+                        class="pa-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        data-filter="conference"
+                    >
+                        Conference Organization
+                    </button>
+                    <button
+                        class="pa-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        data-filter="talks"
+                    >
+                        Invited Talks
+                    </button>
+                </div>
+
+                <!-- Activities List -->
+                <div class="p-4 space-y-3" id="pa-list">
+                    <!-- Thesis Committee -->
+                    <div
+                        class="pa-item flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-purple-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="thesis"
+                    >
+                        <span
+                            class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
+                            >2025.07.21</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="text-accent font-semibold"
+                                >Master's Thesis Committee Member</span
+                            >, Dept. of Electronic and Computer Engineering,
+                            National Taiwan University of Science and Technology
+                            (NTUST)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-purple-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="thesis"
+                    >
+                        <span
+                            class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
+                            >2025.07.09</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="text-accent font-semibold"
+                                >Master's Thesis Committee Member</span
+                            >, Dept. of Electronic and Computer Engineering,
+                            National Taiwan University of Science and Technology
+                            (NTUST)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-purple-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="thesis"
+                    >
+                        <span
+                            class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
+                            >2025.07.07</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="text-accent font-semibold"
+                                >Master's Thesis Committee Member</span
+                            >, Dept. of Electronic and Computer Engineering,
+                            National Taiwan University of Science and Technology
+                            (NTUST)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-purple-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="thesis"
+                    >
+                        <span
+                            class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2025.06.09</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="text-red-600 font-semibold"
+                                >Master's Thesis Committee Member</span
+                            >, Dept. of Computer Science and Information
+                            Engineering, National Ilan University (NIU)</span
+                        >
+                    </div>
+
+                    <!-- Conference Organization -->
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2026</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                >Special Session Chair</span
+                            >, "Smart Systems and Their Applications", IEEE
+                            International Conference on Consumer Electronics –
+                            Taiwan (ICCE-TW)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2025</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                >Special Session Chair</span
+                            >, "Intelligent System and Its Application",
+                            International Conference on Automation Technology
+                            (Automation)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2025</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                >Special Session Chair</span
+                            >, "Smart Systems and Their Applications", IEEE
+                            International Conference on Consumer Electronics –
+                            Taiwan (ICCE-TW)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2024</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                >Special Session Chair</span
+                            >, "Intelligent System and Its Application",
+                            International Conference on Automation Technology
+                            (Automation)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2023</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                >Special Session Chair</span
+                            >, "Advanced Signal Processing in Consumer and
+                            Industrial Electronics", IEEE International
+                            Conference on Consumer Electronics – Taiwan
+                            (ICCE-TW)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2021</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                >Publicity Chair</span
+                            >, IET International Conference on Engineering
+                            Technologies and Applications (ICETA) <span
+                                class="text-accent font-medium"
+                                >(Outstanding Service Award)</span
+                            ></span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2019</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                >Special Session Chair</span
+                            >, "Deep Learning and Its Application", IEEE
+                            International Symposium on Intelligent Signal
+                            Processing and Communications Systems (ISPACS)</span
+                        >
+                    </div>
+
+                    <!-- Invited Talks -->
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="talks"
+                    >
+                        <span
+                            class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2025</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold"
+                                >"From Perception to Decision: How Generative AI
+                                and AI Agents Are Pioneering the New Era of
+                                Autonomous Driving"</span
+                            >, Dept. of Computer Science and Information
+                            Engineering, National Ilan University (NIU)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="talks"
+                    >
+                        <span
+                            class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2025</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold"
+                                >"The Evolution Path and Future Challenges of
+                                Autonomous Driving Technology"</span
+                            >, Dept. of Electrical Engineering, National Ilan
+                            University (NIU)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="talks"
+                    >
+                        <span
+                            class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2024</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold"
+                                >"Practical Experience Sharing on Key
+                                Technologies for Autonomous Vehicles"</span
+                            >, Dept. of Electrical Engineering, National Ilan
+                            University (NIU)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="talks"
+                    >
+                        <span
+                            class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2023</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold"
+                                >"Efficient Project Thinking Under AI Innovation
+                                Technology"</span
+                            >, Dept. of Electrical Engineering, National Ilan
+                            University (NIU)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="talks"
+                    >
+                        <span
+                            class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2021</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold"
+                                >"Python Workshop for Beginners"</span
+                            >, Dept. of Health, Taipei City Government
+                            (臺北市衛生局)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="talks"
+                    >
+                        <span
+                            class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2020</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold"
+                                >"AI Practices and Applications"</span
+                            >, Directorate General of Budget, Accounting &
+                            Statistics, Executive Yuan (行政院主計總處)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="talks"
+                    >
+                        <span
+                            class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2020</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold"
+                                >"AI Computer Vision in Practice"</span
+                            >, Taiwan Network Information Center (TWNIC;
+                            財團法人台灣網路資訊中心)</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Professional Activities Filter (Service & Engagement Section)
+        const paFilterBtns = document.querySelectorAll(".pa-filter-btn");
+        const paItems = document.querySelectorAll(".pa-item");
+
+        // Update counts dynamically
+        function updatePACounts() {
+            const thesisCount = document.querySelectorAll(
+                '.pa-item[data-category="thesis"]',
+            ).length;
+            const conferenceCount = document.querySelectorAll(
+                '.pa-item[data-category="conference"]',
+            ).length;
+            const talksCount = document.querySelectorAll(
+                '.pa-item[data-category="talks"]',
+            ).length;
+
+            paFilterBtns.forEach((btn) => {
+                const filter = btn.getAttribute("data-filter");
+                if (filter === "thesis") {
+                    btn.textContent = `Thesis Committee (${thesisCount})`;
+                } else if (filter === "conference") {
+                    btn.textContent = `Conference Organization (${conferenceCount})`;
+                } else if (filter === "talks") {
+                    btn.textContent = `Invited Talks (${talksCount})`;
+                }
+            });
+        }
+        updatePACounts();
+
+        paFilterBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                // Update button styles
+                paFilterBtns.forEach((b) => {
+                    b.classList.remove(
+                        "active",
+                        "bg-accent",
+                        "text-white",
+                        "shadow-lg",
+                        "shadow-accent/30",
+                    );
+                    b.classList.add(
+                        "bg-gray-100",
+                        "text-gray-700",
+                        "hover:bg-gray-200",
+                    );
+                });
+                btn.classList.add(
+                    "active",
+                    "bg-accent",
+                    "text-white",
+                    "shadow-lg",
+                    "shadow-accent/30",
+                );
+                btn.classList.remove(
+                    "bg-gray-100",
+                    "text-gray-700",
+                    "hover:bg-gray-200",
+                );
+
+                // Filter items
+                const filter = btn.getAttribute("data-filter");
+                paItems.forEach((item) => {
+                    if (item.getAttribute("data-category") === filter) {
+                        item.classList.remove("hidden");
+                    } else {
+                        item.classList.add("hidden");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Editorial & Reviewer Service Filter
+        const reviewerFilterBtns = document.querySelectorAll(
+            ".reviewer-filter-btn",
+        );
+        const reviewerItems = document.querySelectorAll(".reviewer-item");
+
+        // Update counts dynamically
+        function updateReviewerCounts() {
+            const journalCount = document.querySelectorAll(
+                '.reviewer-item[data-category="journal"]',
+            ).length;
+            const conferenceCount = document.querySelectorAll(
+                '.reviewer-item[data-category="conference"]',
+            ).length;
+
+            const journalCountEl = document.querySelector(
+                ".reviewer-count-journal",
+            );
+            const conferenceCountEl = document.querySelector(
+                ".reviewer-count-conference",
+            );
+
+            if (journalCountEl)
+                journalCountEl.textContent = `(${journalCount})`;
+            if (conferenceCountEl)
+                conferenceCountEl.textContent = `(${conferenceCount})`;
+        }
+        updateReviewerCounts();
+
+        reviewerFilterBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                // Update button styles
+                reviewerFilterBtns.forEach((b) => {
+                    b.classList.remove(
+                        "active",
+                        "bg-accent",
+                        "text-white",
+                        "shadow-lg",
+                        "shadow-accent/30",
+                    );
+                    b.classList.add(
+                        "bg-gray-100",
+                        "text-gray-700",
+                        "hover:bg-gray-200",
+                    );
+                });
+                btn.classList.add(
+                    "active",
+                    "bg-accent",
+                    "text-white",
+                    "shadow-lg",
+                    "shadow-accent/30",
+                );
+                btn.classList.remove(
+                    "bg-gray-100",
+                    "text-gray-700",
+                    "hover:bg-gray-200",
+                );
+
+                // Filter items
+                const filter = btn.getAttribute("data-filter");
+                reviewerItems.forEach((item) => {
+                    if (item.getAttribute("data-category") === filter) {
+                        item.classList.remove("hidden");
+                    } else {
+                        item.classList.add("hidden");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Honors & Awards -->
+    <section id="honors" class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader title="Personal Honors & Awards" />
+
+            <p class="text-gray-text text-center mb-6 -mt-4">
+                Recognition of my individual academic excellence, research
+                contributions, and achievements as a researcher.
+                <br class="hidden sm:block" />
+                For lab team achievements and student competition wins, please visit
+                <a
+                    href="/awards"
+                    class="text-accent hover:underline font-medium"
+                    >Lab & Student Awards</a
+                >.
+            </p>
+
+            <!-- Filter Tabs -->
+            <div
+                class="flex flex-wrap justify-center gap-2 mb-8"
+                id="pi-award-filters"
+            >
+                <button
+                    class="pi-filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30 cursor-pointer hover:-translate-y-0.5"
+                    data-filter="all"
+                >
+                    All ({sortedAwards.length})
+                </button>
+                <button
+                    class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
+                    data-filter="merit"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    Merit ({meritAwards.length})
+                </button>
+                <button
+                    class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
+                    data-filter="paper"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        ></path>
+                    </svg>
+                    Paper ({paperAwards.length})
+                </button>
+                <button
+                    class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
+                    data-filter="competition"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
+                            clip-rule="evenodd"></path>
+                        <path
+                            d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"
+                        ></path>
+                    </svg>
+                    Competition Awards ({competitionAwards.length})
+                </button>
+            </div>
+
+            <!-- Awards List by Year -->
+            <div id="pi-awards-container">
+                {
+                    [...new Set(sortedAwards.map((a) => a.year))].map(
+                        (year) => (
+                            <div
+                                class="pi-year-group mb-12 last:mb-0"
+                                data-year={year}
+                            >
+                                <div class="year-header flex items-center gap-4 mb-6 py-2">
+                                    <div class="text-2xl font-bold text-navy">
+                                        {year}
+                                    </div>
+                                    <div class="flex-1 h-px bg-gradient-to-r from-accent/50 to-transparent" />
+                                    <span class="text-sm text-gray-400 font-medium pi-year-count">
+                                        {
+                                            sortedAwards.filter(
+                                                (a) => a.year === year,
+                                            ).length
+                                        }{" "}
+                                        {sortedAwards.filter(
+                                            (a) => a.year === year,
+                                        ).length > 1
+                                            ? "awards"
+                                            : "award"}
+                                    </span>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-6 pi-awards-grid">
+                                    {sortedAwards
+                                        .filter((a) => a.year === year)
+                                        .map((award) => (
+                                            <div
+                                                class="pi-award-item"
+                                                data-category={award.category}
+                                            >
+                                                <PIAwardCard
+                                                    title={award.title}
+                                                    event={award.event}
+                                                    year={award.year}
+                                                    category={award.category}
+                                                />
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                        ),
+                    )
+                }
+            </div>
+        </div>
+    </section>
+
+    <script lang="ts">
+        const piFilterBtns = document.querySelectorAll(".pi-filter-btn");
+        const piYearGroups = document.querySelectorAll(".pi-year-group");
+
+        // Auto-update counts
+        function updateCounts() {
+            const meritCount = document.querySelectorAll(
+                '.pi-award-item[data-category="merit"]',
+            ).length;
+            const paperCount = document.querySelectorAll(
+                '.pi-award-item[data-category="paper"]',
+            ).length;
+            const competitionCount = document.querySelectorAll(
+                '.pi-award-item[data-category="competition"]',
+            ).length;
+            const totalCount = meritCount + paperCount + competitionCount;
+
+            piFilterBtns.forEach((btn) => {
+                const filter = btn.getAttribute("data-filter");
+                if (filter === "all") {
+                    btn.textContent = `All (${totalCount})`;
+                } else if (filter === "merit") {
+                    btn.textContent = `🏅 Merit Awards (${meritCount})`;
+                } else if (filter === "paper") {
+                    btn.textContent = `📄 Paper Awards (${paperCount})`;
+                } else if (filter === "competition") {
+                    btn.textContent = `🏆 Competition Awards (${competitionCount})`;
+                }
+            });
+        }
+        updateCounts();
+
+        piFilterBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                piFilterBtns.forEach((b) => {
+                    b.classList.remove(
+                        "active",
+                        "bg-accent",
+                        "text-white",
+                        "shadow-lg",
+                        "shadow-accent/30",
+                    );
+                    b.classList.add(
+                        "bg-gray-100",
+                        "text-gray-700",
+                        "hover:bg-gray-200",
+                    );
+                });
+                btn.classList.add(
+                    "active",
+                    "bg-accent",
+                    "text-white",
+                    "shadow-lg",
+                    "shadow-accent/30",
+                );
+                btn.classList.remove(
+                    "bg-gray-100",
+                    "text-gray-700",
+                    "hover:bg-gray-200",
+                );
+
+                const filter = btn.getAttribute("data-filter");
+
+                piYearGroups.forEach((group) => {
+                    const items = group.querySelectorAll(".pi-award-item");
+                    let visibleCount = 0;
+
+                    items.forEach((item) => {
+                        if (
+                            filter === "all" ||
+                            item.getAttribute("data-category") === filter
+                        ) {
+                            item.classList.remove("hidden");
+                            visibleCount++;
+                        } else {
+                            item.classList.add("hidden");
+                        }
+                    });
+
+                    // Update year count
+                    const yearCountEl = group.querySelector(".pi-year-count");
+                    if (yearCountEl) {
+                        yearCountEl.textContent = `${visibleCount} ${visibleCount === 1 ? "award" : "awards"}`;
+                    }
+
+                    if (visibleCount > 0) {
+                        group.classList.remove("hidden");
+                    } else {
+                        group.classList.add("hidden");
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Back to Top Button -->
+    <button
+        id="back-to-top"
+        class="fixed bottom-8 right-8 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50 hover:-translate-y-1 hover:shadow-accent/50 group"
+        aria-label="Back to Top"
+    >
+        <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // Back to Top Button Logic
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopBtn?.classList.remove("opacity-0", "invisible");
+            } else {
+                backToTopBtn?.classList.add("opacity-0", "invisible");
+            }
+        });
+
+        backToTopBtn?.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+    </script>
+</BaseLayout>

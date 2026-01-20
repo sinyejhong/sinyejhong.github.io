@@ -1,0 +1,328 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import LogoWall from "../components/LogoWall.astro";
+import projects from "../data/projects.json";
+
+// Helper to calculate status from duration string "YYYY.MM - YYYY.MM"
+const calculateStatus = (duration: string) => {
+    try {
+        const parts = duration.split("-");
+        if (parts.length < 2) return "ongoing";
+
+        const endStr = parts[1].trim(); // e.g. "2025.09" or "Present"
+
+        if (endStr.toLowerCase() === "present") return "ongoing";
+
+        const [year, month] = endStr.split(".").map(Number);
+
+        // Create date for end of that month (approximate)
+        const endDate = new Date(year, month, 1); // Month is 0-indexed in JS Date? Wait, 2025.09 usually means Sept.
+        // Actually, let's just compare YYYY.MM numerically to Current YYYY.MM
+
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonth = now.getMonth() + 1; // 1-12
+
+        if (year > currentYear) return "ongoing";
+        if (year === currentYear && month >= currentMonth) return "ongoing";
+
+        return "completed";
+    } catch (e) {
+        return "ongoing"; // Default fallback
+    }
+};
+
+const projectsWithStatus = projects.map((p) => ({
+    ...p,
+    status: calculateStatus(p.duration),
+}));
+
+// Sort: ongoing first, then by year
+const sortedProjects = [...projectsWithStatus].sort((a, b) => {
+    if (a.status === "ongoing" && b.status !== "ongoing") return -1;
+    if (a.status !== "ongoing" && b.status === "ongoing") return 1;
+    return 0;
+});
+
+const industryProjects = sortedProjects.filter((p) => p.type === "industry");
+const govProjects = sortedProjects.filter((p) => p.type === "government");
+const ongoingCount = sortedProjects.filter(
+    (p) => p.status === "ongoing",
+).length;
+
+// Partner logos
+const industryLogos = [
+    {
+        name: "AAEON",
+        logo: "/images/Logo/AAEON.png",
+        url: "https://www.aaeon.com",
+    },
+    {
+        name: "MacroHi",
+        logo: "/images/Logo/macrohi.png",
+        url: "https://www.macrohi.com",
+    },
+    {
+        name: "CPC Corporation",
+        logo: "/images/Logo/CPC.png",
+        url: "https://www.cpc.com.tw",
+    },
+    {
+        name: "Novatek",
+        logo: "/images/Logo/novatek.png",
+        url: "https://www.novatek.com.tw",
+    },
+];
+
+const govLogos = [
+    {
+        name: "ARTC",
+        logo: "/images/Logo/ARTC.png",
+        url: "https://www.artc.org.tw",
+    },
+    {
+        name: "III",
+        logo: "/images/Logo/III.png",
+        url: "https://www.iii.org.tw",
+    },
+    {
+        name: "NSTC",
+        logo: "/images/Logo/NSTC.png",
+        url: "https://www.nstc.gov.tw",
+    },
+    {
+        name: "ITRI",
+        logo: "/images/Logo/ITRI.png",
+        url: "https://www.itri.org.tw", // Verified URL for Industrial Technology Research Institute
+    },
+];
+---
+
+<BaseLayout
+    title="Projects"
+    description="Research projects and collaborations at ASI² LAB"
+>
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-navy to-navy-light text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1
+                class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
+            >
+                Projects
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Industry collaborations and government-funded research
+                initiatives
+            </p>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <span class="text-4xl font-bold text-accent"
+                        >{sortedProjects.length}</span
+                    >
+                    <div class="text-gray-300 mt-1">Total Projects</div>
+                </div>
+                <div class="px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <span class="text-4xl font-bold text-green-400"
+                        >{ongoingCount}</span
+                    >
+                    <div class="text-gray-300 mt-1">Ongoing</div>
+                </div>
+                <div class="px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <span class="text-4xl font-bold text-orange-400"
+                        >{industryProjects.length}</span
+                    >
+                    <div class="text-gray-300 mt-1">Industry</div>
+                </div>
+                <div class="px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <span class="text-4xl font-bold text-cyan-400"
+                        >{govProjects.length}</span
+                    >
+                    <div class="text-gray-300 mt-1">Government</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Wall -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="Our Partners"
+                subtitle="Collaborating with leading industry partners and government agencies"
+            />
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3
+                        class="text-lg font-semibold text-navy mb-6 flex items-center gap-2"
+                    >
+                        <span class="text-2xl">🏭</span> Industry Partners
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        {
+                            industryLogos.map((logo) => (
+                                <a
+                                    href={logo.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="group flex items-center justify-center p-4 bg-white border border-gray-100 rounded-xl hover:border-navy/30 hover:shadow-lg hover:shadow-navy/5 transition-all duration-300 aspect-square relative overflow-hidden"
+                                    title={logo.name}
+                                >
+                                    <div class="absolute inset-0 bg-gradient-to-br from-transparent to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <img
+                                        src={logo.logo}
+                                        alt={logo.name}
+                                        class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500 relative z-10"
+                                    />
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div>
+                    <h3
+                        class="text-lg font-semibold text-navy mb-6 flex items-center gap-2"
+                    >
+                        <span class="text-2xl">🏛️</span> Government Agencies / Research
+                        Center
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        {
+                            govLogos.map((logo) => (
+                                <a
+                                    href={logo.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="group flex items-center justify-center p-4 bg-white border border-gray-100 rounded-xl hover:border-navy/30 hover:shadow-lg hover:shadow-navy/5 transition-all duration-300 aspect-square relative overflow-hidden"
+                                    title={logo.name}
+                                >
+                                    <div class="absolute inset-0 bg-gradient-to-br from-transparent to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <img
+                                        src={logo.logo}
+                                        alt={logo.name}
+                                        class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500 relative z-10"
+                                    />
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section
+        class="sticky top-12 lg:top-14 z-40 bg-white border-b border-gray-border shadow-sm"
+    >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div
+                class="flex flex-wrap justify-center gap-2"
+                id="project-filters"
+            >
+                <button
+                    class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
+                    data-filter="all"
+                >
+                    All Projects ({sortedProjects.length})
+                </button>
+                <button
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    data-filter="industry"
+                >
+                    🏭 Industry ({industryProjects.length})
+                </button>
+                <button
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    data-filter="government"
+                >
+                    🏛️ Gov / Research Center ({govProjects.length})
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="section-padding bg-gray-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                id="projects-list"
+            >
+                {
+                    sortedProjects.map((project) => (
+                        <div class="project-item" data-type={project.type}>
+                            <ProjectCard
+                                title={project.title}
+                                funder={project.funder}
+                                duration={project.duration}
+                                role={project.role}
+                                status={
+                                    project.status as "ongoing" | "completed"
+                                }
+                                type={project.type}
+                                description={project.description}
+                                pillar={project.pillar}
+                            />
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<script>
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const projectItems = document.querySelectorAll(".project-item");
+
+    filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            // Update active button
+            filterBtns.forEach((b) => {
+                b.classList.remove(
+                    "active",
+                    "bg-accent",
+                    "text-white",
+                    "shadow-lg",
+                    "shadow-accent/30",
+                );
+                b.classList.add(
+                    "bg-gray-100",
+                    "text-gray-700",
+                    "hover:bg-gray-200",
+                );
+            });
+            btn.classList.add(
+                "active",
+                "bg-accent",
+                "text-white",
+                "shadow-lg",
+                "shadow-accent/30",
+            );
+            btn.classList.remove(
+                "bg-gray-100",
+                "text-gray-700",
+                "hover:bg-gray-200",
+            );
+
+            // Filter items
+            const filter = btn.getAttribute("data-filter");
+            projectItems.forEach((item) => {
+                if (
+                    filter === "all" ||
+                    item.getAttribute("data-type") === filter
+                ) {
+                    item.classList.remove("hidden");
+                } else {
+                    item.classList.add("hidden");
+                }
+            });
+        });
+    });
+</script>

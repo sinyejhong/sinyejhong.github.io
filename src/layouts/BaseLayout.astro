@@ -1,0 +1,297 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Autonomous Systems and Intelligent Interaction Laboratory - Research in Computer Vision, Deep Learning, and Robotics",
+} = Astro.props;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About PI" },
+  { href: "/research", label: "Research" },
+  { href: "/publications", label: "Publications" },
+  { href: "/awards", label: "Lab & Student Awards" },
+  { href: "/projects", label: "Projects" },
+  { href: "/members", label: "Members" },
+  { href: "/teaching", label: "Teaching" },
+  { href: "/joinus", label: "Join Us" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Prof. Sin-Ye Jhong" />
+    <meta
+      name="keywords"
+      content="ASI Lab, Computer Vision, Deep Learning, Robotics, NTUST"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | ASI² LAB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="min-h-screen flex flex-col bg-white">
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 bg-white border-b border-gray-border shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-12 lg:h-14">
+          <!-- Logo -->
+          <a href="/" class="flex items-center">
+            <img
+              src="/images/logo.png"
+              alt="ASI² LAB"
+              class="h-10 lg:h-12 w-auto"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center gap-1">
+            {
+              navItems.map((item) => (
+                <a
+                  href={item.href}
+                  class:list={[
+                    "px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
+                    currentPath === item.href ||
+                    (item.href !== "/" && currentPath.startsWith(item.href))
+                      ? "text-accent bg-accent/10"
+                      : "text-navy hover:text-accent hover:bg-gray-bg",
+                  ]}
+                >
+                  {item.label}
+                </a>
+              ))
+            }
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden p-2 rounded-lg text-navy hover:bg-gray-bg transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav
+        id="mobile-menu"
+        class="hidden lg:hidden border-t border-gray-border bg-white"
+      >
+        <div class="px-4 py-3 space-y-1">
+          {
+            navItems.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  "block px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                  currentPath === item.href ||
+                  (item.href !== "/" && currentPath.startsWith(item.href))
+                    ? "text-accent bg-accent/10"
+                    : "text-navy hover:text-accent hover:bg-gray-bg",
+                ]}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col md:flex-row md:justify-center gap-8">
+          <!-- Lab Info -->
+          <div>
+            <div class="flex items-center gap-3 h-7 mb-4">
+              <div
+                class="w-7 h-7 bg-accent rounded-lg flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-xs">ASI²</span>
+              </div>
+              <span class="font-heading font-bold text-lg">ASI² LAB</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              <span class="whitespace-nowrap"
+                >Autonomous Systems and Intelligent Interaction Laboratory</span
+              ><br />
+              <span class="whitespace-nowrap"
+                >Graduate Institute of Intelligent Manufacturing Technology</span
+              ><br />
+              National Taiwan University of Science and Technology
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="font-heading font-semibold text-lg mb-4">Quick Links</h3>
+            <div class="flex gap-8 text-sm text-gray-300">
+              <ul class="space-y-2">
+                <li>
+                  <a href="/" class="hover:text-accent transition-colors"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a href="/about" class="hover:text-accent transition-colors"
+                    >About PI</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/research"
+                    class="hover:text-accent transition-colors">Research</a
+                  >
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="/publications"
+                    class="hover:text-accent transition-colors">Publications</a
+                  >
+                </li>
+                <li>
+                  <a href="/awards" class="hover:text-accent transition-colors"
+                    >Lab & Student Awards</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/projects"
+                    class="hover:text-accent transition-colors">Projects</a
+                  >
+                </li>
+              </ul>
+              <ul class="space-y-2">
+                <li>
+                  <a href="/members" class="hover:text-accent transition-colors"
+                    >Members</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/teaching"
+                    class="hover:text-accent transition-colors">Teaching</a
+                  >
+                </li>
+                <li>
+                  <a href="/joinus" class="hover:text-accent transition-colors"
+                    >Join Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h3 class="font-heading font-semibold text-lg mb-4">Contact</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <a
+                  href="mailto:sinyejhong@mail.ntust.edu.tw"
+                  class="hover:text-accent transition-colors"
+                >
+                  sinyejhong@mail.ntust.edu.tw
+                </a>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span
+                  >C216, 2F, General Education Building,<br />
+                  TaiwanTech Hwa Hsia Campus,<br />
+                  NTUST, Taipei, Taiwan</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-400"
+        >
+          <p>
+            &copy; {new Date().getFullYear()} ASI² LAB. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>

@@ -1,0 +1,1344 @@
+[
+    {
+        "id": 100,
+        "title": "A Cooperative Hybrid Learning Framework for Automated Dandruff Severity Grading",
+        "authors": [
+            "S.-Y. Jhong",
+            "H.-C. Hsu",
+            "H.-H. Huang",
+            "C.-H. Hsia*",
+            "Y. Harjoseputro",
+            "Y.-Y. Chen*"
+        ],
+        "venue": "Computers, Materials and Continua",
+        "venueDetail": "Accepted, Jan. 2026",
+        "year": 2026,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": null,
+        "link": "#",
+        "highlight": false,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 1,
+        "title": "A Small Traffic Sign Detection Model Based on Improved YOLOv7",
+        "authors": [
+            "H.-C. Lin",
+            "Y.-Y. Chen",
+            "S.-Y. Jhong",
+            "C.-C. Zhang",
+            "K.-L. Hua",
+            "S.-T. Chen",
+            "C.-H. Hsia*"
+        ],
+        "venue": "Sensors and Materials",
+        "venueDetail": "vol. 37, no. 8, pp. 3707-3722, Aug. 2025",
+        "year": 2025,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q3"
+        ],
+        "doi": "10.18494/SAM5347",
+        "link": "https://doi.org/10.18494/SAM5347",
+        "highlight": false,
+        "researchArea": "perception"
+    },
+    {
+        "id": 2,
+        "title": "Vision-Language-Guided Adaptive Cross-Modal Fusion for Multispectral Object Detection Under Adverse Weather Conditions",
+        "authors": [
+            "Y.-Y. Chen*",
+            "S.-Y. Jhong",
+            "H.-C. Lin",
+            "Y.-C. Wu"
+        ],
+        "venue": "IEEE Multimedia",
+        "venueDetail": "vol. 32, no. 2, pp. 22-32, Jul. 2025",
+        "year": 2025,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/MMUL.2025.3525559",
+        "link": "https://doi.org/10.1109/MMUL.2025.3525559",
+        "highlight": true,
+        "researchArea": "perception"
+    },
+    {
+        "id": 3,
+        "title": "Learning-Based Heatmap-Guided Model for Monocular Visual Odometry",
+        "authors": [
+            "H.-C. Lin",
+            "S.-Y. Jhong",
+            "Y.-H. Lin",
+            "J.-K. Fang",
+            "C.-A. Chang",
+            "S.-Y. Lu",
+            "Y.-Y. Chen*"
+        ],
+        "venue": "IEEE Transactions on Instrumentation and Measurement",
+        "venueDetail": "vol. 74, pp. 1-11, Jun. 2025",
+        "year": 2025,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/TIM.2025.3584151",
+        "link": "https://doi.org/10.1109/TIM.2025.3584151",
+        "highlight": true,
+        "researchArea": "perception"
+    },
+    {
+        "id": 4,
+        "title": "An Edge-Cloud Collaborative Scalp Inspection System Based on Robust Representation Learning",
+        "authors": [
+            "S.-Y. Jhong",
+            "G.-T. Li",
+            "C.-H. Hsia*"
+        ],
+        "venue": "IEEE Transactions on Consumer Electronics",
+        "venueDetail": "vol. 71, no. 1, pp. 1551-1562, Feb. 2025",
+        "year": 2025,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/TCE.2024.3474911",
+        "link": "https://doi.org/10.1109/TCE.2024.3474911",
+        "highlight": true,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 5,
+        "title": "A Domain Generalized Face Anti-Spoofing System Using Domain Adversarial Learning",
+        "authors": [
+            "C.-Y. Chen*",
+            "S.-Y. Jhong",
+            "C.-H. Hsia"
+        ],
+        "venue": "International Journal of Engineering and Technology Innovation",
+        "venueDetail": "vol. 14, no. 4, pp. 378-388, Sep. 2024",
+        "year": 2024,
+        "type": "journal",
+        "badges": [
+            "ESCI",
+            "CiteScore Rank: Q2"
+        ],
+        "doi": "10.46604/ijeti.2024.13314",
+        "link": "https://doi.org/10.46604/ijeti.2024.13314",
+        "highlight": false,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 6,
+        "title": "Autonomous Smart-Edge Fault Diagnostics via Edge-Cloud-Orchestrated Collaborative Computing for Infrared Electrical Equipment Images",
+        "authors": [
+            "Y.-Y. Chen",
+            "S.-Y. Jhong",
+            "S.-K. Tu",
+            "Y.-H. Lin*",
+            "Y.-C. Wu"
+        ],
+        "venue": "IEEE Sensors Journal",
+        "venueDetail": "vol. 24, no. 15, pp. 24630-24648, Aug. 2024",
+        "year": 2024,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/JSEN.2024.3415639",
+        "link": "https://doi.org/10.1109/JSEN.2024.3415639",
+        "highlight": true,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 7,
+        "title": "iVehicles: Spatial Feature Aggregation Network for Lane Detection",
+        "authors": [
+            "S.-Y. Jhong",
+            "Y.-Y. Chen",
+            "C.-H. Hsia*",
+            "C.-F. Lai"
+        ],
+        "venue": "IEEE Sensors Letters",
+        "venueDetail": "vol. 8, no. 4, pp. 1-4, Apr. 2024",
+        "year": 2024,
+        "type": "journal",
+        "badges": [
+            "ESCI",
+            "CiteScore Rank: Q2"
+        ],
+        "doi": "10.1109/LSENS.2024.3377438",
+        "link": "https://doi.org/10.1109/LSENS.2024.3377438",
+        "highlight": false,
+        "researchArea": "perception"
+    },
+    {
+        "id": 8,
+        "title": "Multilevel Self-Training Approach for Cross-Domain Semantic Segmentation in Intelligent Vehicles",
+        "authors": [
+            "Y.-Y. Chen*",
+            "S.-Y. Jhong"
+        ],
+        "venue": "IEEE Intelligent Transportation Systems Magazine",
+        "venueDetail": "vol. 16, no. 1, pp. 148-161, Feb. 2024",
+        "year": 2024,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/MITS.2023.3310027",
+        "link": "https://doi.org/10.1109/MITS.2023.3310027",
+        "highlight": true,
+        "researchArea": "perception"
+    },
+    {
+        "id": 9,
+        "title": "Reinforcement-and-Alignment Multispectral Object Detection Using Visible-Thermal Vision Sensors in Intelligent Vehicles",
+        "authors": [
+            "Y.-Y. Chen*",
+            "S.-Y. Jhong",
+            "Y.-J. Lo"
+        ],
+        "venue": "IEEE Sensors Journal",
+        "venueDetail": "vol. 23, no. 21, pp. 26873-26886, Nov. 2023",
+        "year": 2023,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/JSEN.2023.3319230",
+        "link": "https://doi.org/10.1109/JSEN.2023.3319230",
+        "highlight": true,
+        "researchArea": "perception"
+    },
+    {
+        "id": 10,
+        "title": "Attention-Guided HDR Reconstruction for Enhancing Smart City Applications",
+        "authors": [
+            "Y.-Y. Chen",
+            "C.-H. Hsia*",
+            "S.-Y. Jhong*",
+            "C.-F. Lai"
+        ],
+        "venue": "Electronics",
+        "venueDetail": "vol. 12, no. 22, p. 4625, Nov. 2023",
+        "year": 2023,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.3390/electronics12224625",
+        "link": "https://doi.org/10.3390/electronics12224625",
+        "highlight": false,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 11,
+        "title": "Density-Aware and Semantic-Guided Fusion for 3D Object Detection Using LiDAR-Camera Sensors",
+        "authors": [
+            "S.-Y. Jhong",
+            "Y.-Y. Chen",
+            "C.-H. Hsia",
+            "Y.-Q. Wang",
+            "C.-F. Lai*"
+        ],
+        "venue": "IEEE Sensors Journal",
+        "venueDetail": "vol. 23, no. 18, pp. 22051-22063, Sep. 2023",
+        "year": 2023,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/JSEN.2023.3302314",
+        "link": "https://doi.org/10.1109/JSEN.2023.3302314",
+        "highlight": true,
+        "researchArea": "perception"
+    },
+    {
+        "id": 12,
+        "title": "An Edge Lidar-Based Detection Method in Intelligent Transportation System",
+        "authors": [
+            "Y.-Y. Chen",
+            "H.-C. Lin",
+            "H.-W. Hwang",
+            "K.-L. Hua",
+            "Y.-L. Hsu",
+            "S.-Y. Jhong*"
+        ],
+        "venue": "APSIPA Transactions on Signal and Information Processing",
+        "venueDetail": "vol. 12, no. 4, Aug. 2023",
+        "year": 2023,
+        "type": "journal",
+        "badges": [
+            "ESCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1561/116.00000118",
+        "link": "https://doi.org/10.1561/116.00000118",
+        "highlight": false,
+        "researchArea": "perception"
+    },
+    {
+        "id": 13,
+        "title": "Roadside Unit-Based Unknown Object Detection in Adverse Weather Conditions for Smart Internet of Vehicles",
+        "authors": [
+            "Y.-C. Chen",
+            "S.-Y. Jhong",
+            "C.-H. Hsia*"
+        ],
+        "venue": "ACM Transactions on Management Information Systems",
+        "venueDetail": "vol. 13, no. 4, pp. 47-67, Jan. 2023",
+        "year": 2023,
+        "type": "journal",
+        "badges": [
+            "ESCI",
+            "CiteScore Rank: Q2"
+        ],
+        "doi": "10.1145/3554923",
+        "link": "https://doi.org/10.1145/3554923",
+        "highlight": false,
+        "researchArea": "perception"
+    },
+    {
+        "id": 14,
+        "title": "Distributed Real-Time Object Detection Based on Edge-Cloud Collaboration for Smart Video Surveillance Applications",
+        "authors": [
+            "Y.-Y. Chen",
+            "Y.-H. Lin*",
+            "Y.-C. Hu",
+            "C.-H. Hsia",
+            "Y.-A. Lian",
+            "S.-Y. Jhong"
+        ],
+        "venue": "IEEE Access",
+        "venueDetail": "vol. 10, pp. 93745-93759, Aug. 2022",
+        "year": 2022,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/ACCESS.2022.3203053",
+        "link": "https://doi.org/10.1109/ACCESS.2022.3203053",
+        "highlight": true,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 15,
+        "title": "An Expert Inspection System Using Deep Learning for Smart Scalp",
+        "authors": [
+            "S.-Y. Jhong",
+            "P.-Y. Yang",
+            "C.-H. Hsia*"
+        ],
+        "venue": "Sensors and Materials",
+        "venueDetail": "vol. 34, pp. 1265-1274, Apr. 2022",
+        "year": 2022,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q3"
+        ],
+        "doi": "10.18494/SAM3462",
+        "link": "https://doi.org/10.18494/SAM3462",
+        "highlight": false,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 16,
+        "title": "Explainable AI: A Multispectral Palm-Vein Identification System with New Augmentation Features",
+        "authors": [
+            "Y.-Y. Chen",
+            "S.-Y. Jhong",
+            "C.-H. Hsia*",
+            "K.-L. Hua"
+        ],
+        "venue": "ACM Transactions on Multimedia Computing, Communications, and Applications",
+        "venueDetail": "vol. 17, no. 35, pp. 112-132, Nov. 2021",
+        "year": 2021,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1145/3468873",
+        "link": "https://doi.org/10.1145/3468873",
+        "highlight": true,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 17,
+        "title": "Nighttime Object Detection System with Lightweight Deep Network for Internet of Vehicles",
+        "authors": [
+            "S.-Y. Jhong",
+            "Y.-Y. Chen",
+            "C.-H. Hsia",
+            "S.-C. Lin",
+            "K.-H. Hsu",
+            "C.-F. Lai*"
+        ],
+        "venue": "Journal of Real-Time Image Processing",
+        "venueDetail": "vol. 18, pp. 1141-1155, Aug. 2021",
+        "year": 2021,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q2"
+        ],
+        "doi": "10.1007/s11554-021-01110-1",
+        "link": "https://doi.org/10.1007/s11554-021-01110-1",
+        "highlight": false,
+        "researchArea": "perception"
+    },
+    {
+        "id": 18,
+        "title": "Design of A Lightweight Palm-Vein Authentication System Based on Model Compression",
+        "authors": [
+            "Z.-C. Chen",
+            "S.-Y. Jhong",
+            "C.-H. Hsia*"
+        ],
+        "venue": "Journal of Information Science and Engineering",
+        "venueDetail": "vol. 37, pp. 809-825, Jul. 2021",
+        "year": 2021,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q2"
+        ],
+        "doi": "10.6688/JISE.202107_37(4).0005",
+        "link": "https://doi.org/10.6688/JISE.202107_37(4).0005",
+        "highlight": false,
+        "researchArea": "aiot"
+    },
+    {
+        "id": 19,
+        "title": "Nighttime Pedestrian Detection Based on Thermal Imaging",
+        "authors": [
+            "Y.-Y. Chen*",
+            "G.-Y. Li",
+            "S.-Y. Jhong",
+            "P.-H. Chen",
+            "C.-C. Tsai",
+            "P.-H. Chen"
+        ],
+        "venue": "Sensors and Materials",
+        "venueDetail": "vol. 32, pp. 3157-3167, Oct. 2020",
+        "year": 2020,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q3"
+        ],
+        "doi": "10.18494/SAM.2020.2838",
+        "link": "https://doi.org/10.18494/SAM.2020.2838",
+        "highlight": false,
+        "researchArea": "perception"
+    },
+    {
+        "id": 20,
+        "title": "Data Hiding Method for AMBTC Compressed Images",
+        "authors": [
+            "Y.-Y. Chen*",
+            "C.-H. Hsia",
+            "S.-Y. Jhong",
+            "H.-J. Lin"
+        ],
+        "venue": "Journal of Ambient Intelligence and Humanized Computing",
+        "venueDetail": "vol. 14, pp. 1-9, Nov. 2018",
+        "year": 2018,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1007/s12652-018-1048-0",
+        "link": "https://doi.org/10.1007/s12652-018-1048-0",
+        "highlight": false,
+        "researchArea": "aiot"
+    },
+    {
+        "year": 2025,
+        "link": "#",
+        "id": 21,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Kaohsiung, Taiwan, Nov. 28-30, 2025",
+        "authors": [
+            "M. V. La",
+            "S.-Y. Jhong",
+            "H.-C. Lin",
+            "S.-L. Li",
+            "Y.-Y. Chen*",
+            "C.-L. Yang"
+        ],
+        "highlight": true,
+        "title": "Adaptive Token Fusion Transformer for Multi-Modal Object Detection with RGB and Event Data",
+        "venue": "International Conference on Automation Technology (Automation)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "#",
+        "id": 22,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Kaohsiung, Taiwan, Nov. 28-30, 2025",
+        "authors": [
+            "C.-Y. Hsieh",
+            "S.-Y. Jhong",
+            "H.-C. Lin",
+            "S.-L. Li",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "Embodied Multi-Agent Planning with LLMs: A Best-of-N Strategy for Efficient Cooperation",
+        "venue": "International Conference on Automation Technology (Automation)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "embodied"
+    },
+    {
+        "year": 2025,
+        "link": "#",
+        "id": 23,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Hsinchu, Taiwan, Nov. 5-8, 2025",
+        "authors": [
+            "C.-W. Chen",
+            "S.-Y. Jhong",
+            "W.-J. Chang",
+            "H.-C. Lin",
+            "C.-C. Huang",
+            "Y.-L. Chang",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "Enhancing Camera-4D mmRadar Fusion with Voxelized Modulation and Deformable Cross-Attention",
+        "venue": "International Automatic Control Conference (CACS)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "https://doi.org/10.1109/ARIS66143.2025.11163438",
+        "id": 24,
+        "type": "conference",
+        "doi": "10.1109/ARIS66143.2025.11163438",
+        "venueDetail": "Taichung, Taiwan, Aug. 17-19, 2025",
+        "authors": [
+            "C.-H. Hsu",
+            "H.-C. Lin",
+            "S.-Y. Jhong",
+            "H.-C. Hsu",
+            "M.-X. Hong",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "VSTFusion-VO: Monocular Visual Odometry with Video Swin Transformer Multimodal Fusion",
+        "venue": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "https://doi.org/10.1109/ARIS66143.2025.11163440",
+        "id": 25,
+        "type": "conference",
+        "doi": "10.1109/ARIS66143.2025.11163440",
+        "venueDetail": "Taichung, Taiwan, Aug. 17-19, 2025",
+        "authors": [
+            "S.-Y. Jhong",
+            "H.-C. Hsu",
+            "H.-C. Lin",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": false,
+        "title": "An Efficient and Lightweight Framework for Small Object Detection in UAV Images",
+        "venue": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "https://doi.org/10.1109/ICCE-Taiwan58799.2023.10226927",
+        "id": 26,
+        "type": "conference",
+        "doi": "10.1109/ICCE-Taiwan58799.2023.10226927",
+        "venueDetail": "Kaohsiung, Taiwan, Jul. 16-18, 2025",
+        "authors": [
+            "W.-J. Chang",
+            "Y.-Y. Chen",
+            "S.-Y. Jhong*",
+            "Y. Harjoseputro"
+        ],
+        "highlight": false,
+        "title": "MAF: Mixture Attention Fusion for Camera-Radar Object Detection",
+        "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "https://doi.org/10.1109/ICRA55743.2025.11128243",
+        "id": 27,
+        "type": "conference",
+        "doi": "10.1109/ICRA55743.2025.11128243",
+        "venueDetail": "Atlanta, GA, USA, May 19-23, 2025",
+        "authors": [
+            "S.-Y. Jhong",
+            "M.-H. Ho",
+            "S.-Y. Lu",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "3D Multi-Modal Object Detection Based on Cross-Attention Feature Fusion",
+        "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+        "badges": [
+            "Top Tier"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "https://doi.org/10.1109/ICRA55743.2025.11127670",
+        "id": 28,
+        "type": "conference",
+        "doi": "10.1109/ICRA55743.2025.11127670",
+        "venueDetail": "Atlanta, GA, USA, May 19-23, 2025",
+        "authors": [
+            "S.-Y. Jhong",
+            "H.-C. Lin",
+            "T.-C. Liu",
+            "K.-L. Hua",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "Hierarchical Spatiotemporal Fusion for Event-Visible Object Detection",
+        "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+        "badges": [
+            "Top Tier"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "https://doi.org/10.1109/WACV61041.2025.00264",
+        "id": 29,
+        "type": "conference",
+        "doi": "10.1109/WACV61041.2025.00264",
+        "venueDetail": "Tucson, Arizona, USA, Feb. 28 - Mar. 4, 2025",
+        "authors": [
+            "S.-Y. Lu",
+            "Y.-Y. Chen",
+            "Y.-T. Wu",
+            "H.-C. Lin",
+            "S.-Y. Jhong",
+            "W.-H. Cheng*"
+        ],
+        "highlight": true,
+        "title": "Radiance Field-Based Pose Estimation via Decoupled Optimization Under Challenging Initial Conditions",
+        "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+        "badges": [
+            "Top Tier"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2024,
+        "link": "https://doi.org/10.1109/CACS63404.2024.10773133",
+        "id": 30,
+        "type": "conference",
+        "doi": "10.1109/CACS63404.2024.10773133",
+        "venueDetail": "Taoyuan, Taiwan, Oct. 31 - Nov. 3, 2024",
+        "authors": [
+            "S.-Y. Jhong",
+            "W.-J. Chang",
+            "H.-C. Hsu",
+            "S.-H. Lin",
+            "S.-C. Chien",
+            "K.-L. Hua",
+            "Y.-Y. Chen"
+        ],
+        "highlight": false,
+        "title": "Camera-Radar-Based Adaptive Cross Attention Fusion for Multimodal Object Detection",
+        "venue": "International Automatic Control Conference (CACS)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2023,
+        "link": "https://doi.org/10.1109/CACS60074.2023.10326208",
+        "id": 31,
+        "type": "conference",
+        "doi": "10.1109/CACS60074.2023.10326208",
+        "venueDetail": "Penghu, Taiwan, Oct. 26-29, 2023",
+        "authors": [
+            "Z.-K. Hu",
+            "S.-Y. Jhong",
+            "H.-W. Hwang",
+            "S.-H. Lin",
+            "K.-L. Hua",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "Bi-Directional Bird's-Eye View Features Fusion for 3D Multimodal Object Detection and Tracking",
+        "venue": "International Automatic Control Conference (CACS)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2023,
+        "link": "https://doi.org/10.1109/ARIS59192.2023.10268521",
+        "id": 32,
+        "type": "conference",
+        "doi": "10.1109/ARIS59192.2023.10268521",
+        "venueDetail": "Taipei, Taiwan, Aug. 30 - Sep. 1, 2023",
+        "authors": [
+            "S.-Y. Jhong",
+            "C.-H. Ko",
+            "Y.-F. Su",
+            "K.-L. Hua",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "Efficient Lane Detection based on Feature Aggregation for Advanced Driver Assistance Systems",
+        "venue": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2023,
+        "link": "https://doi.org/10.1109/ICCE-Taiwan58799.2023.10226927",
+        "id": 33,
+        "type": "conference",
+        "doi": "10.1109/ICCE-Taiwan58799.2023.10226927",
+        "venueDetail": "Pingtung, Taiwan, Jul. 17-19, 2023",
+        "authors": [
+            "S.-Y. Jhong",
+            "H.-C. Lin",
+            "X.-X. Weng",
+            "T.-F. Xie",
+            "H.-W. Lin",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": false,
+        "title": "A Novel Network Architecture and Training Strategies for Camera-Radar 3D Detection",
+        "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2023,
+        "link": "https://doi.org/10.1109/ICASI57738.2023.10179572",
+        "id": 34,
+        "type": "conference",
+        "doi": "10.1109/ICASI57738.2023.10179572",
+        "venueDetail": "Chiba, Japan, Apr. 21-25, 2023",
+        "authors": [
+            "H.-T. Chan",
+            "Y.-W. Liao",
+            "S.-Y. Jhong",
+            "S.-C. Chien",
+            "K.-L. Hua",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": false,
+        "title": "A Skin Type Classification Method Using Mobile Device-Based Deep Learning Model",
+        "venue": "International Conference on Applied System Innovation (ICASI)",
+        "badges": [],
+        "researchArea": "aiot"
+    },
+    {
+        "year": 2022,
+        "link": "https://doi.org/10.1109/ICSSE55923.2022.9948235",
+        "id": 35,
+        "type": "conference",
+        "doi": "10.1109/ICSSE55923.2022.9948235",
+        "venueDetail": "Taichung, Taiwan, May 26-29, 2022",
+        "authors": [
+            "S.-Y. Jhong",
+            "Y.-Q. Wang",
+            "W.-J. Cheng",
+            "H.-W. Hwang",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": false,
+        "title": "LiDAR-Based Pedestrian Detection Using Multiple Features and Dimensionality Reduction Scheme",
+        "venue": "International Conference on System Science and Engineering (ICSSE)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2022,
+        "link": "https://doi.org/10.1109/CACS55319.2022.9969856",
+        "id": 36,
+        "type": "conference",
+        "doi": "10.1109/CACS55319.2022.9969856",
+        "venueDetail": "Kaohsiung, Taiwan, Nov. 3-6, 2022",
+        "authors": [
+            "S.-Y. Lu",
+            "S.-Y. Jhong",
+            "W.-J. Cheng",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "Fast Learning-Based 3-D Lidar Localization with Multiscale Feature Recursive Matching for Autonomous Driving",
+        "venue": "International Automatic Control Conference (CACS)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2022,
+        "link": "https://doi.org/10.1109/ICCE-Taiwan55306.2022.9869116",
+        "id": 37,
+        "type": "conference",
+        "doi": "10.1109/ICCE-Taiwan55306.2022.9869116",
+        "venueDetail": "Taipei, Taiwan, Jul. 6-8, 2022",
+        "authors": [
+            "Y.-M. Zhang",
+            "S.-W. Lin",
+            "T.-H. Chou",
+            "S.-Y. Jhong",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": false,
+        "title": "Robust Lane Detection via Filter Estimator and Data Augmentation",
+        "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2022,
+        "link": "https://doi.org/10.1109/ICCE-Taiwan55306.2022.9869187",
+        "id": 38,
+        "type": "conference",
+        "doi": "10.1109/ICCE-Taiwan55306.2022.9869187",
+        "venueDetail": "Taipei, Taiwan, Jul. 6-8, 2022",
+        "authors": [
+            "P.-H. Chen",
+            "S.-Y. Jhong",
+            "C.-H. Hsia*"
+        ],
+        "highlight": false,
+        "title": "Semi-Supervised Learning with Attention-Based CNN for Classification of Coffee Beans Defect",
+        "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2021,
+        "link": "#",
+        "id": 39,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Tokyo, Japan, Dec. 14-17, 2021",
+        "authors": [
+            "S.-Y. Jhong",
+            "P.-Y. Yang",
+            "C.-H. Hsia*"
+        ],
+        "highlight": false,
+        "title": "An Attention based Expert Inspection System for Smart Scalp",
+        "venue": "Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC)",
+        "badges": [],
+        "researchArea": "aiot"
+    },
+    {
+        "year": 2021,
+        "link": "https://doi.org/10.1109/ICCE-TW52618.2021.9603134",
+        "id": 40,
+        "type": "conference",
+        "doi": "10.1109/ICCE-TW52618.2021.9603134",
+        "venueDetail": "Penghu, Taiwan, Sep. 15-17, 2021",
+        "authors": [
+            "P.-Y. Yang",
+            "S.-Y. Jhong",
+            "C.-H. Hsia*"
+        ],
+        "highlight": false,
+        "title": "Green Coffee Beans Classification Using Attention-Based Features and Knowledge Transfer",
+        "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2021,
+        "link": "https://doi.org/10.1109/ICCE-TW52618.2021.9602987",
+        "id": 41,
+        "type": "conference",
+        "doi": "10.1109/ICCE-TW52618.2021.9602987",
+        "venueDetail": "Penghu, Taiwan, Sep. 15-17, 2021",
+        "authors": [
+            "Y.-Q. Wang",
+            "P.-H. Chen",
+            "S.-Y. Jhong",
+            "K.-M. Yen",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": false,
+        "title": "Forward Vehicle Detection Based on Thermal Vision and Convolutional Neural Network for Autonomous Vehicles",
+        "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2020,
+        "link": "https://doi.org/10.1109/ARIS50834.2020.9205778",
+        "id": 42,
+        "type": "conference",
+        "doi": "10.1109/ARIS50834.2020.9205778",
+        "venueDetail": "Taipei, Taiwan, Aug. 19-21, 2020",
+        "authors": [
+            "S.-Y. Jhong",
+            "P.-Y. Tseng",
+            "N. Siriphockpirom",
+            "C.-H. Hsia",
+            "M.-S. Huang",
+            "K.-L. Hua",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "An Automated Biometric Identification System Using CNN-Based Palm Vein Recognition",
+        "venue": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "aiot"
+    },
+    {
+        "year": 2020,
+        "link": "https://doi.org/10.1109/Indo-TaiwanICAN48429.2020.9181329",
+        "id": 43,
+        "type": "conference",
+        "doi": "10.1109/Indo-TaiwanICAN48429.2020.9181329",
+        "venueDetail": "Rajpura, India, Feb. 7-15, 2020",
+        "authors": [
+            "Q. Sun",
+            "S.-Y. Jhong",
+            "C.-H. Hsia*",
+            "C. Yu"
+        ],
+        "highlight": false,
+        "title": "Online Social Media Interaction and Offline Protest Movement: Patterns in 2019 Hong Kong",
+        "venue": "Indo-Taiwan International Conference on Computing, Analytics and Networks (Indo-Taiwan ICAN)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2019,
+        "link": "https://doi.org/10.1109/ISPACS48206.2019.8986298",
+        "id": 44,
+        "type": "conference",
+        "doi": "10.1109/ISPACS48206.2019.8986298",
+        "venueDetail": "Taipei, Taiwan, Dec. 3-6, 2019",
+        "authors": [
+            "Y.-Y. Chen*",
+            "S.-Y. Jhong",
+            "G.-Y. Li",
+            "P.-H. Chen"
+        ],
+        "highlight": false,
+        "title": "Thermal-Based Pedestrian Detection Using Faster R-CNN and Region Decomposition Branch",
+        "venue": "IEEE International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2020,
+        "link": "#",
+        "id": 45,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Taipei, Taiwan, Nov. 2020",
+        "authors": [
+            "夏至賢*",
+            "陳稟翰",
+            "鍾昕燁"
+        ],
+        "highlight": true,
+        "title": "輕量化卷積神經網路於非接觸式多光譜掌靜脈辨識系統",
+        "venue": "Cyberspace Conference",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2019,
+        "link": "#",
+        "id": 46,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Taipei, Taiwan, Oct. 2019",
+        "authors": [
+            "夏至賢*",
+            "鍾昕燁"
+        ],
+        "highlight": true,
+        "title": "利用輕量化卷積神經網路於多光譜掌靜脈辨識系統",
+        "venue": "Cyberspace Conference",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2018,
+        "link": "#",
+        "id": 47,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Taipei, Taiwan, Nov. 2018",
+        "authors": [
+            "夏至賢*",
+            "鍾昕燁",
+            "劉晉華",
+            "陳稟翰"
+        ],
+        "highlight": true,
+        "title": "高效能指靜脈身份辨識系統",
+        "venue": "Cyberspace Conference",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "#",
+        "id": 48,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I888949",
+        "authors": [
+            "花凱龍",
+            "陳永耀",
+            "鍾昕燁",
+            "林詠翔",
+            "羅宥鈞",
+            "胡志剛",
+            "黃耀邦",
+            "許家雄"
+        ],
+        "highlight": false,
+        "title": "影像物件辨識模型的訓練方法、影像物件辨識模型及電腦可存取的記錄媒體",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "#",
+        "id": 49,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I880479",
+        "authors": [
+            "鍾昕燁",
+            "夏至賢",
+            "陳俊偉"
+        ],
+        "highlight": false,
+        "title": "頭皮皮脂特性自動分類系統與方法",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "https://patents.google.com/patent/CN115804567B/zh",
+        "id": 50,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "115804567, Valid: 2025/04/04 - 2041/12/08",
+        "authors": [
+            "钟昕烨",
+            "夏至贤"
+        ],
+        "highlight": false,
+        "title": "智能头皮屑检测系统与方法",
+        "venue": "China Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "#",
+        "id": 51,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I875423",
+        "authors": [
+            "花凱龍",
+            "陳永耀",
+            "鍾昕燁",
+            "林詠翔",
+            "謝雅芳",
+            "林羿汎",
+            "胡志剛",
+            "李佳欣",
+            "黃耀邦",
+            "許家雄"
+        ],
+        "highlight": false,
+        "title": "人體活動心率預測方法及系統、電腦可讀取的記錄媒體",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2024,
+        "link": "#",
+        "id": 52,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I867559",
+        "authors": [
+            "陳永耀",
+            "劉益宏",
+            "唐逸文",
+            "詹宏澤",
+            "鍾昕燁",
+            "林昕駿",
+            "林靖翰"
+        ],
+        "highlight": false,
+        "title": "骨裂偵測方法",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2024,
+        "link": "https://patents.google.com/patent/US12086983B2/en",
+        "id": 53,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "12086983B2, Valid: 2024/09/10 - 2043/02/12",
+        "authors": [
+            "S.-Y. Jhong",
+            "C.-H. Hsia"
+        ],
+        "highlight": true,
+        "title": "Intelligent Dandruff Detection System and Method",
+        "venue": "US Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2024,
+        "link": "#",
+        "id": 54,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I841402",
+        "authors": [
+            "鍾昕燁",
+            "夏至賢",
+            "陳俊偉"
+        ],
+        "highlight": false,
+        "title": "頭髮特徵分析方法與系統",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2023,
+        "link": "https://patents.google.com/patent/TWI823143B/zh",
+        "id": 55,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I823143, Valid: 2023/11/21 - 2041/09/12",
+        "authors": [
+            "鍾昕燁",
+            "夏至賢"
+        ],
+        "highlight": false,
+        "title": "智慧頭皮屑檢測系統與方法",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2023,
+        "link": "https://patents.google.com/patent/US11663832B2/en",
+        "id": 56,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "11663832B2, Valid: 2023/05/30 - 2040/02/07",
+        "authors": [
+            "K.-L. Hua",
+            "Y.-Y. Chen",
+            "S.-Y. Jhong",
+            "Y.-C. Chen",
+            "B.-L. Lin",
+            "T.-Y. Lin",
+            "C.-S. Wen",
+            "Y.-P. Wang",
+            "C.-J. Chen",
+            "T.-H. Yang",
+            "W.-H. Lu",
+            "C.-J. Huang"
+        ],
+        "highlight": true,
+        "title": "Method and System for Detecting and Analyzing Objects",
+        "venue": "US Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2023,
+        "link": "https://patents.google.com/patent/TWI797596B/zh",
+        "id": 57,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I797596, Valid: 2023/04/01 - 2041/04/21",
+        "authors": [
+            "花凱龍",
+            "陳永耀",
+            "鍾昕燁",
+            "陳佑丞",
+            "林八林",
+            "林子永",
+            "溫承書",
+            "王彥博",
+            "陳俊榮",
+            "楊東行",
+            "呂文翔",
+            "黃祺佳"
+        ],
+        "highlight": false,
+        "title": "偵測物件並標記距離的方法與系統",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2022,
+        "link": "https://patents.google.com/patent/TWI768709B/zh",
+        "id": 58,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I768709, Valid: 2022/06/21 - 2041/02/08",
+        "authors": [
+            "花凱龍",
+            "陳永耀",
+            "鍾昕燁",
+            "陳佑丞",
+            "林八林",
+            "林子永",
+            "溫承書",
+            "王彥博",
+            "陳俊榮",
+            "楊東行",
+            "呂文翔",
+            "黃祺佳"
+        ],
+        "highlight": false,
+        "title": "雙影像融合方法與裝置",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2022,
+        "link": "https://patents.google.com/patent/TWI759156B/zh",
+        "id": 59,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I759156, Valid: 2022/03/21 - 2041/03/23",
+        "authors": [
+            "花凱龍",
+            "陳永耀",
+            "鍾昕燁",
+            "陳佑丞",
+            "林八林",
+            "林子永",
+            "溫承書",
+            "王彥博",
+            "陳俊榮",
+            "楊東行",
+            "呂文翔",
+            "黃祺佳"
+        ],
+        "highlight": false,
+        "title": "影像物件辨識模型的訓練方法及影像物件辨識模型",
+        "venue": "Taiwan Patent",
+        "badges": [
+            "Industry Collaboration"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2018,
+        "link": "#",
+        "id": 60,
+        "type": "patent",
+        "doi": null,
+        "venueDetail": "I643160",
+        "authors": [
+            "陳永耀",
+            "彭信捷",
+            "鍾昕燁",
+            "陳柏諺"
+        ],
+        "highlight": false,
+        "title": "利用權重參數與餘數定義隱寫資料於區塊截斷編碼影像的方法、影像壓縮裝置及電腦可讀取的記錄媒體",
+        "venue": "Taiwan Patent",
+        "badges": [],
+        "researchArea": "perception"
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "text": "ASI² Lab team wins First Prize in the Best Student Paper Award at the International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
+        "date": "2025-11-30",
+        "highlights": [
+            "First Prize",
+            "Best Student Paper Award"
+        ],
+        "images": [
+            "/images/news/Automation2025_Student_1.jpg"
+        ],
+        "pillar": "robotics",
+        "links": {
+            "International Conference on Automation Technology (Automation)": "https://cacs2025.web.nycu.edu.tw/"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
+        "text": "ASI² Lab team wins Second Prize in the Best Paper Award at the International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
+        "date": "2025-11-30",
+        "highlights": [
+            "Second Prize",
+            "Best Paper Award"
+        ],
+        "images": [
+            "/images/news/Automation2025_Best_1.jpg"
+        ],
+        "pillar": "perception",
+        "links": {
+            "International Conference on Automation Technology (Automation)": "https://cacs2025.web.nycu.edu.tw/"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
+        "text": "ASI² Lab team wins 1st Place and NT$200,000 prize at the NCHU Capstone Competition for AI Empowerment and Robotics Applications in Manufacturing (AI賦能與機器人於智慧製造應用專題實作競賽)",
+        "date": "2025-11-22",
+        "highlights": [
+            "1st Place",
+            "NT$200,000"
+        ],
+        "images": [
+            "/images/news/NCHU2025_1.jpg",
+            "/images/news/NCHU2025_2.jpg"
+        ],
+        "pillar": "robotics",
+        "links": {
+            "AI賦能與機器人於智慧製造應用專題實作競賽": "https://reurl.cc/nlMRAD"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
+        "text": "ASI² Lab team wins Second Prize in the Best Paper Award at the International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
+        "date": "2025-11-08",
+        "highlights": [
+            "Second Prize",
+            "Best Paper Award"
+        ],
+        "images": [
+            "/images/news/CACS2025_1.jpg",
+            "/images/news/CACS2025_2.jpg"
+        ],
+        "pillar": "perception",
+        "links": {
+            "International Automatic Control Conference (CACS)": "https://cacs2025.nsysu.edu.tw/"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
+        "text": "ASI² Lab Director Dr. Sin-Ye Jhong honored with the Best Ph.D. Thesis Award by the IEEE Tainan Section",
+        "date": "2025-11-07",
+        "highlights": [
+            "Best Ph.D. Thesis Award"
+        ],
+        "images": [
+            "/images/news/IEEE_Thesis_Award_1.jpg",
+            "/images/news/IEEE_Thesis_Award_2.jpg"
+        ],
+        "links": {
+            "IEEE Tainan Section": "https://r10.ieee.org/tainan/award/"
+        },
+        "pillar": "academic",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "ASI² Lab team secures 3rd Place in the Industry-Academia Collaboration category at the International ICT Innovative Services Awards (資訊應用服務創新競賽)",
+        "date": "2025-11-01",
+        "highlights": [
+            "3rd Place",
+            "Industry-Academia Collaboration"
+        ],
+        "images": [
+            "/images/news/InnoServe2025_1.jpg",
+            "/images/news/InnoServe2025_2.jpg"
+        ],
+        "pillar": "inspection",
+        "links": {
+            "資訊應用服務創新競賽": "https://innoserve.tca.org.tw/"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
+        "text": "ASI² Lab Director Dr. Sin-Ye Jhong awarded the Ph.D. Thesis Merit Award by the IET Taipei Local Network",
+        "date": "2025-10-24",
+        "highlights": [
+            "Ph.D. Thesis Merit Award"
+        ],
+        "images": [
+            "/images/news/IET_Thesis_Award_1.jpg",
+            "/images/news/IET_Thesis_Award_2.jpg"
+        ],
+        "pillar": "academic",
+        "links": {
+            "IET Taipei Local Network": "https://www.iettaiwan.org.tw/news_detail_78.htm"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "ASI² Lab team receives Honorable Mention in the Best Paper Award at the International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "date": "2025-08-19",
+        "highlights": [
+            "Honorable Mention",
+            "Best Paper Award"
+        ],
+        "images": [
+            "/images/news/ARIS2025_1.jpg"
+        ],
+        "pillar": "perception",
+        "links": {
+            "International Conference on Advanced Robotics and Intelligent Systems (ARIS)": "https://aris2025.nchu.edu.tw/"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
+        "text": "ASI² Lab team wins the Outstanding Presentation Award at the IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS)",
+        "date": "2025-08-13",
+        "highlights": [
+            "Outstanding Presentation Award"
+        ],
+        "images": [
+            "/images/news/AVSS2025_1.jpg"
+        ],
+        "pillar": "inspection",
+        "links": {
+            "IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS)": "https://sites.google.com/view/avss2025-tw"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
+        "text": "ASI² Lab officially established at NTUST",
+        "date": "2025-08-01"
+    }
+]

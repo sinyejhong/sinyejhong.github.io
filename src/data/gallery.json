@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "image": "/images/news/InnoServe2025_1.jpg",
+        "title": "3rd Place at InnoServe Awards",
+        "description": "ASI² Lab team secures 3rd Place in the Industry-Academia Collaboration category at the International ICT Innovative Services Awards.",
+        "category": "Activity"
+    },
+    {
+        "id": 2,
+        "image": "/images/news/NCHU2025_1.jpg",
+        "title": "1st Place at NCHU Capstone Competition",
+        "description": "ASI² Lab team wins 1st Place and NT$200,000 prize at the NCHU Capstone Competition for AI Empowerment and Robotics Applications in Manufacturing.",
+        "category": "Activity"
+    },
+    {
+        "id": 3,
+        "image": "/images/Lab/AMR.jpg",
+        "title": "Autonomous Mobile Robot (AMR)",
+        "description": "Lab-developed Autonomous Mobile Robot for intelligent navigation and logistics automation research.",
+        "category": "Equipment"
+    },
+    {
+        "id": 4,
+        "image": "/images/Lab/Car.jpg",
+        "title": "Intelligent Vehicle Platform",
+        "description": "Smart vehicle developed in collaboration with ARTC (Automotive Research & Testing Center) for autonomous driving research.",
+        "category": "Equipment"
+    },
+    {
+        "id": 5,
+        "image": "/images/Lab/Novatek1.jpg",
+        "title": "Industry Knowledge Sharing",
+        "description": "Novatek Technology representatives visiting ASI² Lab for an industry insights and best practices sharing session.",
+        "category": "Activity"
+    },
+    {
+        "id": 6,
+        "image": "/images/Lab/Novatek2.jpg",
+        "title": "Novatek Recruitment Event",
+        "description": "Novatek Technology hosting a recruitment event with refreshments, offering internship opportunities and employee referrals.",
+        "category": "Activity"
+    }
+]

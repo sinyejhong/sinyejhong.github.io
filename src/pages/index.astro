@@ -1,0 +1,725 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsCarousel from "../components/NewsCarousel.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import publications from "../data/publications.json";
+import awards from "../data/awards.json";
+
+import projects from "../data/projects.json";
+import members from "../data/members.json";
+
+// Calculate dynamic counts
+const publicationCount = publications.length;
+const projectsCount = projects.length;
+const membersCount = members.length;
+
+// Awards Calculation:
+// Personal Honors (All non-student-merit) + Student Merit (Only displayed on student awards page, >= 2025)
+const personalHonorsCount = awards.filter(
+	(a) => a.category !== "student_merit",
+).length;
+const studentMeritCount = awards.filter(
+	(a) => a.category === "student_merit" && a.year >= 2025,
+).length;
+const awardsCount = personalHonorsCount + studentMeritCount;
+---
+
+<BaseLayout title="Home">
+	<!-- Hero Section with Video Background -->
+	<section
+		class="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden"
+	>
+		<!-- Video Background -->
+		<div class="absolute inset-0">
+			<video
+				id="hero-video"
+				autoplay
+				muted
+				playsinline
+				class="w-full h-full object-cover"
+				poster="/images/hero_poster.png"
+				style="pointer-events: none;"
+			>
+				<source src="/videos/hero_video.mp4" type="video/mp4" />
+			</video>
+			<!-- Gradient Overlay for better text contrast -->
+			<div
+				class="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/20 to-navy/60"
+			>
+			</div>
+		</div>
+
+		<!-- Hero Content (Hidden initially, shown after video ends) -->
+		<div
+			id="hero-content"
+			class="relative z-10 text-center px-4 max-w-4xl opacity-0 translate-y-8 transition-all duration-700 ease-out"
+		>
+			<!-- Semi-transparent card for content -->
+			<div
+				class="bg-navy/70 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/10"
+			>
+				<!-- Lab Name -->
+				<h1
+					class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4"
+					style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);"
+				>
+					ASI² LAB
+				</h1>
+				<p class="text-lg md:text-xl text-gray-200 mb-6 font-medium">
+					Autonomous Systems and Intelligent Interaction Laboratory
+				</p>
+				<p
+					class="text-base md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto"
+				>
+					Pioneering research in Computer Vision, Deep Learning, Robot
+					Perception, and Human-Robot Interaction
+				</p>
+				<div class="flex flex-wrap justify-center gap-4">
+					<a
+						href="/research"
+						class="px-8 py-3 bg-accent hover:bg-accent-light text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+					>
+						Explore Research
+					</a>
+					<a
+						href="/joinus"
+						class="px-8 py-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium rounded-lg border border-white/40 transition-all duration-300 hover:-translate-y-0.5"
+					>
+						Join Our Team
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scroll Indicator -->
+		<div
+			class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+		>
+			<svg
+				class="w-10 h-10 text-white/80"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+			</svg>
+		</div>
+	</section>
+
+	<!-- Lab Introduction -->
+	<section class="section-padding bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<SectionHeader
+				title="Welcome to ASI² LAB<br/>(自主系統與智慧互動實驗室)"
+				subtitle="Advancing the frontiers of autonomous systems and intelligent interaction"
+			/>
+
+			<div class="grid lg:grid-cols-2 gap-12 text-lg">
+				<!-- Left Column: Text Content -->
+				<div
+					class="space-y-6 text-gray-text text-justify leading-relaxed"
+				>
+					<p>
+						<span class="font-semibold text-navy"
+							>True intelligence</span
+						> manifests not only through individual capability but also
+						through the ability to interact and collaborate. This dual
+						philosophy drives our research at the <strong
+							class="text-navy"
+							>Autonomous Systems and Intelligent Interaction
+							Laboratory (ASI² Lab)</strong
+						>. We aim to engineer systems that possess the <strong
+							class="text-navy">"Autonomy"</strong
+						> to independently perceive and adapt to unstructured environments
+						while simultaneously exhibiting the <strong
+							class="text-navy">"Interaction"</strong
+						> capabilities necessary to cooperate with humans and other
+						agents.
+					</p>
+					<p>
+						Our work integrates <strong class="text-navy"
+							>Resilient Perception</strong
+						> and
+						<strong class="text-navy">Multimodal Fusion</strong> to guarantee
+						robust operation even in extreme weather or low-light conditions.
+						We further connect perception with action through <strong
+							class="text-navy">Embodied Intelligence</strong
+						> and <strong class="text-navy"
+							>Generative Robotics</strong
+						>. By leveraging Large Language Models and
+						Vision-Language-Action models, we empower robots to
+						perform complex reasoning and multi-agent coordination.
+						Beyond robotics, we extend these advanced algorithms to <strong
+							class="text-navy">Human-Centric AIoT</strong
+						> to provide precise solutions for industrial and medical
+						diagnostics.
+					</p>
+					<p>
+						<strong class="text-accent">Dr. Sin-Ye Jhong</strong> is an
+						Assistant Professor at the Graduate Institute of Intelligent
+						Manufacturing Technology (GIMT) at the National Taiwan University
+						of Science and Technology (NTUST), where he leads the ASI²
+						Lab. He also serves as an <a
+							href="https://www.powerdata.com.tw/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-accent hover:underline transition-all"
+							>AI Application Consultant at Power Data Co., Ltd.</a
+						>, working to translate advanced AI theories into
+						real-world deployments. If you are interested in joining
+						our team as a graduate student or collaborating on
+						industrial solutions, please visit our <a
+							href="/joinus"
+							class="text-accent hover:underline transition-all"
+							>contact page</a
+						> for more information.
+					</p>
+				</div>
+
+				<!-- Right Column: PI Profile & Stats -->
+				<div class="flex flex-col gap-8 justify-between h-full">
+					<!-- PI Profile Card -->
+					<a
+						href="/about"
+						class="flex flex-col bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 hover:shadow-3xl hover:shadow-accent/20 transition-all duration-300 border border-gray-100/50 group relative overflow-hidden ring-1 ring-gray-50"
+					>
+						<!-- Full Width Image Section -->
+						<div class="relative w-full h-80 overflow-hidden">
+							<div class="absolute inset-0 bg-gray-200">
+								<img
+									src="/images/members/sinyejhong3.jpg"
+									alt="Dr. Sin-Ye Jhong"
+									class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
+									style="object-position: center 20%;"
+								/>
+							</div>
+							<!-- Gradient Overlay -->
+							<div
+								class="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-60"
+							>
+							</div>
+
+							<!-- Director Badge -->
+							<div class="absolute bottom-4 left-4 z-20">
+								<div
+									class="bg-white/90 backdrop-blur-md border border-white/50 text-navy px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2 transform transition-transform duration-300 group-hover:scale-105"
+								>
+									<span
+										class="text-xs font-bold uppercase tracking-wider text-accent"
+										>Director</span
+									>
+									<span class="w-px h-3 bg-gray-300"></span>
+									<span class="text-sm font-semibold"
+										>ASI² Lab</span
+									>
+								</div>
+							</div>
+						</div>
+
+						<!-- Content Section -->
+						<div
+							class="relative p-6 flex flex-col items-center text-center"
+						>
+							<!-- Decorative BG -->
+							<div
+								class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"
+							>
+							</div>
+
+							<div class="relative z-10 w-full">
+								<h3
+									class="text-2xl md:text-3xl font-heading font-bold text-navy mb-2 group-hover:text-accent transition-colors tracking-tight"
+								>
+									Dr. Sin-Ye Jhong
+								</h3>
+
+								<div class="mb-5">
+									<p
+										class="text-lg text-gray-500 font-medium"
+									>
+										Assistant Professor, GIMT, NTUST
+									</p>
+								</div>
+
+								<div
+									class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gray-50 text-gray-500 text-sm font-bold group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:-translate-y-0.5"
+								>
+									View Full Profile
+									<svg
+										class="w-4 h-4 transition-transform group-hover:translate-x-1"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<!-- Key Statistics -->
+					<div class="grid grid-cols-2 gap-x-4 gap-y-4">
+						<a
+							href="/publications"
+							class="p-5 bg-white rounded-2xl text-center card-hover cursor-pointer group block border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300"
+						>
+							<div
+								class="text-4xl font-heading font-bold text-accent mb-1 stat-number"
+								data-target={publicationCount}
+							>
+								{publicationCount}+
+							</div>
+							<div
+								class="text-sm font-bold text-gray-500 group-hover:text-navy transition-colors uppercase tracking-wider"
+							>
+								Publications
+							</div>
+						</a>
+						<a
+							href="/projects"
+							class="p-5 bg-white rounded-2xl text-center card-hover cursor-pointer group block border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300"
+						>
+							<div
+								class="text-4xl font-heading font-bold text-accent mb-1 stat-number"
+								data-target={projectsCount}
+							>
+								{projectsCount}+
+							</div>
+							<div
+								class="text-sm font-bold text-gray-500 group-hover:text-navy transition-colors uppercase tracking-wider"
+							>
+								Projects
+							</div>
+						</a>
+						<a
+							href="/awards"
+							class="p-5 bg-white rounded-2xl text-center card-hover cursor-pointer group block border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300"
+						>
+							<div
+								class="text-4xl font-heading font-bold text-accent mb-1 stat-number"
+								data-target={awardsCount}
+							>
+								{awardsCount}+
+							</div>
+							<div
+								class="text-sm font-bold text-gray-500 group-hover:text-navy transition-colors uppercase tracking-wider"
+							>
+								Awards
+							</div>
+						</a>
+						<a
+							href="/members"
+							class="p-5 bg-white rounded-2xl text-center card-hover cursor-pointer group block border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300"
+						>
+							<div
+								class="text-4xl font-heading font-bold text-accent mb-1 stat-number"
+								data-target={membersCount}
+							>
+								{membersCount}+
+							</div>
+							<div
+								class="text-sm font-bold text-gray-500 group-hover:text-navy transition-colors uppercase tracking-wider"
+							>
+								Team Members
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Research Pillars -->
+	<section class="section-padding bg-gray-bg">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<SectionHeader
+				title="Research Pillars"
+				subtitle="Three key areas driving our research innovation"
+			/>
+
+			<div class="grid sm:grid-cols-1 lg:grid-cols-3 gap-6">
+				<a
+					href="/research#perception"
+					class="group p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 card-hover relative overflow-hidden border border-gray-100 hover:border-accent/30"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+					>
+					</div>
+
+					<!-- Watermark Icon -->
+					<div
+						class="absolute -bottom-6 -right-2 w-32 h-32 text-blue-700 opacity-10 group-hover:opacity-30 transition-all duration-500 pointer-events-none transform rotate-12 group-hover:rotate-0 group-hover:scale-110"
+					>
+						<svg
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							class="w-full h-full"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+							></path>
+						</svg>
+					</div>
+
+					<div class="relative z-10 flex flex-col h-full">
+						<div
+							class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 text-navy group-hover:text-accent group-hover:scale-110 transition-all duration-300"
+						>
+							<svg
+								class="w-7 h-7"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+								></path>
+							</svg>
+						</div>
+						<h3
+							class="text-lg font-semibold text-navy mb-2 group-hover:text-accent transition-colors text-left"
+						>
+							Resilient Perception & Multimodal Fusion for
+							Autonomous System
+						</h3>
+						<ul
+							class="text-sm text-gray-text text-left mb-6 flex-grow space-y-1.5 list-none"
+						>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>Multimodal Sensor Fusion</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>All-Weather & Nighttime Perception</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>3D Object Detection & Tracking</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>Lightweight V-SLAM & UAV Perception</span>
+							</li>
+						</ul>
+						<div
+							class="mt-auto flex items-center text-sm font-bold text-accent group-hover:translate-x-1 transition-transform"
+						>
+							Show More
+							<svg
+								class="w-4 h-4 ml-1"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+							</svg>
+						</div>
+					</div>
+				</a>
+
+				<a
+					href="/research#inspection"
+					class="group p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 card-hover relative overflow-hidden border border-gray-100 hover:border-accent/30"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+					>
+					</div>
+
+					<!-- Watermark Icon -->
+					<div
+						class="absolute -bottom-6 -right-2 w-32 h-32 text-emerald-700 opacity-10 group-hover:opacity-30 transition-all duration-500 pointer-events-none transform rotate-12 group-hover:rotate-0 group-hover:scale-110"
+					>
+						<svg
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							class="w-full h-full"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+							></path>
+						</svg>
+					</div>
+
+					<div class="relative z-10 flex flex-col h-full">
+						<div
+							class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 text-navy group-hover:text-accent group-hover:scale-110 transition-all duration-300"
+						>
+							<svg
+								class="w-7 h-7"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+								></path>
+							</svg>
+						</div>
+						<h3
+							class="text-lg font-semibold text-navy mb-2 group-hover:text-accent transition-colors text-left"
+						>
+							Intelligent Visual Inspection & Human-Centric AIoT
+						</h3>
+						<ul
+							class="text-sm text-gray-text text-left mb-6 flex-grow space-y-1.5 list-none"
+						>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span
+									>Smart Industrial & Medical Diagnostics</span
+								>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span
+									>Edge-Cloud Collaborative Architecture</span
+								>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>Biometrics & Security</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>Generative AI for Defect Detection</span>
+							</li>
+						</ul>
+						<div
+							class="mt-auto flex items-center text-sm font-bold text-accent group-hover:translate-x-1 transition-transform"
+						>
+							Show More
+							<svg
+								class="w-4 h-4 ml-1"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+							</svg>
+						</div>
+					</div>
+				</a>
+
+				<a
+					href="/research#robotics"
+					class="group p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 card-hover relative overflow-hidden border border-gray-100 hover:border-accent/30"
+				>
+					<!-- Hover Gradient -->
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+					>
+					</div>
+
+					<!-- Watermark Icon -->
+					<div
+						class="absolute -bottom-6 -right-2 w-32 h-32 text-purple-700 opacity-10 group-hover:opacity-30 transition-all duration-500 pointer-events-none transform rotate-12 group-hover:rotate-0 group-hover:scale-110"
+					>
+						<svg
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							class="w-full h-full"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+							></path>
+						</svg>
+					</div>
+
+					<!-- Content -->
+					<div class="relative z-10 flex flex-col h-full">
+						<div
+							class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 text-navy group-hover:text-accent group-hover:scale-110 transition-all duration-300"
+						>
+							<svg
+								class="w-7 h-7"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+								></path>
+							</svg>
+						</div>
+						<h3
+							class="text-lg font-semibold text-navy mb-2 group-hover:text-accent transition-colors text-left"
+						>
+							Embodied Intelligence & Generative Robotics
+						</h3>
+						<ul
+							class="text-sm text-gray-text text-left mb-6 flex-grow space-y-1.5 list-none"
+						>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>Vision-Language Navigation (VLN)</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>Vision-Language-Action (VLA)</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>Multi-Agent Cooperation</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-accent mt-1">•</span>
+								<span>Proactive Hazard Awareness</span>
+							</li>
+						</ul>
+						<div
+							class="mt-auto flex items-center text-sm font-bold text-accent group-hover:translate-x-1 transition-transform"
+						>
+							Show More
+							<svg
+								class="w-4 h-4 ml-1"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+							</svg>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- News Carousel -->
+	<NewsCarousel />
+
+	<style>
+		/* Fade-in-up animation for hero content */
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.animate-fade-in-up {
+			animation: fadeInUp 0.8s ease-out forwards;
+		}
+	</style>
+
+	<script>
+		// Wait for video to end before showing hero content
+		document.addEventListener("DOMContentLoaded", () => {
+			const video = document.getElementById(
+				"hero-video",
+			) as HTMLVideoElement;
+			const heroContent = document.getElementById("hero-content");
+
+			const showContent = () => {
+				if (heroContent) {
+					heroContent.classList.remove("opacity-0", "translate-y-8");
+					heroContent.classList.add("animate-fade-in-up");
+				}
+			};
+
+			// Statistics Count-Up Animation
+			const statObserver = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const target = entry.target as HTMLElement;
+							const targetValue = parseInt(
+								target.dataset.target || "0",
+							);
+							let current = 0;
+							const increment = Math.ceil(targetValue / 40); // speed controls
+							const timer = setInterval(() => {
+								current += increment;
+								if (current >= targetValue) {
+									current = targetValue;
+									clearInterval(timer);
+								}
+								target.textContent = current + "+";
+							}, 30);
+							statObserver.unobserve(target);
+						}
+					});
+				},
+				{ threshold: 0.5 },
+			);
+
+			document.querySelectorAll(".stat-number").forEach((stat) => {
+				statObserver.observe(stat);
+			});
+
+			if (video && heroContent) {
+				// Show content when video ends
+				video.addEventListener("ended", showContent);
+
+				// Fallback: if video fails to load or takes too long
+				video.addEventListener("error", showContent);
+
+				// Fallback timeout (in case video is very long or doesn't trigger ended)
+				setTimeout(() => {
+					if (heroContent.classList.contains("opacity-0")) {
+						showContent();
+					}
+				}, 15000); // 15 seconds fallback
+			}
+		});
+	</script>
+</BaseLayout>

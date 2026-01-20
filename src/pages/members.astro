@@ -1,0 +1,283 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import MemberCard from "../components/MemberCard.astro";
+import GalleryCard from "../components/GalleryCard.astro";
+import members from "../data/members.json";
+import galleryItems from "../data/gallery.json";
+
+const director = members.find((m) => m.status === "director");
+const currentMembers = members.filter((m) => m.status === "current");
+const alumni = members.filter((m) => m.status === "alumni");
+---
+
+<BaseLayout title="Members" description="Meet the ASI² LAB team members">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-navy to-navy-light text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1
+                class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
+            >
+                Our Team
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Meet the researchers and students driving innovation at ASI² LAB
+            </p>
+
+            <!-- Team Counter -->
+            <div
+                class="inline-flex items-center gap-3 px-8 py-4 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20"
+            >
+                <div class="text-5xl font-heading font-bold text-accent">
+                    {currentMembers.length + 1}
+                </div>
+                <div class="text-left">
+                    <div class="text-xl font-semibold">Team Members</div>
+                    <div class="text-gray-400 text-sm">
+                        (Director + Current Students)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Director -->
+    <section class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="ASI² Lab Director"
+                subtitle="Leading our research vision"
+            />
+
+            <div class="flex justify-center">
+                <div class="w-full max-w-2xl">
+                    {
+                        director && (
+                            <MemberCard
+                                name={director.name}
+                                photo={director.photo}
+                                role={director.role}
+                                topic={director.topic}
+                                email={director.email}
+                                affiliations={director.affiliations}
+                                links={director.links}
+                                isDirector={true}
+                            />
+                        )
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Members -->
+    <section class="section-padding bg-gray-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="Current Members"
+                subtitle={`${currentMembers.length} researchers and students`}
+            />
+
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            >
+                {
+                    currentMembers.map((member) => (
+                        <MemberCard
+                            name={member.name}
+                            photo={member.photo}
+                            role={member.role}
+                            topic={member.topic}
+                            email={member.email}
+                            coadvisor={member.coadvisor}
+                            research_group={member.research_group}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Gallery -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="Lab Gallery"
+                subtitle="A glimpse into our activities, events, and research equipment"
+            />
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button
+                    id="filter-all"
+                    class="gallery-filter active inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-slate-800 text-white border border-slate-800 cursor-pointer transition-all duration-200 hover:scale-105"
+                    data-filter="all"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                        ></path>
+                    </svg>
+                    All
+                </button>
+                <button
+                    id="filter-activity"
+                    class="gallery-filter inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-amber-100 text-amber-800 border border-amber-200 cursor-pointer transition-all duration-200 hover:scale-105 hover:bg-amber-200"
+                    data-filter="Activity"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        ></path>
+                    </svg>
+                    Activity / Event
+                </button>
+                <button
+                    id="filter-equipment"
+                    class="gallery-filter inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200 cursor-pointer transition-all duration-200 hover:scale-105 hover:bg-blue-200"
+                    data-filter="Equipment"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m14 0h2M3 15h2m14 0h2M9 9h6v6H9V9z"
+                        ></path>
+                    </svg>
+                    Equipment
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div
+                id="gallery-grid"
+                class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+                {
+                    galleryItems.map((item) => (
+                        <div class="gallery-item" data-category={item.category}>
+                            <GalleryCard
+                                image={item.image}
+                                title={item.title}
+                                description={item.description}
+                                category={item.category}
+                            />
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Gallery filter functionality
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterButtons =
+                document.querySelectorAll<HTMLButtonElement>(".gallery-filter");
+            const galleryItems =
+                document.querySelectorAll<HTMLElement>(".gallery-item");
+
+            filterButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const filter = button.dataset.filter;
+
+                    // Update active button styles
+                    filterButtons.forEach((btn) => {
+                        btn.classList.remove("active");
+                        if (btn.dataset.filter === "all") {
+                            btn.classList.remove(
+                                "bg-slate-800",
+                                "text-white",
+                                "border-slate-800",
+                            );
+                            btn.classList.add(
+                                "bg-slate-100",
+                                "text-slate-800",
+                                "border-slate-200",
+                            );
+                        }
+                    });
+
+                    button.classList.add("active");
+                    if (button.dataset.filter === "all") {
+                        button.classList.remove(
+                            "bg-slate-100",
+                            "text-slate-800",
+                            "border-slate-200",
+                        );
+                        button.classList.add(
+                            "bg-slate-800",
+                            "text-white",
+                            "border-slate-800",
+                        );
+                    } else if (button.dataset.filter === "Activity") {
+                        button.classList.remove("bg-amber-100");
+                        button.classList.add("bg-amber-300");
+                    } else if (button.dataset.filter === "Equipment") {
+                        button.classList.remove("bg-blue-100");
+                        button.classList.add("bg-blue-300");
+                    }
+
+                    // Filter gallery items
+                    galleryItems.forEach((item) => {
+                        const category = item.dataset.category;
+                        if (filter === "all" || category === filter) {
+                            item.style.display = "block";
+                            item.style.animation = "fadeIn 0.3s ease-out";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+
+                    // Reset other button styles
+                    filterButtons.forEach((btn) => {
+                        if (!btn.classList.contains("active")) {
+                            if (btn.dataset.filter === "Activity") {
+                                btn.classList.remove("bg-amber-300");
+                                btn.classList.add("bg-amber-100");
+                            } else if (btn.dataset.filter === "Equipment") {
+                                btn.classList.remove("bg-blue-300");
+                                btn.classList.add("bg-blue-100");
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</BaseLayout>

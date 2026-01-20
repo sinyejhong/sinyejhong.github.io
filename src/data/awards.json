@@ -1,0 +1,474 @@
+[
+    {
+        "id": 103,
+        "title": "Ph.D. Scholarship",
+        "event": "Ministry of Education (教育部)",
+        "year": 2025,
+        "category": "student_merit",
+        "description": "Recipient: Hui-Che Hsu (Grant: NT 480,000)"
+    },
+    {
+        "id": 1,
+        "title": "Best Ph.D. Thesis Award",
+        "event": "IEEE Tainan Section",
+        "year": 2025,
+        "category": "merit",
+        "description": "Recognition for doctoral research excellence"
+    },
+    {
+        "id": 2,
+        "title": "Ph.D. Thesis Merit Award",
+        "event": "IET Taipei Local Network",
+        "year": 2025,
+        "category": "merit",
+        "description": "Recognition for doctoral research excellence"
+    },
+    {
+        "id": 3,
+        "title": "Best Ph.D. Thesis Award",
+        "event": "Taiwan Consumer Electronics Society (中華民國消費電子學會)",
+        "year": 2025,
+        "category": "merit",
+        "description": "Recognition for doctoral research excellence"
+    },
+    {
+        "id": 4,
+        "title": "Outstanding Ph.D. Thesis Award",
+        "event": "Taiwan Association of Systems Science and Engineering (中華民國系統學會)",
+        "year": 2025,
+        "category": "merit",
+        "description": "Recognition for doctoral research excellence"
+    },
+    {
+        "id": 5,
+        "title": "Graduate Students Study Abroad Fellowship",
+        "event": "National Science and Technology Council (國科會千里馬計畫)",
+        "year": 2024,
+        "category": "merit",
+        "description": "Fellowship for international research collaboration"
+    },
+    {
+        "id": 104,
+        "title": "Outstanding R&D Substitute Service Award",
+        "event": "Ministry of the Interior, Taiwan (中華民國內政部)",
+        "year": 2024,
+        "category": "merit",
+        "description": "Recognition for excellence in R&D substitute service"
+    },
+    {
+        "id": 6,
+        "title": "Outstanding Service Award",
+        "event": "IET International Conference on Engineering Technology and Application (ICETA)",
+        "year": 2021,
+        "category": "merit",
+        "description": "Recognition for conference service"
+    },
+    {
+        "id": 7,
+        "title": "Competition Excellence Scholarship",
+        "event": "Dept. of Engineering Science, National Cheng Kung University",
+        "year": 2020,
+        "category": "merit",
+        "description": "Scholarship for competition achievement"
+    },
+    {
+        "id": 8,
+        "title": "Research Excellence Scholarship",
+        "event": "National Taipei University of Technology",
+        "year": 2019,
+        "category": "merit",
+        "description": "Scholarship for research excellence"
+    },
+    {
+        "id": 9,
+        "title": "Competition Excellence Scholarship",
+        "event": "National Taipei University of Technology",
+        "year": 2018,
+        "category": "merit",
+        "description": "Scholarship for competition achievement (2018-2019)"
+    },
+    {
+        "id": 105,
+        "title": "Competition Excellence Scholarship",
+        "event": "National Taipei University of Technology",
+        "year": 2019,
+        "category": "merit",
+        "description": "Scholarship for competition achievement"
+    },
+    {
+        "id": 106,
+        "title": "Academic Excellence Scholarship",
+        "event": "Chinese Culture University",
+        "year": 2017,
+        "category": "merit",
+        "description": "Scholarship for academic excellence"
+    },
+    {
+        "id": 107,
+        "title": "Competition Excellence Scholarship",
+        "event": "Chinese Culture University",
+        "year": 2017,
+        "category": "merit",
+        "description": "Scholarship for competition achievement"
+    },
+    {
+        "id": 108,
+        "title": "Academic Excellence Scholarship",
+        "event": "Chinese Culture University",
+        "year": 2016,
+        "category": "merit",
+        "description": "Scholarship for academic excellence"
+    },
+    {
+        "id": 10,
+        "title": "Competition Excellence Scholarship",
+        "event": "Chinese Culture University",
+        "year": 2016,
+        "category": "merit",
+        "description": "Scholarship for competition achievement (2016-2017)"
+    },
+    {
+        "id": 11,
+        "title": "Academic Excellence Scholarship",
+        "event": "Chinese Culture University",
+        "year": 2015,
+        "category": "merit",
+        "description": "Scholarship for academic excellence (2015-2017)"
+    },
+    {
+        "id": 12,
+        "title": "Best Paper Award - Second Place",
+        "event": "International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
+        "year": 2025,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution"
+    },
+    {
+        "id": 13,
+        "title": "Best Paper Award - Second Place",
+        "event": "International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
+        "year": 2025,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution"
+    },
+    {
+        "id": 14,
+        "title": "Best Paper Award - Honorable Mention",
+        "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "year": 2025,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution"
+    },
+    {
+        "id": 15,
+        "title": "Outstanding Presentation Award",
+        "event": "IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS)",
+        "year": 2025,
+        "category": "paper",
+        "description": "Recognition for excellent presentation"
+    },
+    {
+        "id": 16,
+        "title": "Best Presentation Paper Award - Honorable Mention",
+        "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "year": 2024,
+        "category": "paper",
+        "description": "Recognition for outstanding presentation"
+    },
+    {
+        "id": 17,
+        "title": "Best Paper Award - Honorable Mention",
+        "event": "International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
+        "year": 2023,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution"
+    },
+    {
+        "id": 18,
+        "title": "Best Paper Award - Honorable Mention",
+        "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "year": 2023,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution"
+    },
+    {
+        "id": 19,
+        "title": "Best Paper Award - Honorable Mention",
+        "event": "International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
+        "year": 2022,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution"
+    },
+    {
+        "id": 20,
+        "title": "Best Paper Award - Honorable Mention",
+        "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "year": 2020,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution"
+    },
+    {
+        "id": 21,
+        "title": "Best Paper Award - First Place",
+        "event": "Cyberspace Conference (網際空間研討會)",
+        "year": 2020,
+        "category": "paper",
+        "description": "Recognition for best paper"
+    },
+    {
+        "id": 22,
+        "title": "Best Paper Award - First Place",
+        "event": "Cyberspace Conference (網際空間研討會)",
+        "year": 2019,
+        "category": "paper",
+        "description": "Recognition for best paper"
+    },
+    {
+        "id": 23,
+        "title": "Best Paper Award - First Place",
+        "event": "Cyberspace Conference (網際空間研討會)",
+        "year": 2018,
+        "category": "paper",
+        "description": "Recognition for best paper"
+    },
+    {
+        "id": 100,
+        "title": "First Prize",
+        "event": "NCHU Capstone Competition for AI Empowerment and Robotics Applications in Manufacturing (AI賦能與機器人於智慧製造應用專題實作競賽)",
+        "year": 2025,
+        "category": "competition",
+        "description": "First place in smart manufacturing capstone competition"
+    },
+    {
+        "id": 101,
+        "title": "Third Prize",
+        "event": "International ICT Innovative Services Awards (資訊應用服務創新競賽)",
+        "year": 2025,
+        "category": "competition",
+        "description": "Third place in international ICT innovation competition"
+    },
+    {
+        "id": 102,
+        "title": "Honorable Mention & IEEE Special Award",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2025,
+        "category": "competition",
+        "description": "Recognition and special award in electronics design competition"
+    },
+    {
+        "id": 24,
+        "title": "Honorable Mention",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2024,
+        "category": "competition",
+        "description": "Recognition in electronics design competition"
+    },
+    {
+        "id": 25,
+        "title": "Honorable Mention",
+        "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
+        "year": 2023,
+        "category": "competition",
+        "description": "Recognition in industry-academia innovation competition"
+    },
+    {
+        "id": 26,
+        "title": "Second Prize",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2023,
+        "category": "competition",
+        "description": "Second place in electronics design competition"
+    },
+    {
+        "id": 27,
+        "title": "Second Prize & Popularity Award",
+        "event": "Intel® DevCup x OpenVINO™ Toolkit Competition",
+        "year": 2022,
+        "category": "competition",
+        "description": "Recognition in Intel AI competition"
+    },
+    {
+        "id": 28,
+        "title": "Second Prize",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2022,
+        "category": "competition",
+        "description": "Second place in electronics design competition"
+    },
+    {
+        "id": 29,
+        "title": "Third Prize & Popularity Award",
+        "event": "Intel® DevCup x OpenVINO™ Toolkit Competition",
+        "year": 2021,
+        "category": "competition",
+        "description": "Recognition in Intel AI competition"
+    },
+    {
+        "id": 30,
+        "title": "First Prize",
+        "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
+        "year": 2021,
+        "category": "competition",
+        "description": "First place in industry-academia innovation competition"
+    },
+    {
+        "id": 31,
+        "title": "Silver Award",
+        "event": "Information Application Service Innovation Startup Selection (經濟部資訊應用服務創新創業新秀選拔)",
+        "year": 2021,
+        "category": "competition",
+        "description": "Recognition in MOEA startup competition"
+    },
+    {
+        "id": 32,
+        "title": "Excellent Award",
+        "event": "AI Industry Practical Talent Training Program (經濟部AI產業實戰應用人才淬煉計畫) [AIGO競賽]",
+        "year": 2021,
+        "category": "competition",
+        "description": "Recognition in AIGO AI competition"
+    },
+    {
+        "id": 33,
+        "title": "Gold Medal",
+        "event": "National Quemoy University AI Innovation Application Competition (金門大學人工智慧創新應用競賽)",
+        "year": 2021,
+        "category": "competition",
+        "description": "First place in AI innovation competition"
+    },
+    {
+        "id": 34,
+        "title": "Champion",
+        "event": "Autonomous Vehicle System Project Competition (自駕車系統專題競賽)",
+        "year": 2021,
+        "category": "competition",
+        "description": "First place in autonomous vehicle competition"
+    },
+    {
+        "id": 35,
+        "title": "Second Prize",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2021,
+        "category": "competition",
+        "description": "Second place in electronics design competition"
+    },
+    {
+        "id": 36,
+        "title": "Special Award",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2020,
+        "category": "competition",
+        "description": "Special recognition in electronics design competition"
+    },
+    {
+        "id": 37,
+        "title": "First Prize & IEEE Special Award",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2019,
+        "category": "competition",
+        "description": "First place and IEEE special recognition"
+    },
+    {
+        "id": 38,
+        "title": "First Prize",
+        "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
+        "year": 2019,
+        "category": "competition",
+        "description": "First place in industry-academia innovation competition"
+    },
+    {
+        "id": 39,
+        "title": "Silver Medal",
+        "event": "Hua Nan Financial Holdings Fintech Innovation Competition (華南金控Fintech金融科技創新競賽)",
+        "year": 2019,
+        "category": "competition",
+        "description": "Second place in fintech innovation competition"
+    },
+    {
+        "id": 40,
+        "title": "Silver & Rising Star Award",
+        "event": "Information Application Service Innovation Startup Selection (經濟部資訊應用服務創新創業新秀選拔)",
+        "year": 2019,
+        "category": "competition",
+        "description": "Recognition in MOEA startup competition"
+    },
+    {
+        "id": 41,
+        "title": "Third Prize",
+        "event": "Yun-Tai Youth Student Innovation & Entrepreneurship Invitational Competition (雲台青年學生創新創業邀請賽)",
+        "year": 2019,
+        "category": "competition",
+        "description": "Third place in cross-strait innovation competition"
+    },
+    {
+        "id": 42,
+        "title": "Honorable Mention",
+        "event": "Smart Industry Information Application Competition (智慧產業資訊應用競賽)",
+        "year": 2019,
+        "category": "competition",
+        "description": "Recognition in smart industry competition"
+    },
+    {
+        "id": 43,
+        "title": "First Prize",
+        "event": "Jih Sun Bank Hackathon (日盛銀行黑客松競賽)",
+        "year": 2018,
+        "category": "competition",
+        "description": "First place in bank hackathon"
+    },
+    {
+        "id": 44,
+        "title": "Silver & Rising Star Award",
+        "event": "Information Application Service Innovation Startup Selection (經濟部資訊應用服務創新創業新秀選拔)",
+        "year": 2018,
+        "category": "competition",
+        "description": "Recognition in MOEA startup competition"
+    },
+    {
+        "id": 45,
+        "title": "First Prize & Icetron Enterprises Co., Ltd. Special Award",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2018,
+        "category": "competition",
+        "description": "First place and special award in electronics design competition"
+    },
+    {
+        "id": 46,
+        "title": "First Prize",
+        "event": "National Youth Creative Application Competition (全國青年創意應用競賽)",
+        "year": 2018,
+        "category": "competition",
+        "description": "First place in youth creative application competition"
+    },
+    {
+        "id": 47,
+        "title": "First Prize",
+        "event": "PCCU College of Engineering Project Competition (中國文化大學工學院專題競賽)",
+        "year": 2017,
+        "category": "competition",
+        "description": "First place in college engineering project competition"
+    },
+    {
+        "id": 48,
+        "title": "Second Prize",
+        "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
+        "year": 2016,
+        "category": "competition",
+        "description": "Second place in industry-academia innovation competition"
+    },
+    {
+        "id": 49,
+        "title": "First Prize",
+        "event": "PCCU EE Project Competition (中國文化大學電機系專題競賽)",
+        "year": 2016,
+        "category": "competition",
+        "description": "First place in EE department project competition"
+    },
+    {
+        "id": 50,
+        "title": "First Prize",
+        "event": "PCCU College of Engineering Project Competition (中國文化大學工學院專題競賽)",
+        "year": 2016,
+        "category": "competition",
+        "description": "First place in college engineering project competition"
+    }
+]

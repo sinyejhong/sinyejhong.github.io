@@ -1,0 +1,593 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+---
+
+<BaseLayout
+    title="Join Us"
+    description="Join the ASI² LAB - Open positions for students and researchers"
+>
+    <!-- Hero -->
+    <section class="relative bg-navy text-white py-24 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90"
+        >
+        </div>
+        <!-- Abstract Tech Pattern -->
+        <svg
+            class="absolute inset-0 w-full h-full opacity-10"
+            width="100%"
+            height="100%"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <defs>
+                <pattern
+                    id="grid-pattern"
+                    width="40"
+                    height="40"
+                    patternUnits="userSpaceOnUse"
+                >
+                    <path
+                        d="M0 40L40 0H20L0 20M40 40V20L20 40"
+                        stroke="currentColor"
+                        stroke-width="1"
+                        fill="none"></path>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
+        </svg>
+
+        <div
+            class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10"
+        >
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-6 border border-accent/20 backdrop-blur-sm"
+            >
+                Join the ASI² Lab
+            </span>
+            <h1
+                class="text-5xl md:text-6xl font-heading font-bold mb-6 tracking-tight leading-tight"
+            >
+                Shape the Future of <br />
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light"
+                    >Intelligent Systems</span
+                >
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                We are looking for passionate researchers to pioneer
+                breakthroughs in Robotics, AI, and Industrial Automation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="Contact Information"
+                subtitle="Get in touch with us"
+            />
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                >
+                    <h3
+                        class="text-xl font-semibold text-navy mb-6 flex items-center gap-3"
+                    >
+                        <div
+                            class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                ></path></svg
+                            >
+                        </div>
+                        Dr. Sin-Ye Jhong
+                    </h3>
+
+                    <div class="space-y-4">
+                        <a
+                            href="mailto:sinyejhong@mail.ntust.edu.tw"
+                            class="flex items-center gap-3 text-navy hover:text-accent transition-colors group"
+                        >
+                            <div
+                                class="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-accent/10 transition-colors"
+                            >
+                                <svg
+                                    class="w-4 h-4 text-accent"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    ></path></svg
+                                >
+                            </div>
+                            <span class="font-medium text-sm"
+                                >sinyejhong@mail.ntust.edu.tw</span
+                            >
+                        </a>
+
+                        <div class="flex items-start gap-3 text-navy">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0 mt-1"
+                            >
+                                <svg
+                                    class="w-4 h-4 text-accent"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                    ></path><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                    ></path></svg
+                                >
+                            </div>
+                            <div class="flex-grow text-sm">
+                                <p class="font-medium text-base text-navy mb-1">
+                                    Lab Address
+                                </p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    C216, 2F, General Education Building<br />
+                                    <span class="font-medium text-navy"
+                                        >TaiwanTech Hwa Hsia Campus</span
+                                    ><br />
+                                    No.111, Gongzhuan Rd., Zhonghe Dist.,<br />
+                                    New Taipei City, Taiwan
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                >
+                    <h3
+                        class="text-xl font-semibold text-navy mb-6 flex items-center gap-3"
+                    >
+                        <div
+                            class="w-12 h-12 bg-navy/10 rounded-xl flex items-center justify-center text-navy"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                ></path><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                ></path></svg
+                            >
+                        </div>
+                        Lab Location
+                    </h3>
+                    <div
+                        class="aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden border border-gray-100 shadow-inner"
+                    >
+                        <iframe
+                            src="https://maps.google.com/maps?q=No.111,+Gongzhuan+Rd.,+Zhonghe+Dist.,+New+Taipei+City&hl=en&z=15&output=embed"
+                            class="w-full h-full border-0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lab Location Map"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="Why Join ASI² Lab?"
+                subtitle="We provide a world-class research environment to help you achieve your academic and professional goals."
+            />
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div
+                    class="p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-accent"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">
+                        Cutting-edge Research
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Work on state-of-the-art projects in Resilient
+                        Perception, Industrial AIoT, and Embodied Intelligence
+                        funded by top agencies.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div
+                    class="p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-teal-600"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">
+                        Mentorship & Growth
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Receive personalized guidance from Dr. Jhong and regular
+                        feedback to prepare you for top-tier academic or
+                        industrial careers.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div
+                    class="p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform text-purple-600"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">
+                        Global Impact
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Collaborate with international partners and publish your
+                        work in prestigious journal and conference (e.g.,
+                        IEEE/ACM Trans., CVPR, ICRA).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section class="section-padding bg-gray-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="Open Positions"
+                subtitle="We welcome talented individuals at all levels"
+            />
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- PhD Students -->
+                <div
+                    class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"
+                    >
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent"
+                        >
+                            <svg
+                                class="w-7 h-7"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5z"></path><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                                ></path><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                                ></path></svg
+                            >
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-navy mb-3 group-hover:text-accent transition-colors"
+                        >
+                            Ph.D. Students
+                        </h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            We are looking for highly motivated Ph.D. candidates
+                            with strong background in computer science,
+                            electrical engineering, or related fields.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
+                                >Fully Funded</span
+                            >
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                                >RA Support</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master's Students -->
+                <div
+                    class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"
+                    >
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent"
+                        >
+                            <svg
+                                class="w-7 h-7"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                ></path></svg
+                            >
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-navy mb-3 group-hover:text-accent transition-colors"
+                        >
+                            Master's Students
+                        </h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Opportunities to work on industry-sponsored projects
+                            and publish at top conferences in AI and robotics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800"
+                                >Research Projects</span
+                            >
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800"
+                                >Industry Collaboration</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Undergraduate -->
+                <div
+                    class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden"
+                >
+                    <div
+                        class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"
+                    >
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent"
+                        >
+                            <svg
+                                class="w-7 h-7"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                                ></path></svg
+                            >
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-navy mb-3 group-hover:text-accent transition-colors"
+                        >
+                            Undergrad Researchers
+                        </h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Join via independent study or research
+                            assistantship. Great opportunity to gain hands-on
+                            experience and prepare for graduate school.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800"
+                                >Independent Study</span
+                            >
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-800"
+                                >Capstone Projects</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+                title="What We're Looking For"
+                subtitle="Ideal candidate qualifications"
+            />
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-navy mb-4">
+                        Technical Skills
+                    </h3>
+                    <ul class="space-y-3">
+                        {
+                            [
+                                "Strong programming skills (Python, C/C++)",
+                                "Experience with deep learning frameworks (PyTorch, TensorFlow)",
+                                "Background in computer vision or robotics",
+                                "Familiarity with Linux and version control (Git)",
+                                "Experience with ROS is a plus",
+                            ].map((item) => (
+                                <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                        <svg
+                                            class="w-3.5 h-3.5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="3"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-600 font-medium leading-relaxed">
+                                        {item}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-navy mb-4">
+                        Personal Qualities
+                    </h3>
+                    <ul class="space-y-3">
+                        {
+                            [
+                                "Self-motivated and passionate about research",
+                                "Strong problem-solving abilities",
+                                "Good communication skills in English",
+                                "Ability to work both independently and in teams",
+                                "Curiosity and willingness to learn new things",
+                            ].map((item) => (
+                                <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                        <svg
+                                            class="w-3.5 h-3.5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="3"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-600 font-medium leading-relaxed">
+                                        {item}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+        class="py-16 bg-gradient-to-br from-accent to-accent-dark text-white"
+    >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-heading font-bold mb-4">Ready to Join?</h2>
+            <p class="text-xl text-white/80 mb-8">
+                Send us your CV and a brief description of your research
+                interests
+            </p>
+            <a
+                href="mailto:sinyejhong@mail.ntust.edu.tw?subject=Interested in Joining ASI² LAB"
+                class="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-semibold rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+            >
+                <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                </svg>
+                Contact Dr. Jhong
+            </a>
+        </div>
+    </section>
+</BaseLayout>
