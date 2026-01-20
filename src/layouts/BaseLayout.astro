@@ -4,6 +4,8 @@ interface Props {
   description?: string;
 }
 
+import "../styles/global.css";
+
 const {
   title,
   description = "Autonomous Systems and Intelligent Interaction Laboratory - Research in Computer Vision, Deep Learning, and Robotics",
@@ -291,7 +293,3 @@ const currentPath = Astro.url.pathname;
     </script>
   </body>
 </html>
-
-<style is:global>
-  @import "../styles/global.css";
-</style>
