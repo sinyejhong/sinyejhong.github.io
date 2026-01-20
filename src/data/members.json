@@ -42,7 +42,7 @@
         "research_group": "Resilient Perception"
     },
     {
-        "id": 4,
+        "id": 2,
         "name": "Shang-Lin Li",
         "photo": "/images/members/Shang-Lin Li.jpg",
         "role": "Ph.D. Student",
@@ -51,6 +51,28 @@
         "email": "33300zxc@gmail.com",
         "coadvisor": "臺科大電子所共同指導",
         "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 3,
+        "name": "Vi Minh La",
+        "photo": "/images/members/Viminhla.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "oweeminh@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 4,
+        "name": "Cheng-Yen Hsieh",
+        "photo": "/images/members/Chengyenhsieh.jpg",
+        "role": "Master's Student",
+        "topic": "Embodied AI",
+        "status": "current",
+        "email": "chengyen0206@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Embodied Intelligence"
     },
     {
         "id": 5,
@@ -65,14 +87,14 @@
     },
     {
         "id": 6,
-        "name": "Cheng-Yen Hsieh",
-        "photo": "/images/members/Chengyenhsieh.jpg",
+        "name": "Chang-Hsun Tsai",
+        "photo": "/images/members/Changhsuntsai.jpg",
         "role": "Master's Student",
-        "topic": "Embodied AI",
+        "topic": "Industrial AI",
         "status": "current",
-        "email": "chengyen0206@gmail.com",
+        "email": "goosbytsai1124@gmail.com",
         "coadvisor": "臺科大電子所共同指導",
-        "research_group": "Embodied Intelligence"
+        "research_group": "Industrial AIoT"
     },
     {
         "id": 7,
@@ -87,13 +109,13 @@
     },
     {
         "id": 8,
-        "name": "Chang-Hsun Tsai",
-        "photo": "/images/members/Changhsuntsai.jpg",
+        "name": "Wei-Ling Xu",
+        "photo": "/images/members/Weilingxu.jpg",
         "role": "Master's Student",
         "topic": "Industrial AI",
         "status": "current",
-        "email": "goosbytsai1124@gmail.com",
-        "coadvisor": "臺科大電子所共同指導",
+        "email": "R1343008@ms.niu.edu.tw",
+        "coadvisor": "宜大資工所共同指導",
         "research_group": "Industrial AIoT"
     },
     {
@@ -109,13 +131,12 @@
     },
     {
         "id": 10,
-        "name": "Wei-Ling Xu",
-        "photo": "/images/members/Weilingxu.jpg",
+        "name": "Jun-Guang Zhu",
+        "photo": "/images/members/Junguangzhu.jpg",
         "role": "Master's Student",
         "topic": "Industrial AI",
         "status": "current",
-        "email": "R1343008@ms.niu.edu.tw",
-        "coadvisor": "宜大資工所共同指導",
+        "email": "zhuguang1010414@gmail.com",
         "research_group": "Industrial AIoT"
     },
     {
@@ -131,13 +152,14 @@
     },
     {
         "id": 12,
-        "name": "Jun-Guang Zhu",
-        "photo": "/images/members/Junguangzhu.jpg",
+        "name": "Bo-Hong Pan",
+        "photo": "/images/members/Bohongpan.jpg",
         "role": "Master's Student",
-        "topic": "Industrial AI",
+        "topic": "Embodied AI",
         "status": "current",
-        "email": "zhuguang1010414@gmail.com",
-        "research_group": "Industrial AIoT"
+        "email": "m11402146@gapps.ntust.edu.tw",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Embodied Intelligence"
     },
     {
         "id": 13,
@@ -152,14 +174,14 @@
     },
     {
         "id": 14,
-        "name": "Bo-Hong Pan",
-        "photo": "/images/members/Bohongpan.jpg",
+        "name": "Shih-Yi Wen",
+        "photo": "/images/members/Shihyiwen.jpg",
         "role": "Master's Student",
-        "topic": "Embodied AI",
+        "topic": "Industrial AI",
         "status": "current",
-        "email": "m11402146@gapps.ntust.edu.tw",
+        "email": "m11402140@ntust.mail.edu.tw",
         "coadvisor": "臺科大電子所共同指導",
-        "research_group": "Embodied Intelligence"
+        "research_group": "Industrial AIoT"
     },
     {
         "id": 15,
@@ -174,14 +196,14 @@
     },
     {
         "id": 16,
-        "name": "Shih-Yi Wen",
-        "photo": "/images/members/Shihyiwen.jpg",
+        "name": "Po-Shao Liu",
+        "photo": "/images/members/Poshaoliu.jpg",
         "role": "Master's Student",
-        "topic": "Industrial AI",
+        "topic": "Embodied AI",
         "status": "current",
-        "email": "m11402140@ntust.mail.edu.tw",
+        "email": "allen88787@gmail.com",
         "coadvisor": "臺科大電子所共同指導",
-        "research_group": "Industrial AIoT"
+        "research_group": "Embodied Intelligence"
     },
     {
         "id": 17,
@@ -196,28 +218,6 @@
     },
     {
         "id": 18,
-        "name": "Po-Shao Liu",
-        "photo": "/images/members/Poshaoliu.jpg",
-        "role": "Master's Student",
-        "topic": "Embodied AI",
-        "status": "current",
-        "email": "allen88787@gmail.com",
-        "coadvisor": "臺科大電子所共同指導",
-        "research_group": "Embodied Intelligence"
-    },
-    {
-        "id": 19,
-        "name": "Vi Minh La",
-        "photo": "/images/members/Viminhla.jpg",
-        "role": "Master's Student",
-        "topic": "Resilient Perception",
-        "status": "current",
-        "email": "oweeminh@gmail.com",
-        "coadvisor": "臺科大電子所共同指導",
-        "research_group": "Resilient Perception"
-    },
-    {
-        "id": 20,
         "name": "Yu-Lin Su",
         "photo": "/images/members/Yulinsu.jpg",
         "role": "Master's Student",
@@ -227,7 +227,7 @@
         "research_group": "Industrial AIoT"
     },
     {
-        "id": 21,
+        "id": 19,
         "name": "Pei-Yan Chou",
         "photo": "/images/members/Peiyanchou.jpg",
         "role": "Master's Student",
@@ -237,7 +237,7 @@
         "research_group": "Resilient Perception"
     },
     {
-        "id": 22,
+        "id": 20,
         "name": "Jui-Chen Chien",
         "photo": "/images/members/Juichenchien.jpg",
         "role": "Master's Student",
@@ -247,13 +247,13 @@
         "research_group": "Industrial AIoT"
     },
     {
-        "id": 23,
+        "id": 21,
         "name": "Hsiang-Yu Wang",
         "photo": "/images/members/hsiangyuwang.jpg",
         "role": "Master's Student",
-        "topic": "Resilient Perception",
+        "topic": "Embodied AI",
         "status": "current",
-        "email": "thomasrcchien@gmail.com",
-        "research_group": "Resilient Perception"
+        "email": "yoshino39391@gmail.com",
+        "research_group": "Embodied Intelligence"
     }
 ]
