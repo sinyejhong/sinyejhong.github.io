@@ -54,8 +54,8 @@
     },
     {
         "id": 5,
-        "name": "Le Trong Nhan",
-        "photo": "/images/members/Letrongnhan.jpg",
+        "name": "Trong Nhan Le",
+        "photo": "/images/members/Trongnhanle.jpg",
         "role": "Master's Student",
         "topic": "Resilient Perception",
         "status": "current",
@@ -141,8 +141,8 @@
     },
     {
         "id": 13,
-        "name": "Doan Xuan Duy Phuc",
-        "photo": "/images/members/Doanxuanduyphuc.jpg",
+        "name": "Xuan Duy Phuc Doan",
+        "photo": "/images/members/Xuanduyphucdoan.jpg",
         "role": "Master's Student",
         "topic": "Resilient Perception",
         "status": "current",
@@ -204,5 +204,56 @@
         "email": "allen88787@gmail.com",
         "coadvisor": "臺科大電子所共同指導",
         "research_group": "Embodied Intelligence"
+    },
+    {
+        "id": 19,
+        "name": "Vi Minh La",
+        "photo": "/images/members/Viminhla.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "oweeminh@gmail.com",
+        "coadvisor": "臺科大電子所共同指導",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 20,
+        "name": "Yu-Lin Su",
+        "photo": "/images/members/Yulinsu.jpg",
+        "role": "Master's Student",
+        "topic": "Industrial AIoT",
+        "status": "current",
+        "email": "kikisu0106@gmail.com",
+        "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 21,
+        "name": "Pei-Yan Chou",
+        "photo": "/images/members/Peiyanchou.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "peiyan93082700@gmail.com",
+        "research_group": "Resilient Perception"
+    },
+    {
+        "id": 22,
+        "name": "Jui-Chen Chien",
+        "photo": "/images/members/Juichenchien.jpg",
+        "role": "Master's Student",
+        "topic": "Industrial AIoT",
+        "status": "current",
+        "email": "thomasrcchien@gmail.com",
+        "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 23,
+        "name": "Hsiang-Yu Wang",
+        "photo": "/images/members/hsiangyuwang.jpg",
+        "role": "Master's Student",
+        "topic": "Resilient Perception",
+        "status": "current",
+        "email": "thomasrcchien@gmail.com",
+        "research_group": "Resilient Perception"
     }
 ]
