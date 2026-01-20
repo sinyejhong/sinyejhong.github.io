@@ -237,8 +237,6 @@ const currentPath = Astro.url.pathname;
                 <a
                   href="mailto:sinyejhong@mail.ntust.edu.tw"
                   class="hover:text-accent transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   sinyejhong@mail.ntust.edu.tw
                 </a>
@@ -282,13 +280,61 @@ const currentPath = Astro.url.pathname;
       </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
+    <!-- Toast Notification -->
+    <div
+      id="copy-toast"
+      class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900/90 text-white px-6 py-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none z-50 flex items-center gap-2 backdrop-blur-sm"
+    >
+      <svg
+        class="w-5 h-5 text-accent"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 13l4 4L19 7"></path>
+      </svg>
+      <span class="font-medium">Email copied to clipboard!</span>
+    </div>
+
+    <!-- Mobile Menu Script & Mailto Handler -->
     <script>
       const menuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
 
       menuBtn?.addEventListener("click", () => {
         mobileMenu?.classList.toggle("hidden");
+      });
+
+      // Mailto click handler: Copy email + Show toast
+      document.addEventListener("click", async (e) => {
+        const link = (e.target as HTMLElement).closest('a[href^="mailto:"]');
+        if (link) {
+          const href = link.getAttribute("href");
+          // Extract email before '?' (subject/body params)
+          const email = href?.replace("mailto:", "").split("?")[0];
+
+          if (email) {
+            try {
+              await navigator.clipboard.writeText(email);
+
+              // Show toast
+              const toast = document.getElementById("copy-toast");
+              if (toast) {
+                toast.classList.remove("opacity-0");
+                // Hide after 3 seconds
+                setTimeout(() => {
+                  toast.classList.add("opacity-0");
+                }, 3000);
+              }
+            } catch (err) {
+              console.error("Failed to copy email:", err);
+            }
+          }
+        }
       });
     </script>
   </body>
