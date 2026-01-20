@@ -688,10 +688,11 @@ function getMoonthAndDay(dateStr: string) {
         });
 
         // ===== Auto-Cycling Logic (First 2 Pages Only) =====
-        const AUTO_CYCLE_INTERVAL = 5000; // 5 seconds
+        const AUTO_CYCLE_INTERVAL = 10000; // 10 seconds (slower for better UX)
         const AUTO_CYCLE_MAX_PAGE = 1; // Cycle between page 0 and 1
         let autoPlayTimer = null;
         let isPaused = false;
+        let interactionTimeout = null; // Timer to resume after user interaction
 
         function startAutoCycle() {
             if (autoPlayTimer) clearInterval(autoPlayTimer);
@@ -717,13 +718,33 @@ function getMoonthAndDay(dateStr: string) {
         }
 
         function resumeAutoCycle() {
-            isPaused = false;
+            // Only resume if not in a user-interaction pause state (handled by handleUserInteraction)
+            if (!interactionTimeout) {
+                isPaused = false;
+            }
+        }
+
+        // Pause for a longer specified duration after explicit user interaction
+        function handleUserInteraction() {
+            isPaused = true;
+            if (interactionTimeout) clearTimeout(interactionTimeout);
+            
+            // Resume regular checking after 15 seconds of inactivity
+            interactionTimeout = setTimeout(() => {
+                isPaused = false;
+                interactionTimeout = null;
+            }, 15000);
         }
 
         // Pause on hover over the news container
         const newsContainer = document.getElementById("news-container");
         newsContainer?.addEventListener("mouseenter", pauseAutoCycle);
         newsContainer?.addEventListener("mouseleave", resumeAutoCycle);
+
+        // Hook up user interaction events to the pause logic
+        prevBtn?.addEventListener("click", handleUserInteraction);
+        nextBtn?.addEventListener("click", handleUserInteraction);
+        mobileDots.forEach(dot => dot.addEventListener("click", handleUserInteraction));
 
         // Start auto-cycling on page load
         startAutoCycle();
