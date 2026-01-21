@@ -102,20 +102,20 @@ const categoryLabels: Record<string, string> = {
 
             <!-- Title with hover effect -->
             <h3
-                class="text-lg font-semibold text-navy mb-1.5 group-hover:text-accent transition-colors duration-200 line-clamp-2"
+                class="text-lg font-semibold text-navy mb-1.5 group-hover:text-accent transition-colors duration-200"
             >
                 {title}
             </h3>
 
             <!-- Event -->
-            <p class="text-sm text-gray-600 mb-2 line-clamp-2">
+            <p class="text-sm text-gray-600 mb-2">
                 {event}
             </p>
 
             <!-- Description -->
             {
                 description && (
-                    <p class="text-sm text-gray-500 italic line-clamp-2 border-t border-gray-100 pt-2 mt-2">
+                    <p class="text-sm text-gray-500 italic border-t border-gray-100 pt-2 mt-2">
                         {description}
                     </p>
                 )

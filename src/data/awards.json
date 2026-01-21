@@ -136,6 +136,14 @@
         "description": "Scholarship for academic excellence (2015-2017)"
     },
     {
+        "id": 109,
+        "title": "Best Student Paper Award - First Place",
+        "event": "International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
+        "year": 2025,
+        "category": "paper",
+        "description": "Recognition for outstanding student paper contribution"
+    },
+    {
         "id": 12,
         "title": "Best Paper Award - Second Place",
         "event": "International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
