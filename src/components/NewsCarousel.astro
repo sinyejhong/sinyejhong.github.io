@@ -687,8 +687,14 @@ function getMoonthAndDay(dateStr: string) {
 
         mobileDots.forEach((dot) => {
             dot.addEventListener("click", (e) => {
-                const index = parseInt(e.target.dataset.index);
-                updateView(index);
+                // Use closest to get the button element with data-index
+                const btn = e.target.closest('.mobile-dot');
+                if (btn) {
+                    const index = parseInt(btn.dataset.index);
+                    if (!isNaN(index)) {
+                        updateView(index);
+                    }
+                }
             });
         });
 
