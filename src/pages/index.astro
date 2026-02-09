@@ -708,6 +708,18 @@ const awardsCount = personalHonorsCount + studentMeritCount;
 			});
 
 			if (video && heroContent) {
+				// 方案二：嘗試自動播放帶聲音，失敗則靜音播放
+				video.muted = false;
+				const playPromise = video.play();
+
+				if (playPromise !== undefined) {
+					playPromise.catch(() => {
+						// 自動播放失敗（瀏覽器阻擋），改為靜音播放
+						video.muted = true;
+						video.play();
+					});
+				}
+
 				// Show content when video ends
 				video.addEventListener("ended", showContent);
 
