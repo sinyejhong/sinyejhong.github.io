@@ -750,6 +750,35 @@ function getMoonthAndDay(dateStr: string) {
         startAutoCycle();
         // ===== End Auto-Cycling Logic =====
 
+        // ===== Touch Swipe Support for Mobile =====
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const SWIPE_THRESHOLD = 50; // minimum distance for swipe
+
+        newsContainer?.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        newsContainer?.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > SWIPE_THRESHOLD) {
+                if (diff > 0) {
+                    // Swiped left → next page
+                    updateView(currentPage + 1);
+                } else {
+                    // Swiped right → previous page
+                    updateView(currentPage - 1);
+                }
+                handleUserInteraction(); // Pause auto-cycle after swipe
+            }
+        }
+        // ===== End Touch Swipe Support =====
+
         // Lightbox Close Logic
         const lightbox = document.getElementById("news-lightbox");
         const lightboxClose = document.getElementById("lightbox-close");
