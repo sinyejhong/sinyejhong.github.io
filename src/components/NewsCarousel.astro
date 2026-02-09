@@ -402,15 +402,17 @@ function getMoonthAndDay(dateStr: string) {
             }
         </div>
 
-        <!-- Mobile Controls (Pagination Dots) -->
-        <div class="flex justify-center mt-8 gap-2">
+        <!-- Pagination Dots (Desktop & Mobile) -->
+        <div class="flex justify-center mt-8 gap-3">
             {
                 Array.from({ length: totalPages }).map((_, i) => (
                     <button
-                        class="mobile-dot w-2 h-2 rounded-full bg-gray-300 transition-all data-[active=true]:bg-accent data-[active=true]:w-6"
+                        class="mobile-dot group p-2 cursor-pointer"
                         data-index={i}
                         aria-label={`Go to page ${i + 1}`}
-                    />
+                    >
+                        <span class="block w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 group-hover:bg-accent/50 group-hover:scale-125 data-[active=true]:bg-accent data-[active=true]:w-8" data-active={i === 0 ? "true" : "false"}></span>
+                    </button>
                 ))
             }
         </div>
@@ -666,12 +668,15 @@ function getMoonthAndDay(dateStr: string) {
             if (prevBtn) prevBtn.disabled = currentPage === 0;
             if (nextBtn) nextBtn.disabled = currentPage === total - 1;
 
-            // Update Mobile Dots
+            // Update Pagination Dots
             mobileDots.forEach((dot, i) => {
-                if (i === currentPage) {
-                    dot.setAttribute("data-active", "true");
-                } else {
-                    dot.setAttribute("data-active", "false");
+                const span = dot.querySelector('span');
+                if (span) {
+                    if (i === currentPage) {
+                        span.setAttribute("data-active", "true");
+                    } else {
+                        span.setAttribute("data-active", "false");
+                    }
                 }
             });
         }
