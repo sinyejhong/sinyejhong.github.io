@@ -853,7 +853,7 @@
         "title": "Semi-Supervised Learning with Attention-Based CNN for Classification of Coffee Beans Defect",
         "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
         "badges": [],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2021,
@@ -889,7 +889,7 @@
         "title": "Green Coffee Beans Classification Using Attention-Based Features and Knowledge Transfer",
         "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
         "badges": [],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2021,
@@ -952,7 +952,7 @@
         "title": "Online Social Media Interaction and Offline Protest Movement: Patterns in 2019 Hong Kong",
         "venue": "Indo-Taiwan International Conference on Computing, Analytics and Networks (Indo-Taiwan ICAN)",
         "badges": [],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2019,
@@ -991,7 +991,7 @@
         "badges": [
             "Best Paper Award"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2019,
@@ -1010,7 +1010,7 @@
         "badges": [
             "Best Paper Award"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2018,
@@ -1031,7 +1031,7 @@
         "badges": [
             "Best Paper Award"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2025,
@@ -1076,7 +1076,7 @@
         "badges": [
             "Industry Collaboration"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2025,
@@ -1095,7 +1095,7 @@
         "badges": [
             "Industry Collaboration"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2025,
@@ -1122,7 +1122,7 @@
         "badges": [
             "Industry Collaboration"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2024,
@@ -1146,7 +1146,7 @@
         "badges": [
             "Industry Collaboration"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2024,
@@ -1165,7 +1165,7 @@
         "badges": [
             "Industry Collaboration"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2024,
@@ -1185,7 +1185,7 @@
         "badges": [
             "Industry Collaboration"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2023,
@@ -1204,7 +1204,7 @@
         "badges": [
             "Industry Collaboration"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2023,
@@ -1339,6 +1339,6 @@
         "title": "利用權重參數與餘數定義隱寫資料於區塊截斷編碼影像的方法、影像壓縮裝置及電腦可讀取的記錄媒體",
         "venue": "Taiwan Patent",
         "badges": [],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     }
 ]
