@@ -256,6 +256,14 @@
         "description": "Third place in international ICT innovation competition"
     },
     {
+        "id": 110,
+        "title": "Third Prize, Honorable Mention & IEEE Special Award (Grand Prize)",
+        "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "year": 2026,
+        "category": "competition",
+        "description": "Third place (Electronics), honorable mention (Information & Communication), and grand prize of IEEE special award"
+    },
+    {
         "id": 102,
         "title": "Honorable Mention & IEEE Special Award",
         "event": "National Electronics Creative Design Competition (全國電子創意設計競賽)",

@@ -1,5 +1,24 @@
 [
     {
+        "text": "ASI² Lab team wins Third Prize in the Electronics category, Honorable Mention in the Information & Communication category, and the Grand Prize of the IEEE Special Award at the National Electronics Creative Design Competition (全國電子創意設計競賽)",
+        "date": "2026-03-28",
+        "highlights": [
+            "Third Prize",
+            "Honorable Mention",
+            "Grand Prize",
+            "IEEE Special Award"
+        ],
+        "images": [
+            "/images/news/NECDE2026_IEEE.jpg",
+            "/images/news/NECDE2026_honoable.jpg",
+            "/images/news/NECDE2026_third.jpg"
+        ],
+        "pillar": "robotics",
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
         "text": "ASI² Lab team wins First Prize in the Best Student Paper Award at the International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
         "date": "2025-11-30",
         "highlights": [
