@@ -1,5 +1,17 @@
 [
     {
+        "id": 11,
+        "title": "具備環境韌性與開放認知能力之語意驅動式自主移動載具研發 (Development of Semantic-Driven Autonomous Mobile Robots with Environmental Robustness and Open-World Cognition)",
+        "funder": "National Science and Technology Council (NSTC) (國家科學及技術委員會)",
+        "duration": "2026.05 - 2028.04",
+        "role": "Principal Investigator (計畫主持人)",
+        "status": "ongoing",
+        "type": "government",
+        "description": "Three-year roadmap integrating Environmental Robust Perception (event-RGB fusion via SSM), Open-World Cognition (VLM with adaptive decomposed prompt tuning), and LLM-based Semantic-Driven Collaboration for embodied AI in smart manufacturing and logistics.",
+        "pillar": "robotics",
+        "logo": "/images/Logo/NSTC.png"
+    },
+    {
         "id": 1,
         "title": "AI瑕疵檢查系統開發 (AI Defect Inspection System Development)",
         "funder": "AAEON Technology Inc. (研揚科技股份有限公司)",
