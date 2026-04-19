@@ -7,7 +7,7 @@
         "role": "Principal Investigator (計畫主持人)",
         "status": "ongoing",
         "type": "government",
-        "description": "Three-year roadmap integrating Environmental Robust Perception (event-RGB fusion via SSM), Open-World Cognition (VLM with adaptive decomposed prompt tuning), and LLM-based Semantic-Driven Collaboration for embodied AI in smart manufacturing and logistics.",
+        "description": "Two-year roadmap integrating Environmental Robust Perception (event-RGB fusion via SSM) and Open-World Cognition (VLM with adaptive decomposed prompt tuning) for embodied AI in smart manufacturing and logistics.",
         "pillar": "robotics",
         "logo": "/images/Logo/NSTC.png"
     },
