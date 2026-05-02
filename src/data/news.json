@@ -1,5 +1,23 @@
 [
     {
+        "text": "ASI² Lab team wins the Best Paper Award at the 2026 Information Technology and Applications Conference (ITAC 2026) [2026資訊科技應用國際學術研討會]",
+        "date": "2026-04-29",
+        "highlights": [
+            "Best Paper Award"
+        ],
+        "images": [
+            "/images/news/ITAC2026.jpg",
+            "/images/news/2026ITAC_best_paper.jpg"
+        ],
+        "pillar": "inspection",
+        "links": {
+            "2026 Information Technology and Applications Conference (ITAC 2026)": "https://itac2026.gm.cute.edu.tw/"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ]
+    },
+    {
         "text": "ASI² Lab team wins Third Prize in the Electronics category, Honorable Mention in the Information & Communication category, and the Grand Prize of the IEEE Special Award at the National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "date": "2026-03-28",
         "highlights": [
@@ -15,6 +33,9 @@
             "/images/news/NECDE2026_IEEE.jpg"
         ],
         "pillar": "robotics",
+        "links": {
+            "National Electronic Design Creative Competition (全國電子設計創意競賽)": "https://nedcc.nkust.edu.tw/"
+        },
         "emphasis": [
             "ASI² Lab team"
         ]

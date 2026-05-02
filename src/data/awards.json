@@ -136,6 +136,14 @@
         "description": "Scholarship for academic excellence (2015-2017)"
     },
     {
+        "id": 111,
+        "title": "Best Paper Award",
+        "event": "Information Technology and Applications Conference (ITAC) [資訊科技應用國際學術研討會]",
+        "year": 2026,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution in industrial AI"
+    },
+    {
         "id": 109,
         "title": "Best Student Paper Award - First Place",
         "event": "International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
