@@ -117,7 +117,7 @@
         "type": "industry",
         "description": "SLAM algorithm development using Multi-View Stereo (MVS) for autonomous drones.",
         "pillar": "robotics",
-        "logo": "/images/Logo/novatek.jpg"
+        "logo": "/images/Logo/novatek.png"
     },
     {
         "id": 10,
