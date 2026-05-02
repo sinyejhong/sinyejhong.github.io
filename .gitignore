@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# AI tooling artifacts
+.agent/
+.shared/
+__pycache__/
