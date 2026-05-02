@@ -9,7 +9,7 @@
             "/images/engagements/2026NIU_Talk1.jpg",
             "/images/engagements/2026NIU_Talk2.jpg"
         ],
-        "pillar": "engagement",
+        "pillar": "invited_talk",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
         ]
@@ -25,7 +25,7 @@
             "/images/engagements/Sessionchair_ITAC2026.jpg",
             "/images/engagements/Sessionchair_ITAC2026_2.jpg"
         ],
-        "pillar": "engagement",
+        "pillar": "session_chair",
         "links": {
             "2026 Information Technology and Applications Conference (ITAC 2026)": "https://itac2026.gm.cute.edu.tw/"
         },
@@ -43,7 +43,7 @@
             "/images/engagements/NTUST_Talk1.jpg",
             "/images/engagements/NTUST_Talk2.jpg"
         ],
-        "pillar": "engagement",
+        "pillar": "invited_talk",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
         ]
@@ -58,7 +58,7 @@
             "/images/engagements/2025NIU_Talk1.jpg",
             "/images/engagements/2025NIU_Talk2.jpg"
         ],
-        "pillar": "engagement",
+        "pillar": "invited_talk",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
         ]
