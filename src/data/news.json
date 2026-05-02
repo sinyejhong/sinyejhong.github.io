@@ -41,34 +41,19 @@
         ]
     },
     {
-        "text": "ASI² Lab team wins First Prize in the Best Student Paper Award at the International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
+        "text": "ASI² Lab team wins First Prize in the Best Student Paper Award and Second Prize in the Best Paper Award at the International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
         "date": "2025-11-30",
         "highlights": [
             "First Prize",
-            "Best Student Paper Award"
-        ],
-        "images": [
-            "/images/news/Automation2025_Student_1.jpg"
-        ],
-        "pillar": "robotics",
-        "links": {
-            "International Conference on Automation Technology (Automation)": "https://cacs2025.web.nycu.edu.tw/"
-        },
-        "emphasis": [
-            "ASI² Lab team"
-        ]
-    },
-    {
-        "text": "ASI² Lab team wins Second Prize in the Best Paper Award at the International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
-        "date": "2025-11-30",
-        "highlights": [
+            "Best Student Paper Award",
             "Second Prize",
             "Best Paper Award"
         ],
         "images": [
+            "/images/news/Automation2025_Student_1.jpg",
             "/images/news/Automation2025_Best_1.jpg"
         ],
-        "pillar": "perception",
+        "pillar": "robotics",
         "links": {
             "International Conference on Automation Technology (Automation)": "https://cacs2025.web.nycu.edu.tw/"
         },
