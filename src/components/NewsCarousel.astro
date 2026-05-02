@@ -1,9 +1,33 @@
 ---
-import news from "../data/news.json";
+import defaultNews from "../data/news.json";
+
+interface NewsItem {
+    text: string;
+    date: string;
+    highlights?: string[];
+    images?: string[];
+    pillar?: string;
+    links?: Record<string, string>;
+    emphasis?: string[];
+}
+
+interface Props {
+    data?: NewsItem[];
+    title?: string;
+    subtitle?: string;
+    idPrefix?: string;
+}
+
+const {
+    data = defaultNews as NewsItem[],
+    title = "Latest News",
+    subtitle = "Recent breakthroughs, publications, and lab announcements",
+    idPrefix = "news",
+} = Astro.props;
 
 // Config: 3 items per page for a "Grid" feel
 const itemsPerPage = 3;
-const totalPages = Math.ceil(news.length / itemsPerPage);
+const totalPages = Math.ceil(data.length / itemsPerPage);
 
 // Helper: Highlight Text
 function highlightText(
@@ -90,6 +114,13 @@ const pillarConfig: Record<
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
+    engagement: {
+        label: "Outreach",
+        text: "text-rose-700",
+        href: "/about#professional-activities",
+        spacingClass: "space-y-1",
+        spacing: "pr-1 pb-1 -mt-2",
+    },
 };
 
 // Helper: Date Formatting
@@ -105,9 +136,8 @@ function getMoonthAndDay(dateStr: string) {
 }
 ---
 
-<section class="section-padding bg-gray-50/50">
+<section class="section-padding bg-gray-50/50" data-carousel-id={idPrefix}>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
         <!-- Section Header -->
         <div class="flex flex-col md:flex-row items-center md:items-end justify-between mb-10 gap-4">
             <!-- Left Spacer for centering balance -->
@@ -118,18 +148,18 @@ function getMoonthAndDay(dateStr: string) {
                 <h2
                     class="text-3xl md:text-4xl font-heading font-bold text-navy mb-3"
                 >
-                    Latest News
+                    {title}
                 </h2>
                 <div class="w-20 h-1 bg-accent rounded-full mb-4 mx-auto"></div>
                 <p class="text-gray-text text-lg max-w-2xl">
-                    Recent breakthroughs, publications, and lab announcements
+                    {subtitle}
                 </p>
             </div>
 
             <!-- Right Controls -->
             <div class="flex items-center gap-3 w-full md:w-auto md:flex-1 justify-center md:justify-end mt-4 md:mt-0">
                 <button
-                    id="news-prev"
+                    id={`${idPrefix}-prev`}
                     class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-md border-2 border-gray-200/80 flex items-center justify-center text-navy hover:bg-accent hover:text-white hover:border-accent hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy disabled:hover:scale-100 cursor-pointer"
                     aria-label="Previous page"
                 >
@@ -147,7 +177,7 @@ function getMoonthAndDay(dateStr: string) {
                     </svg>
                 </button>
                 <button
-                    id="news-next"
+                    id={`${idPrefix}-next`}
                     class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-md border-2 border-gray-200/80 flex items-center justify-center text-navy hover:bg-accent hover:text-white hover:border-accent hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy disabled:hover:scale-100 cursor-pointer"
                     aria-label="Next page"
                 >
@@ -168,19 +198,19 @@ function getMoonthAndDay(dateStr: string) {
         </div>
 
         <!-- News Grid Carousel -->
-        <div class="relative min-h-[400px]" id="news-container">
+        <div class="relative min-h-[400px]" id={`${idPrefix}-container`}>
             {
                 Array.from({ length: totalPages }).map((_, pageIndex) => (
                     <div
                         class:list={[
-                            "news-page grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-500 absolute inset-0 w-full items-stretch",
+                            "carousel-page grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-500 absolute inset-0 w-full items-stretch",
                             pageIndex === 0
                                 ? "opacity-100 relative z-10"
                                 : "opacity-0 absolute z-0 pointer-events-none",
                         ]}
                         data-page={pageIndex}
                     >
-                        {news
+                        {data
                             .slice(
                                 pageIndex * itemsPerPage,
                                 (pageIndex + 1) * itemsPerPage,
@@ -192,7 +222,7 @@ function getMoonthAndDay(dateStr: string) {
                                 const hasImage =
                                     item.images && item.images.length > 0;
                                 const coverImage = hasImage
-                                    ? item.images[0]
+                                    ? item.images![0]
                                     : null;
 
                                 return (
@@ -336,6 +366,22 @@ function getMoonthAndDay(dateStr: string) {
                                                                     />
                                                                 </svg>
                                                             )}
+                                                            {item.pillar ===
+                                                                "engagement" && (
+                                                                <svg
+                                                                    class="w-full h-full"
+                                                                    fill="none"
+                                                                    stroke="currentColor"
+                                                                    viewBox="0 0 24 24"
+                                                                >
+                                                                    <path
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round"
+                                                                        stroke-width="2"
+                                                                        d="M3 10h18M3 14h18M5 18h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2zM9 22V18m6 4V18"
+                                                                    />
+                                                                </svg>
+                                                            )}
                                                         </div>
                                                         <span
                                                             class:list={[
@@ -372,7 +418,7 @@ function getMoonthAndDay(dateStr: string) {
                                                     item.emphasis,
                                                 )}
                                             />
-                                            
+
                                             <!-- Hidden Full Content for Modal -->
                                             <div class="hidden news-full-content">
                                                 <div class="news-raw-text" set:html={highlightText(
@@ -417,234 +463,213 @@ function getMoonthAndDay(dateStr: string) {
             }
         </div>
     </div>
-</section>
 
-<!-- Lightbox Modal -->
-<div
-    id="news-lightbox"
-    class="fixed inset-0 z-50 hidden items-center justify-center bg-navy/90 backdrop-blur-sm opacity-0 transition-opacity duration-300"
->
-    <button
-        id="lightbox-close"
-        class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-50 p-2"
+    <!-- Lightbox Modal -->
+    <div
+        id={`${idPrefix}-lightbox`}
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-navy/90 backdrop-blur-sm opacity-0 transition-opacity duration-300"
     >
-        <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-        >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-    </button>
-    <img
-        id="lightbox-image"
-        src=""
-        alt="Full size"
-        class="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300"
-    />
-</div>
-
-<!-- News Detail Modal -->
-<div
-    id="news-detail-modal"
-    class="fixed inset-0 z-[60] hidden flex items-center justify-center bg-navy/90 backdrop-blur-sm opacity-0 transition-opacity duration-300 px-4"
->
-    <div 
-        class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300 flex flex-col"
-        id="news-detail-content"
-    >
-         <!-- Close Button -->
         <button
-            id="news-detail-close"
-            class="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-navy transition-colors z-20"
+            class="lightbox-close absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-50 p-2"
         >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            <svg
+                class="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
+        <img
+            class="lightbox-image max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300"
+            src=""
+            alt="Full size"
+        />
+    </div>
 
-        <!-- Modal Content -->
-        <div class="p-8">
-            <div class="flex items-center gap-3 mb-6">
-                 <span id="modal-date" class="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-sm font-semibold"></span>
-                 <span id="modal-pillar" class="hidden px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wide"></span>
-            </div>
+    <!-- News Detail Modal -->
+    <div
+        id={`${idPrefix}-detail-modal`}
+        class="fixed inset-0 z-[60] hidden flex items-center justify-center bg-navy/90 backdrop-blur-sm opacity-0 transition-opacity duration-300 px-4"
+    >
+        <div
+            class="detail-content bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300 flex flex-col"
+        >
+             <!-- Close Button -->
+            <button
+                class="detail-close absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-navy transition-colors z-20"
+            >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
 
-            <div id="modal-text" class="prose prose-blue max-w-none text-lg leading-relaxed text-gray-700 mb-8">
-            </div>
+            <!-- Modal Content -->
+            <div class="p-8">
+                <div class="flex items-center gap-3 mb-6">
+                     <span class="modal-date px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-sm font-semibold"></span>
+                     <span class="modal-pillar hidden px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wide"></span>
+                </div>
 
-            <!-- Image Gallery in Modal -->
-            <div id="modal-gallery" class="space-y-4">
+                <div class="modal-text prose prose-blue max-w-none text-lg leading-relaxed text-gray-700 mb-8">
+                </div>
+
+                <!-- Image Gallery in Modal -->
+                <div class="modal-gallery space-y-4">
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<script define:vars={{ totalPages }}>
-    // Track current page globally for accurate click handling
-    window.newsCarouselCurrentPage = 0;
+<script define:vars={{ totalPages, idPrefix }}>
+    (function () {
+        const root = document.querySelector(`[data-carousel-id="${idPrefix}"]`);
+        if (!root) return;
 
-    // Lightbox Global Function
-    window.openLightbox = (src) => {
-        const lightbox = document.getElementById("news-lightbox");
-        const img = document.getElementById("lightbox-image");
-        if (lightbox && img) {
-            img.src = src;
+        const lightbox = root.querySelector(`#${idPrefix}-lightbox`);
+        const lightboxImg = lightbox?.querySelector(".lightbox-image");
+        const lightboxClose = lightbox?.querySelector(".lightbox-close");
+        const detailModal = root.querySelector(`#${idPrefix}-detail-modal`);
+        const detailContent = detailModal?.querySelector(".detail-content");
+        const detailClose = detailModal?.querySelector(".detail-close");
+
+        let currentPage = 0;
+
+        function openLightbox(src) {
+            if (!lightbox || !lightboxImg) return;
+            lightboxImg.src = src;
             lightbox.classList.remove("hidden");
-            // Small delay for fade in
             requestAnimationFrame(() => {
                 lightbox.classList.remove("opacity-0");
-                img.classList.remove("scale-95");
-                img.classList.add("scale-100");
+                lightboxImg.classList.remove("scale-95");
+                lightboxImg.classList.add("scale-100");
             });
         }
-    };
 
-    // News Detail Modal Logic
-    const newsModal = document.getElementById("news-detail-modal");
-    const newsModalContent = document.getElementById("news-detail-content");
-    const newsModalClose = document.getElementById("news-detail-close");
-    
-    function openNewsModal(article) {
-         if (!newsModal || !newsModalContent) return;
-         
-         // Extract data
-         const fullContentDiv = article.querySelector('.news-full-content');
-         if(!fullContentDiv) return;
-
-         const rawText = fullContentDiv.querySelector('.news-raw-text').innerHTML;
-         const dateDiv = fullContentDiv.querySelector('.news-meta-date');
-         const pillarDiv = fullContentDiv.querySelector('.news-meta-pillar');
-         const pillar = pillarDiv.dataset.pillar;
-         const pillarLabel = pillarDiv.dataset.label;
-         const images = fullContentDiv.querySelectorAll('.hidden-news-img');
-
-         // Populate Modal
-         document.getElementById('modal-text').innerHTML = rawText;
-         
-         // Date
-         const dateStr = `${dateDiv.dataset.month} ${dateDiv.dataset.day}, ${dateDiv.dataset.year}`;
-         document.getElementById('modal-date').textContent = dateStr;
-
-         // Pillar
-         const pillarSpan = document.getElementById('modal-pillar');
-         // Simple mapping for colors (reusing what we know from pillarConfig logic roughly, or just general styles)
-         // Since we don't have the full config object here easily without duplication, let's just make it look nice generic styling or add classes dynamically
-         pillarSpan.className = "hidden px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wide"; // reset
-         if (pillar) {
-             pillarSpan.classList.remove('hidden');
-             pillarSpan.textContent = pillarLabel || pillar;
-             // Add some color based on pillar name
-             if (pillar.includes('perception')) pillarSpan.classList.add('bg-blue-100', 'text-blue-700');
-             else if (pillar.includes('inspection')) pillarSpan.classList.add('bg-emerald-100', 'text-emerald-700');
-             else if (pillar.includes('robotics')) pillarSpan.classList.add('bg-purple-100', 'text-purple-700');
-             else pillarSpan.classList.add('bg-orange-100', 'text-orange-700');
-         } else {
-             pillarSpan.classList.add('hidden');
-         }
-
-         // Images
-         const gallery = document.getElementById('modal-gallery');
-         gallery.innerHTML = '';
-         images.forEach(img => {
-             const newImg = document.createElement('img');
-             newImg.src = img.src;
-             newImg.className = "w-full rounded-xl shadow-md border border-gray-100";
-             gallery.appendChild(newImg);
-         });
-
-         // Show Modal
-         newsModal.classList.remove("hidden");
-         document.body.style.overflow = 'hidden'; // Prevent background scroll
-         requestAnimationFrame(() => {
-             newsModal.classList.remove("opacity-0");
-             newsModalContent.classList.remove("scale-95");
-             newsModalContent.classList.add("scale-100");
-         });
-    }
-
-    function closeNewsModal() {
-        if (!newsModal) return;
-        newsModal.classList.add("opacity-0");
-        if (newsModalContent) {
-            newsModalContent.classList.remove("scale-100");
-            newsModalContent.classList.add("scale-95");
-        }
-        setTimeout(() => {
-            newsModal.classList.add("hidden");
-            document.body.style.overflow = ''; // Restore scroll
-        }, 300);
-    }
-
-    newsModalClose?.addEventListener('click', closeNewsModal);
-    
-    // Wire up Read More buttons
-    document.addEventListener("click", (e) => {
-        const btn = e.target.closest(".read-more-btn");
-        if (btn) {
-            const article = btn.closest("article");
-            if (article) openNewsModal(article);
-        }
-    });
-
-    // Close on outside click
-     newsModal?.addEventListener("click", (e) => {
-        if (e.target === newsModal) closeNewsModal();
-    });
-
-    // Close on Esc
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-             closeNewsModal();
-             // Also close lightbox if open (existing logic covers this but good to be safe)
-        }
-    });
-
-    // Event delegation for lightbox triggers
-    document.addEventListener("click", (e) => {
-        const trigger = e.target.closest(".lightbox-trigger");
-        if (!trigger) return;
-
-        // Check if the trigger's page is the active one
-        const parentPage = trigger.closest(".news-page");
-        if (!parentPage) return;
-
-        // Use the global current page variable for accurate comparison
-        const pageIndex = parseInt(parentPage.dataset.page, 10);
-        if (pageIndex === window.newsCarouselCurrentPage) {
-            const imageSrc = trigger.dataset.image;
-            if (imageSrc) {
-                window.openLightbox(imageSrc);
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.classList.add("opacity-0");
+            if (lightboxImg) {
+                lightboxImg.classList.remove("scale-100");
+                lightboxImg.classList.add("scale-95");
             }
+            setTimeout(() => lightbox.classList.add("hidden"), 300);
         }
-    });
 
-    document.addEventListener("DOMContentLoaded", () => {
-        let currentPage = 0;
-        const total = totalPages;
+        function openDetailModal(article) {
+            if (!detailModal) return;
+            const fullContentDiv = article.querySelector(".news-full-content");
+            if (!fullContentDiv) return;
 
-        const pages = document.querySelectorAll(".news-page");
-        const prevBtn = document.getElementById("news-prev");
-        const nextBtn = document.getElementById("news-next");
-        const mobileDots = document.querySelectorAll(".mobile-dot");
+            const rawText = fullContentDiv.querySelector(".news-raw-text").innerHTML;
+            const dateDiv = fullContentDiv.querySelector(".news-meta-date");
+            const pillarDiv = fullContentDiv.querySelector(".news-meta-pillar");
+            const pillar = pillarDiv.dataset.pillar;
+            const pillarLabel = pillarDiv.dataset.label;
+            const images = fullContentDiv.querySelectorAll(".hidden-news-img");
+
+            detailModal.querySelector(".modal-text").innerHTML = rawText;
+
+            const dateStr = `${dateDiv.dataset.month} ${dateDiv.dataset.day}, ${dateDiv.dataset.year}`;
+            detailModal.querySelector(".modal-date").textContent = dateStr;
+
+            const pillarSpan = detailModal.querySelector(".modal-pillar");
+            pillarSpan.className =
+                "modal-pillar hidden px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wide";
+            if (pillar) {
+                pillarSpan.classList.remove("hidden");
+                pillarSpan.textContent = pillarLabel || pillar;
+                if (pillar.includes("perception"))
+                    pillarSpan.classList.add("bg-blue-100", "text-blue-700");
+                else if (pillar.includes("inspection"))
+                    pillarSpan.classList.add("bg-emerald-100", "text-emerald-700");
+                else if (pillar.includes("robotics"))
+                    pillarSpan.classList.add("bg-purple-100", "text-purple-700");
+                else if (pillar.includes("engagement"))
+                    pillarSpan.classList.add("bg-rose-100", "text-rose-700");
+                else pillarSpan.classList.add("bg-orange-100", "text-orange-700");
+            } else {
+                pillarSpan.classList.add("hidden");
+            }
+
+            const gallery = detailModal.querySelector(".modal-gallery");
+            gallery.innerHTML = "";
+            images.forEach((img) => {
+                const newImg = document.createElement("img");
+                newImg.src = img.src;
+                newImg.className =
+                    "w-full rounded-xl shadow-md border border-gray-100";
+                gallery.appendChild(newImg);
+            });
+
+            detailModal.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+            requestAnimationFrame(() => {
+                detailModal.classList.remove("opacity-0");
+                detailContent?.classList.remove("scale-95");
+                detailContent?.classList.add("scale-100");
+            });
+        }
+
+        function closeDetailModal() {
+            if (!detailModal) return;
+            detailModal.classList.add("opacity-0");
+            if (detailContent) {
+                detailContent.classList.remove("scale-100");
+                detailContent.classList.add("scale-95");
+            }
+            setTimeout(() => {
+                detailModal.classList.add("hidden");
+                document.body.style.overflow = "";
+            }, 300);
+        }
+
+        detailClose?.addEventListener("click", closeDetailModal);
+        lightboxClose?.addEventListener("click", closeLightbox);
+
+        // Open detail modal on card click (scoped to this carousel)
+        root.addEventListener("click", (e) => {
+            const btn = e.target.closest(".read-more-btn");
+            if (btn && root.contains(btn)) {
+                const article = btn.closest("article");
+                if (article) openDetailModal(article);
+            }
+        });
+
+        detailModal?.addEventListener("click", (e) => {
+            if (e.target === detailModal) closeDetailModal();
+        });
+
+        lightbox?.addEventListener("click", (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeDetailModal();
+                closeLightbox();
+            }
+        });
+
+        // Carousel navigation (scoped to this carousel)
+        const container = root.querySelector(`#${idPrefix}-container`);
+        const pages = root.querySelectorAll(".carousel-page");
+        const prevBtn = root.querySelector(`#${idPrefix}-prev`);
+        const nextBtn = root.querySelector(`#${idPrefix}-next`);
+        const mobileDots = root.querySelectorAll(".mobile-dot");
 
         function updateView(newIndex) {
-            // Validate index
-            if (newIndex < 0 || newIndex >= total) return;
-
+            if (newIndex < 0 || newIndex >= totalPages) return;
             currentPage = newIndex;
-            // Sync global variable for lightbox click handling
-            window.newsCarouselCurrentPage = currentPage;
 
-            // Update Pages
             pages.forEach((page, i) => {
                 const isCurrent = i === currentPage;
-                // We use opacity for transition, z-index for interaction
                 if (isCurrent) {
                     page.classList.remove(
                         "opacity-0",
@@ -664,60 +689,56 @@ function getMoonthAndDay(dateStr: string) {
                 }
             });
 
-            // Update Desktop Buttons
             if (prevBtn) prevBtn.disabled = currentPage === 0;
-            if (nextBtn) nextBtn.disabled = currentPage === total - 1;
+            if (nextBtn) nextBtn.disabled = currentPage === totalPages - 1;
 
-            // Update Pagination Dots
             mobileDots.forEach((dot, i) => {
-                const span = dot.querySelector('span');
+                const span = dot.querySelector("span");
                 if (span) {
-                    if (i === currentPage) {
-                        span.setAttribute("data-active", "true");
-                    } else {
-                        span.setAttribute("data-active", "false");
-                    }
+                    span.setAttribute("data-active", i === currentPage ? "true" : "false");
                 }
             });
         }
 
-        // Event Listeners
         prevBtn?.addEventListener("click", () => updateView(currentPage - 1));
         nextBtn?.addEventListener("click", () => updateView(currentPage + 1));
 
         mobileDots.forEach((dot) => {
             dot.addEventListener("click", (e) => {
-                // Use closest to get the button element with data-index
-                const btn = e.target.closest('.mobile-dot');
+                const btn = e.target.closest(".mobile-dot");
                 if (btn) {
                     const index = parseInt(btn.dataset.index);
-                    if (!isNaN(index)) {
-                        updateView(index);
-                    }
+                    if (!isNaN(index)) updateView(index);
                 }
             });
         });
 
-        // ===== Auto-Cycling Logic (First 2 Pages Only) =====
-        const AUTO_CYCLE_INTERVAL = 10000; // 10 seconds (slower for better UX)
-        const AUTO_CYCLE_MAX_PAGE = 1; // Cycle between page 0 and 1
+        // Lightbox triggers (scoped)
+        root.addEventListener("click", (e) => {
+            const trigger = e.target.closest(".lightbox-trigger");
+            if (!trigger || !root.contains(trigger)) return;
+            const parentPage = trigger.closest(".carousel-page");
+            if (!parentPage) return;
+            const pageIndex = parseInt(parentPage.dataset.page, 10);
+            if (pageIndex === currentPage) {
+                const imageSrc = trigger.dataset.image;
+                if (imageSrc) openLightbox(imageSrc);
+            }
+        });
+
+        // Auto-cycle (first 2 pages only)
+        const AUTO_CYCLE_INTERVAL = 10000;
+        const AUTO_CYCLE_MAX_PAGE = 1;
         let autoPlayTimer = null;
         let isPaused = false;
-        let interactionTimeout = null; // Timer to resume after user interaction
+        let interactionTimeout = null;
 
         function startAutoCycle() {
             if (autoPlayTimer) clearInterval(autoPlayTimer);
             autoPlayTimer = setInterval(() => {
-                // Check if lightbox or news modal is open
-                const lightbox = document.getElementById("news-lightbox");
-                const newsModal = document.getElementById("news-detail-modal");
-                
                 const isLightboxOpen = lightbox && !lightbox.classList.contains("hidden");
-                const isNewsModalOpen = newsModal && !newsModal.classList.contains("hidden");
-
-                if (isPaused || isLightboxOpen || isNewsModalOpen) return;
-
-                // Cycle only between pages 0 and 1
+                const isDetailOpen = detailModal && !detailModal.classList.contains("hidden");
+                if (isPaused || isLightboxOpen || isDetailOpen) return;
                 const nextPage =
                     currentPage >= AUTO_CYCLE_MAX_PAGE ? 0 : currentPage + 1;
                 updateView(nextPage);
@@ -729,93 +750,51 @@ function getMoonthAndDay(dateStr: string) {
         }
 
         function resumeAutoCycle() {
-            // Only resume if not in a user-interaction pause state (handled by handleUserInteraction)
-            if (!interactionTimeout) {
-                isPaused = false;
-            }
+            if (!interactionTimeout) isPaused = false;
         }
 
-        // Pause for a longer specified duration after explicit user interaction
         function handleUserInteraction() {
             isPaused = true;
             if (interactionTimeout) clearTimeout(interactionTimeout);
-            
-            // Resume regular checking after 15 seconds of inactivity
             interactionTimeout = setTimeout(() => {
                 isPaused = false;
                 interactionTimeout = null;
             }, 15000);
         }
 
-        // Pause on hover over the news container
-        const newsContainer = document.getElementById("news-container");
-        newsContainer?.addEventListener("mouseenter", pauseAutoCycle);
-        newsContainer?.addEventListener("mouseleave", resumeAutoCycle);
-
-        // Hook up user interaction events to the pause logic
+        container?.addEventListener("mouseenter", pauseAutoCycle);
+        container?.addEventListener("mouseleave", resumeAutoCycle);
         prevBtn?.addEventListener("click", handleUserInteraction);
         nextBtn?.addEventListener("click", handleUserInteraction);
-        mobileDots.forEach(dot => dot.addEventListener("click", handleUserInteraction));
+        mobileDots.forEach((dot) =>
+            dot.addEventListener("click", handleUserInteraction),
+        );
 
-        // Start auto-cycling on page load
-        startAutoCycle();
-        // ===== End Auto-Cycling Logic =====
+        if (totalPages > 1) startAutoCycle();
 
-        // ===== Touch Swipe Support for Mobile =====
+        // Touch swipe support
         let touchStartX = 0;
         let touchEndX = 0;
-        const SWIPE_THRESHOLD = 50; // minimum distance for swipe
+        const SWIPE_THRESHOLD = 50;
 
-        newsContainer?.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
+        container?.addEventListener(
+            "touchstart",
+            (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            },
+            { passive: true },
+        );
 
-        newsContainer?.addEventListener('touchend', (e) => {
+        container?.addEventListener("touchend", (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
             const diff = touchStartX - touchEndX;
             if (Math.abs(diff) > SWIPE_THRESHOLD) {
-                if (diff > 0) {
-                    // Swiped left → next page
-                    updateView(currentPage + 1);
-                } else {
-                    // Swiped right → previous page
-                    updateView(currentPage - 1);
-                }
-                handleUserInteraction(); // Pause auto-cycle after swipe
+                if (diff > 0) updateView(currentPage + 1);
+                else updateView(currentPage - 1);
+                handleUserInteraction();
             }
-        }
-        // ===== End Touch Swipe Support =====
-
-        // Lightbox Close Logic
-        const lightbox = document.getElementById("news-lightbox");
-        const lightboxClose = document.getElementById("lightbox-close");
-
-        const closeLightbox = () => {
-            if (!lightbox) return;
-            lightbox.classList.add("opacity-0");
-            const img = document.getElementById("lightbox-image");
-            if (img) {
-                img.classList.remove("scale-100");
-                img.classList.add("scale-95");
-            }
-            setTimeout(() => {
-                lightbox.classList.add("hidden");
-            }, 300);
-        };
-
-        lightboxClose?.addEventListener("click", closeLightbox);
-        lightbox?.addEventListener("click", (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") closeLightbox();
         });
 
-        // Initialize state
         updateView(0);
-    });
+    })();
 </script>

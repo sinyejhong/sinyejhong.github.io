@@ -4,6 +4,8 @@ import NewsCarousel from "../components/NewsCarousel.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import publications from "../data/publications.json";
 import awards from "../data/awards.json";
+import news from "../data/news.json";
+import engagements from "../data/engagements.json";
 
 import projects from "../data/projects.json";
 import members from "../data/members.json";
@@ -641,8 +643,21 @@ const awardsCount = personalHonorsCount + studentMeritCount;
 		</div>
 	</section>
 
-	<!-- News Carousel -->
-	<NewsCarousel />
+	<!-- Awards & Highlights -->
+	<NewsCarousel
+		data={news}
+		title="Awards & Highlights"
+		subtitle="Lab achievements, recognitions, and milestones"
+		idPrefix="news"
+	/>
+
+	<!-- Talks & Engagements -->
+	<NewsCarousel
+		data={engagements}
+		title="Talks & Engagements"
+		subtitle="Invited talks, session chairs, and academic outreach"
+		idPrefix="engagements"
+	/>
 
 	<style>
 		/* Fade-in-up animation for hero content */

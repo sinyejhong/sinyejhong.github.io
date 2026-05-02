@@ -1,0 +1,66 @@
+[
+    {
+        "text": "Dr. Sin-Ye Jhong delivered an invited talk titled \"Compounding Research from Sophomore Year: Choosing the Right Mentor, Planning Strategically, and Turning Each Step into the Next Opportunity\" at the College of Electrical Engineering and Computer Science, National Ilan University (NIU)",
+        "date": "2026-04-30",
+        "highlights": [
+            "invited talk"
+        ],
+        "images": [
+            "/images/engagements/2026NIU_Talk1.jpg",
+            "/images/engagements/2026NIU_Talk2.jpg"
+        ],
+        "pillar": "engagement",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "Dr. Sin-Ye Jhong served as Session Chair for the \"Best Paper Award Contest\" at the 2026 Information Technology and Applications Conference (ITAC 2026) [2026資訊科技應用國際學術研討會]",
+        "date": "2026-04-29",
+        "highlights": [
+            "Session Chair",
+            "Best Paper Award Contest"
+        ],
+        "images": [
+            "/images/engagements/Sessionchair_ITAC2026.jpg",
+            "/images/engagements/Sessionchair_ITAC2026_2.jpg"
+        ],
+        "pillar": "engagement",
+        "links": {
+            "2026 Information Technology and Applications Conference (ITAC 2026)": "https://itac2026.gm.cute.edu.tw/"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "Dr. Sin-Ye Jhong delivered an invited talk titled \"From Perception to Decision: How Generative AI and AI Agents Are Pioneering the New Era of Autonomous Driving\" at the Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)",
+        "date": "2026-03-16",
+        "highlights": [
+            "invited talk"
+        ],
+        "images": [
+            "/images/engagements/NTUST_Talk1.jpg",
+            "/images/engagements/NTUST_Talk2.jpg"
+        ],
+        "pillar": "engagement",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "Dr. Sin-Ye Jhong delivered an invited talk titled \"From Perception to Decision: How Generative AI and AI Agents Are Pioneering the New Era of Autonomous Driving\" at the Dept. of Computer Science and Information Engineering, National Ilan University (NIU)",
+        "date": "2025-11-19",
+        "highlights": [
+            "invited talk"
+        ],
+        "images": [
+            "/images/engagements/2025NIU_Talk1.jpg",
+            "/images/engagements/2025NIU_Talk2.jpg"
+        ],
+        "pillar": "engagement",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    }
+]
