@@ -256,6 +256,8 @@ function getMoonthAndDay(dateStr: string) {
                                                 <img
                                                     src={coverImage}
                                                     alt="News cover"
+                                                    loading={pageIndex === 0 ? "eager" : "lazy"}
+                                                    decoding="async"
                                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                                 />
                                             ) : (
