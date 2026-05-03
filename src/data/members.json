@@ -89,5 +89,15 @@
         "status": "current",
         "email": "thomasrcchien@gmail.com",
         "research_group": "Industrial AIoT"
+    },
+    {
+        "id": 7,
+        "name": "Chen-Wei Yang",
+        "photo": "/images/members/Whenweiyang.jpg",
+        "role": "Master's Student",
+        "topic": "Embodied AI",
+        "status": "current",
+        "email": "ycw23062@gmail.com",
+        "research_group": "Embodied Intelligence"
     }
 ]
