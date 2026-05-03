@@ -17,6 +17,14 @@
     },
     {
         "id": 3,
+        "image": "/images/Lab/Lab_Springbanquet.jpg",
+        "title": "Lab Spring Banquet 2026",
+        "description": "ASI² Lab members gather at Xin Dian Hotpot (辛殿麻辣鍋) for a Spring Banquet dinner, celebrating team achievements and strengthening lab camaraderie.",
+        "category": "Activity",
+        "date": "2026-03-30"
+    },
+    {
+        "id": 4,
         "image": "/images/news/NECDE2026_1.jpg",
         "title": "Multiple Awards at NEDCC 2026",
         "description": "ASI² Lab team wins Third Prize in Electronics, Honorable Mention in Information & Communication, and the IEEE Special Award (Grand Prize) at the National Electronic Design Creative Competition.",
@@ -24,7 +32,7 @@
         "date": "2026-03-28"
     },
     {
-        "id": 4,
+        "id": 5,
         "image": "/images/news/Automation2025_Student_1.jpg",
         "title": "Top Honors at Automation 2025",
         "description": "ASI² Lab team wins First Prize in the Best Student Paper Award and Second Prize in the Best Paper Award at the International Conference on Automation Technology (Automation).",
@@ -32,7 +40,7 @@
         "date": "2025-11-30"
     },
     {
-        "id": 5,
+        "id": 6,
         "image": "/images/news/NCHU2025_1.jpg",
         "title": "1st Place at NCHU Capstone Competition",
         "description": "ASI² Lab team wins 1st Place and NT$200,000 prize at the NCHU Capstone Competition for AI Empowerment and Robotics Applications in Manufacturing.",
@@ -40,7 +48,7 @@
         "date": "2025-11-22"
     },
     {
-        "id": 6,
+        "id": 7,
         "image": "/images/news/CACS2025_1.jpg",
         "title": "Best Paper Award at CACS 2025",
         "description": "ASI² Lab team wins Second Prize in the Best Paper Award at the International Automatic Control Conference (CACS).",
@@ -48,7 +56,7 @@
         "date": "2025-11-08"
     },
     {
-        "id": 7,
+        "id": 8,
         "image": "/images/news/InnoServe2025_1.jpg",
         "title": "3rd Place at InnoServe Awards",
         "description": "ASI² Lab team secures 3rd Place in the Industry-Academia Collaboration category at the International ICT Innovative Services Awards.",
@@ -56,7 +64,7 @@
         "date": "2025-11-01"
     },
     {
-        "id": 8,
+        "id": 9,
         "image": "/images/engagements/Novatek1.jpg",
         "title": "Novatek Industry Visit",
         "description": "Novatek Technology representatives visit ASI² Lab for an industry insights and best practices sharing session, followed by a recruitment event offering internship opportunities and employee referrals to lab members.",
@@ -64,7 +72,7 @@
         "date": "2025-10-28"
     },
     {
-        "id": 9,
+        "id": 10,
         "image": "/images/news/ARIS2025_1.jpg",
         "title": "Best Paper Honorable Mention at ARIS 2025",
         "description": "ASI² Lab team receives Honorable Mention in the Best Paper Award at the International Conference on Advanced Robotics and Intelligent Systems (ARIS).",
@@ -72,7 +80,7 @@
         "date": "2025-08-19"
     },
     {
-        "id": 10,
+        "id": 11,
         "image": "/images/news/AVSS2025_1.jpg",
         "title": "Outstanding Presentation Award at IEEE AVSS 2025",
         "description": "ASI² Lab team wins the Outstanding Presentation Award at the IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS).",
@@ -80,7 +88,7 @@
         "date": "2025-08-13"
     },
     {
-        "id": 11,
+        "id": 12,
         "image": "/images/Logo2.png",
         "title": "ASI² Lab Established",
         "description": "ASI² Lab officially established at the Graduate Institute of Intelligent Manufacturing Technology, NTUST.",
@@ -88,7 +96,7 @@
         "date": "2025-08-01"
     },
     {
-        "id": 12,
+        "id": 13,
         "image": "/images/Lab/AMR.jpg",
         "title": "Autonomous Mobile Robot (AMR)",
         "description": "Lab-developed Autonomous Mobile Robot for intelligent navigation and logistics automation research.",
@@ -96,7 +104,7 @@
         "date": "2025-08-01"
     },
     {
-        "id": 13,
+        "id": 14,
         "image": "/images/Lab/Car.jpg",
         "title": "Intelligent Vehicle Platform",
         "description": "Smart vehicle developed in collaboration with ARTC (Automotive Research & Testing Center) for autonomous driving research.",
