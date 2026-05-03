@@ -13,7 +13,9 @@ import members from "../data/members.json";
 // Calculate dynamic counts
 const publicationCount = publications.length;
 const projectsCount = projects.length;
-const membersCount = members.length;
+const membersCount = members.filter(
+	(m) => m.status === "director" || m.status === "current",
+).length;
 
 // Awards Calculation:
 // Personal Honors (All non-student-merit) + Student Merit (Only displayed on student awards page, >= 2025)
