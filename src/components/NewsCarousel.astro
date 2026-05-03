@@ -130,6 +130,20 @@ const pillarConfig: Record<
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
+    thesis_committee: {
+        label: "Thesis Committee",
+        text: "text-sky-700",
+        href: "/about#professional-activities",
+        spacingClass: "space-y-1",
+        spacing: "pr-1 pb-1 -mt-2",
+    },
+    lab_visit: {
+        label: "Lab Visit",
+        text: "text-indigo-700",
+        href: "/about#professional-activities",
+        spacingClass: "space-y-1",
+        spacing: "pr-1 pb-1 -mt-2",
+    },
 };
 
 // Helper: Date Formatting
@@ -407,6 +421,38 @@ function getMoonthAndDay(dateStr: string) {
                                                                     />
                                                                 </svg>
                                                             )}
+                                                            {item.pillar ===
+                                                                "thesis_committee" && (
+                                                                <svg
+                                                                    class="w-full h-full"
+                                                                    fill="none"
+                                                                    stroke="currentColor"
+                                                                    viewBox="0 0 24 24"
+                                                                >
+                                                                    <path
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round"
+                                                                        stroke-width="2"
+                                                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                                                    />
+                                                                </svg>
+                                                            )}
+                                                            {item.pillar ===
+                                                                "lab_visit" && (
+                                                                <svg
+                                                                    class="w-full h-full"
+                                                                    fill="none"
+                                                                    stroke="currentColor"
+                                                                    viewBox="0 0 24 24"
+                                                                >
+                                                                    <path
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round"
+                                                                        stroke-width="2"
+                                                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                                                    />
+                                                                </svg>
+                                                            )}
                                                         </div>
                                                         <span
                                                             class:list={[
@@ -456,7 +502,7 @@ function getMoonthAndDay(dateStr: string) {
                                                 <div class="news-meta-pillar" data-pillar={item.pillar} data-label={item.pillar && pillarConfig[item.pillar] ? pillarConfig[item.pillar].label : ''}></div>
                                                 <div class="news-images">
                                                     {item.images && item.images.map(img => (
-                                                        <img src={img} class="hidden-news-img" />
+                                                        <span class="hidden-news-img" data-src={img}></span>
                                                     ))}
                                                 </div>
                                             </div>
@@ -617,6 +663,8 @@ function getMoonthAndDay(dateStr: string) {
                     academic: ["bg-orange-100", "text-orange-700"],
                     invited_talk: ["bg-rose-100", "text-rose-700"],
                     session_chair: ["bg-amber-100", "text-amber-700"],
+                    thesis_committee: ["bg-sky-100", "text-sky-700"],
+                    lab_visit: ["bg-indigo-100", "text-indigo-700"],
                 };
                 const colors = pillarColors[pillar] || [
                     "bg-orange-100",
@@ -629,9 +677,12 @@ function getMoonthAndDay(dateStr: string) {
 
             const gallery = detailModal.querySelector(".modal-gallery");
             gallery.innerHTML = "";
-            images.forEach((img) => {
+            images.forEach((el) => {
+                const src = el.dataset.src;
+                if (!src) return;
                 const newImg = document.createElement("img");
-                newImg.src = img.src;
+                newImg.src = src;
+                newImg.loading = "lazy";
                 newImg.className =
                     "w-full rounded-xl shadow-md border border-gray-100";
                 gallery.appendChild(newImg);
@@ -664,6 +715,8 @@ function getMoonthAndDay(dateStr: string) {
 
         // Open detail modal on card click (scoped to this carousel)
         root.addEventListener("click", (e) => {
+            // Skip if click landed on an inline link inside the card
+            if (e.target.closest("a")) return;
             const btn = e.target.closest(".read-more-btn");
             if (btn && root.contains(btn)) {
                 const article = btn.closest("article");

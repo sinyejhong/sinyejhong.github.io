@@ -34,6 +34,23 @@
         ]
     },
     {
+        "text": "Dr. Sin-Ye Jhong hosted a delegation from the Industrial Technology Research Institute (ITRI) [工業技術研究院] at TaiwanTech Hwa Hsia Campus, representing the Smart Electric Vehicle (SEV) Research Center to share lab research outcomes and ongoing project progress",
+        "date": "2026-04-09",
+        "highlights": [
+            "Industrial Technology Research Institute (ITRI)",
+            "Smart Electric Vehicle (SEV) Research Center"
+        ],
+        "images": [
+            "/images/engagements/ITRI1.jpg",
+            "/images/engagements/ITRI2.jpg",
+            "/images/engagements/ITRI3.jpg"
+        ],
+        "pillar": "lab_visit",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
         "text": "Dr. Sin-Ye Jhong delivered an invited talk titled \"From Perception to Decision: How Generative AI and AI Agents Are Pioneering the New Era of Autonomous Driving\" at the Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)",
         "date": "2026-03-16",
         "highlights": [
@@ -59,6 +76,53 @@
             "/images/engagements/2025NIU_Talk2.jpg"
         ],
         "pillar": "invited_talk",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "Dr. Sin-Ye Jhong hosted Novatek Technology representatives at ASI² Lab for an industry insights and best practices sharing session, followed by a recruitment event with refreshments offering internship opportunities and employee referrals to lab members",
+        "date": "2025-10-28",
+        "highlights": [
+            "industry insights",
+            "recruitment event"
+        ],
+        "images": [
+            "/images/engagements/Novatek1.jpg",
+            "/images/engagements/Novatek2.jpg"
+        ],
+        "pillar": "lab_visit",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "Dr. Sin-Ye Jhong served as a Master's Thesis Committee Member at the Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)",
+        "date": "2025-07-09",
+        "highlights": [
+            "Master's Thesis Committee Member"
+        ],
+        "images": [
+            "/images/engagements/NTUST_master_thesis1.jpg",
+            "/images/engagements/NTUST_master_thesis2.jpg",
+            "/images/engagements/NTUST_master_thesis3.jpg"
+        ],
+        "pillar": "thesis_committee",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "Dr. Sin-Ye Jhong served as a Master's Thesis Committee Member at the Dept. of Computer Science and Information Engineering, National Ilan University (NIU)",
+        "date": "2025-06-09",
+        "highlights": [
+            "Master's Thesis Committee Member"
+        ],
+        "images": [
+            "/images/engagements/NIU_master_thesis.jpg",
+            "/images/engagements/NIU_master_thesis2.jpg"
+        ],
+        "pillar": "thesis_committee",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
         ]

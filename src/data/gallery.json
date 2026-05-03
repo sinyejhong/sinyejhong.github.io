@@ -26,19 +26,5 @@
         "title": "Intelligent Vehicle Platform",
         "description": "Smart vehicle developed in collaboration with ARTC (Automotive Research & Testing Center) for autonomous driving research.",
         "category": "Equipment"
-    },
-    {
-        "id": 5,
-        "image": "/images/Lab/Novatek1.jpg",
-        "title": "Industry Knowledge Sharing",
-        "description": "Novatek Technology representatives visiting ASI² Lab for an industry insights and best practices sharing session.",
-        "category": "Activity"
-    },
-    {
-        "id": 6,
-        "image": "/images/Lab/Novatek2.jpg",
-        "title": "Novatek Recruitment Event",
-        "description": "Novatek Technology hosting a recruitment event with refreshments, offering internship opportunities and employee referrals.",
-        "category": "Activity"
     }
 ]
