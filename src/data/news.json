@@ -29,7 +29,7 @@
         "images": [
             "/images/news/NECDE2026_1.jpg",
             "/images/news/NECDE2026_third.jpg",
-            "/images/news/NECDE2026_honoable.jpg",
+            "/images/news/NECDE2026_honorable.jpg",
             "/images/news/NECDE2026_IEEE.jpg"
         ],
         "pillar": "robotics",
@@ -55,7 +55,7 @@
         ],
         "pillar": "robotics",
         "links": {
-            "International Conference on Automation Technology (Automation)": "https://cacs2025.web.nycu.edu.tw/"
+            "International Conference on Automation Technology (Automation)": "https://automation2025.nsysu.edu.tw/"
         },
         "emphasis": [
             "ASI² Lab team"
@@ -93,7 +93,7 @@
         ],
         "pillar": "perception",
         "links": {
-            "International Automatic Control Conference (CACS)": "https://cacs2025.nsysu.edu.tw/"
+            "International Automatic Control Conference (CACS)": "https://cacs2025.web.nycu.edu.tw/"
         },
         "emphasis": [
             "ASI² Lab team"

@@ -140,11 +140,21 @@ const areaKey = getAreaKey(research_group);
 const areaConfig = areaKey
     ? researchAreaConfig[areaKey as keyof typeof researchAreaConfig]
     : null;
+
+// Card is only navigable when there's a destination (director -> /about,
+// students -> their research area). Otherwise it stays non-interactive.
+const navUrl = isDirector ? "/about" : areaConfig ? areaConfig.url : null;
+const navLabel = isDirector
+    ? "View lab director profile"
+    : areaConfig
+      ? `Go to ${areaConfig.label} research`
+      : null;
 ---
 
 <div
     class:list={[
-        "group relative overflow-hidden transition-all duration-300 isolate cursor-pointer member-card",
+        "group relative overflow-hidden transition-all duration-300 isolate member-card",
+        navUrl && "cursor-pointer",
         isDirector
             ? "bg-white rounded-2xl shadow-sm hover:-translate-y-1 py-5 px-4 border-2 h-full flex flex-col hover:shadow-xl border-amber-200 hover:border-amber-500 hover:bg-amber-50/30"
             : "bg-white rounded-2xl shadow-sm hover:-translate-y-1 p-4 border-2 h-full flex flex-col hover:shadow-xl border-gray-200",
@@ -158,11 +168,15 @@ const areaConfig = areaKey
             areaKey === "embodied" &&
             "hover:border-purple-700 hover:bg-purple-50/50",
     ]}
-    onclick={isDirector
-        ? "if(!event.target.closest('a')) window.location.href='/about'"
-        : areaConfig
-          ? `if(!event.target.closest('a')) window.location.href='${areaConfig.url}'`
-          : undefined}
+    role={navUrl ? "link" : undefined}
+    tabindex={navUrl ? "0" : undefined}
+    aria-label={navLabel ?? undefined}
+    onclick={navUrl
+        ? `if(!event.target.closest('a')) window.location.href='${navUrl}'`
+        : undefined}
+    onkeydown={navUrl
+        ? `if(event.key==='Enter'&&!event.target.closest('a')) window.location.href='${navUrl}'`
+        : undefined}
 >
     <!-- Research Watermark (Publication Style) -->
     {

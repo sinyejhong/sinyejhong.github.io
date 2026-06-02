@@ -86,8 +86,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
           <!-- Mobile Menu Button -->
           <button
             id="mobile-menu-btn"
-            class="lg:hidden p-2 rounded-lg text-navy hover:bg-gray-bg transition-colors"
+            class="lg:hidden p-3 -mr-1 rounded-lg text-navy hover:bg-gray-bg transition-colors"
             aria-label="Toggle menu"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
           >
             <svg
               class="w-6 h-6"
@@ -268,7 +270,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
                 <span
                   >C216, 2F, General Education Building,<br />
                   TaiwanTech Hwa Hsia Campus,<br />
-                  NTUST, Taipei, Taiwan</span
+                  NTUST, New Taipei City, Taiwan</span
                 >
               </li>
             </ul>
@@ -311,7 +313,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
       const mobileMenu = document.getElementById("mobile-menu");
 
       menuBtn?.addEventListener("click", () => {
-        mobileMenu?.classList.toggle("hidden");
+        const isHidden = mobileMenu?.classList.toggle("hidden");
+        menuBtn.setAttribute("aria-expanded", isHidden ? "false" : "true");
       });
 
       // Mailto click handler: Copy email + Show toast

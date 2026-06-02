@@ -65,7 +65,11 @@ if (date) {
 <!-- Clickable Card that opens lightbox -->
 <div
     class="gallery-card group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100 hover:border-gray-200"
+    role="button"
+    tabindex="0"
+    aria-label={`Open “${title}” — view ${photoCount > 1 ? photoCount + " photos" : "photo"}`}
     onclick={`document.getElementById('${uniqueId}').showModal(); document.body.style.overflow = 'hidden';`}
+    onkeydown={`if(event.key==='Enter'||event.key===' '){event.preventDefault(); document.getElementById('${uniqueId}').showModal(); document.body.style.overflow='hidden';}`}
 >
     <!-- Image Container -->
     <div class="relative aspect-[4/3] overflow-hidden">

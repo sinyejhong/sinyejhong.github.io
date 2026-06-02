@@ -148,13 +148,15 @@ const pillarConfig: Record<
 
 // Helper: Date Formatting
 function getMoonthAndDay(dateStr: string) {
-    const date = new Date(dateStr);
+    // Parse as UTC to avoid the date shifting a day in negative-offset timezones
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const date = new Date(Date.UTC(y, m - 1, d));
     return {
         month: date
-            .toLocaleDateString("en-US", { month: "short" })
+            .toLocaleDateString("en-US", { timeZone: "UTC", month: "short" })
             .toUpperCase(),
-        day: date.getDate(),
-        year: date.getFullYear(),
+        day: date.getUTCDate(),
+        year: date.getUTCFullYear(),
     };
 }
 ---
@@ -242,6 +244,14 @@ function getMoonthAndDay(dateStr: string) {
                                 const { month, day, year } = getMoonthAndDay(
                                     item.date,
                                 );
+                                const [iy, im, idd] = item.date
+                                    .split("-")
+                                    .map(Number);
+                                const ageMs =
+                                    Date.now() -
+                                    Date.UTC(iy, im - 1, idd);
+                                const isRecent =
+                                    ageMs >= 0 && ageMs < 60 * 86400000;
                                 const hasImage =
                                     item.images && item.images.length > 0;
                                 const coverImage = hasImage
@@ -249,7 +259,12 @@ function getMoonthAndDay(dateStr: string) {
                                     : null;
 
                                 return (
-                                    <article class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full hover:-translate-y-1 read-more-btn cursor-pointer">
+                                    <article
+                                        class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full hover:-translate-y-1 read-more-btn cursor-pointer"
+                                        role="button"
+                                        tabindex="0"
+                                        aria-label={`Open news detail: ${item.text.slice(0, 70)}`}
+                                    >
                                         {/* Cover Image or Color Block */}
                                         <div class="h-48 overflow-hidden relative bg-navy/5">
                                             {coverImage ? (
@@ -475,7 +490,7 @@ function getMoonthAndDay(dateStr: string) {
                                             <div class="text-xs text-gray-400 mb-3 font-medium flex items-center gap-2">
                                                 <span>{year}</span>
                                                 {/* New badge if recent (logic: within current year or first 2 items) */}
-                                                {pageIndex === 0 && i < 2 && (
+                                                {isRecent && (
                                                     <span class="px-2 py-0.5 bg-accent/10 text-accent rounded-full font-bold animate-pulse">
                                                         NEW
                                                     </span>
@@ -537,38 +552,13 @@ function getMoonthAndDay(dateStr: string) {
         </div>
     </div>
 
-    <!-- Lightbox Modal -->
-    <div
-        id={`${idPrefix}-lightbox`}
-        class="fixed inset-0 z-50 hidden items-center justify-center bg-navy/90 backdrop-blur-sm opacity-0 transition-opacity duration-300"
-    >
-        <button
-            class="lightbox-close absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-50 p-2"
-        >
-            <svg
-                class="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <img
-            class="lightbox-image max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300"
-            src=""
-            alt="Full size"
-        />
-    </div>
-
     <!-- News Detail Modal -->
     <div
         id={`${idPrefix}-detail-modal`}
         class="fixed inset-0 z-[60] hidden flex items-center justify-center bg-navy/90 backdrop-blur-sm opacity-0 transition-opacity duration-300 px-4"
+        role="dialog"
+        aria-modal="true"
+        aria-label="News detail"
     >
         <div
             class="detail-content bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300 flex flex-col"
@@ -576,6 +566,7 @@ function getMoonthAndDay(dateStr: string) {
              <!-- Close Button -->
             <button
                 class="detail-close absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-navy transition-colors z-20"
+                aria-label="Close news detail"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -605,35 +596,12 @@ function getMoonthAndDay(dateStr: string) {
         const root = document.querySelector(`[data-carousel-id="${idPrefix}"]`);
         if (!root) return;
 
-        const lightbox = root.querySelector(`#${idPrefix}-lightbox`);
-        const lightboxImg = lightbox?.querySelector(".lightbox-image");
-        const lightboxClose = lightbox?.querySelector(".lightbox-close");
         const detailModal = root.querySelector(`#${idPrefix}-detail-modal`);
         const detailContent = detailModal?.querySelector(".detail-content");
         const detailClose = detailModal?.querySelector(".detail-close");
 
         let currentPage = 0;
-
-        function openLightbox(src) {
-            if (!lightbox || !lightboxImg) return;
-            lightboxImg.src = src;
-            lightbox.classList.remove("hidden");
-            requestAnimationFrame(() => {
-                lightbox.classList.remove("opacity-0");
-                lightboxImg.classList.remove("scale-95");
-                lightboxImg.classList.add("scale-100");
-            });
-        }
-
-        function closeLightbox() {
-            if (!lightbox) return;
-            lightbox.classList.add("opacity-0");
-            if (lightboxImg) {
-                lightboxImg.classList.remove("scale-100");
-                lightboxImg.classList.add("scale-95");
-            }
-            setTimeout(() => lightbox.classList.add("hidden"), 300);
-        }
+        let lastFocused = null;
 
         function openDetailModal(article) {
             if (!detailModal) return;
@@ -690,12 +658,14 @@ function getMoonthAndDay(dateStr: string) {
                 gallery.appendChild(newImg);
             });
 
+            lastFocused = document.activeElement;
             detailModal.classList.remove("hidden");
             document.body.style.overflow = "hidden";
             requestAnimationFrame(() => {
                 detailModal.classList.remove("opacity-0");
                 detailContent?.classList.remove("scale-95");
                 detailContent?.classList.add("scale-100");
+                detailClose?.focus();
             });
         }
 
@@ -710,10 +680,13 @@ function getMoonthAndDay(dateStr: string) {
                 detailModal.classList.add("hidden");
                 document.body.style.overflow = "";
             }, 300);
+            if (lastFocused && typeof lastFocused.focus === "function") {
+                lastFocused.focus();
+                lastFocused = null;
+            }
         }
 
         detailClose?.addEventListener("click", closeDetailModal);
-        lightboxClose?.addEventListener("click", closeLightbox);
 
         // Open detail modal on card click (scoped to this carousel)
         root.addEventListener("click", (e) => {
@@ -726,18 +699,25 @@ function getMoonthAndDay(dateStr: string) {
             }
         });
 
-        detailModal?.addEventListener("click", (e) => {
-            if (e.target === detailModal) closeDetailModal();
+        // Keyboard activation for the card (role="button")
+        root.addEventListener("keydown", (e) => {
+            if (e.key !== "Enter" && e.key !== " ") return;
+            if (e.target.closest("a")) return;
+            const btn = e.target.closest(".read-more-btn");
+            if (btn && root.contains(btn)) {
+                e.preventDefault();
+                const article = btn.closest("article");
+                if (article) openDetailModal(article);
+            }
         });
 
-        lightbox?.addEventListener("click", (e) => {
-            if (e.target === lightbox) closeLightbox();
+        detailModal?.addEventListener("click", (e) => {
+            if (e.target === detailModal) closeDetailModal();
         });
 
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") {
                 closeDetailModal();
-                closeLightbox();
             }
         });
 
@@ -797,19 +777,6 @@ function getMoonthAndDay(dateStr: string) {
             });
         });
 
-        // Lightbox triggers (scoped)
-        root.addEventListener("click", (e) => {
-            const trigger = e.target.closest(".lightbox-trigger");
-            if (!trigger || !root.contains(trigger)) return;
-            const parentPage = trigger.closest(".carousel-page");
-            if (!parentPage) return;
-            const pageIndex = parseInt(parentPage.dataset.page, 10);
-            if (pageIndex === currentPage) {
-                const imageSrc = trigger.dataset.image;
-                if (imageSrc) openLightbox(imageSrc);
-            }
-        });
-
         // Auto-cycle (first 2 pages only)
         const AUTO_CYCLE_INTERVAL = 10000;
         const AUTO_CYCLE_MAX_PAGE = 1;
@@ -820,9 +787,8 @@ function getMoonthAndDay(dateStr: string) {
         function startAutoCycle() {
             if (autoPlayTimer) clearInterval(autoPlayTimer);
             autoPlayTimer = setInterval(() => {
-                const isLightboxOpen = lightbox && !lightbox.classList.contains("hidden");
                 const isDetailOpen = detailModal && !detailModal.classList.contains("hidden");
-                if (isPaused || isLightboxOpen || isDetailOpen) return;
+                if (isPaused || isDetailOpen) return;
                 const nextPage =
                     currentPage >= AUTO_CYCLE_MAX_PAGE ? 0 : currentPage + 1;
                 updateView(nextPage);
