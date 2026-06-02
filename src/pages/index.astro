@@ -26,9 +26,45 @@ const studentMeritCount = awards.filter(
 	(a) => a.category === "student_merit" && a.year >= 2025,
 ).length;
 const awardsCount = personalHonorsCount + studentMeritCount;
+
+// Structured data: website + research organization
+const siteUrl = "https://sinyejhong.github.io";
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": `${siteUrl}/#website`,
+			url: `${siteUrl}/`,
+			name: "ASI² Lab — NTUST",
+			description:
+				"Autonomous Systems and Intelligent Interaction Laboratory at National Taiwan University of Science and Technology",
+			inLanguage: "en",
+			publisher: { "@id": `${siteUrl}/#organization` },
+		},
+		{
+			"@type": "ResearchOrganization",
+			"@id": `${siteUrl}/#organization`,
+			name: "Autonomous Systems and Intelligent Interaction Laboratory",
+			alternateName: "ASI² Lab",
+			url: `${siteUrl}/`,
+			logo: `${siteUrl}/images/Logo2.png`,
+			parentOrganization: {
+				"@type": "CollegeOrUniversity",
+				name: "National Taiwan University of Science and Technology",
+				alternateName: "NTUST",
+			},
+			founder: {
+				"@type": "Person",
+				name: "Sin-Ye Jhong",
+				jobTitle: "Assistant Professor",
+			},
+		},
+	],
+};
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="Home" jsonLd={jsonLd}>
 	<!-- Hero Section with Video Background -->
 	<section
 		class="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden"

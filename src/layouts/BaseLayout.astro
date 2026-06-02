@@ -2,6 +2,9 @@
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  type?: string;
+  jsonLd?: unknown;
 }
 
 import "../styles/global.css";
@@ -9,6 +12,9 @@ import "../styles/global.css";
 const {
   title,
   description = "Autonomous Systems and Intelligent Interaction Laboratory - Research in Computer Vision, Deep Learning, and Robotics",
+  image = "/images/og-default.jpg",
+  type = "website",
+  jsonLd,
 } = Astro.props;
 
 const navItems = [
@@ -28,6 +34,8 @@ const currentPath = Astro.url.pathname;
 // Canonical URL (absolute, anchored to config `site`) — matches the URLs
 // emitted in sitemap-0.xml so Google sees a consistent canonical signal.
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageURL = new URL(image, Astro.site).href;
+const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
 ---
 
 <!doctype html>
@@ -42,12 +50,52 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
       content="ASI Lab, Computer Vision, Deep Learning, Robotics, NTUST"
     />
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Color scheme -->
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#101b39" />
+
+    <title>{fullTitle}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="ASI² Lab — NTUST" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:alt" content="ASI² Lab, NTUST" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    {
+      jsonLd && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+        />
+      )
+    }
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body class="min-h-screen flex flex-col bg-white">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg"
+      >Skip to main content</a
+    >
     <!-- Header -->
     <header
       class="sticky top-0 z-50 bg-white border-b border-gray-border shadow-sm"
@@ -59,6 +107,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
             <img
               src="/images/logo.png"
               alt="ASI² LAB"
+              width="802"
+              height="219"
               class="h-10 lg:h-12 w-auto"
             />
           </a>
@@ -134,7 +184,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
     </header>
 
     <!-- Main Content -->
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
 

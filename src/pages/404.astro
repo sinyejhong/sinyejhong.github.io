@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+    title="Page Not Found"
+    description="The page you are looking for could not be found at ASI² Lab, NTUST."
+>
+    <section
+        class="min-h-[60vh] flex items-center justify-center section-padding bg-white"
+    >
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p
+                class="text-7xl md:text-9xl font-heading font-bold text-accent mb-4 leading-none"
+            >
+                404
+            </p>
+            <h1
+                class="text-2xl md:text-3xl font-heading font-bold text-navy mb-4"
+            >
+                Page Not Found
+            </h1>
+            <p class="text-gray-text text-lg mb-8">
+                Sorry, the page you're looking for doesn't exist or may have
+                moved. Here are some helpful links instead:
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a
+                    href="/"
+                    class="px-5 py-2.5 rounded-lg bg-navy text-white font-medium hover:bg-navy-light transition-colors"
+                    >Home</a
+                >
+                <a
+                    href="/publications"
+                    class="px-5 py-2.5 rounded-lg bg-gray-bg text-navy font-medium hover:bg-gray-border transition-colors"
+                    >Publications</a
+                >
+                <a
+                    href="/members"
+                    class="px-5 py-2.5 rounded-lg bg-gray-bg text-navy font-medium hover:bg-gray-border transition-colors"
+                    >Members</a
+                >
+                <a
+                    href="/about"
+                    class="px-5 py-2.5 rounded-lg bg-gray-bg text-navy font-medium hover:bg-gray-border transition-colors"
+                    >About PI</a
+                >
+            </div>
+        </div>
+    </section>
+</BaseLayout>

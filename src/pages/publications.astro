@@ -16,11 +16,44 @@ const pubsByYear = years.map((year) => ({
     year,
     pubs: sortedPubs.filter((p) => p.year === year),
 }));
+
+// Structured data: publication list
+const siteUrl = "https://sinyejhong.github.io";
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Publications — ASI² Lab",
+    url: `${siteUrl}/publications/`,
+    mainEntity: {
+        "@type": "ItemList",
+        itemListElement: sortedPubs.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+                "@type":
+                    p.type === "patent" ? "CreativeWork" : "ScholarlyArticle",
+                name: p.title,
+                datePublished: String(p.year),
+                author: p.authors.map((a) => ({
+                    "@type": "Person",
+                    name: a.replace(/\*/g, "").trim(),
+                })),
+                ...(p.type === "patent"
+                    ? {}
+                    : { isPartOf: { "@type": "Periodical", name: p.venue } }),
+                ...(p.doi
+                    ? { identifier: p.doi, sameAs: `https://doi.org/${p.doi}` }
+                    : {}),
+            },
+        })),
+    },
+};
 ---
 
 <BaseLayout
     title="Publications"
     description="Journal articles, conference papers, and patents from ASI² Lab at NTUST, spanning resilient perception, industrial AIoT, embodied AI, and computer vision."
+    jsonLd={jsonLd}
 >
     <!-- Hero -->
     <section class="bg-gradient-to-br from-navy to-navy-light text-white py-16">

@@ -271,6 +271,8 @@ function getMoonthAndDay(dateStr: string) {
                                                 <img
                                                     src={coverImage}
                                                     alt="News cover"
+                                                    width="800"
+                                                    height="600"
                                                     loading={pageIndex === 0 ? "eager" : "lazy"}
                                                     decoding="async"
                                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -820,7 +822,10 @@ function getMoonthAndDay(dateStr: string) {
             dot.addEventListener("click", handleUserInteraction),
         );
 
-        if (totalPages > 1) startAutoCycle();
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+        ).matches;
+        if (totalPages > 1 && !prefersReducedMotion) startAutoCycle();
 
         // Touch swipe support
         let touchStartX = 0;

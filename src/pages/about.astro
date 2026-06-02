@@ -42,11 +42,42 @@ const getTextColor = (category: string) => {
             return "text-gray-600";
     }
 };
+
+// Structured data: profile page for the PI
+const siteUrl = "https://sinyejhong.github.io";
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    mainEntity: {
+        "@type": "Person",
+        name: "Sin-Ye Jhong",
+        alternateName: "鍾昕燁",
+        jobTitle: "Assistant Professor",
+        email: "sinyejhong@mail.ntust.edu.tw",
+        url: `${siteUrl}/about/`,
+        image: `${siteUrl}/images/members/sinyejhong2.jpg`,
+        affiliation: {
+            "@type": "CollegeOrUniversity",
+            name: "National Taiwan University of Science and Technology",
+            alternateName: "NTUST",
+        },
+        worksFor: {
+            "@type": "ResearchOrganization",
+            name: "ASI² Lab",
+        },
+        sameAs: [
+            "https://scholar.google.com/citations?user=0aR6RcIAAAAJ&hl=zh-TW",
+            "https://innc.ntust.edu.tw/p/405-1111-137656,c11515.php?Lang=zh-tw",
+            "https://arspb.nstc.gov.tw/NSCWebFront/modules/talentSearch/talentSearch.do?action=initBasic&rsNo=8ef9a4d44c0245c09942f8aa25de49df&LANG=chi",
+        ],
+    },
+};
 ---
 
 <BaseLayout
     title="About PI"
     description="Dr. Sin-Ye Jhong, Assistant Professor at NTUST and director of ASI² Lab — biography, research vision, honors, patents, and academic service in AI and robotics."
+    jsonLd={jsonLd}
 >
     <!-- Hero Section -->
     <section
@@ -76,6 +107,8 @@ const getTextColor = (category: string) => {
                         <img
                             src="/images/members/sinyejhong.jpg"
                             alt="Dr. Sin-Ye Jhong"
+                            width="875"
+                            height="1161"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <!-- Subtle overlay on hover -->
