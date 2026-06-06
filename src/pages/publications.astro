@@ -166,7 +166,7 @@ const jsonLd = {
             <!-- Search Results Info -->
             <div id="search-info" class="text-center mt-3 text-sm text-gray-500 hidden">
                 <span id="search-count">0</span>
-                <span data-lang-en>results found for</span><span data-lang-zh
+                <span id="search-label-en" data-lang-en>results found for</span><span data-lang-zh
                     >筆結果，符合</span
                 > "<span id="search-term"></span>"
             </div>
@@ -249,6 +249,7 @@ const jsonLd = {
     const searchInfo = document.getElementById("search-info");
     const searchCount = document.getElementById("search-count");
     const searchTerm = document.getElementById("search-term");
+    const searchLabelEn = document.getElementById("search-label-en");
     const noResults = document.getElementById("no-results");
     const clearSearchBtn = document.getElementById("clear-search");
 
@@ -308,6 +309,10 @@ const jsonLd = {
             searchInfo?.classList.remove("hidden");
             if (searchCount) searchCount.textContent = String(visibleCount);
             if (searchTerm) searchTerm.textContent = currentSearch;
+            // English singular/plural; Chinese has no plural form
+            if (searchLabelEn)
+                searchLabelEn.textContent =
+                    visibleCount === 1 ? "result found for" : "results found for";
             searchClear?.classList.remove("hidden");
         } else {
             searchInfo?.classList.add("hidden");

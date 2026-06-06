@@ -1608,6 +1608,7 @@ const jsonLd = {
                                             >
                                                 <PIAwardCard
                                                     title={award.title}
+                                                    titleZh={award.title_zh}
                                                     event={award.event}
                                                     eventZh={award.event_zh}
                                                     year={award.year}
@@ -1624,7 +1625,7 @@ const jsonLd = {
         </div>
     </section>
 
-    <script lang="ts">
+    <script>
         import { countUnit, onLangChange } from "../scripts/i18n";
 
         const piFilterBtns = document.querySelectorAll(".pi-filter-btn");

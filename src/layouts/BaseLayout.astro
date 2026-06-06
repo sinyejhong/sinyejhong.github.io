@@ -381,7 +381,8 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
 
       // Mailto click handler: Copy email + Show toast
       document.addEventListener("click", async (e) => {
-        const link = (e.target as HTMLElement).closest('a[href^="mailto:"]');
+        if (!(e.target instanceof Element)) return;
+        const link = e.target.closest('a[href^="mailto:"]');
         if (link) {
           const href = link.getAttribute("href");
           // Extract email before '?' (subject/body params)

@@ -2,6 +2,7 @@
     {
         "id": 103,
         "title": "Ph.D. Scholarship",
+        "title_zh": "博士獎學金",
         "event": "Ministry of Education (教育部)",
         "event_zh": "教育部",
         "year": 2025,
@@ -12,6 +13,7 @@
     {
         "id": 1,
         "title": "Best Ph.D. Thesis Award",
+        "title_zh": "最佳博士論文獎",
         "event": "IEEE Tainan Section",
         "year": 2025,
         "category": "merit",
@@ -21,6 +23,7 @@
     {
         "id": 2,
         "title": "Ph.D. Thesis Merit Award",
+        "title_zh": "博士論文優等獎",
         "event": "IET Taipei Local Network",
         "year": 2025,
         "category": "merit",
@@ -30,6 +33,7 @@
     {
         "id": 3,
         "title": "Best Ph.D. Thesis Award",
+        "title_zh": "最佳博士論文獎",
         "event": "Taiwan Consumer Electronics Society (中華民國消費電子學會)",
         "event_zh": "中華民國消費電子學會",
         "year": 2025,
@@ -40,6 +44,7 @@
     {
         "id": 4,
         "title": "Outstanding Ph.D. Thesis Award",
+        "title_zh": "傑出博士論文獎",
         "event": "Taiwan Association of Systems Science and Engineering (中華民國系統學會)",
         "event_zh": "中華民國系統學會",
         "year": 2025,
@@ -50,6 +55,7 @@
     {
         "id": 5,
         "title": "Graduate Students Study Abroad Fellowship",
+        "title_zh": "研究生出國研修獎學金",
         "event": "National Science and Technology Council (國科會千里馬計畫)",
         "event_zh": "國科會千里馬計畫",
         "year": 2024,
@@ -60,6 +66,7 @@
     {
         "id": 104,
         "title": "Outstanding R&D Substitute Service Award",
+        "title_zh": "研發替代役績優獎",
         "event": "Ministry of the Interior, Taiwan (中華民國內政部)",
         "event_zh": "中華民國內政部",
         "year": 2024,
@@ -70,6 +77,7 @@
     {
         "id": 6,
         "title": "Best Service Award",
+        "title_zh": "最佳服務獎",
         "event": "IET International Conference on Engineering Technology and Application (ICETA)",
         "year": 2021,
         "category": "merit",
@@ -79,6 +87,7 @@
     {
         "id": 7,
         "title": "Competition Excellence Scholarship",
+        "title_zh": "競賽績優獎學金",
         "event": "Dept. of Engineering Science, National Cheng Kung University",
         "event_zh": "國立成功大學工程科學系",
         "year": 2020,
@@ -89,6 +98,7 @@
     {
         "id": 8,
         "title": "Research Excellence Scholarship",
+        "title_zh": "研究績優獎學金",
         "event": "National Taipei University of Technology",
         "event_zh": "國立臺北科技大學",
         "year": 2019,
@@ -99,6 +109,7 @@
     {
         "id": 9,
         "title": "Competition Excellence Scholarship",
+        "title_zh": "競賽績優獎學金",
         "event": "National Taipei University of Technology",
         "event_zh": "國立臺北科技大學",
         "year": 2018,
@@ -109,6 +120,7 @@
     {
         "id": 105,
         "title": "Competition Excellence Scholarship",
+        "title_zh": "競賽績優獎學金",
         "event": "National Taipei University of Technology",
         "event_zh": "國立臺北科技大學",
         "year": 2019,
@@ -119,6 +131,7 @@
     {
         "id": 106,
         "title": "Academic Excellence Scholarship",
+        "title_zh": "學業績優獎學金",
         "event": "Chinese Culture University",
         "event_zh": "中國文化大學",
         "year": 2017,
@@ -129,6 +142,7 @@
     {
         "id": 107,
         "title": "Competition Excellence Scholarship",
+        "title_zh": "競賽績優獎學金",
         "event": "Chinese Culture University",
         "event_zh": "中國文化大學",
         "year": 2017,
@@ -139,6 +153,7 @@
     {
         "id": 108,
         "title": "Academic Excellence Scholarship",
+        "title_zh": "學業績優獎學金",
         "event": "Chinese Culture University",
         "event_zh": "中國文化大學",
         "year": 2016,
@@ -149,6 +164,7 @@
     {
         "id": 10,
         "title": "Competition Excellence Scholarship",
+        "title_zh": "競賽績優獎學金",
         "event": "Chinese Culture University",
         "event_zh": "中國文化大學",
         "year": 2016,
@@ -159,6 +175,7 @@
     {
         "id": 11,
         "title": "Academic Excellence Scholarship",
+        "title_zh": "學業績優獎學金",
         "event": "Chinese Culture University",
         "event_zh": "中國文化大學",
         "year": 2015,
@@ -169,6 +186,7 @@
     {
         "id": 111,
         "title": "Best Paper Award",
+        "title_zh": "最佳論文獎",
         "event": "Information Technology and Applications Conference (ITAC) [資訊科技應用國際學術研討會]",
         "event_zh": "資訊科技應用國際學術研討會",
         "year": 2026,
@@ -179,6 +197,7 @@
     {
         "id": 109,
         "title": "Best Student Paper Award - First Place",
+        "title_zh": "最佳學生論文獎—第一名",
         "event": "International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
         "event_zh": "國科會自動化學門國際研討會",
         "year": 2025,
@@ -189,6 +208,7 @@
     {
         "id": 12,
         "title": "Best Paper Award - Second Place",
+        "title_zh": "最佳論文獎—第二名",
         "event": "International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
         "event_zh": "國科會自動化學門國際研討會",
         "year": 2025,
@@ -199,6 +219,7 @@
     {
         "id": 13,
         "title": "Best Paper Award - Second Place",
+        "title_zh": "最佳論文獎—第二名",
         "event": "International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
         "event_zh": "國科會控制學門國際研討會",
         "year": 2025,
@@ -209,6 +230,7 @@
     {
         "id": 14,
         "title": "Best Paper Award - Honorable Mention",
+        "title_zh": "最佳論文獎—佳作",
         "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
         "year": 2025,
         "category": "paper",
@@ -218,6 +240,7 @@
     {
         "id": 15,
         "title": "Outstanding Presentation Award",
+        "title_zh": "傑出報告獎",
         "event": "IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS)",
         "year": 2025,
         "category": "paper",
@@ -227,6 +250,7 @@
     {
         "id": 16,
         "title": "Best Presentation Paper Award - Honorable Mention",
+        "title_zh": "最佳報告論文獎—佳作",
         "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
         "year": 2024,
         "category": "paper",
@@ -236,6 +260,7 @@
     {
         "id": 17,
         "title": "Best Paper Award - Honorable Mention",
+        "title_zh": "最佳論文獎—佳作",
         "event": "International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
         "event_zh": "國科會控制學門國際研討會",
         "year": 2023,
@@ -246,6 +271,7 @@
     {
         "id": 18,
         "title": "Best Paper Award - Honorable Mention",
+        "title_zh": "最佳論文獎—佳作",
         "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
         "year": 2023,
         "category": "paper",
@@ -255,6 +281,7 @@
     {
         "id": 19,
         "title": "Best Paper Award - Honorable Mention",
+        "title_zh": "最佳論文獎—佳作",
         "event": "International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
         "event_zh": "國科會控制學門國際研討會",
         "year": 2022,
@@ -265,6 +292,7 @@
     {
         "id": 20,
         "title": "Best Paper Award - Honorable Mention",
+        "title_zh": "最佳論文獎—佳作",
         "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
         "year": 2020,
         "category": "paper",
@@ -274,6 +302,7 @@
     {
         "id": 21,
         "title": "Best Paper Award - First Place",
+        "title_zh": "最佳論文獎—第一名",
         "event": "Cyberspace Conference (網際空間研討會)",
         "event_zh": "網際空間研討會",
         "year": 2020,
@@ -284,6 +313,7 @@
     {
         "id": 22,
         "title": "Best Paper Award - First Place",
+        "title_zh": "最佳論文獎—第一名",
         "event": "Cyberspace Conference (網際空間研討會)",
         "event_zh": "網際空間研討會",
         "year": 2019,
@@ -294,6 +324,7 @@
     {
         "id": 23,
         "title": "Best Paper Award - First Place",
+        "title_zh": "最佳論文獎—第一名",
         "event": "Cyberspace Conference (網際空間研討會)",
         "event_zh": "網際空間研討會",
         "year": 2018,
@@ -304,6 +335,7 @@
     {
         "id": 100,
         "title": "First Prize",
+        "title_zh": "第一名",
         "event": "NCHU Capstone Competition for AI Empowerment and Robotics Applications in Manufacturing (AI賦能與機器人於智慧製造應用專題實作競賽)",
         "event_zh": "AI賦能與機器人於智慧製造應用專題實作競賽",
         "year": 2025,
@@ -314,6 +346,7 @@
     {
         "id": 101,
         "title": "Third Prize",
+        "title_zh": "第三名",
         "event": "International ICT Innovative Services Awards (資訊應用服務創新競賽)",
         "event_zh": "資訊應用服務創新競賽",
         "year": 2025,
@@ -324,6 +357,7 @@
     {
         "id": 110,
         "title": "Third Prize, Honorable Mention & IEEE Special Award (Grand Prize)",
+        "title_zh": "第三名、佳作暨 IEEE 特別獎（大獎）",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2026,
@@ -334,6 +368,7 @@
     {
         "id": 102,
         "title": "Honorable Mention & IEEE Special Award",
+        "title_zh": "佳作暨 IEEE 特別獎",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2025,
@@ -344,6 +379,7 @@
     {
         "id": 24,
         "title": "Honorable Mention",
+        "title_zh": "佳作",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2024,
@@ -354,6 +390,7 @@
     {
         "id": 25,
         "title": "Honorable Mention",
+        "title_zh": "佳作",
         "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
         "event_zh": "全國大專院校產學創新實作競賽",
         "year": 2023,
@@ -364,6 +401,7 @@
     {
         "id": 26,
         "title": "Second Prize",
+        "title_zh": "第二名",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2023,
@@ -374,6 +412,7 @@
     {
         "id": 27,
         "title": "Second Prize & Popularity Award",
+        "title_zh": "第二名暨人氣獎",
         "event": "Intel® DevCup x OpenVINO™ Toolkit Competition",
         "year": 2022,
         "category": "competition",
@@ -383,6 +422,7 @@
     {
         "id": 28,
         "title": "Second Prize",
+        "title_zh": "第二名",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2022,
@@ -393,6 +433,7 @@
     {
         "id": 29,
         "title": "Third Prize & Popularity Award",
+        "title_zh": "第三名暨人氣獎",
         "event": "Intel® DevCup x OpenVINO™ Toolkit Competition",
         "year": 2021,
         "category": "competition",
@@ -402,6 +443,7 @@
     {
         "id": 30,
         "title": "First Prize",
+        "title_zh": "第一名",
         "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
         "event_zh": "全國大專院校產學創新實作競賽",
         "year": 2021,
@@ -412,6 +454,7 @@
     {
         "id": 31,
         "title": "Silver Award",
+        "title_zh": "銀獎",
         "event": "Information Application Service Innovation Startup Selection (經濟部資訊應用服務創新創業新秀選拔)",
         "event_zh": "經濟部資訊應用服務創新創業新秀選拔",
         "year": 2021,
@@ -422,6 +465,7 @@
     {
         "id": 32,
         "title": "Excellent Award",
+        "title_zh": "優等獎",
         "event": "AI Industry Practical Talent Training Program (經濟部AI產業實戰應用人才淬煉計畫) [AIGO競賽]",
         "event_zh": "經濟部 AI 產業實戰應用人才淬煉計畫（AIGO競賽）",
         "year": 2021,
@@ -432,6 +476,7 @@
     {
         "id": 33,
         "title": "Gold Medal",
+        "title_zh": "金牌",
         "event": "National Quemoy University AI Innovation Application Competition (金門大學人工智慧創新應用競賽)",
         "event_zh": "國立金門大學人工智慧創新應用競賽",
         "year": 2021,
@@ -442,6 +487,7 @@
     {
         "id": 34,
         "title": "Champion",
+        "title_zh": "冠軍",
         "event": "Autonomous Vehicle System Project Competition (自駕車系統專題競賽)",
         "event_zh": "自駕車系統專題競賽",
         "year": 2021,
@@ -452,6 +498,7 @@
     {
         "id": 35,
         "title": "Second Prize",
+        "title_zh": "第二名",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2021,
@@ -462,6 +509,7 @@
     {
         "id": 36,
         "title": "Special Award",
+        "title_zh": "特別獎",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2020,
@@ -472,6 +520,7 @@
     {
         "id": 37,
         "title": "First Prize & IEEE Special Award",
+        "title_zh": "第一名暨 IEEE 特別獎",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2019,
@@ -482,6 +531,7 @@
     {
         "id": 38,
         "title": "First Prize",
+        "title_zh": "第一名",
         "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
         "event_zh": "全國大專院校產學創新實作競賽",
         "year": 2019,
@@ -492,6 +542,7 @@
     {
         "id": 39,
         "title": "Silver Medal",
+        "title_zh": "銀牌",
         "event": "Hua Nan Financial Holdings Fintech Innovation Competition (華南金控Fintech金融科技創新競賽)",
         "event_zh": "華南金控 Fintech 金融科技創新競賽",
         "year": 2019,
@@ -502,6 +553,7 @@
     {
         "id": 40,
         "title": "Silver & Rising Star Award",
+        "title_zh": "銀獎暨明日之星獎",
         "event": "Information Application Service Innovation Startup Selection (經濟部資訊應用服務創新創業新秀選拔)",
         "event_zh": "經濟部資訊應用服務創新創業新秀選拔",
         "year": 2019,
@@ -512,6 +564,7 @@
     {
         "id": 41,
         "title": "Third Prize",
+        "title_zh": "第三名",
         "event": "Yun-Tai Youth Student Innovation & Entrepreneurship Invitational Competition (雲台青年學生創新創業邀請賽)",
         "event_zh": "雲台青年學生創新創業邀請賽",
         "year": 2019,
@@ -522,6 +575,7 @@
     {
         "id": 42,
         "title": "Honorable Mention",
+        "title_zh": "佳作",
         "event": "Smart Industry Information Application Competition (智慧產業資訊應用競賽)",
         "event_zh": "智慧產業資訊應用競賽",
         "year": 2019,
@@ -532,6 +586,7 @@
     {
         "id": 43,
         "title": "First Prize",
+        "title_zh": "第一名",
         "event": "Jih Sun Bank Hackathon (日盛銀行黑客松競賽)",
         "event_zh": "日盛銀行黑客松競賽",
         "year": 2018,
@@ -542,6 +597,7 @@
     {
         "id": 44,
         "title": "Silver & Rising Star Award",
+        "title_zh": "銀獎暨明日之星獎",
         "event": "Information Application Service Innovation Startup Selection (經濟部資訊應用服務創新創業新秀選拔)",
         "event_zh": "經濟部資訊應用服務創新創業新秀選拔",
         "year": 2018,
@@ -552,6 +608,7 @@
     {
         "id": 45,
         "title": "First Prize & Icetron Enterprises Co., Ltd. Special Award",
+        "title_zh": "第一名暨 Icetron Enterprises Co., Ltd. 特別獎",
         "event": "National Electronic Design Creative Competition (全國電子設計創意競賽)",
         "event_zh": "全國電子設計創意競賽",
         "year": 2018,
@@ -562,6 +619,7 @@
     {
         "id": 46,
         "title": "First Prize",
+        "title_zh": "第一名",
         "event": "National Youth Creative Application Competition (全國青年創意應用競賽)",
         "event_zh": "全國青年創意應用競賽",
         "year": 2018,
@@ -572,6 +630,7 @@
     {
         "id": 47,
         "title": "First Prize",
+        "title_zh": "第一名",
         "event": "PCCU College of Engineering Project Competition (中國文化大學工學院專題競賽)",
         "event_zh": "中國文化大學工學院專題競賽",
         "year": 2017,
@@ -582,6 +641,7 @@
     {
         "id": 48,
         "title": "Second Prize",
+        "title_zh": "第二名",
         "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
         "event_zh": "全國大專院校產學創新實作競賽",
         "year": 2016,
@@ -592,6 +652,7 @@
     {
         "id": 49,
         "title": "First Prize",
+        "title_zh": "第一名",
         "event": "PCCU EE Project Competition (中國文化大學電機系專題競賽)",
         "event_zh": "中國文化大學電機系專題競賽",
         "year": 2016,
@@ -602,6 +663,7 @@
     {
         "id": 50,
         "title": "First Prize",
+        "title_zh": "第一名",
         "event": "PCCU College of Engineering Project Competition (中國文化大學工學院專題競賽)",
         "event_zh": "中國文化大學工學院專題競賽",
         "year": 2016,

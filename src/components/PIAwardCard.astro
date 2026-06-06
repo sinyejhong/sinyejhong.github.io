@@ -1,13 +1,14 @@
 ---
 interface Props {
     title: string;
+    titleZh?: string;
     event: string;
     eventZh?: string;
     year: number;
     category: string;
 }
 
-const { title, event, eventZh, year, category } = Astro.props;
+const { title, titleZh, event, eventZh, year, category } = Astro.props;
 
 // Category configuration with colors matching the existing design
 const categoryConfig: Record<
@@ -108,7 +109,16 @@ const categoryLabelsZh: Record<string, string> = {
             <h3
                 class="text-lg font-semibold text-navy mb-1.5 group-hover:text-accent transition-colors duration-200"
             >
-                {title}
+                {
+                    titleZh ? (
+                        <>
+                            <span data-lang-en>{title}</span>
+                            <span data-lang-zh>{titleZh}</span>
+                        </>
+                    ) : (
+                        title
+                    )
+                }
             </h3>
 
             <!-- Event -->

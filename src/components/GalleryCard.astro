@@ -436,6 +436,16 @@ if (date) {
                                     ? `${title} — photo ${i + 1} of ${photoCount}`
                                     : title
                             }
+                            data-i18n-alt-en={
+                                photoCount > 1
+                                    ? `${title} — photo ${i + 1} of ${photoCount}`
+                                    : title
+                            }
+                            data-i18n-alt-zh={
+                                photoCount > 1
+                                    ? `${titleZh ?? title} — 照片 ${i + 1}／共 ${photoCount}`
+                                    : (titleZh ?? title)
+                            }
                             class="w-full h-auto max-h-[70vh] object-contain mx-auto"
                             loading="lazy"
                         />

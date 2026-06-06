@@ -341,11 +341,6 @@ function getMoonthAndDay(dateStr: string) {
                                 return (
                                     <article
                                         class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full hover:-translate-y-1 read-more-btn cursor-pointer"
-                                        role="button"
-                                        tabindex="0"
-                                        aria-label={`Open news detail: ${item.text.slice(0, 70)}`}
-                                        data-i18n-aria-en={`Open news detail: ${item.text.slice(0, 70)}`}
-                                        data-i18n-aria-zh={`開啟最新消息：${(item.text_zh ?? item.text).slice(0, 40)}`}
                                     >
                                         {/* Cover Image or Color Block */}
                                         <div class="h-48 overflow-hidden relative bg-navy/5">
@@ -620,6 +615,19 @@ function getMoonthAndDay(dateStr: string) {
                                                 />
                                             </div>
 
+                                            <button
+                                                type="button"
+                                                class="news-open-detail self-start inline-flex items-center gap-1 text-sm font-bold text-accent hover:gap-2 transition-all mb-4"
+                                                aria-label={`Open news detail: ${item.text.slice(0, 70)}`}
+                                                data-i18n-aria-en={`Open news detail: ${item.text.slice(0, 70)}`}
+                                                data-i18n-aria-zh={`開啟最新消息：${(item.text_zh ?? item.text).slice(0, 40)}`}
+                                            >
+                                                <span data-lang-en>Read more</span><span data-lang-zh>閱讀更多</span>
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </button>
+
                                             <!-- Hidden Full Content for Modal (bilingual payload copied verbatim into modal; CSS handles language) -->
                                             <div class="hidden news-full-content">
                                                 <div class="news-raw-text">
@@ -790,6 +798,7 @@ function getMoonthAndDay(dateStr: string) {
                 if (!src) return;
                 const newImg = document.createElement("img");
                 newImg.src = src;
+                newImg.alt = "";
                 newImg.loading = "lazy";
                 newImg.className =
                     "w-full rounded-xl shadow-md border border-gray-100";
@@ -817,17 +826,19 @@ function getMoonthAndDay(dateStr: string) {
             setTimeout(() => {
                 detailModal.classList.add("hidden");
                 document.body.style.overflow = "";
+                // Restore focus only after the dialog is fully hidden (a11y timing)
+                if (lastFocused && typeof lastFocused.focus === "function") {
+                    lastFocused.focus();
+                    lastFocused = null;
+                }
             }, 300);
-            if (lastFocused && typeof lastFocused.focus === "function") {
-                lastFocused.focus();
-                lastFocused = null;
-            }
         }
 
         detailClose?.addEventListener("click", closeDetailModal);
 
         // Open detail modal on card click (scoped to this carousel)
         root.addEventListener("click", (e) => {
+            if (!(e.target instanceof Element)) return;
             // Skip if click landed on an inline link inside the card
             if (e.target.closest("a")) return;
             const btn = e.target.closest(".read-more-btn");
@@ -837,20 +848,28 @@ function getMoonthAndDay(dateStr: string) {
             }
         });
 
-        // Keyboard activation for the card (role="button")
-        root.addEventListener("keydown", (e) => {
-            if (e.key !== "Enter" && e.key !== " ") return;
-            if (e.target.closest("a")) return;
-            const btn = e.target.closest(".read-more-btn");
-            if (btn && root.contains(btn)) {
-                e.preventDefault();
-                const article = btn.closest("article");
-                if (article) openDetailModal(article);
-            }
-        });
-
         detailModal?.addEventListener("click", (e) => {
             if (e.target === detailModal) closeDetailModal();
+        });
+
+        // Focus trap: keep Tab within the open modal
+        detailModal?.addEventListener("keydown", (e) => {
+            if (e.key !== "Tab" || !detailModal) return;
+            const focusables = [
+                ...detailModal.querySelectorAll(
+                    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+                ),
+            ].filter((el) => el.offsetParent !== null);
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
         });
 
         document.addEventListener("keydown", (e) => {
