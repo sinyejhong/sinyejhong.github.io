@@ -2,11 +2,12 @@
 interface Props {
     title: string;
     event: string;
+    eventZh?: string;
     year: number;
     category: string;
 }
 
-const { title, event, year, category } = Astro.props;
+const { title, event, eventZh, year, category } = Astro.props;
 
 // Category configuration with colors matching the existing design
 const categoryConfig: Record<
@@ -54,6 +55,12 @@ const categoryLabels: Record<string, string> = {
     paper: "Paper Award",
     competition: "Competition",
 };
+
+const categoryLabelsZh: Record<string, string> = {
+    merit: "傑出獎",
+    paper: "論文獎",
+    competition: "競賽獎",
+};
 ---
 
 <div
@@ -86,7 +93,14 @@ const categoryLabels: Record<string, string> = {
                         config.badgeText,
                     ]}
                 >
-                    {categoryLabels[category] || category.replace("_", " ")}
+                    <span data-lang-en
+                        >{categoryLabels[category] ||
+                            category.replace("_", " ")}</span
+                    ><span data-lang-zh
+                        >{categoryLabelsZh[category] ||
+                            categoryLabels[category] ||
+                            category.replace("_", " ")}</span
+                    >
                 </span>
             </div>
 
@@ -99,7 +113,16 @@ const categoryLabels: Record<string, string> = {
 
             <!-- Event -->
             <p class="text-sm text-gray-600">
-                {event}
+                {
+                    eventZh ? (
+                        <>
+                            <span data-lang-en>{event}</span>
+                            <span data-lang-zh>{eventZh}</span>
+                        </>
+                    ) : (
+                        event
+                    )
+                }
             </p>
         </div>
     </div>

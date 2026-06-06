@@ -2,11 +2,14 @@
 interface Props {
     title: string;
     funder: string;
+    funderZh?: string;
     duration: string;
     role: string;
+    roleZh?: string;
     status: "ongoing" | "completed";
     type: string;
     description?: string;
+    descriptionZh?: string;
     pillar?: string;
     logo?: string;
 }
@@ -14,11 +17,14 @@ interface Props {
 const {
     title,
     funder,
+    funderZh,
     duration,
     role,
+    roleZh,
     status,
     type,
     description,
+    descriptionZh,
     pillar,
     logo,
 } = Astro.props;
@@ -160,7 +166,19 @@ const pillarConfig: Record<
                     status === "ongoing" ? "badge-ongoing" : "badge-completed",
                 ]}
             >
-                {status === "ongoing" ? "🔄 Ongoing" : "✓ Completed"}
+                {
+                    status === "ongoing" ? (
+                        <>
+                            <span data-lang-en>🔄 Ongoing</span>
+                            <span data-lang-zh>🔄 進行中</span>
+                        </>
+                    ) : (
+                        <>
+                            <span data-lang-en>✓ Completed</span>
+                            <span data-lang-zh>✓ 已完成</span>
+                        </>
+                    )
+                }
             </span>
             <span
                 class:list={[
@@ -170,7 +188,19 @@ const pillarConfig: Record<
                         : "bg-cyan-100 text-cyan-800",
                 ]}
             >
-                {type === "industry" ? "🏭 Industry" : "🏛️ Government"}
+                {
+                    type === "industry" ? (
+                        <>
+                            <span data-lang-en>🏭 Industry</span>
+                            <span data-lang-zh>🏭 產業</span>
+                        </>
+                    ) : (
+                        <>
+                            <span data-lang-en>🏛️ Government</span>
+                            <span data-lang-zh>🏛️ 政府機構</span>
+                        </>
+                    )
+                }
             </span>
         </div>
 
@@ -193,10 +223,28 @@ const pillarConfig: Record<
                                 alt={funder}
                                 class="h-6 w-auto object-contain"
                             />
-                            <span class="font-medium text-navy">{funder}</span>
+                            <span class="font-medium text-navy">
+                            {funderZh ? (
+                                <>
+                                    <span data-lang-en>{funder}</span>
+                                    <span data-lang-zh>{funderZh}</span>
+                                </>
+                            ) : (
+                                funder
+                            )}
+                        </span>
                         </div>
                     ) : (
-                        <span class="font-medium text-navy">{funder}</span>
+                        <span class="font-medium text-navy">
+                            {funderZh ? (
+                                <>
+                                    <span data-lang-en>{funder}</span>
+                                    <span data-lang-zh>{funderZh}</span>
+                                </>
+                            ) : (
+                                funder
+                            )}
+                        </span>
                     )
                 }
             </div>
@@ -232,14 +280,32 @@ const pillarConfig: Record<
                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                     ></path>
                 </svg>
-                <span class="leading-tight">{role}</span>
+                <span class="leading-tight">
+                    {roleZh ? (
+                        <>
+                            <span data-lang-en>{role}</span>
+                            <span data-lang-zh>{roleZh}</span>
+                        </>
+                    ) : (
+                        role
+                    )}
+                </span>
             </div>
         </div>
 
         {
             description && (
                 <p class="mt-4 text-sm text-gray-text border-t border-gray-border pt-4">
-                    {description}
+                    {
+                        descriptionZh ? (
+                            <>
+                                <span data-lang-en>{description}</span>
+                                <span data-lang-zh>{descriptionZh}</span>
+                            </>
+                        ) : (
+                            description
+                        )
+                    }
                 </p>
             )
         }

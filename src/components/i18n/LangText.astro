@@ -1,0 +1,14 @@
+---
+// Inline localized UI string from the ui.ts dictionary.
+// Renders both languages as sibling spans; CSS (html[data-lang]) hides the
+// inactive one. No whitespace between spans so nothing leaks when switching.
+import { ui, type UIKey } from "../../i18n/ui";
+
+interface Props {
+  k: UIKey;
+}
+
+const { k } = Astro.props;
+const e = ui[k];
+---
+<span data-lang-en>{e.en}</span><span data-lang-zh>{e.zh}</span>

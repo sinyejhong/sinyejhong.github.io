@@ -9,11 +9,14 @@ interface Props {
     name: string;
     photo: string;
     role: string;
+    roleZh?: string;
     topic: string;
     email?: string;
     coadvisor?: string;
+    coadvisorZh?: string;
     research_group?: string;
     affiliations?: string[];
+    affiliationsZh?: string[];
     links?: LinkItem[];
     isDirector?: boolean;
 }
@@ -22,11 +25,14 @@ const {
     name,
     photo,
     role,
+    roleZh,
     topic,
     email,
     coadvisor,
+    coadvisorZh,
     research_group,
     affiliations = [],
+    affiliationsZh = [],
     links = [],
     isDirector = false,
 } = Astro.props;
@@ -149,6 +155,11 @@ const navLabel = isDirector
     : areaConfig
       ? `Go to ${areaConfig.label} research`
       : null;
+const navLabelZh = isDirector
+    ? "查看主持人簡介"
+    : areaConfig
+      ? `前往 ${areaConfig.label} 研究領域`
+      : null;
 ---
 
 <div
@@ -171,6 +182,8 @@ const navLabel = isDirector
     role={navUrl ? "link" : undefined}
     tabindex={navUrl ? "0" : undefined}
     aria-label={navLabel ?? undefined}
+    data-i18n-aria-en={navLabel ?? undefined}
+    data-i18n-aria-zh={navLabelZh ?? undefined}
     onclick={navUrl
         ? `if(!event.target.closest('a')) window.location.href='${navUrl}'`
         : undefined}
@@ -219,7 +232,9 @@ const navLabel = isDirector
                         </svg>
                     </div>
                     <span class="text-sm font-bold tracking-widest uppercase text-right pr-2 pb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                        Lab Director
+                        <span data-lang-en>Lab Director</span><span
+                            data-lang-zh>實驗室主持人</span
+                        >
                     </span>
                 </div>
 
@@ -244,7 +259,14 @@ const navLabel = isDirector
 
                         {/* Role Badge */}
                         <span class="inline-block px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide transition-colors bg-amber-100 text-amber-700 group-hover:bg-amber-200 group-hover:text-amber-800">
-                            {role}
+                            {roleZh ? (
+                                <>
+                                    <span data-lang-en>{role}</span>
+                                    <span data-lang-zh>{roleZh}</span>
+                                </>
+                            ) : (
+                                role
+                            )}
                         </span>
                     </div>
 
@@ -258,13 +280,22 @@ const navLabel = isDirector
                         {/* Affiliations List */}
                         {affiliations.length > 0 && (
                             <div class="space-y-1">
-                                {affiliations.map((affiliation: string) => (
-                                    <div class="flex items-center justify-center sm:justify-start">
-                                        <span class="text-base font-medium text-slate-500 group-hover:text-amber-700 transition-colors">
-                                            {affiliation}
-                                        </span>
-                                    </div>
-                                ))}
+                                {affiliations.map(
+                                    (affiliation: string, i: number) => (
+                                        <div class="flex items-center justify-center sm:justify-start">
+                                            <span class="text-base font-medium text-slate-500 group-hover:text-amber-700 transition-colors">
+                                                {affiliationsZh && affiliationsZh[i] ? (
+                                                    <>
+                                                        <span data-lang-en>{affiliation}</span>
+                                                        <span data-lang-zh>{affiliationsZh[i]}</span>
+                                                    </>
+                                                ) : (
+                                                    affiliation
+                                                )}
+                                            </span>
+                                        </div>
+                                    ),
+                                )}
                             </div>
                         )}
 
@@ -415,7 +446,14 @@ const navLabel = isDirector
                             <span
                                 class={`inline-block px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide mb-2 transition-colors bg-slate-100 text-slate-600 ${areaConfig ? `group-hover:bg-${areaConfig.bgClass.replace("bg-", "")} group-hover:text-${areaConfig.textClass.replace("text-", "")}` : ""}`}
                             >
-                                {coadvisor}
+                                {coadvisorZh ? (
+                                    <>
+                                        <span data-lang-en>{coadvisor}</span>
+                                        <span data-lang-zh>{coadvisorZh}</span>
+                                    </>
+                                ) : (
+                                    coadvisor
+                                )}
                             </span>
                         )}
 
@@ -430,7 +468,14 @@ const navLabel = isDirector
                         <p
                             class={`text-base font-medium mb-2 text-slate-500 transition-colors ${areaConfig ? areaConfig.roleColor.replace("text-", "group-hover:text-") : ""}`}
                         >
-                            {role}
+                            {roleZh ? (
+                                <>
+                                    <span data-lang-en>{role}</span>
+                                    <span data-lang-zh>{roleZh}</span>
+                                </>
+                            ) : (
+                                role
+                            )}
                         </p>
 
                         {/* Email - Clear Text Link */}

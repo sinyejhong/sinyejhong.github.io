@@ -2,12 +2,15 @@
 interface Props {
     title: string;
     event: string;
+    eventZh?: string;
     year: number;
     category: string;
     description?: string;
+    descriptionZh?: string;
 }
 
-const { title, event, year, category, description } = Astro.props;
+const { title, event, eventZh, year, category, description, descriptionZh } =
+    Astro.props;
 
 // Enhanced category configuration with richer colors
 const categoryConfig: Record<
@@ -64,6 +67,13 @@ const categoryLabels: Record<string, string> = {
     personal: "Honor",
     student_merit: "Student Merit",
 };
+
+const categoryLabelsZh: Record<string, string> = {
+    paper: "論文獎",
+    competition: "競賽獎",
+    personal: "榮譽",
+    student_merit: "學生榮譽獎",
+};
 ---
 
 <div
@@ -96,7 +106,14 @@ const categoryLabels: Record<string, string> = {
                         config.badgeText,
                     ]}
                 >
-                    {categoryLabels[category] || category.replace("_", " ")}
+                    <span data-lang-en
+                        >{categoryLabels[category] ||
+                            category.replace("_", " ")}</span
+                    ><span data-lang-zh
+                        >{categoryLabelsZh[category] ||
+                            categoryLabels[category] ||
+                            category.replace("_", " ")}</span
+                    >
                 </span>
             </div>
 
@@ -109,14 +126,30 @@ const categoryLabels: Record<string, string> = {
 
             <!-- Event -->
             <p class="text-sm text-gray-600 mb-2">
-                {event}
+                {
+                    eventZh ? (
+                        <>
+                            <span data-lang-en>{event}</span>
+                            <span data-lang-zh>{eventZh}</span>
+                        </>
+                    ) : (
+                        event
+                    )
+                }
             </p>
 
             <!-- Description -->
             {
                 description && (
                     <p class="text-sm text-gray-500 italic border-t border-gray-100 pt-2 mt-2">
-                        {description}
+                        {descriptionZh ? (
+                            <>
+                                <span data-lang-en>{description}</span>
+                                <span data-lang-zh>{descriptionZh}</span>
+                            </>
+                        ) : (
+                            description
+                        )}
                     </p>
                 )
             }

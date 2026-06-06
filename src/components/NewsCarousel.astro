@@ -3,18 +3,24 @@ import defaultNews from "../data/news.json";
 
 interface NewsItem {
     text: string;
+    text_zh?: string;
     date: string;
     highlights?: string[];
+    highlights_zh?: string[];
     images?: string[];
     pillar?: string;
     links?: Record<string, string>;
+    links_zh?: Record<string, string>;
     emphasis?: string[];
+    emphasis_zh?: string[];
 }
 
 interface Props {
     data?: NewsItem[];
     title?: string;
+    titleZh?: string;
     subtitle?: string;
+    subtitleZh?: string;
     idPrefix?: string;
     bg?: string;
 }
@@ -22,7 +28,9 @@ interface Props {
 const {
     data = defaultNews as NewsItem[],
     title = "Latest News",
+    titleZh,
     subtitle = "Recent breakthroughs, publications, and lab announcements",
+    subtitleZh,
     idPrefix = "news",
     bg = "bg-gray-50/50",
 } = Astro.props;
@@ -32,49 +40,77 @@ const itemsPerPage = 3;
 const totalPages = Math.ceil(data.length / itemsPerPage);
 
 // Helper: Highlight Text
+function escapeHtml(s: string): string {
+    return s
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+}
+
+// Build highlighted HTML from PLAIN text by computing non-overlapping ranges
+// (priority: link > emphasis > highlight), escaping the text, then wrapping
+// each range. This avoids the old regex-replace approach injecting markup into
+// already-inserted tags, and is safe for Chinese (no \b word boundaries).
+// Each label is matched at its first occurrence in the text.
 function highlightText(
     text: string,
     highlights?: string[],
     links?: Record<string, string | undefined>,
     emphasis?: string[],
 ): string {
-    let result = text;
+    type Span = { start: number; end: number; type: string; url?: string };
+    const spans: Span[] = [];
+    const overlaps = (s: number, e: number) =>
+        spans.some((r) => s < r.end && e > r.start);
+    const add = (label: string, type: string, url?: string) => {
+        if (!label) return;
+        const idx = text.indexOf(label);
+        if (idx < 0) return;
+        const end = idx + label.length;
+        if (overlaps(idx, end)) return;
+        spans.push({ start: idx, end, type, url });
+    };
 
-    // Links
     if (links) {
-        Object.entries(links).forEach(([linkText, url]) => {
-            if (!url) return;
-            result = result.replace(
-                new RegExp(
-                    linkText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
-                    "g",
-                ),
-                `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline z-20 relative">${linkText}</a>`,
-            );
+        Object.entries(links).forEach(([label, url]) => {
+            if (url) add(label, "link", url);
         });
     }
+    if (emphasis) emphasis.forEach((e) => add(e, "emphasis"));
+    if (highlights) highlights.forEach((h) => add(h, "highlight"));
+    spans.sort((a, b) => a.start - b.start);
 
-    // Emphasis
-    if (emphasis?.length) {
-        emphasis.forEach((e) => {
-            result = result.replace(
-                new RegExp(e.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"),
-                `<span class="font-bold text-navy">${e}</span>`,
-            );
-        });
+    let out = "";
+    let pos = 0;
+    for (const sp of spans) {
+        out += escapeHtml(text.slice(pos, sp.start));
+        const inner = escapeHtml(text.slice(sp.start, sp.end));
+        if (sp.type === "link") {
+            const href = escapeHtml(sp.url || "").replace(/"/g, "&quot;");
+            out += `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline z-20 relative">${inner}</a>`;
+        } else if (sp.type === "emphasis") {
+            out += `<span class="font-bold text-navy">${inner}</span>`;
+        } else {
+            out += `<span class="text-accent font-semibold bg-accent/5 px-1 rounded">${inner}</span>`;
+        }
+        pos = sp.end;
     }
+    out += escapeHtml(text.slice(pos));
+    return out;
+}
 
-    // Highlights
-    if (highlights?.length) {
-        highlights.forEach((h) => {
-            result = result.replace(
-                new RegExp(h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"),
-                `<span class="text-accent font-semibold bg-accent/5 px-1 rounded">${h}</span>`,
-            );
-        });
+// Localized highlighted HTML: falls back to English fields when a _zh variant
+// is missing, so a partially-translated item never blanks out in Chinese.
+function highlightItem(item: NewsItem, lang: "en" | "zh"): string {
+    if (lang === "zh") {
+        return highlightText(
+            item.text_zh ?? item.text,
+            item.highlights_zh ?? item.highlights,
+            item.links_zh ?? item.links,
+            item.emphasis_zh ?? item.emphasis,
+        );
     }
-
-    return result;
+    return highlightText(item.text, item.highlights, item.links, item.emphasis);
 }
 
 // Helper: Pillar Config
@@ -82,6 +118,7 @@ const pillarConfig: Record<
     string,
     {
         label: string;
+        labelZh: string;
         text: string;
         href: string;
         spacingClass?: string;
@@ -90,6 +127,7 @@ const pillarConfig: Record<
 > = {
     perception: {
         label: "Resilient Perception",
+        labelZh: "Resilient Perception",
         text: "text-blue-700",
         href: "/research#perception",
         spacingClass: "space-y-1",
@@ -97,6 +135,7 @@ const pillarConfig: Record<
     },
     inspection: {
         label: "Industrial AIoT",
+        labelZh: "Industrial AIoT",
         text: "text-emerald-700",
         href: "/research#inspection",
         spacingClass: "space-y-1",
@@ -104,6 +143,7 @@ const pillarConfig: Record<
     },
     robotics: {
         label: "Embodied AI",
+        labelZh: "Embodied AI",
         text: "text-purple-700",
         href: "/research#robotics",
         spacingClass: "space-y-1",
@@ -111,6 +151,7 @@ const pillarConfig: Record<
     },
     academic: {
         label: "Academic",
+        labelZh: "學術動態",
         text: "text-orange-700",
         href: "/about",
         spacingClass: "space-y-1",
@@ -118,6 +159,7 @@ const pillarConfig: Record<
     },
     invited_talk: {
         label: "Invited Talk",
+        labelZh: "受邀演講",
         text: "text-rose-700",
         href: "/about#professional-activities",
         spacingClass: "space-y-1",
@@ -125,6 +167,7 @@ const pillarConfig: Record<
     },
     session_chair: {
         label: "Session Chair",
+        labelZh: "議程主持",
         text: "text-amber-700",
         href: "/about#professional-activities",
         spacingClass: "space-y-1",
@@ -132,6 +175,7 @@ const pillarConfig: Record<
     },
     thesis_committee: {
         label: "Thesis Committee",
+        labelZh: "口試委員",
         text: "text-sky-700",
         href: "/about#professional-activities",
         spacingClass: "space-y-1",
@@ -139,6 +183,7 @@ const pillarConfig: Record<
     },
     lab_visit: {
         label: "Lab Visit",
+        labelZh: "實驗室參訪",
         text: "text-indigo-700",
         href: "/about#professional-activities",
         spacingClass: "space-y-1",
@@ -155,8 +200,16 @@ function getMoonthAndDay(dateStr: string) {
         month: date
             .toLocaleDateString("en-US", { timeZone: "UTC", month: "short" })
             .toUpperCase(),
+        monthZh: `${m}月`,
         day: date.getUTCDate(),
         year: date.getUTCFullYear(),
+        fullEn: date.toLocaleDateString("en-US", {
+            timeZone: "UTC",
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        }),
+        fullZh: `${y}年${m}月${d}日`,
     };
 }
 ---
@@ -173,11 +226,29 @@ function getMoonthAndDay(dateStr: string) {
                 <h2
                     class="text-3xl md:text-4xl font-heading font-bold text-navy mb-3"
                 >
-                    {title}
+                    {
+                        titleZh ? (
+                            <>
+                                <span data-lang-en>{title}</span>
+                                <span data-lang-zh>{titleZh}</span>
+                            </>
+                        ) : (
+                            title
+                        )
+                    }
                 </h2>
                 <div class="w-20 h-1 bg-accent rounded-full mb-4 mx-auto"></div>
                 <p class="text-gray-text text-lg max-w-2xl">
-                    {subtitle}
+                    {
+                        subtitleZh ? (
+                            <>
+                                <span data-lang-en>{subtitle}</span>
+                                <span data-lang-zh>{subtitleZh}</span>
+                            </>
+                        ) : (
+                            subtitle
+                        )
+                    }
                 </p>
             </div>
 
@@ -187,6 +258,8 @@ function getMoonthAndDay(dateStr: string) {
                     id={`${idPrefix}-prev`}
                     class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-md border-2 border-gray-200/80 flex items-center justify-center text-navy hover:bg-accent hover:text-white hover:border-accent hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy disabled:hover:scale-100 cursor-pointer"
                     aria-label="Previous page"
+                    data-i18n-aria-en="Previous page"
+                    data-i18n-aria-zh="上一頁"
                 >
                     <svg
                         class="w-6 h-6"
@@ -205,6 +278,8 @@ function getMoonthAndDay(dateStr: string) {
                     id={`${idPrefix}-next`}
                     class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-md border-2 border-gray-200/80 flex items-center justify-center text-navy hover:bg-accent hover:text-white hover:border-accent hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy disabled:hover:scale-100 cursor-pointer"
                     aria-label="Next page"
+                    data-i18n-aria-en="Next page"
+                    data-i18n-aria-zh="下一頁"
                 >
                     <svg
                         class="w-6 h-6"
@@ -241,9 +316,14 @@ function getMoonthAndDay(dateStr: string) {
                                 (pageIndex + 1) * itemsPerPage,
                             )
                             .map((item, i) => {
-                                const { month, day, year } = getMoonthAndDay(
-                                    item.date,
-                                );
+                                const {
+                                    month,
+                                    monthZh,
+                                    day,
+                                    year,
+                                    fullEn,
+                                    fullZh,
+                                } = getMoonthAndDay(item.date);
                                 const [iy, im, idd] = item.date
                                     .split("-")
                                     .map(Number);
@@ -264,6 +344,8 @@ function getMoonthAndDay(dateStr: string) {
                                         role="button"
                                         tabindex="0"
                                         aria-label={`Open news detail: ${item.text.slice(0, 70)}`}
+                                        data-i18n-aria-en={`Open news detail: ${item.text.slice(0, 70)}`}
+                                        data-i18n-aria-zh={`開啟最新消息：${(item.text_zh ?? item.text).slice(0, 40)}`}
                                     >
                                         {/* Cover Image or Color Block */}
                                         <div class="h-48 overflow-hidden relative bg-navy/5">
@@ -271,6 +353,8 @@ function getMoonthAndDay(dateStr: string) {
                                                 <img
                                                     src={coverImage}
                                                     alt="News cover"
+                                                    data-i18n-alt-en="News cover"
+                                                    data-i18n-alt-zh="新聞封面"
                                                     width="800"
                                                     height="600"
                                                     loading={pageIndex === 0 ? "eager" : "lazy"}
@@ -298,7 +382,11 @@ function getMoonthAndDay(dateStr: string) {
                                             {/* Date Block (Absolute) */}
                                             <div class="absolute top-4 left-4 bg-white/95 backdrop-blur shadow-md rounded-xl p-2 text-center min-w-[3.5rem] border border-gray-100">
                                                 <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                                                    {month}
+                                                    <span data-lang-en
+                                                        >{month}</span
+                                                    ><span data-lang-zh
+                                                        >{monthZh}</span
+                                                    >
                                                 </div>
                                                 <div class="text-xl font-bold text-navy leading-none mt-0.5">
                                                     {day}
@@ -481,11 +569,22 @@ function getMoonthAndDay(dateStr: string) {
                                                                 ].spacing,
                                                             ]}
                                                         >
-                                                            {
-                                                                pillarConfig[
-                                                                    item.pillar
-                                                                ].label
-                                                            }
+                                                            <span data-lang-en>
+                                                                {
+                                                                    pillarConfig[
+                                                                        item
+                                                                            .pillar
+                                                                    ].label
+                                                                }
+                                                            </span>
+                                                            <span data-lang-zh>
+                                                                {
+                                                                    pillarConfig[
+                                                                        item
+                                                                            .pillar
+                                                                    ].labelZh
+                                                                }
+                                                            </span>
                                                         </span>
                                                     </a>
                                                 )}
@@ -494,31 +593,62 @@ function getMoonthAndDay(dateStr: string) {
                                                 {/* New badge if recent (logic: within current year or first 2 items) */}
                                                 {isRecent && (
                                                     <span class="px-2 py-0.5 bg-accent/10 text-accent rounded-full font-bold animate-pulse">
-                                                        NEW
+                                                        <span data-lang-en
+                                                            >NEW</span
+                                                        ><span data-lang-zh
+                                                            >最新</span
+                                                        >
                                                     </span>
                                                 )}
                                             </div>
 
                                             <div
                                                 class="text-gray-700 leading-relaxed text-sm mb-4 line-clamp-4 min-h-[5rem] text-justify"
-                                                set:html={highlightText(
-                                                    item.text,
-                                                    item.highlights,
-                                                    item.links,
-                                                    item.emphasis,
-                                                )}
-                                            />
+                                            >
+                                                <span
+                                                    data-lang-en
+                                                    set:html={highlightItem(
+                                                        item,
+                                                        "en",
+                                                    )}
+                                                /><span
+                                                    data-lang-zh
+                                                    set:html={highlightItem(
+                                                        item,
+                                                        "zh",
+                                                    )}
+                                                />
+                                            </div>
 
-                                            <!-- Hidden Full Content for Modal -->
+                                            <!-- Hidden Full Content for Modal (bilingual payload copied verbatim into modal; CSS handles language) -->
                                             <div class="hidden news-full-content">
-                                                <div class="news-raw-text" set:html={highlightText(
-                                                    item.text,
-                                                    item.highlights,
-                                                    item.links,
-                                                    item.emphasis,
-                                                )}></div>
-                                                <div class="news-meta-date" data-month={month} data-day={day} data-year={year}></div>
-                                                <div class="news-meta-pillar" data-pillar={item.pillar} data-label={item.pillar && pillarConfig[item.pillar] ? pillarConfig[item.pillar].label : ''}></div>
+                                                <div class="news-raw-text">
+                                                    <div
+                                                        data-lang-en
+                                                        set:html={highlightItem(
+                                                            item,
+                                                            "en",
+                                                        )}
+                                                    />
+                                                    <div
+                                                        data-lang-zh
+                                                        set:html={highlightItem(
+                                                            item,
+                                                            "zh",
+                                                        )}
+                                                    />
+                                                </div>
+                                                <div class="news-meta-date">
+                                                    <span data-lang-en>{fullEn}</span><span data-lang-zh>{fullZh}</span>
+                                                </div>
+                                                <div class="news-meta-pillar" data-pillar={item.pillar}>
+                                                    {item.pillar && pillarConfig[item.pillar] && (
+                                                        <>
+                                                            <span data-lang-en>{pillarConfig[item.pillar].label}</span>
+                                                            <span data-lang-zh>{pillarConfig[item.pillar].labelZh}</span>
+                                                        </>
+                                                    )}
+                                                </div>
                                                 <div class="news-images">
                                                     {item.images && item.images.map(img => (
                                                         <span class="hidden-news-img" data-src={img}></span>
@@ -546,6 +676,8 @@ function getMoonthAndDay(dateStr: string) {
                         class="mobile-dot group p-2 cursor-pointer"
                         data-index={i}
                         aria-label={`Go to page ${i + 1}`}
+                        data-i18n-aria-en={`Go to page ${i + 1}`}
+                        data-i18n-aria-zh={`前往第 ${i + 1} 頁`}
                     >
                         <span class="block w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 group-hover:bg-accent/50 group-hover:scale-125 data-[active=true]:bg-accent data-[active=true]:w-8" data-active={i === 0 ? "true" : "false"}></span>
                     </button>
@@ -561,6 +693,8 @@ function getMoonthAndDay(dateStr: string) {
         role="dialog"
         aria-modal="true"
         aria-label="News detail"
+        data-i18n-aria-en="News detail"
+        data-i18n-aria-zh="最新消息詳情"
     >
         <div
             class="detail-content bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300 flex flex-col"
@@ -569,6 +703,8 @@ function getMoonthAndDay(dateStr: string) {
             <button
                 class="detail-close absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-navy transition-colors z-20"
                 aria-label="Close news detail"
+                data-i18n-aria-en="Close news detail"
+                data-i18n-aria-zh="關閉最新消息詳情"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -614,20 +750,20 @@ function getMoonthAndDay(dateStr: string) {
             const dateDiv = fullContentDiv.querySelector(".news-meta-date");
             const pillarDiv = fullContentDiv.querySelector(".news-meta-pillar");
             const pillar = pillarDiv.dataset.pillar;
-            const pillarLabel = pillarDiv.dataset.label;
             const images = fullContentDiv.querySelectorAll(".hidden-news-img");
 
+            // Copy bilingual payloads verbatim; html[data-lang] CSS shows the
+            // active language, so switching while the modal is open just works.
             detailModal.querySelector(".modal-text").innerHTML = rawText;
-
-            const dateStr = `${dateDiv.dataset.month} ${dateDiv.dataset.day}, ${dateDiv.dataset.year}`;
-            detailModal.querySelector(".modal-date").textContent = dateStr;
+            detailModal.querySelector(".modal-date").innerHTML =
+                dateDiv.innerHTML;
 
             const pillarSpan = detailModal.querySelector(".modal-pillar");
             pillarSpan.className =
                 "modal-pillar hidden px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wide";
             if (pillar) {
                 pillarSpan.classList.remove("hidden");
-                pillarSpan.textContent = pillarLabel || pillar;
+                pillarSpan.innerHTML = pillarDiv.innerHTML || pillar;
                 const pillarColors = {
                     perception: ["bg-blue-100", "text-blue-700"],
                     inspection: ["bg-emerald-100", "text-emerald-700"],

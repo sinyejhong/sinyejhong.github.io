@@ -1,15 +1,26 @@
 ---
+import { formatDateParts, formatDateFull } from "../i18n/format";
+
 interface Props {
     images: string[];
     title: string;
+    titleZh?: string;
     description: string;
+    descriptionZh?: string;
     category: string;
     date?: string;
 }
 
-const { images, title, description, category, date } = Astro.props;
+const { images, title, titleZh, description, descriptionZh, category, date } =
+    Astro.props;
 const coverImage = images[0];
 const photoCount = images.length;
+
+const categoryLabelsZh: Record<string, string> = {
+    Activity: "活動",
+    Equipment: "設備",
+};
+const categoryZh = categoryLabelsZh[category] || category;
 
 // Category color mapping - only 2 categories now
 const categoryColors: Record<
@@ -37,8 +48,10 @@ const uniqueId = `gallery-${Math.random().toString(36).substr(2, 9)}`;
 let dateShort: string | null = null;
 let dateFull: string | null = null;
 let dateMonth: string | null = null;
+let dateMonthZh: string | null = null;
 let dateDay: string | null = null;
 let dateYear: string | null = null;
+let dateFullZh: string | null = null;
 if (date) {
     const [y, m, d] = date.split("-").map(Number);
     const dt = new Date(Date.UTC(y, m - 1, d));
@@ -59,6 +72,8 @@ if (date) {
         .toUpperCase();
     dateDay = String(d);
     dateYear = String(y);
+    dateMonthZh = formatDateParts(date, "zh").month;
+    dateFullZh = formatDateFull(date, "zh");
 }
 ---
 
@@ -68,6 +83,8 @@ if (date) {
     role="button"
     tabindex="0"
     aria-label={`Open “${title}” — view ${photoCount > 1 ? photoCount + " photos" : "photo"}`}
+    data-i18n-aria-en={`Open “${title}” — view ${photoCount > 1 ? photoCount + " photos" : "photo"}`}
+    data-i18n-aria-zh={`開啟「${titleZh || title}」— 檢視 ${photoCount} 張照片`}
     onclick={`document.getElementById('${uniqueId}').showModal(); document.body.style.overflow = 'hidden';`}
     onkeydown={`if(event.key==='Enter'||event.key===' '){event.preventDefault(); document.getElementById('${uniqueId}').showModal(); document.body.style.overflow='hidden';}`}
 >
@@ -76,6 +93,8 @@ if (date) {
         <img
             src={coverImage}
             alt={title}
+            data-i18n-alt-en={title}
+            data-i18n-alt-zh={titleZh || title}
             width="800"
             height="600"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -132,7 +151,9 @@ if (date) {
                         </svg>
                     )
                 }
-                {category}
+                <span data-lang-en>{category}</span><span data-lang-zh
+                    >{categoryZh}</span
+                >
             </span>
         </div>
 
@@ -142,7 +163,9 @@ if (date) {
                 <div class="absolute top-4 right-4 z-10">
                     <div class="date-tile flex flex-col items-center justify-center w-12 h-12 rounded-lg bg-white/95 backdrop-blur-md shadow-lg border border-white/40 overflow-hidden ring-1 ring-black/5">
                         <div class="w-full bg-accent text-white text-[9px] font-bold uppercase tracking-wider text-center leading-tight py-0.5">
-                            {dateMonth}
+                            <span data-lang-en>{dateMonth}</span><span
+                                data-lang-zh>{dateMonthZh}</span
+                            >
                         </div>
                         <div class="flex-1 flex items-center justify-center w-full">
                             <span class="text-lg font-bold text-navy leading-none">
@@ -185,7 +208,16 @@ if (date) {
             <h3
                 class="text-lg font-bold text-white mb-2 line-clamp-2 drop-shadow-lg"
             >
-                {title}
+                {
+                    titleZh ? (
+                        <>
+                            <span data-lang-en>{title}</span>
+                            <span data-lang-zh>{titleZh}</span>
+                        </>
+                    ) : (
+                        title
+                    )
+                }
             </h3>
             {
                 date && (
@@ -203,14 +235,25 @@ if (date) {
                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                             />
                         </svg>
-                        {dateShort}
+                        <span data-lang-en>{dateShort}</span><span
+                            data-lang-zh>{dateFullZh}</span
+                        >
                     </p>
                 )
             }
             <p
                 class="text-sm text-white/80 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
             >
-                {description}
+                {
+                    descriptionZh ? (
+                        <>
+                            <span data-lang-en>{description}</span>
+                            <span data-lang-zh>{descriptionZh}</span>
+                        </>
+                    ) : (
+                        description
+                    )
+                }
             </p>
         </div>
 
@@ -249,6 +292,9 @@ if (date) {
     <!-- Close Button -->
     <button
         onclick={`document.getElementById('${uniqueId}').close()`}
+        aria-label="Close"
+        data-i18n-aria-en="Close"
+        data-i18n-aria-zh="關閉"
         class="absolute top-4 right-4 z-20 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-navy transition-colors"
     >
         <svg
@@ -311,7 +357,9 @@ if (date) {
                         </svg>
                     )
                 }
-                {category}
+                <span data-lang-en>{category}</span><span data-lang-zh
+                    >{categoryZh}</span
+                >
             </span>
             {
                 date && (
@@ -329,12 +377,18 @@ if (date) {
                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                             />
                         </svg>
-                        <time datetime={date}>{dateFull}</time>
+                        <time datetime={date}
+                            ><span data-lang-en>{dateFull}</span><span
+                                data-lang-zh>{dateFullZh}</span
+                            ></time
+                        >
                     </span>
                 )
             }
             <span class="text-sm text-gray-400 font-medium"
-                >ASI² Lab Gallery</span
+                ><span data-lang-en>ASI² Lab Gallery</span><span data-lang-zh
+                    >ASI² Lab 相簿</span
+                ></span
             >
         </div>
 
@@ -342,14 +396,32 @@ if (date) {
         <h3
             class="text-2xl md:text-3xl font-heading font-bold text-navy mb-6 leading-tight"
         >
-            {title}
+            {
+                titleZh ? (
+                    <>
+                        <span data-lang-en>{title}</span>
+                        <span data-lang-zh>{titleZh}</span>
+                    </>
+                ) : (
+                    title
+                )
+            }
         </h3>
 
         <!-- Description -->
         <div
             class="prose prose-lg text-gray-600 mb-8 max-w-none leading-relaxed"
         >
-            {description}
+            {
+                descriptionZh ? (
+                    <>
+                        <span data-lang-en>{description}</span>
+                        <span data-lang-zh>{descriptionZh}</span>
+                    </>
+                ) : (
+                    description
+                )
+            }
         </div>
 
         <!-- Image Gallery (vertical stack, all photos) -->

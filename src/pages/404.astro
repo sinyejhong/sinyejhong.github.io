@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import LangBlock from "../components/i18n/LangBlock.astro";
 ---
 
 <BaseLayout
@@ -18,32 +19,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <h1
                 class="text-2xl md:text-3xl font-heading font-bold text-navy mb-4"
             >
-                Page Not Found
+                <span data-lang-en>Page Not Found</span><span data-lang-zh>找不到此頁面</span>
             </h1>
-            <p class="text-gray-text text-lg mb-8">
-                Sorry, the page you're looking for doesn't exist or may have
-                moved. Here are some helpful links instead:
-            </p>
+            <LangBlock as="p" class="text-gray-text text-lg mb-8">
+                <Fragment slot="en">Sorry, the page you're looking for doesn't exist or may have moved. Here are some helpful links instead:</Fragment>
+                <Fragment slot="zh">抱歉，您找的頁面不存在或已移動。以下提供幾個常用連結：</Fragment>
+            </LangBlock>
             <div class="flex flex-wrap justify-center gap-3">
                 <a
                     href="/"
                     class="px-5 py-2.5 rounded-lg bg-navy text-white font-medium hover:bg-navy-light transition-colors"
-                    >Home</a
+                    ><span data-lang-en>Home</span><span data-lang-zh>首頁</span></
                 >
                 <a
                     href="/publications"
                     class="px-5 py-2.5 rounded-lg bg-gray-bg text-navy font-medium hover:bg-gray-border transition-colors"
-                    >Publications</a
+                    ><span data-lang-en>Publications</span><span data-lang-zh>學術著作</span></
                 >
                 <a
                     href="/members"
                     class="px-5 py-2.5 rounded-lg bg-gray-bg text-navy font-medium hover:bg-gray-border transition-colors"
-                    >Members</a
+                    ><span data-lang-en>Members</span><span data-lang-zh>實驗室成員</span></
                 >
                 <a
                     href="/about"
                     class="px-5 py-2.5 rounded-lg bg-gray-bg text-navy font-medium hover:bg-gray-border transition-colors"
-                    >About PI</a
+                    ><span data-lang-en>About PI</span><span data-lang-zh>主持人簡介</span></
                 >
             </div>
         </div>

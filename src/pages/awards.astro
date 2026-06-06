@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import AwardCard from "../components/AwardCard.astro";
+import LangBlock from "../components/i18n/LangBlock.astro";
 import awards from "../data/awards.json";
 
 // Filter for 2025+ and sort by year descending, excluding PI awards
@@ -32,19 +33,28 @@ const competitionAwards = sortedAwards.filter(
             <h1
                 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
             >
-                Lab & Student Awards
+                <span data-lang-en>Lab & Student Awards</span><span data-lang-zh>實驗室與學生獎項</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
-                Celebrating our students' excellence and team achievements under
-                Dr. Jhong's guidance
+                <span data-lang-en>Celebrating our students' excellence and team achievements under
+                Dr. Jhong's guidance</span><span data-lang-zh>記錄本實驗室學生與團隊在競賽與學術活動中的獲獎成果</span>
             </p>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-8">
-                Competition wins and recognitions achieved by ASI² LAB members.
-                For the PI's personal academic honors, visit
-                <a href="/about#honors" class="text-accent hover:underline"
-                    >Personal Honors & Awards</a
-                >.
-            </p>
+            <LangBlock as="p" class="text-gray-400 max-w-2xl mx-auto mb-8">
+                <Fragment slot="en">
+                    Competition wins and recognitions achieved by ASI² LAB members.
+                    For the PI's personal academic honors, visit
+                    <a href="/about#honors" class="text-accent hover:underline"
+                        >Personal Honors & Awards</a
+                    >.
+                </Fragment>
+                <Fragment slot="zh">
+                    ASI² LAB 成員獲得的各項競賽與學術肯定。
+                    主持人的個人學術榮譽請見
+                    <a href="/about#honors" class="text-accent hover:underline"
+                        >Personal Honors & Awards</a
+                    >。
+                </Fragment>
+            </LangBlock>
 
             <!-- Total Counter -->
             <div
@@ -54,7 +64,7 @@ const competitionAwards = sortedAwards.filter(
                     {sortedAwards.length}
                 </div>
                 <div class="text-left">
-                    <div class="text-xl font-semibold">Total Awards</div>
+                    <div class="text-xl font-semibold"><span data-lang-en>Total Awards</span><span data-lang-zh>獎項總計</span></div>
                     <div class="text-gray-400 text-sm">(2025 - Present)</div>
                 </div>
             </div>
@@ -71,25 +81,25 @@ const competitionAwards = sortedAwards.filter(
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
                 >
-                    All ({sortedAwards.length})
+                    <span data-lang-en>All</span><span data-lang-zh>全部</span> ({sortedAwards.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="student_merit"
                 >
-                    🏅 Student Merit Awards ({meritAwards.length})
+                    🏅 <span data-lang-en>Student Merit Awards</span><span data-lang-zh>學生榮譽獎</span> ({meritAwards.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="paper"
                 >
-                    📄 Paper Awards ({paperAwards.length})
+                    📄 <span data-lang-en>Paper Awards</span><span data-lang-zh>論文獎</span> ({paperAwards.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="competition"
                 >
-                    🏆 Competition Awards ({competitionAwards.length})
+                    🏆 <span data-lang-en>Competition Awards</span><span data-lang-zh>競賽獎</span> ({competitionAwards.length})
                 </button>
             </div>
         </div>
@@ -125,9 +135,11 @@ const competitionAwards = sortedAwards.filter(
                                         <AwardCard
                                             title={award.title}
                                             event={award.event}
+                                            eventZh={award.event_zh}
                                             year={award.year}
                                             category={award.category}
                                             description={award.description}
+                                            descriptionZh={award.description_zh}
                                         />
                                     </div>
                                 ))}
@@ -141,12 +153,50 @@ const competitionAwards = sortedAwards.filter(
 </BaseLayout>
 
 <script>
+    import { countUnit, onLangChange } from "../scripts/i18n";
+
     const filterBtns = document.querySelectorAll(".filter-btn");
     const yearGroups = document.querySelectorAll(".year-group");
 
+    function applyFilter(filter: string) {
+        yearGroups.forEach((group) => {
+            const items = group.querySelectorAll(".award-item");
+            let visibleCount = 0;
+
+            items.forEach((item) => {
+                if (
+                    filter === "all" ||
+                    item.getAttribute("data-category") === filter
+                ) {
+                    item.classList.remove("hidden");
+                    visibleCount++;
+                } else {
+                    item.classList.add("hidden");
+                }
+            });
+
+            // Update year count in the active language
+            const yearCountEl = group.querySelector(".year-count");
+            if (yearCountEl) {
+                yearCountEl.textContent = countUnit(
+                    visibleCount,
+                    "award",
+                    "awards",
+                    "個獎項",
+                );
+            }
+
+            group.classList.toggle("hidden", visibleCount === 0);
+        });
+    }
+
+    function currentFilter(): string {
+        const active = document.querySelector(".filter-btn.active");
+        return active?.getAttribute("data-filter") || "all";
+    }
+
     filterBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            // Update active button
             filterBtns.forEach((b) => {
                 b.classList.remove(
                     "active",
@@ -174,36 +224,10 @@ const competitionAwards = sortedAwards.filter(
                 "hover:bg-gray-200",
             );
 
-            const filter = btn.getAttribute("data-filter");
-
-            yearGroups.forEach((group) => {
-                const items = group.querySelectorAll(".award-item");
-                let visibleCount = 0;
-
-                items.forEach((item) => {
-                    if (
-                        filter === "all" ||
-                        item.getAttribute("data-category") === filter
-                    ) {
-                        item.classList.remove("hidden");
-                        visibleCount++;
-                    } else {
-                        item.classList.add("hidden");
-                    }
-                });
-
-                // Update year count
-                const yearCountEl = group.querySelector(".year-count");
-                if (yearCountEl) {
-                    yearCountEl.textContent = `${visibleCount} ${visibleCount === 1 ? 'award' : 'awards'}`;
-                }
-
-                if (visibleCount > 0) {
-                    group.classList.remove("hidden");
-                } else {
-                    group.classList.add("hidden");
-                }
-            });
+            applyFilter(btn.getAttribute("data-filter") || "all");
         });
     });
+
+    // Re-render year counts in the active language (runs on load + langchange).
+    onLangChange(() => applyFilter(currentFilter()));
 </script>

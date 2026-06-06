@@ -1,11 +1,16 @@
 ---
 interface Props {
     title: string;
+    titleZh?: string;
     organization: string;
+    organizationZh?: string;
     organizationUrl?: string;
     period: string;
+    periodZh?: string;
     location: string;
+    locationZh?: string;
     department?: string;
+    departmentZh?: string;
     iconType:
         | "phd"
         | "masters"
@@ -23,11 +28,16 @@ interface Props {
 
 const {
     title,
+    titleZh,
     organization,
+    organizationZh,
     organizationUrl,
     period,
+    periodZh,
     location,
+    locationZh,
     department,
+    departmentZh,
     iconType,
     isCurrent = false,
     category,
@@ -284,19 +294,40 @@ const config = iconConfig[iconType] || iconConfig.research;
                     {
                         isCurrent && (
                             <span class="badge badge-ongoing text-xs">
-                                Current
+                                <span data-lang-en>Current</span>
+                                <span data-lang-zh>現職</span>
                             </span>
                         )
                     }
                 </div>
-                <span class="text-sm font-medium text-gray-500">{period}</span>
+                <span class="text-sm font-medium text-gray-500">
+                    {
+                        periodZh ? (
+                            <>
+                                <span data-lang-en>{period}</span>
+                                <span data-lang-zh>{periodZh}</span>
+                            </>
+                        ) : (
+                            period
+                        )
+                    }
+                </span>
             </div>
 
             <!-- Title with hover effect -->
             <h3
                 class="text-lg font-semibold text-navy mb-1.5 group-hover:text-accent transition-colors duration-200"
             >
-                {title}
+                {
+                    titleZh ? (
+                        <>
+                            <span data-lang-en>{title}</span>
+                            <span data-lang-zh>{titleZh}</span>
+                        </>
+                    ) : (
+                        title
+                    )
+                }
             </h3>
 
             <!-- Organization -->
@@ -309,7 +340,14 @@ const config = iconConfig[iconType] || iconConfig.research;
                             rel="noopener noreferrer"
                             class="hover:underline inline-flex items-center gap-1"
                         >
-                            {organization}
+                            {organizationZh ? (
+                                <>
+                                    <span data-lang-en>{organization}</span>
+                                    <span data-lang-zh>{organizationZh}</span>
+                                </>
+                            ) : (
+                                organization
+                            )}
                             <svg
                                 class="w-3.5 h-3.5 opacity-50"
                                 fill="none"
@@ -324,6 +362,11 @@ const config = iconConfig[iconType] || iconConfig.research;
                                 />
                             </svg>
                         </a>
+                    ) : organizationZh ? (
+                        <>
+                            <span data-lang-en>{organization}</span>
+                            <span data-lang-zh>{organizationZh}</span>
+                        </>
                     ) : (
                         organization
                     )
@@ -334,7 +377,20 @@ const config = iconConfig[iconType] || iconConfig.research;
             <div
                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-sm text-gray-500"
             >
-                {department && <span>{department}</span>}
+                {
+                    department && (
+                        <span>
+                            {departmentZh ? (
+                                <>
+                                    <span data-lang-en>{department}</span>
+                                    <span data-lang-zh>{departmentZh}</span>
+                                </>
+                            ) : (
+                                department
+                            )}
+                        </span>
+                    )
+                }
                 <span class="flex items-center gap-1">
                     <svg
                         class="w-3.5 h-3.5"

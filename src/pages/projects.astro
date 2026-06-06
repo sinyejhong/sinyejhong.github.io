@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import LogoWall from "../components/LogoWall.astro";
+import LangText from "../components/i18n/LangText.astro";
 import projects from "../data/projects.json";
 
 // Helper to calculate status from duration string "YYYY.MM - YYYY.MM"
@@ -110,11 +111,11 @@ const govLogos = [
             <h1
                 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
             >
-                Projects
+                <span data-lang-en>Projects</span><span data-lang-zh>計畫</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Industry collaborations and government-funded research
-                initiatives
+                <span data-lang-en>Industry collaborations and government-funded research
+                initiatives</span><span data-lang-zh>產業合作與政府補助研究計畫</span>
             </p>
 
             <!-- Stats -->
@@ -123,25 +124,25 @@ const govLogos = [
                     <span class="text-4xl font-bold text-accent"
                         >{sortedProjects.length}</span
                     >
-                    <div class="text-gray-300 mt-1">Total Projects</div>
+                    <div class="text-gray-300 mt-1"><span data-lang-en>Total Projects</span><span data-lang-zh>全部計畫</span></div>
                 </div>
                 <div class="px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm">
                     <span class="text-4xl font-bold text-green-400"
                         >{ongoingCount}</span
                     >
-                    <div class="text-gray-300 mt-1">Ongoing</div>
+                    <div class="text-gray-300 mt-1"><span data-lang-en>Ongoing</span><span data-lang-zh>進行中</span></div>
                 </div>
                 <div class="px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm">
                     <span class="text-4xl font-bold text-orange-400"
                         >{industryProjects.length}</span
                     >
-                    <div class="text-gray-300 mt-1">Industry</div>
+                    <div class="text-gray-300 mt-1"><span data-lang-en>Industry</span><span data-lang-zh>產業</span></div>
                 </div>
                 <div class="px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm">
                     <span class="text-4xl font-bold text-cyan-400"
                         >{govProjects.length}</span
                     >
-                    <div class="text-gray-300 mt-1">Government</div>
+                    <div class="text-gray-300 mt-1"><span data-lang-en>Government</span><span data-lang-zh>政府機構</span></div>
                 </div>
             </div>
         </div>
@@ -152,7 +153,9 @@ const govLogos = [
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="Our Partners"
+                titleZh="合作夥伴"
                 subtitle="Collaborating with leading industry partners and government agencies"
+                subtitleZh="與頂尖產業夥伴及政府機構攜手合作"
             />
 
             <div class="grid md:grid-cols-2 gap-12">
@@ -160,7 +163,7 @@ const govLogos = [
                     <h3
                         class="text-lg font-semibold text-navy mb-6 flex items-center gap-2"
                     >
-                        <span class="text-2xl">🏭</span> Industry Partners
+                        <span class="text-2xl">🏭</span> <span data-lang-en>Industry Partners</span><span data-lang-zh>產業夥伴</span>
                     </h3>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         {
@@ -188,8 +191,7 @@ const govLogos = [
                     <h3
                         class="text-lg font-semibold text-navy mb-6 flex items-center gap-2"
                     >
-                        <span class="text-2xl">🏛️</span> Government Agencies / Research
-                        Center
+                        <span class="text-2xl">🏛️</span> <span data-lang-en>Government Agencies / Research Center</span><span data-lang-zh>政府機構 / 研究中心</span>
                     </h3>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         {
@@ -229,19 +231,19 @@ const govLogos = [
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
                 >
-                    All Projects ({sortedProjects.length})
+                    <span data-lang-en>All Projects</span><span data-lang-zh>全部計畫</span> ({sortedProjects.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="industry"
                 >
-                    🏭 Industry ({industryProjects.length})
+                    🏭 <span data-lang-en>Industry</span><span data-lang-zh>產業</span> ({industryProjects.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="government"
                 >
-                    🏛️ Gov / Research Center ({govProjects.length})
+                    🏛️ <span data-lang-en>Gov / Research Center</span><span data-lang-zh>政府機構 / 研究中心</span> ({govProjects.length})
                 </button>
             </div>
         </div>
@@ -260,13 +262,16 @@ const govLogos = [
                             <ProjectCard
                                 title={project.title}
                                 funder={project.funder}
+                                funderZh={project.funder_zh}
                                 duration={project.duration}
                                 role={project.role}
+                                roleZh={project.role_zh}
                                 status={
                                     project.status as "ongoing" | "completed"
                                 }
                                 type={project.type}
                                 description={project.description}
+                                descriptionZh={project.description_zh}
                                 pillar={project.pillar}
                             />
                         </div>

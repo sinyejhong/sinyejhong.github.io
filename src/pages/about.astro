@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import LangText from "../components/i18n/LangText.astro";
+import LangBlock from "../components/i18n/LangBlock.astro";
 import PIAwardCard from "../components/PIAwardCard.astro";
 import TimelineCard from "../components/TimelineCard.astro";
 import awards from "../data/awards.json";
@@ -127,15 +129,29 @@ const jsonLd = {
                         Dr. Sin-Ye Jhong 鍾昕燁
                     </h1>
                     <p class="text-lg mb-1">
-                        <span class="text-accent font-medium"
-                            >Assistant Professor</span
-                        ><span class="text-gray-300">, GIMT, NTUST</span>
+                        <span data-lang-en
+                            ><span class="text-accent font-medium"
+                                >Assistant Professor</span
+                            ><span class="text-gray-300">, GIMT, NTUST</span></span
+                        ><span data-lang-zh
+                            ><span class="text-accent font-medium">助理教授</span
+                            ><span class="text-gray-300"
+                                >，智慧製造科技研究所，國立臺灣科技大學</span
+                            ></span
+                        >
                     </p>
                     <p class="text-lg mb-6">
-                        <span class="text-accent font-medium"
-                            >AI Application Consultant</span
-                        ><span class="text-gray-300"
-                            >, Power Data Co., Ltd.</span
+                        <span data-lang-en
+                            ><span class="text-accent font-medium"
+                                >AI Application Consultant</span
+                            ><span class="text-gray-300"
+                                >, Power Data Co., Ltd.</span
+                            ></span
+                        ><span data-lang-zh
+                            ><span class="text-accent font-medium">AI 應用顧問</span
+                            ><span class="text-gray-300"
+                                >，勝力數智股份有限公司 (Power Data Co., Ltd.)</span
+                            ></span
                         >
                     </p>
 
@@ -160,7 +176,9 @@ const jsonLd = {
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                 ></path>
                             </svg>
-                            Contact
+                            <span data-lang-en>Contact</span><span
+                                data-lang-zh>聯絡</span
+                            >
                         </a>
                         <a
                             href="/document/CV.pdf"
@@ -180,7 +198,9 @@ const jsonLd = {
                                     d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                 ></path>
                             </svg>
-                            Download CV
+                            <span data-lang-en>Download CV</span><span
+                                data-lang-zh>下載 CV</span
+                            >
                         </a>
                         <a
                             href="https://innc.ntust.edu.tw/p/405-1111-137656,c11515.php?Lang=zh-tw"
@@ -201,7 +221,9 @@ const jsonLd = {
                                     d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                                 ></path>
                             </svg>
-                            Faculty Profile
+                            <span data-lang-en>Faculty Profile</span><span
+                                data-lang-zh>教師簡介</span
+                            >
                         </a>
                     </div>
 
@@ -269,12 +291,12 @@ const jsonLd = {
     <!-- Biography -->
     <section class="section-padding bg-gray-bg">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader title="Biography" />
+            <SectionHeader title="Biography" titleZh="個人簡介" />
 
             <div
                 class="bg-white rounded-xl p-8 shadow-sm text-base leading-relaxed text-gray-700 space-y-2 text-justify"
             >
-                <p>
+                <p data-lang-en>
                     <span class="font-bold text-navy">Sin-Ye Jhong</span> received
                     the Ph.D. degree in Engineering Science from National Cheng Kung
                     University (NCKU), Tainan, Taiwan, in <span
@@ -300,7 +322,22 @@ const jsonLd = {
                     things (AIoT), robot perception & navigation, and
                     human-robot interaction.
                 </p>
-                <p class="indent-8">
+                <p data-lang-zh>
+                    <span class="font-bold text-navy">Sin-Ye Jhong</span> 於 <span
+                        class="text-blue-600 font-semibold">2024</span
+                    > 年取得國立成功大學（NCKU）工程科學博士學位。<span
+                        class="text-blue-600 font-semibold">2023</span
+                    >–<span class="text-blue-600 font-semibold">2024</span> 年間於國立臺灣科技大學（NTUST）智慧電動車研究中心擔任研究員；<span
+                        class="text-blue-600 font-semibold">2024</span
+                    > 年並在國科會<span class="text-[#d83d70] font-bold">千里馬計畫</span
+                    >支持下，赴南佛羅里達大學（USF）擔任訪問學者。先前於 <span
+                        class="text-blue-600 font-semibold">2025</span
+                    > 年於淡江大學人工智慧學系擔任助理教授，現為國立臺灣科技大學智慧製造科技研究所助理教授。研究興趣涵蓋
+                    computer vision、deep learning、multimodal learning、artificial
+                    intelligence of things (AIoT)、robot perception & navigation
+                    與 human-robot interaction。
+                </p>
+                <p class="indent-8" data-lang-en>
                     Dr. Jhong’s research excellence has been widely recognized.
                     In <span class="text-blue-600 font-semibold">2025</span>, he
                     was the recipient of <span class="text-[#d83d70] font-bold"
@@ -334,7 +371,35 @@ const jsonLd = {
                         >Best Paper Honorable Mention</span
                     > at ARIS.
                 </p>
-                <p class="indent-8">
+                <p class="indent-8" data-lang-zh>
+                    Dr. Jhong 曾獲多項研究獎項。<span
+                        class="text-blue-600 font-semibold">2025</span
+                    > 年榮獲 <span class="text-[#d83d70] font-bold"
+                        >四項最佳博士論文獎</span
+                    >，分別由 IEEE Tainan Section、IET Taipei Local Network、中華民國系統學會（TASSE）與中華民國消費電子學會頒授。已於
+                    SCI 期刊發表 <span class="text-[#d83d70] font-bold"
+                        >逾 15 篇論文</span
+                    >，包括 <span class="italic">IEEE Trans. Consumer Electronics</span
+                    >、<span class="italic"
+                        >IEEE Trans. Instrumentation and Measurement</span
+                    > 與 <span class="italic"
+                        >ACM Trans. Multimedia Computing, Communications, and
+                        Applications</span
+                    >；並於多個國際會議獲獎，<span
+                        class="text-blue-600 font-semibold">2025</span
+                    > 年成果包括 IEEE AVSS 的 <span class="text-[#d83d70] font-bold"
+                        >傑出報告獎</span
+                    >、Automation 的 <span class="text-[#d83d70] font-bold"
+                        >最佳學生論文獎第一名</span
+                    > 與 <span class="text-[#d83d70] font-bold"
+                        >最佳論文獎第二名</span
+                    >、CACS 的 <span class="text-[#d83d70] font-bold"
+                        >最佳論文獎第二名</span
+                    >，以及 ARIS 的 <span class="text-[#d83d70] font-bold"
+                        >最佳論文獎佳作</span
+                    >。
+                </p>
+                <p class="indent-8" data-lang-en>
                     Dedicated to bridging the gap between theoretical research
                     and practical application, Dr. Jhong has guided his research
                     team to win <span class="text-[#d83d70] font-bold"
@@ -369,6 +434,32 @@ const jsonLd = {
                         >Best Service Award</span
                     >.
                 </p>
+                <p class="indent-8" data-lang-zh>
+                    Dr. Jhong 致力於銜接理論研究與實務應用，指導研究團隊在重要全國性競賽中獲得 <span
+                        class="text-[#d83d70] font-bold">逾 30 項獎項</span
+                    >，包括 NCHU Capstone Competition for AI Empowerment
+                    and Robotics Applications in Manufacturing（<span
+                        class="text-blue-600 font-semibold">2025</span
+                    >）、International ICT Innovative Services Awards（<span
+                        class="text-blue-600 font-semibold">2025</span
+                    >）、National Electronics Creative Design Competition（<span
+                        class="text-blue-600 font-semibold">2018</span
+                    >–<span class="text-blue-600 font-semibold">2026</span>）與
+                    Intel® DevCup x OpenVINO™ Toolkit Competition（<span
+                        class="text-blue-600 font-semibold">2021</span
+                    >、<span class="text-blue-600 font-semibold">2022</span>）等競賽的 <span
+                        class="text-[#d83d70] font-bold">首獎</span
+                    >。參與 <span class="text-[#d83d70] font-bold"
+                        >逾 20 項產學與國科會計畫</span
+                    >，持有 <span class="text-[#d83d70] font-bold"
+                        >2 項美國專利</span
+                    >、<span class="text-[#d83d70] font-bold">10 項臺灣專利</span
+                    > 與 <span class="text-[#d83d70] font-bold">1 項中國專利</span
+                    >。亦活躍於學術社群，曾於 ARIS、CACS、Automation、ICCE-TW 等會議擔任議程主持人，並於
+                    ICETA 2021 擔任公開宣傳主持人，榮獲 <span class="text-[#d83d70] font-bold"
+                        >最佳服務獎</span
+                    >。
+                </p>
             </div>
         </div>
     </section>
@@ -376,15 +467,18 @@ const jsonLd = {
     <!-- Education -->
     <section class="section-padding bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader title="Education" />
+            <SectionHeader title="Education" titleZh="學歷" />
 
             <div class="space-y-6">
                 <TimelineCard
                     title="Ph.D. in Engineering Science"
+                    titleZh="工程科學博士"
                     organization="National Cheng Kung University (NCKU)"
+                    organizationZh="國立成功大學 (NCKU)"
                     organizationUrl="https://www.es.ncku.edu.tw/esncku/zh/"
                     period="2019 - 2024"
                     location="Tainan, Taiwan"
+                    locationZh="台灣台南"
                     iconType="phd"
                     category="education"
                     watermarkLogo="/images/Logo/NCKU.png"
@@ -392,10 +486,13 @@ const jsonLd = {
 
                 <TimelineCard
                     title="M.S. in Automation Technology"
+                    titleZh="自動化科技碩士"
                     organization="National Taipei University of Technology (NTUT)"
+                    organizationZh="國立臺北科技大學 (NTUT)"
                     organizationUrl="https://giat.ntut.edu.tw/"
                     period="2017 - 2019"
                     location="Taipei, Taiwan"
+                    locationZh="台灣台北"
                     iconType="masters"
                     category="education"
                     watermarkLogo="/images/Logo/NTUT.png"
@@ -404,10 +501,13 @@ const jsonLd = {
 
                 <TimelineCard
                     title="B.S. in Electrical Engineering"
+                    titleZh="電機工程學士"
                     organization="Chinese Culture University (PCCU)"
+                    organizationZh="中國文化大學 (PCCU)"
                     organizationUrl="https://ee.pccu.edu.tw/"
                     period="2013 - 2017"
                     location="Taipei, Taiwan"
+                    locationZh="台灣台北"
                     iconType="bachelors"
                     category="education"
                     watermarkLogo="/images/Logo/PCCU.png"
@@ -420,16 +520,21 @@ const jsonLd = {
     <!-- Work Experience -->
     <section class="section-padding bg-gray-bg">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader title="Work Experience" />
+            <SectionHeader title="Work Experience" titleZh="工作經歷" />
 
             <div class="space-y-6">
                 <TimelineCard
                     title="Assistant Professor"
+                    titleZh="助理教授"
                     organization="National Taiwan University of Science and Technology (NTUST)"
+                    organizationZh="國立臺灣科技大學 (NTUST)"
                     organizationUrl="https://www.ntust.edu.tw/"
                     period="2025 - Present"
+                    periodZh="2025 - 至今"
                     location="Taipei, Taiwan"
+                    locationZh="台灣台北"
                     department="Graduate Institute of Intelligent Manufacturing Technology"
+                    departmentZh="智慧製造科技研究所"
                     iconType="professor"
                     isCurrent={true}
                     category="work"
@@ -437,11 +542,16 @@ const jsonLd = {
 
                 <TimelineCard
                     title="AI Application Consultant"
+                    titleZh="AI 應用顧問"
                     organization="Power Data Co., Ltd. (勝力數智股份有限公司)"
+                    organizationZh="勝力數智股份有限公司 (Power Data Co., Ltd.)"
                     organizationUrl="https://www.powerdata.com.tw/"
                     period="2025 - Present"
+                    periodZh="2025 - 至今"
                     location="Yunlin, Taiwan"
+                    locationZh="台灣雲林"
                     department="Strategic Technical Advisory & Digital Transformation"
+                    departmentZh="策略技術顧問與數位轉型"
                     iconType="industry"
                     isCurrent={true}
                     category="work"
@@ -449,55 +559,74 @@ const jsonLd = {
 
                 <TimelineCard
                     title="Assistant Professor"
+                    titleZh="助理教授"
                     organization="Tamkang University (TKU)"
+                    organizationZh="淡江大學 (TKU)"
                     organizationUrl="https://www.tku.edu.tw/"
                     period="2025"
                     location="New Taipei, Taiwan"
+                    locationZh="台灣新北"
                     department="Department of Artificial Intelligence"
+                    departmentZh="人工智慧學系"
                     iconType="professor"
                     category="work"
                 />
 
                 <TimelineCard
                     title="Research Fellow"
+                    titleZh="研究員"
                     organization="National Taiwan University of Science and Technology (NTUST)"
+                    organizationZh="國立臺灣科技大學 (NTUST)"
                     organizationUrl="https://www.ntust.edu.tw/"
                     period="2023 - 2025"
                     location="Taipei, Taiwan"
+                    locationZh="台灣台北"
                     department="Smart Electric Vehicle (SEV) Research Center"
+                    departmentZh="智慧電動車 (SEV) 研究中心"
                     iconType="research"
                     category="work"
                 />
 
                 <TimelineCard
                     title="Visiting Scholar"
+                    titleZh="訪問學者"
                     organization="University of South Florida (USF)"
+                    organizationZh="南佛羅里達大學 (USF)"
                     organizationUrl="https://www.usf.edu/"
                     period="2024"
                     location="Tampa, Florida, USA"
+                    locationZh="美國佛羅里達州坦帕"
                     department="Department of Electrical Engineering"
+                    departmentZh="電機工程學系"
                     iconType="visiting"
                     category="work"
                 />
 
                 <TimelineCard
                     title="Vice Chair"
+                    titleZh="副主席"
                     organization="IET Taipei Local Network"
                     organizationUrl="https://www.iettaiwan.org.tw/news_detail_78.htm"
                     period="2019"
                     location="Taipei, Taiwan"
+                    locationZh="台灣台北"
                     department="Young Professionals Group"
+                    departmentZh="青年專業人士組 (Young Professionals Group)"
                     iconType="leadership"
                     category="work"
                 />
 
                 <TimelineCard
                     title="Computer Vision R&D Intern"
+                    titleZh="Computer Vision 研發實習生"
                     organization="Real Touch Corp. Ltd. (健中資訊股份有限公司)"
+                    organizationZh="健中資訊股份有限公司 (Real Touch Corp. Ltd.)"
                     organizationUrl="https://realtouchapp.com/"
                     period="2016 - 2017"
                     location="New Taipei, Taiwan"
+                    locationZh="台灣新北"
                     department="Product R&D Department"
+                    departmentZh="產品研發部"
                     iconType="industry"
                     category="work"
                 />
@@ -508,12 +637,16 @@ const jsonLd = {
     <!-- Professional Activities -->
     <section id="professional-activities" class="section-padding bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader title="Professional Activities" />
+            <SectionHeader title="Professional Activities" titleZh="專業服務與學術活動" />
 
             <p class="text-gray-text text-center mb-8 -mt-4">
-                Contributing to the academic community through editorial
-                service, conference leadership, invited presentations, and
-                professional engagement.
+                <span data-lang-en
+                    >Contributing to the academic community through editorial
+                    service, conference leadership, invited presentations, and
+                    professional engagement.</span
+                ><span data-lang-zh
+                    >透過期刊編輯服務、會議籌辦、受邀演講與專業參與，持續貢獻於學術社群。</span
+                >
             </p>
 
             <!-- Editorial & Reviewer Service (Tabbed Interface) -->
@@ -524,11 +657,17 @@ const jsonLd = {
                     <h3
                         class="text-lg font-bold text-primary flex items-center gap-2"
                     >
-                        <span class="text-xl">📝</span> Editorial & Reviewer Service
+                        <span class="text-xl">📝</span> <span data-lang-en
+                            >Editorial & Reviewer Service</span
+                        ><span data-lang-zh>編輯與審稿服務</span>
                     </h3>
                     <p class="text-sm text-gray-500 mt-1">
-                        Serving as a peer reviewer for leading academic journals
-                        and international conferences
+                        <span data-lang-en
+                            >Serving as a peer reviewer for leading academic
+                            journals and international conferences</span
+                        ><span data-lang-zh
+                            >擔任頂尖學術期刊與國際會議的同儕審稿人</span
+                        >
                     </p>
                 </div>
 
@@ -541,14 +680,17 @@ const jsonLd = {
                         class="reviewer-filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                         data-filter="journal"
                     >
-                        Journal <span class="reviewer-count-journal"></span>
+                        <span data-lang-en>Journal</span><span data-lang-zh
+                            >期刊</span
+                        > <span class="reviewer-count-journal"></span>
                     </button>
                     <button
                         class="reviewer-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                         data-filter="conference"
                     >
-                        Conference <span class="reviewer-count-conference"
-                        ></span>
+                        <span data-lang-en>Conference</span><span
+                            data-lang-zh>會議</span
+                        > <span class="reviewer-count-conference"></span>
                     </button>
                 </div>
 
@@ -560,7 +702,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, IEEE Transactions on Consumer Electronics
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> IEEE Transactions on Consumer Electronics
                             (TCE)</span
                         >
                     </div>
@@ -569,7 +711,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, IEEE Transactions on Semiconductor
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> IEEE Transactions on Semiconductor
                             Manufacturing (TSM)</span
                         >
                     </div>
@@ -578,7 +720,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, ACM Transactions on Multimedia Computing,
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> ACM Transactions on Multimedia Computing,
                             Communications, and Applications (TOMM)</span
                         >
                     </div>
@@ -587,7 +729,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, Journal of Field Robotics (JFR)</span
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> Journal of Field Robotics (JFR)</span
                         >
                     </div>
                     <div
@@ -595,7 +737,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, International Journal of Intelligent
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> International Journal of Intelligent
                             Systems (IJIS)</span
                         >
                     </div>
@@ -604,7 +746,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, Applied Computational Intelligence and
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> Applied Computational Intelligence and
                             Soft Computing (ACISC)</span
                         >
                     </div>
@@ -612,14 +754,14 @@ const jsonLd = {
                         class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
                         data-category="journal"
                     >
-                        <span class="text-gray-700">Reviewer, Sensors</span>
+                        <span class="text-gray-700"><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> Sensors</span>
                     </div>
                     <div
                         class="reviewer-item py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-blue-500 hover:bg-gray-100 transition-colors"
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, Service Oriented Computing and
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> Service Oriented Computing and
                             Applications (SOCA)</span
                         >
                     </div>
@@ -628,7 +770,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, Journal of Information Science and
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> Journal of Information Science and
                             Engineering (JISE)</span
                         >
                     </div>
@@ -637,7 +779,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, Sensors and Materials (SM)</span
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> Sensors and Materials (SM)</span
                         >
                     </div>
                     <div
@@ -645,7 +787,7 @@ const jsonLd = {
                         data-category="journal"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, Journal of Imaging Science and Technology
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> Journal of Imaging Science and Technology
                             (JIST)</span
                         >
                     </div>
@@ -656,7 +798,7 @@ const jsonLd = {
                         data-category="conference"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, IEEE International Conference on Robotics
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> IEEE International Conference on Robotics
                             and Automation (ICRA)</span
                         >
                     </div>
@@ -665,7 +807,7 @@ const jsonLd = {
                         data-category="conference"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, International Conference on Automation
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> International Conference on Automation
                             Technology (Automation)</span
                         >
                     </div>
@@ -674,7 +816,7 @@ const jsonLd = {
                         data-category="conference"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, International Automatic Control
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> International Automatic Control
                             Conference (CACS)</span
                         >
                     </div>
@@ -683,7 +825,7 @@ const jsonLd = {
                         data-category="conference"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, IEEE International Conference on Consumer
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> IEEE International Conference on Consumer
                             Electronics-Taiwan (ICCE-TW)</span
                         >
                     </div>
@@ -692,7 +834,7 @@ const jsonLd = {
                         data-category="conference"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, IEEE International Symposium on
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> IEEE International Symposium on
                             Intelligent Signal Processing and Communications
                             Systems (ISPACS)</span
                         >
@@ -702,7 +844,7 @@ const jsonLd = {
                         data-category="conference"
                     >
                         <span class="text-gray-700"
-                            >Reviewer, IET International Conference on
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> IET International Conference on
                             Engineering Technologies and Applications (ICETA)</span
                         >
                     </div>
@@ -717,7 +859,9 @@ const jsonLd = {
                     <h3
                         class="text-lg font-bold text-primary flex items-center gap-2"
                     >
-                        <span class="text-xl">🏛️</span> Professional Memberships
+                        <span class="text-xl">🏛️</span> <span data-lang-en
+                            >Professional Memberships</span
+                        ><span data-lang-zh>學會會員資格</span>
                     </h3>
                 </div>
 
@@ -726,7 +870,7 @@ const jsonLd = {
                         class="py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-indigo-500 hover:bg-gray-100 transition-colors"
                     >
                         <span class="text-gray-700"
-                            >Member, IEEE – Institute of Electrical and
+                            ><span data-lang-en>Member,</span><span data-lang-zh>會員，</span> IEEE – Institute of Electrical and
                             Electronics Engineers</span
                         >
                     </div>
@@ -734,14 +878,14 @@ const jsonLd = {
                         class="py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-indigo-500 hover:bg-gray-100 transition-colors"
                     >
                         <span class="text-gray-700"
-                            >Member, ACM – Association for Computing Machinery</span
+                            ><span data-lang-en>Member,</span><span data-lang-zh>會員，</span> ACM – Association for Computing Machinery</span
                         >
                     </div>
                     <div
                         class="py-2 px-3 bg-gray-50 rounded-lg border-l-4 border-l-indigo-500 hover:bg-gray-100 transition-colors"
                     >
                         <span class="text-gray-700"
-                            >Member, TASSE – Taiwan Association of Systems
+                            ><span data-lang-en>Member,</span><span data-lang-zh>會員，</span> TASSE – Taiwan Association of Systems
                             Science and Engineering (中華民國系統學會)</span
                         >
                     </div>
@@ -756,7 +900,9 @@ const jsonLd = {
                     <h3
                         class="text-lg font-bold text-primary flex items-center gap-2"
                     >
-                        <span class="text-xl">🎯</span> Service & Engagement
+                        <span class="text-xl">🎯</span> <span data-lang-en
+                            >Service & Engagement</span
+                        ><span data-lang-zh>學術服務與參與</span>
                     </h3>
                 </div>
 
@@ -769,19 +915,25 @@ const jsonLd = {
                         class="pa-filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                         data-filter="thesis"
                     >
-                        Thesis Committee
+                        <span data-lang-en>Thesis Committee</span><span
+                            data-lang-zh>口試委員</span
+                        ><span class="filter-count"></span>
                     </button>
                     <button
                         class="pa-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                         data-filter="conference"
                     >
-                        Conference Organization
+                        <span data-lang-en>Conference Organization</span><span
+                            data-lang-zh>會議籌辦</span
+                        ><span class="filter-count"></span>
                     </button>
                     <button
                         class="pa-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                         data-filter="talks"
                     >
-                        Invited Talks
+                        <span data-lang-en>Invited Talks</span><span
+                            data-lang-zh>受邀演講</span
+                        ><span class="filter-count"></span>
                     </button>
                 </div>
 
@@ -798,10 +950,8 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="text-accent font-semibold"
-                                >Master's Thesis Committee Member</span
-                            >, Dept. of Electronic and Computer Engineering,
-                            National Taiwan University of Science and Technology
-                            (NTUST)</span
+                                ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
+                            >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
                         >
                     </div>
                     <div
@@ -814,10 +964,8 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="text-accent font-semibold"
-                                >Master's Thesis Committee Member</span
-                            >, Dept. of Electronic and Computer Engineering,
-                            National Taiwan University of Science and Technology
-                            (NTUST)</span
+                                ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
+                            >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
                         >
                     </div>
                     <div
@@ -830,10 +978,8 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="text-accent font-semibold"
-                                >Master's Thesis Committee Member</span
-                            >, Dept. of Electronic and Computer Engineering,
-                            National Taiwan University of Science and Technology
-                            (NTUST)</span
+                                ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
+                            >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
                         >
                     </div>
                     <div
@@ -846,9 +992,8 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="text-red-600 font-semibold"
-                                >Master's Thesis Committee Member</span
-                            >, Dept. of Computer Science and Information
-                            Engineering, National Ilan University (NIU)</span
+                                ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
+                            >, <span data-lang-en>Dept. of Computer Science and Information Engineering, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 資工系</span></span
                         >
                     </div>
 
@@ -863,7 +1008,7 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
-                                >Special Session Chair</span
+                                ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Smart Systems and Their Applications", IEEE
                             International Conference on Consumer Electronics –
                             Taiwan (ICCE-TW)</span
@@ -879,7 +1024,7 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
-                                >Session Chair</span
+                                ><span data-lang-en>Session Chair</span><span data-lang-zh>議程主持人</span></span
                             >, "Best Paper Award Contest", Information
                             Technology and Applications Conference (ITAC)</span
                         >
@@ -894,7 +1039,7 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
-                                >Special Session Chair</span
+                                ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Intelligent System and Its Application",
                             International Conference on Automation Technology
                             (Automation)</span
@@ -910,7 +1055,7 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
-                                >Special Session Chair</span
+                                ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Smart Systems and Their Applications", IEEE
                             International Conference on Consumer Electronics –
                             Taiwan (ICCE-TW)</span
@@ -926,7 +1071,7 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
-                                >Special Session Chair</span
+                                ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Intelligent System and Its Application",
                             International Conference on Automation Technology
                             (Automation)</span
@@ -942,7 +1087,7 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
-                                >Special Session Chair</span
+                                ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Advanced Signal Processing in Consumer and
                             Industrial Electronics", IEEE International
                             Conference on Consumer Electronics – Taiwan
@@ -959,7 +1104,7 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
-                                >Public Announcement Chair</span
+                                ><span data-lang-en>Public Announcement Chair</span><span data-lang-zh>公開宣傳主持人</span></span
                             >, IET International Conference on Engineering
                             Technologies and Applications (ICETA) <span
                                 class="text-accent font-medium"
@@ -977,7 +1122,7 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
-                                >Special Session Chair</span
+                                ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Deep Learning and Its Application", IEEE
                             International Symposium on Intelligent Signal
                             Processing and Communications Systems (ISPACS)</span
@@ -999,8 +1144,7 @@ const jsonLd = {
                                 Choosing the Right Mentor, Planning
                                 Strategically, and Turning Each Step into the
                                 Next Opportunity"</span
-                            >, College of Electrical Engineering and Computer
-                            Science, National Ilan University (NIU)</span
+                            >, <span data-lang-en>College of Electrical Engineering and Computer Science, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 電資學院</span></span
                         >
                     </div>
                     <div
@@ -1016,9 +1160,7 @@ const jsonLd = {
                                 >"From Perception to Decision: How Generative AI
                                 and AI Agents Are Pioneering the New Era of
                                 Autonomous Driving"</span
-                            >, Dept. of Electronic and Computer Engineering,
-                            National Taiwan University of Science and Technology
-                            (NTUST)</span
+                            >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
                         >
                     </div>
                     <div
@@ -1034,8 +1176,7 @@ const jsonLd = {
                                 >"From Perception to Decision: How Generative AI
                                 and AI Agents Are Pioneering the New Era of
                                 Autonomous Driving"</span
-                            >, Dept. of Computer Science and Information
-                            Engineering, National Ilan University (NIU)</span
+                            >, <span data-lang-en>Dept. of Computer Science and Information Engineering, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 資工系</span></span
                         >
                     </div>
                     <div
@@ -1082,8 +1223,7 @@ const jsonLd = {
                             ><span class="font-semibold"
                                 >"The Evolution Path and Future Challenges of
                                 Autonomous Driving Technology"</span
-                            >, Dept. of Electrical Engineering, National Ilan
-                            University (NIU)</span
+                            >, <span data-lang-en>Dept. of Electrical Engineering, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 電機工程系</span></span
                         >
                     </div>
                     <div
@@ -1098,8 +1238,7 @@ const jsonLd = {
                             ><span class="font-semibold"
                                 >"Practical Experience Sharing on Key
                                 Technologies for Autonomous Vehicles"</span
-                            >, Dept. of Electrical Engineering, National Ilan
-                            University (NIU)</span
+                            >, <span data-lang-en>Dept. of Electrical Engineering, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 電機工程系</span></span
                         >
                     </div>
                     <div
@@ -1114,8 +1253,7 @@ const jsonLd = {
                             ><span class="font-semibold"
                                 >"Efficient Project Thinking Under AI Innovation
                                 Technology"</span
-                            >, Dept. of Electrical Engineering, National Ilan
-                            University (NIU)</span
+                            >, <span data-lang-en>Dept. of Electrical Engineering, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 電機工程系</span></span
                         >
                     </div>
                     <div
@@ -1175,24 +1313,24 @@ const jsonLd = {
 
         // Update counts dynamically
         function updatePACounts() {
-            const thesisCount = document.querySelectorAll(
-                '.pa-item[data-category="thesis"]',
-            ).length;
-            const conferenceCount = document.querySelectorAll(
-                '.pa-item[data-category="conference"]',
-            ).length;
-            const talksCount = document.querySelectorAll(
-                '.pa-item[data-category="talks"]',
-            ).length;
+            const counts: Record<string, number> = {
+                thesis: document.querySelectorAll(
+                    '.pa-item[data-category="thesis"]',
+                ).length,
+                conference: document.querySelectorAll(
+                    '.pa-item[data-category="conference"]',
+                ).length,
+                talks: document.querySelectorAll(
+                    '.pa-item[data-category="talks"]',
+                ).length,
+            };
 
+            // Only update the count span — keep the bilingual .filter-label intact.
             paFilterBtns.forEach((btn) => {
                 const filter = btn.getAttribute("data-filter");
-                if (filter === "thesis") {
-                    btn.textContent = `Thesis Committee (${thesisCount})`;
-                } else if (filter === "conference") {
-                    btn.textContent = `Conference Organization (${conferenceCount})`;
-                } else if (filter === "talks") {
-                    btn.textContent = `Invited Talks (${talksCount})`;
+                const countEl = btn.querySelector(".filter-count");
+                if (countEl && filter && filter in counts) {
+                    countEl.textContent = ` (${counts[filter]})`;
                 }
             });
         }
@@ -1317,19 +1455,33 @@ const jsonLd = {
     <!-- Honors & Awards -->
     <section id="honors" class="section-padding bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader title="Personal Honors & Awards" />
+            <SectionHeader
+                title="Personal Honors & Awards"
+                titleZh="個人榮譽與獎項"
+            />
 
-            <p class="text-gray-text text-center mb-6 -mt-4">
-                Recognition of my individual academic excellence, research
-                contributions, and achievements as a researcher.
-                <br class="hidden sm:block" />
-                For lab team achievements and student competition wins, please visit
-                <a
-                    href="/awards"
-                    class="text-accent hover:underline font-medium"
-                    >Lab & Student Awards</a
-                >.
-            </p>
+            <LangBlock as="p" class="text-gray-text text-center mb-6 -mt-4">
+                <Fragment slot="en"
+                    >Recognition of my individual academic excellence, research
+                    contributions, and achievements as a researcher.
+                    <br class="hidden sm:block" />
+                    For lab team achievements and student competition wins, please
+                    visit <a
+                        href="/awards"
+                        class="text-accent hover:underline font-medium"
+                        >Lab & Student Awards</a
+                    >.</Fragment
+                >
+                <Fragment slot="zh"
+                    >實驗室主持人在學術成就、研究貢獻與研究表現上獲得的個人榮譽。
+                    <br class="hidden sm:block" />
+                    實驗室團隊成就與學生競賽獲獎，請見 <a
+                        href="/awards"
+                        class="text-accent hover:underline font-medium"
+                        >Lab & Student Awards</a
+                    >。</Fragment
+                >
+            </LangBlock>
 
             <!-- Filter Tabs -->
             <div
@@ -1340,7 +1492,11 @@ const jsonLd = {
                     class="pi-filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30 cursor-pointer hover:-translate-y-0.5"
                     data-filter="all"
                 >
-                    All ({sortedAwards.length})
+                    <span class="filter-label"
+                        ><span data-lang-en>All</span><span data-lang-zh
+                            >全部</span
+                        ></span
+                    ><span class="filter-count"> ({sortedAwards.length})</span>
                 </button>
                 <button
                     class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
@@ -1356,7 +1512,11 @@ const jsonLd = {
                             d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                             clip-rule="evenodd"></path>
                     </svg>
-                    Merit ({meritAwards.length})
+                    <span class="filter-label"
+                        ><span data-lang-en>Merit Awards</span><span
+                            data-lang-zh>傑出獎</span
+                        ></span
+                    ><span class="filter-count"> ({meritAwards.length})</span>
                 </button>
                 <button
                     class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
@@ -1375,7 +1535,11 @@ const jsonLd = {
                             d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                         ></path>
                     </svg>
-                    Paper ({paperAwards.length})
+                    <span class="filter-label"
+                        ><span data-lang-en>Paper Awards</span><span
+                            data-lang-zh>論文獎</span
+                        ></span
+                    ><span class="filter-count"> ({paperAwards.length})</span>
                 </button>
                 <button
                     class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
@@ -1394,7 +1558,13 @@ const jsonLd = {
                             d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"
                         ></path>
                     </svg>
-                    Competition Awards ({competitionAwards.length})
+                    <span class="filter-label"
+                        ><span data-lang-en>Competition Awards</span><span
+                            data-lang-zh>競賽獎</span
+                        ></span
+                    ><span class="filter-count">
+                        ({competitionAwards.length})</span
+                    >
                 </button>
             </div>
 
@@ -1418,11 +1588,14 @@ const jsonLd = {
                                                 (a) => a.year === year,
                                             ).length
                                         }{" "}
-                                        {sortedAwards.filter(
-                                            (a) => a.year === year,
-                                        ).length > 1
-                                            ? "awards"
-                                            : "award"}
+                                        <span data-lang-en>
+                                            {sortedAwards.filter(
+                                                (a) => a.year === year,
+                                            ).length > 1
+                                                ? "awards"
+                                                : "award"}
+                                        </span>
+                                        <span data-lang-zh>個獎項</span>
                                     </span>
                                 </div>
                                 <div class="grid md:grid-cols-2 gap-6 pi-awards-grid">
@@ -1436,6 +1609,7 @@ const jsonLd = {
                                                 <PIAwardCard
                                                     title={award.title}
                                                     event={award.event}
+                                                    eventZh={award.event_zh}
                                                     year={award.year}
                                                     category={award.category}
                                                 />
@@ -1451,6 +1625,8 @@ const jsonLd = {
     </section>
 
     <script lang="ts">
+        import { countUnit, onLangChange } from "../scripts/i18n";
+
         const piFilterBtns = document.querySelectorAll(".pi-filter-btn");
         const piYearGroups = document.querySelectorAll(".pi-year-group");
 
@@ -1465,22 +1641,61 @@ const jsonLd = {
             const competitionCount = document.querySelectorAll(
                 '.pi-award-item[data-category="competition"]',
             ).length;
-            const totalCount = meritCount + paperCount + competitionCount;
+            const counts: Record<string, number> = {
+                all: meritCount + paperCount + competitionCount,
+                merit: meritCount,
+                paper: paperCount,
+                competition: competitionCount,
+            };
 
+            // Only update the count span — leave the bilingual .filter-label and
+            // the SVG icon intact (textContent on the whole button would wipe them).
             piFilterBtns.forEach((btn) => {
                 const filter = btn.getAttribute("data-filter");
-                if (filter === "all") {
-                    btn.textContent = `All (${totalCount})`;
-                } else if (filter === "merit") {
-                    btn.textContent = `🏅 Merit Awards (${meritCount})`;
-                } else if (filter === "paper") {
-                    btn.textContent = `📄 Paper Awards (${paperCount})`;
-                } else if (filter === "competition") {
-                    btn.textContent = `🏆 Competition Awards (${competitionCount})`;
+                const countEl = btn.querySelector(".filter-count");
+                if (countEl && filter && filter in counts) {
+                    countEl.textContent = ` (${counts[filter]})`;
                 }
             });
         }
         updateCounts();
+
+        function applyPiFilter(filter: string) {
+            piYearGroups.forEach((group) => {
+                const items = group.querySelectorAll(".pi-award-item");
+                let visibleCount = 0;
+
+                items.forEach((item) => {
+                    if (
+                        filter === "all" ||
+                        item.getAttribute("data-category") === filter
+                    ) {
+                        item.classList.remove("hidden");
+                        visibleCount++;
+                    } else {
+                        item.classList.add("hidden");
+                    }
+                });
+
+                // Update year count in the active language
+                const yearCountEl = group.querySelector(".pi-year-count");
+                if (yearCountEl) {
+                    yearCountEl.textContent = countUnit(
+                        visibleCount,
+                        "award",
+                        "awards",
+                        "個獎項",
+                    );
+                }
+
+                group.classList.toggle("hidden", visibleCount === 0);
+            });
+        }
+
+        function piCurrentFilter(): string {
+            const active = document.querySelector(".pi-filter-btn.active");
+            return active?.getAttribute("data-filter") || "all";
+        }
 
         piFilterBtns.forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -1511,44 +1726,20 @@ const jsonLd = {
                     "hover:bg-gray-200",
                 );
 
-                const filter = btn.getAttribute("data-filter");
-
-                piYearGroups.forEach((group) => {
-                    const items = group.querySelectorAll(".pi-award-item");
-                    let visibleCount = 0;
-
-                    items.forEach((item) => {
-                        if (
-                            filter === "all" ||
-                            item.getAttribute("data-category") === filter
-                        ) {
-                            item.classList.remove("hidden");
-                            visibleCount++;
-                        } else {
-                            item.classList.add("hidden");
-                        }
-                    });
-
-                    // Update year count
-                    const yearCountEl = group.querySelector(".pi-year-count");
-                    if (yearCountEl) {
-                        yearCountEl.textContent = `${visibleCount} ${visibleCount === 1 ? "award" : "awards"}`;
-                    }
-
-                    if (visibleCount > 0) {
-                        group.classList.remove("hidden");
-                    } else {
-                        group.classList.add("hidden");
-                    }
-                });
+                applyPiFilter(btn.getAttribute("data-filter") || "all");
             });
         });
+
+        // Re-render year counts in the active language (load + langchange).
+        onLangChange(() => applyPiFilter(piCurrentFilter()));
     </script>
     <!-- Back to Top Button -->
     <button
         id="back-to-top"
         class="fixed bottom-8 right-8 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50 hover:-translate-y-1 hover:shadow-accent/50 group"
         aria-label="Back to Top"
+        data-i18n-aria-en="Back to Top"
+        data-i18n-aria-zh="回到頂部"
     >
         <svg
             class="w-6 h-6"

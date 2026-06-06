@@ -8,6 +8,10 @@ interface Props {
 }
 
 import "../styles/global.css";
+import LangText from "../components/i18n/LangText.astro";
+import LangBlock from "../components/i18n/LangBlock.astro";
+import LanguageToggle from "../components/i18n/LanguageToggle.astro";
+import type { UIKey } from "../i18n/ui";
 
 const {
   title,
@@ -17,16 +21,16 @@ const {
   jsonLd,
 } = Astro.props;
 
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About PI" },
-  { href: "/research", label: "Research" },
-  { href: "/publications", label: "Publications" },
-  { href: "/awards", label: "Lab & Student Awards" },
-  { href: "/projects", label: "Projects" },
-  { href: "/members", label: "Members" },
-  { href: "/teaching", label: "Teaching" },
-  { href: "/joinus", label: "Join Us" },
+const navItems: { href: string; key: UIKey }[] = [
+  { href: "/", key: "nav.home" },
+  { href: "/about", key: "nav.about" },
+  { href: "/research", key: "nav.research" },
+  { href: "/publications", key: "nav.publications" },
+  { href: "/awards", key: "nav.awards" },
+  { href: "/projects", key: "nav.projects" },
+  { href: "/members", key: "nav.members" },
+  { href: "/teaching", key: "nav.teaching" },
+  { href: "/joinus", key: "nav.joinus" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -39,10 +43,30 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- i18n: set language before paint to avoid FOUC. Self-contained (no
+         imports allowed in is:inline); mirrors src/i18n/config.ts. -->
+    <script is:inline>
+      (() => {
+        try {
+          var lang = localStorage.getItem("site-lang") === "zh" ? "zh" : "en";
+          document.documentElement.dataset.lang = lang;
+          document.documentElement.lang = lang === "zh" ? "zh-Hant-TW" : "en";
+        } catch (e) {}
+      })();
+    </script>
+    <style is:inline>
+      html[data-lang="en"] [data-lang-zh],
+      html[data-lang="zh"] [data-lang-en],
+      html:not([data-lang]) [data-lang-zh] {
+        display: none !important;
+      }
+    </style>
+
     <meta name="description" content={description} />
     <meta name="author" content="Prof. Sin-Ye Jhong" />
     <meta
@@ -94,7 +118,7 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
     <a
       href="#main-content"
       class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg"
-      >Skip to main content</a
+      ><LangText k="ui.skipToContent" /></a
     >
     <!-- Header -->
     <header
@@ -113,47 +137,55 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
             />
           </a>
 
-          <!-- Desktop Navigation -->
-          <nav class="hidden lg:flex items-center gap-1">
-            {
-              navItems.map((item) => (
-                <a
-                  href={item.href}
-                  class:list={[
-                    "px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
-                    currentPath === item.href ||
-                    (item.href !== "/" && currentPath.startsWith(item.href))
-                      ? "text-accent bg-accent/10"
-                      : "text-navy hover:text-accent hover:bg-gray-bg",
-                  ]}
-                >
-                  {item.label}
-                </a>
-              ))
-            }
-          </nav>
+          <!-- Right cluster: nav + language toggle + mobile menu -->
+          <div class="flex items-center gap-1">
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-1">
+              {
+                navItems.map((item) => (
+                  <a
+                    href={item.href}
+                    class:list={[
+                      "px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
+                      currentPath === item.href ||
+                      (item.href !== "/" && currentPath.startsWith(item.href))
+                        ? "text-accent bg-accent/10"
+                        : "text-navy hover:text-accent hover:bg-gray-bg",
+                    ]}
+                  >
+                    <LangText k={item.key} />
+                  </a>
+                ))
+              }
+            </nav>
 
-          <!-- Mobile Menu Button -->
-          <button
-            id="mobile-menu-btn"
-            class="lg:hidden p-3 -mr-1 rounded-lg text-navy hover:bg-gray-bg transition-colors"
-            aria-label="Toggle menu"
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <!-- Language Toggle (visible on desktop + mobile) -->
+            <LanguageToggle />
+
+            <!-- Mobile Menu Button -->
+            <button
+              id="mobile-menu-btn"
+              class="lg:hidden p-3 rounded-lg text-navy hover:bg-gray-bg transition-colors"
+              data-i18n-aria-en="Toggle menu"
+              data-i18n-aria-zh="切換選單"
+              aria-label="Toggle menu"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -175,7 +207,7 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
                     : "text-navy hover:text-accent hover:bg-gray-bg",
                 ]}
               >
-                {item.label}
+                <LangText k={item.key} />
               </a>
             ))
           }
@@ -205,77 +237,41 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
             <div
               class="flex flex-col gap-2 text-gray-300 text-sm leading-relaxed"
             >
-              <p>Autonomous Systems and Intelligent Interaction Laboratory</p>
-              <p>Graduate Institute of Intelligent Manufacturing Technology</p>
-              <p>National Taiwan University of Science and Technology</p>
+              <p><LangText k="footer.labFullName" /></p>
+              <p><LangText k="footer.institute" /></p>
+              <p><LangText k="footer.university" /></p>
             </div>
           </div>
 
           <!-- Quick Links -->
           <div>
-            <h3 class="font-heading font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 class="font-heading font-semibold text-lg mb-4">
+              <LangText k="footer.quickLinks" />
+            </h3>
             <div class="flex gap-8 text-sm text-gray-300">
               <ul class="space-y-2">
-                <li>
-                  <a href="/" class="hover:text-accent transition-colors"
-                    >Home</a
-                  >
-                </li>
-                <li>
-                  <a href="/about" class="hover:text-accent transition-colors"
-                    >About PI</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/research"
-                    class="hover:text-accent transition-colors">Research</a
-                  >
-                </li>
+                <li><a href="/" class="hover:text-accent transition-colors"><LangText k="nav.home" /></a></li>
+                <li><a href="/about" class="hover:text-accent transition-colors"><LangText k="nav.about" /></a></li>
+                <li><a href="/research" class="hover:text-accent transition-colors"><LangText k="nav.research" /></a></li>
               </ul>
               <ul class="space-y-2">
-                <li>
-                  <a
-                    href="/publications"
-                    class="hover:text-accent transition-colors">Publications</a
-                  >
-                </li>
-                <li>
-                  <a href="/awards" class="hover:text-accent transition-colors"
-                    >Lab & Student Awards</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/projects"
-                    class="hover:text-accent transition-colors">Projects</a
-                  >
-                </li>
+                <li><a href="/publications" class="hover:text-accent transition-colors"><LangText k="nav.publications" /></a></li>
+                <li><a href="/awards" class="hover:text-accent transition-colors"><LangText k="nav.awards" /></a></li>
+                <li><a href="/projects" class="hover:text-accent transition-colors"><LangText k="nav.projects" /></a></li>
               </ul>
               <ul class="space-y-2">
-                <li>
-                  <a href="/members" class="hover:text-accent transition-colors"
-                    >Members</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="/teaching"
-                    class="hover:text-accent transition-colors">Teaching</a
-                  >
-                </li>
-                <li>
-                  <a href="/joinus" class="hover:text-accent transition-colors"
-                    >Join Us</a
-                  >
-                </li>
+                <li><a href="/members" class="hover:text-accent transition-colors"><LangText k="nav.members" /></a></li>
+                <li><a href="/teaching" class="hover:text-accent transition-colors"><LangText k="nav.teaching" /></a></li>
+                <li><a href="/joinus" class="hover:text-accent transition-colors"><LangText k="nav.joinus" /></a></li>
               </ul>
             </div>
           </div>
 
           <!-- Contact -->
           <div>
-            <h3 class="font-heading font-semibold text-lg mb-4">Contact</h3>
+            <h3 class="font-heading font-semibold text-lg mb-4">
+              <LangText k="footer.contact" />
+            </h3>
             <ul class="space-y-2 text-sm text-gray-300">
               <li class="flex items-center gap-2">
                 <svg
@@ -317,11 +313,17 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
                     stroke-width="2"
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
-                <span
-                  >C216, 2F, General Education Building,<br />
-                  TaiwanTech Hwa Hsia Campus,<br />
-                  NTUST, New Taipei City, Taiwan</span
-                >
+                <LangBlock as="span">
+                  <Fragment slot="en"
+                    >C216, 2F, General Education Building,<br />
+                    TaiwanTech Hwa Hsia Campus,<br />
+                    NTUST, New Taipei City, Taiwan</Fragment
+                  >
+                  <Fragment slot="zh"
+                    >新北市 國立臺灣科技大學 華夏校區<br />
+                    通識教育大樓 2 樓 C216</Fragment
+                  >
+                </LangBlock>
               </li>
             </ul>
           </div>
@@ -331,7 +333,9 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
           class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-400"
         >
           <p>
-            &copy; {new Date().getFullYear()} ASI² LAB. All rights reserved.
+            &copy; {new Date().getFullYear()} ASI² LAB. <LangText
+              k="footer.rights"
+            />
           </p>
         </div>
       </div>
@@ -340,6 +344,8 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
     <!-- Toast Notification -->
     <div
       id="copy-toast"
+      role="status"
+      aria-live="polite"
       class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900/90 text-white px-6 py-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none z-50 flex items-center gap-2 backdrop-blur-sm"
     >
       <svg
@@ -354,8 +360,14 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
           stroke-width="2"
           d="M5 13l4 4L19 7"></path>
       </svg>
-      <span class="font-medium">Email copied to clipboard!</span>
+      <span class="font-medium"><LangText k="ui.emailCopied" /></span>
     </div>
+
+    <!-- i18n: bind language toggle + sync aria/islands on load -->
+    <script>
+      import { initLanguage } from "../scripts/i18n";
+      initLanguage();
+    </script>
 
     <!-- Mobile Menu Script & Mailto Handler -->
     <script>

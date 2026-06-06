@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import PublicationItem from "../components/PublicationItem.astro";
 import publications from "../data/publications.json";
+import LangText from "../components/i18n/LangText.astro";
 
 // Sort by year descending
 const sortedPubs = [...publications].sort((a, b) => b.year - a.year);
@@ -61,10 +62,10 @@ const jsonLd = {
             <h1
                 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
             >
-                Publications
+                <span data-lang-en>Publications</span><span data-lang-zh>論文發表</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Our research contributions to journals, conferences, and patents
+                <span data-lang-en>Our research contributions to journals, conferences, and patents</span><span data-lang-zh>我們在期刊、會議與專利上的研究貢獻</span>
             </p>
 
             <!-- Stats -->
@@ -73,19 +74,19 @@ const jsonLd = {
                     <span class="text-2xl font-bold text-accent"
                         >{journals.length}</span
                     >
-                    <span class="text-gray-300 ml-2">Journals</span>
+                    <span class="text-gray-300 ml-2"><span data-lang-en>Journals</span><span data-lang-zh>期刊</span></span>
                 </div>
                 <div class="px-6 py-3 bg-white/10 rounded-xl backdrop-blur-sm">
                     <span class="text-2xl font-bold text-accent"
                         >{conferences.length}</span
                     >
-                    <span class="text-gray-300 ml-2">Conferences</span>
+                    <span class="text-gray-300 ml-2"><span data-lang-en>Conferences</span><span data-lang-zh>會議</span></span>
                 </div>
                 <div class="px-6 py-3 bg-white/10 rounded-xl backdrop-blur-sm">
                     <span class="text-2xl font-bold text-accent"
                         >{patents.length}</span
                     >
-                    <span class="text-gray-300 ml-2">Patents</span>
+                    <span class="text-gray-300 ml-2"><span data-lang-en>Patents</span><span data-lang-zh>專利</span></span>
                 </div>
             </div>
         </div>
@@ -116,10 +117,15 @@ const jsonLd = {
                         type="text"
                         id="pub-search"
                         placeholder="Search by title, author, or keyword..."
+                        data-i18n-ph-en="Search by title, author, or keyword..."
+                        data-i18n-ph-zh="以標題、作者或關鍵字搜尋…"
                         class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-sm"
                     />
                     <button
                         id="search-clear"
+                        aria-label="Clear search"
+                        data-i18n-aria-en="Clear search"
+                        data-i18n-aria-zh="清除搜尋"
                         class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden"
                     >
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,31 +141,34 @@ const jsonLd = {
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
                 >
-                    All (<span class="filter-count">{sortedPubs.length}</span>)
+                    <span data-lang-en>All</span><span data-lang-zh>全部</span> (<span class="filter-count">{sortedPubs.length}</span>)
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="journal"
                 >
-                    Journals (<span class="filter-count">{journals.length}</span>)
+                    <span data-lang-en>Journals</span><span data-lang-zh>期刊</span> (<span class="filter-count">{journals.length}</span>)
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="conference"
                 >
-                    Conferences (<span class="filter-count">{conferences.length}</span>)
+                    <span data-lang-en>Conferences</span><span data-lang-zh>會議</span> (<span class="filter-count">{conferences.length}</span>)
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="patent"
                 >
-                    Patents (<span class="filter-count">{patents.length}</span>)
+                    <span data-lang-en>Patents</span><span data-lang-zh>專利</span> (<span class="filter-count">{patents.length}</span>)
                 </button>
             </div>
 
             <!-- Search Results Info -->
             <div id="search-info" class="text-center mt-3 text-sm text-gray-500 hidden">
-                <span id="search-count">0</span> results found for "<span id="search-term"></span>"
+                <span id="search-count">0</span>
+                <span data-lang-en>results found for</span><span data-lang-zh
+                    >筆結果，符合</span
+                > "<span id="search-term"></span>"
             </div>
         </div>
     </section>
@@ -218,9 +227,11 @@ const jsonLd = {
                 <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <p class="text-gray-500 text-lg">No publications found matching your search.</p>
+                <p class="text-gray-500 text-lg"><span data-lang-en>No publications found matching your search.</span><span data-lang-zh>找不到符合搜尋的論文。</span></p>
                 <button id="clear-search" class="mt-4 text-accent hover:underline font-medium">
-                    Clear search
+                    <span data-lang-en>Clear search</span><span data-lang-zh
+                        >清除搜尋</span
+                    >
                 </button>
             </div>
         </div>
@@ -228,6 +239,8 @@ const jsonLd = {
 </BaseLayout>
 
 <script>
+    import { countUnit, onLangChange } from "../scripts/i18n";
+
     const filterBtns = document.querySelectorAll(".filter-btn");
     const pubItems = document.querySelectorAll(".publication-item");
     const yearGroups = document.querySelectorAll(".year-group");
@@ -280,7 +293,12 @@ const jsonLd = {
             } else {
                 group.classList.remove("hidden");
                 if (yearCountEl) {
-                    yearCountEl.textContent = `${visibleInGroup} publication${visibleInGroup !== 1 ? 's' : ''}`;
+                    yearCountEl.textContent = countUnit(
+                        visibleInGroup,
+                        "publication",
+                        "publications",
+                        "篇論文",
+                    );
                 }
             }
         });
@@ -385,4 +403,7 @@ const jsonLd = {
 
     searchClear?.addEventListener("click", clearSearch);
     clearSearchBtn?.addEventListener("click", clearSearch);
+
+    // Re-render year counts in the active language (runs on load + langchange).
+    onLangChange(() => updateView());
 </script>

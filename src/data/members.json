@@ -4,11 +4,17 @@
         "name": "Dr. Sin-Ye Jhong 鍾昕燁",
         "photo": "/images/members/sinyejhong2.jpg",
         "role": "ASI² Lab Director",
+        "role_zh": "實驗室主持人",
         "affiliations": [
             "Assistant Professor, GIMT, NTUST",
             "AI Application Consultant, Power Data Co., Ltd."
         ],
+        "affiliations_zh": [
+            "助理教授，國立臺灣科技大學 智慧製造科技研究所",
+            "AI 應用顧問，勝力數智股份有限公司 (Power Data Co., Ltd.)"
+        ],
         "topic": "Computer Vision & Image Processing, Machine/Deep Learning, Multimodal Fusion, Robot Perception & Navigation, Human-Robot Interaction, Generative AI, Agentic AI, Smart IoT, Intelligent Unmanned Vehicles, Smart Manufacturing, Intelligent Robotics",
+        "topic_zh": "電腦視覺與影像處理、機器／深度學習、多模態融合、機器人感知與導航、人機互動、生成式 AI、代理式 AI、智慧 IoT、智慧無人載具、智慧製造、智慧機器人",
         "status": "director",
         "email": "sinyejhong@mail.ntust.edu.tw",
         "links": [
@@ -28,76 +34,98 @@
                 "icon": "id-card"
             }
         ],
-        "research_group": "ASI² Lab"
+        "research_group": "ASI² Lab",
+        "research_group_zh": "ASI² Lab"
     },
     {
         "id": 1,
         "name": "Yi-Chen Wu",
         "photo": "/images/members/Wuyichen.jpg",
         "role": "Research Assistant",
+        "role_zh": "研究助理",
         "topic": "Resilient Perception",
+        "topic_zh": "Resilient Perception",
         "status": "current",
         "email": "yichen312w@gmail.com",
-        "research_group": "Resilient Perception"
+        "research_group": "Resilient Perception",
+        "research_group_zh": "Resilient Perception"
     },
     {
         "id": 2,
         "name": "Jun-Guang Zhu",
         "photo": "/images/members/Junguangzhu.jpg",
         "role": "Master's Student",
+        "role_zh": "碩士生",
         "topic": "Industrial AI",
+        "topic_zh": "工業 AI",
         "status": "current",
         "email": "zhuguang1010414@gmail.com",
-        "research_group": "Industrial AIoT"
+        "research_group": "Industrial AIoT",
+        "research_group_zh": "工業 AIoT"
     },
     {
         "id": 3,
         "name": "Pei-Yan Chou",
         "photo": "/images/members/Peiyanchou.jpg",
         "role": "Master's Student",
+        "role_zh": "碩士生",
         "topic": "Resilient Perception",
+        "topic_zh": "Resilient Perception",
         "status": "current",
         "email": "peiyan93082700@gmail.com",
-        "research_group": "Resilient Perception"
+        "research_group": "Resilient Perception",
+        "research_group_zh": "Resilient Perception"
     },
     {
         "id": 4,
         "name": "Yu-Lin Su",
         "photo": "/images/members/Yulinsu.jpg",
         "role": "Master's Student",
+        "role_zh": "碩士生",
         "topic": "Industrial AIoT",
+        "topic_zh": "工業 AIoT",
         "status": "current",
         "email": "kikisu0106@gmail.com",
-        "research_group": "Industrial AIoT"
+        "research_group": "Industrial AIoT",
+        "research_group_zh": "工業 AIoT"
     },
     {
         "id": 5,
         "name": "Hsiang-Yu Wang",
         "photo": "/images/members/hsiangyuwang.jpg",
         "role": "Master's Student",
+        "role_zh": "碩士生",
         "topic": "Embodied AI",
+        "topic_zh": "具身智慧 AI",
         "status": "current",
         "email": "yoshino39391@gmail.com",
-        "research_group": "Embodied Intelligence"
+        "research_group": "Embodied Intelligence",
+        "research_group_zh": "具身智慧"
     },
     {
         "id": 6,
         "name": "Jui-Chen Chien",
         "photo": "/images/members/Juichenchien.jpg",
         "role": "Master's Student",
+        "role_zh": "碩士生",
         "topic": "Industrial AIoT",
+        "topic_zh": "工業 AIoT",
         "status": "current",
         "email": "thomasrcchien@gmail.com",
-        "research_group": "Industrial AIoT"
+        "research_group": "Industrial AIoT",
+        "research_group_zh": "工業 AIoT"
     },
     {
         "id": 7,
         "name": "Chen-Wei Yang",
         "photo": "/images/members/Whenweiyang.jpg",
         "role": "Master's Student",
+        "role_zh": "碩士生",
         "topic": "Embodied AI",
+        "topic_zh": "具身智慧 AI",
         "status": "current",
         "email": "ycw23062@gmail.com",
-        "research_group": "Embodied Intelligence"
+        "research_group": "Embodied Intelligence",
+        "research_group_zh": "具身智慧"
     }
 ]

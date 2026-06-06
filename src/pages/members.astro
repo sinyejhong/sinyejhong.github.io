@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import MemberCard from "../components/MemberCard.astro";
 import GalleryCard from "../components/GalleryCard.astro";
+import LangText from "../components/i18n/LangText.astro";
 import members from "../data/members.json";
 import galleryItems from "../data/gallery.json";
 
@@ -18,10 +19,10 @@ const alumni = members.filter((m) => m.status === "alumni");
             <h1
                 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
             >
-                Our Team
+                <span data-lang-en>Our Team</span><span data-lang-zh>研究團隊</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Meet the researchers and students driving innovation at ASI² LAB
+                <span data-lang-en>Meet the researchers and students driving innovation at ASI² LAB</span><span data-lang-zh>認識在 ASI² LAB 推動創新的研究人員與學生</span>
             </p>
 
             <!-- Team Counter -->
@@ -32,9 +33,9 @@ const alumni = members.filter((m) => m.status === "alumni");
                     {currentMembers.length + 1}
                 </div>
                 <div class="text-left">
-                    <div class="text-xl font-semibold">Team Members</div>
+                    <div class="text-xl font-semibold"><span data-lang-en>Team Members</span><span data-lang-zh>團隊成員</span></div>
                     <div class="text-gray-400 text-sm">
-                        (Director + Current Students)
+                        <span data-lang-en>(Director + Current Students)</span><span data-lang-zh>（指導教授 + 現任學生）</span>
                     </div>
                 </div>
             </div>
@@ -46,7 +47,9 @@ const alumni = members.filter((m) => m.status === "alumni");
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="ASI² Lab Director"
+                titleZh="ASI² Lab 指導教授"
                 subtitle="Leading our research vision"
+                subtitleZh="帶領實驗室的研究願景"
             />
 
             <div class="flex justify-center">
@@ -57,9 +60,11 @@ const alumni = members.filter((m) => m.status === "alumni");
                                 name={director.name}
                                 photo={director.photo}
                                 role={director.role}
+                                roleZh={director.role_zh}
                                 topic={director.topic}
                                 email={director.email}
                                 affiliations={director.affiliations}
+                                affiliationsZh={director.affiliations_zh}
                                 links={director.links}
                                 isDirector={true}
                             />
@@ -75,7 +80,9 @@ const alumni = members.filter((m) => m.status === "alumni");
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="Current Members"
+                titleZh="現任成員"
                 subtitle={`${currentMembers.length} researchers and students`}
+                subtitleZh={`${currentMembers.length} 位研究人員與學生`}
             />
 
             <div
@@ -87,9 +94,11 @@ const alumni = members.filter((m) => m.status === "alumni");
                             name={member.name}
                             photo={member.photo}
                             role={member.role}
+                            roleZh={member.role_zh}
                             topic={member.topic}
                             email={member.email}
                             coadvisor={member.coadvisor}
+                            coadvisorZh={member.coadvisor_zh}
                             research_group={member.research_group}
                         />
                     ))
@@ -103,7 +112,9 @@ const alumni = members.filter((m) => m.status === "alumni");
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="Lab Gallery"
+                titleZh="實驗室相簿"
                 subtitle="A glimpse into our activities, events, and research equipment"
+                subtitleZh="記錄實驗室的活動、事件與研究設備"
             />
 
             <!-- Category Filter Buttons -->
@@ -126,7 +137,7 @@ const alumni = members.filter((m) => m.status === "alumni");
                             d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                         ></path>
                     </svg>
-                    All
+                    <span data-lang-en>All</span><span data-lang-zh>全部</span>
                 </button>
                 <button
                     id="filter-activity"
@@ -146,7 +157,7 @@ const alumni = members.filter((m) => m.status === "alumni");
                             d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                         ></path>
                     </svg>
-                    Activity / Event
+                    <span data-lang-en>Activity / Event</span><span data-lang-zh>活動 / 活動</span>
                 </button>
                 <button
                     id="filter-equipment"
@@ -166,7 +177,7 @@ const alumni = members.filter((m) => m.status === "alumni");
                             d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m14 0h2M3 15h2m14 0h2M9 9h6v6H9V9z"
                         ></path>
                     </svg>
-                    Equipment
+                    <span data-lang-en>Equipment</span><span data-lang-zh>設備</span>
                 </button>
             </div>
 
@@ -181,7 +192,9 @@ const alumni = members.filter((m) => m.status === "alumni");
                             <GalleryCard
                                 images={item.images}
                                 title={item.title}
+                                titleZh={item.title_zh}
                                 description={item.description}
+                                descriptionZh={item.description_zh}
                                 category={item.category}
                                 date={item.date}
                             />

@@ -1,42 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import LangText from "../components/i18n/LangText.astro";
+import LangBlock from "../components/i18n/LangBlock.astro";
 
 const courses = [
     {
         code: "SI5011701",
         name: "Multimedia Information Systems",
         level: "Graduate",
+        levelZh: "研究所",
         semester: "Spring 2026",
         description:
             "Advanced exploration of Multimodal Machine Learning (MMML), emphasizing mathematical foundations and state-of-the-art models for integrating linguistic, acoustic, and visual data streams.",
+        descriptionZh:
+            "深入探討多模態機器學習（MMML），著重數學基礎與前沿模型，整合語言、聲學與視覺資料流。",
         tags: ["Multimodal Learning", "MMML", "Cross-Modal AI"]
     },
     {
         code: "SI5102701",
         name: "AI-Based Visual Inspection",
         level: "Graduate",
+        levelZh: "研究所",
         semester: "Spring 2026",
         description:
             "Practical application of advanced AI techniques for precision visual analysis. Covers medical lesion detection and industrial defect inspection using real-world datasets for hands-on model training.",
+        descriptionZh:
+            "運用先進 AI 技術於精密視覺分析，涵蓋醫學病灶偵測與工業缺陷檢測，以真實資料集進行實作模型訓練。",
         tags: ["Visual Inspection", "Medical AI", "Industrial AI"]
     },
     {
         code: "SI5033701",
         name: "Automated Sensing and Smart Data Acquisition",
         level: "Graduate",
+        levelZh: "研究所",
         semester: "Fall 2025",
         description:
             "In-depth study of sensor fusion technologies and practical data processing for autonomous perception through real-world, problem-based projects.",
+        descriptionZh:
+            "深入研究感測器融合技術與自主感知的實用資料處理，透過真實情境的問題導向專題實作。",
         tags: ["Sensor Fusion", "IoT", "Autonomous Systems"]
     },
     {
         code: "SI5007701",
         name: "Deep Learning Based Image Recognition",
         level: "Graduate",
+        levelZh: "研究所",
         semester: "Fall 2025",
         description:
             "Advanced course focused on researching and deploying contemporary image recognition solutions through independent study and practical model implementation.",
+        descriptionZh:
+            "以自主研究與實作模型為核心，探索並部署當代影像辨識解決方案的進階課程。",
         tags: ["Computer Vision", "Deep Learning", "AI Deployment"]
     },
 ];
@@ -52,11 +66,10 @@ const courses = [
             <h1
                 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
             >
-                Teaching
+                <span data-lang-en>Teaching</span><span data-lang-zh>教學</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                Courses taught at National Taiwan University of Science and
-                Technology
+                <span data-lang-en>Courses taught at National Taiwan University of Science and Technology</span><span data-lang-zh>國立臺灣科技大學授課課程</span>
             </p>
         </div>
     </section>
@@ -66,7 +79,9 @@ const courses = [
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="Courses"
+                titleZh="課程"
                 subtitle="Graduate and undergraduate courses"
+                subtitleZh="研究所與大學部課程"
             />
 
             <div class="space-y-4">
@@ -87,7 +102,7 @@ const courses = [
                                             "inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium",
                                             course.level === "Graduate" ? "bg-purple-50 text-purple-700 border border-purple-100" : "bg-blue-50 text-blue-700 border border-blue-100"
                                         ]}>
-                                            {course.level}
+                                            <span data-lang-en>{course.level}</span><span data-lang-zh>{course.levelZh}</span>
                                         </span>
                                         <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200">
                                             {course.semester}
@@ -103,9 +118,10 @@ const courses = [
                                         </h3>
                                     </div>
                                     
-                                    <p class="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700">
-                                        {course.description}
-                                    </p>
+                                    <LangBlock as="p" class="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700">
+                                        <Fragment slot="en">{course.description}</Fragment>
+                                        <Fragment slot="zh">{course.descriptionZh}</Fragment>
+                                    </LangBlock>
 
                                     <!-- Tags -->
                                     <div class="flex flex-wrap items-center gap-2">
@@ -125,16 +141,14 @@ const courses = [
     <!-- Teaching Philosophy -->
     <section class="section-padding bg-gray-bg">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader title="Teaching Philosophy" />
+            <SectionHeader title="Teaching Philosophy" titleZh="教學理念" />
 
             <div class="prose prose-lg max-w-none">
                 <div class="p-8 bg-white rounded-2xl shadow-sm">
                     <blockquote
                         class="text-xl text-navy italic border-l-4 border-accent pl-6 mb-6"
                     >
-                        "My goal is to inspire students to explore the frontiers
-                        of AI and robotics, combining rigorous theoretical
-                        foundations with hands-on practical experience."
+                        <span data-lang-en>"My goal is to inspire students to explore the frontiers of AI and robotics, combining rigorous theoretical foundations with hands-on practical experience."</span><span data-lang-zh>「我的目標是啟發學生探索 AI 與機器人的前沿，將嚴謹的理論基礎與實作經驗融為一體。」</span>
                     </blockquote>
 
                     <div class="grid md:grid-cols-3 gap-6 mt-8">
@@ -157,11 +171,10 @@ const courses = [
                                 </svg>
                             </div>
                             <h3 class="font-semibold text-navy mb-2">
-                                Innovation
+                                <span data-lang-en>Innovation</span><span data-lang-zh>創新思維</span>
                             </h3>
                             <p class="text-sm text-gray-text">
-                                Encouraging creative problem-solving and novel
-                                approaches
+                                <span data-lang-en>Encouraging creative problem-solving and novel approaches</span><span data-lang-zh>鼓勵創意解題與突破傳統的新穎方法</span>
                             </p>
                         </div>
 
@@ -184,11 +197,10 @@ const courses = [
                                 </svg>
                             </div>
                             <h3 class="font-semibold text-navy mb-2">
-                                Hands-On
+                                <span data-lang-en>Hands-On</span><span data-lang-zh>動手實作</span>
                             </h3>
                             <p class="text-sm text-gray-text">
-                                Learning by doing through projects and
-                                experiments
+                                <span data-lang-en>Learning by doing through projects and experiments</span><span data-lang-zh>透過專題與實驗，在做中學</span>
                             </p>
                         </div>
 
@@ -211,10 +223,10 @@ const courses = [
                                 </svg>
                             </div>
                             <h3 class="font-semibold text-navy mb-2">
-                                Collaboration
+                                <span data-lang-en>Collaboration</span><span data-lang-zh>協作精神</span>
                             </h3>
                             <p class="text-sm text-gray-text">
-                                Building teamwork and communication skills
+                                <span data-lang-en>Building teamwork and communication skills</span><span data-lang-zh>培養團隊合作與溝通能力</span>
                             </p>
                         </div>
                     </div>

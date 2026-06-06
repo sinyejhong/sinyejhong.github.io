@@ -6,26 +6,38 @@ const researchAreas = [
   {
     id: "perception",
     title: "Resilient Perception & Multimodal Fusion",
+    titleZh: "面向自主系統的韌性感知與多模態融合",
+    navZh: "韌性感知",
     icon: `<svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>`,
     overview:
       "Achieving reliable autonomy in complex, dynamic, and unstructured environments. We develop robust perception architectures that function effectively under adverse weather opacity and low-light scenarios. Our strategy relies on multimodal sensor fusion (LiDAR, Radar, Camera, Thermal, DVS) to enhance safety and navigation precision for autonomous vehicles and UAVs.",
+    overviewZh:
+      "在複雜、動態且非結構化的環境中實現可靠自主性。我們開發在惡劣天候遮蔽與低光環境下仍能有效運作的韌性感知架構，並透過多模態感測器融合（LiDAR、Radar、Camera、Thermal、DVS）提升自動駕駛車輛與 UAV 的安全性與導航精度。",
     image: "/images/research/research1.png",
     topics: [
       {
         name: "Multimodal Sensor Fusion",
+        nameZh: "多模態感測器融合",
         desc: "Cross-Attention and Spatiotemporal architectures combining Camera, LiDAR, Radar, and Thermal data.",
+        descZh: "結合 Camera、LiDAR、Radar 與 Thermal 資料的 Cross-Attention 與時空架構。",
       },
       {
         name: "All-Weather Perception",
+        nameZh: "全天候感知",
         desc: "Robust object detection algorithms designed specifically for rain, fog, and nighttime scenarios.",
+        descZh: "專為雨天、霧天與夜間場景設計的魯棒物件偵測演算法。",
       },
       {
         name: "2D/3D Object Detection",
+        nameZh: "2D/3D Object Detection",
         desc: "High-precision 3D localization and tracking systems applied to autonomous driving and V2X.",
+        descZh: "應用於自動駕駛與 V2X 的高精度 3D 定位與追蹤系統。",
       },
       {
         name: "UAV Perception",
+        nameZh: "UAV 感知",
         desc: "Efficient Visual Odometry (VO) and small-object detection optimized for drones.",
+        descZh: "為無人機優化的高效 Visual Odometry (VO) 與小目標偵測。",
       },
     ],
     keywords: [
@@ -55,26 +67,38 @@ const researchAreas = [
   {
     id: "inspection",
     title: "Intelligent Visual Inspection & AIoT",
+    titleZh: "智慧視覺檢測與以人為本的 AIoT",
+    navZh: "智慧視覺檢測",
     icon: `<svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>`,
     overview:
       "Bridging high-performance algorithms with real-world deployment. We specialize in Industrial Inspection and Healthcare Diagnostics, utilizing lightweight deep learning and domain adaptation to solve data scarcity. Our work in Human-Centric Computing prioritizes trust, privacy, and explainable AI (XAI).",
+    overviewZh:
+      "將高效能演算法與真實場域部署相連結。我們專注於工業檢測與醫療診斷，運用輕量化 Deep Learning 與領域適應解決資料稀缺問題；以人為本的計算研究則以信任、隱私與可解釋 AI（XAI）為優先考量。",
     image: "/images/research/research2.png",
     topics: [
       {
         name: "Smart Diagnostics",
+        nameZh: "智慧診斷",
         desc: "Automated inspection for medical imaging (X-ray, dermatology) and industrial manufacturing.",
+        descZh: "針對醫學影像（X-ray、皮膚科）與工業製造的自動化檢測。",
       },
       {
         name: "Edge-Cloud Collaboration",
+        nameZh: "邊緣雲端協同",
         desc: "Distributed frameworks optimizing real-time processing and privacy across edge devices.",
+        descZh: "跨邊緣裝置優化即時處理與隱私保護的分散式框架。",
       },
       {
         name: "Biometrics & Security",
+        nameZh: "Biometrics & Security",
         desc: "Advanced palm-vein recognition, face anti-spoofing, and robust data hiding techniques.",
+        descZh: "進階掌靜脈辨識、人臉防偽，以及穩健的資料隱藏技術。",
       },
       {
         name: "Generative Defect AI",
+        nameZh: "生成式缺陷 AI",
         desc: "Using Diffusion Models to synthesize defect samples for few-shot learning in manufacturing.",
+        descZh: "利用 Diffusion Models 合成缺陷樣本，用於製造業的 Few-Shot Learning。",
       },
     ],
     keywords: [
@@ -106,26 +130,38 @@ const researchAreas = [
   {
     id: "robotics",
     title: "Embodied Intelligence & Generative Robotics",
+    titleZh: "具身智慧與生成式機器人",
+    navZh: "具身智慧",
     icon: `<svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>`,
     overview:
       "Closing the semantic gap between human instructions and robot actions. By integrating LLMs and VLMs with robotic control, we empower agents to perform natural language navigation, hazard assessment, and multi-agent cooperation in human-centric environments.",
+    overviewZh:
+      "縮小人類指令與機器人行動之間的語意落差。透過將 LLMs 與 VLMs 整合至機器人控制，我們賦予代理人自然語言導航、危險評估以及在以人為本環境中多代理協作的能力。",
     image: "/images/research/research3.png",
     topics: [
       {
         name: "Vision-Language Nav",
+        nameZh: "Vision-Language Nav",
         desc: "Semantic mapping and path planning based on natural language instructions (VLN).",
+        descZh: "基於自然語言指令的語意地圖建構與路徑規劃（VLN）。",
       },
       {
         name: "VLA Models",
+        nameZh: "VLA Models",
         desc: "End-to-end Vision-Language-Action models mapping inputs directly to robotic control.",
+        descZh: "端到端 Vision-Language-Action 模型，將輸入直接映射為機器人控制指令。",
       },
       {
         name: "Multi-Agent Systems",
+        nameZh: "Multi-Agent Systems",
         desc: "Using LLMs to orchestrate communication and strategy among multiple robotic agents.",
+        descZh: "運用 LLMs 協調多個機器人代理間的通訊與策略。",
       },
       {
         name: "Proactive Safety",
+        nameZh: "主動安全",
         desc: "Language-driven reasoning for identifying environmental risks and safe navigation.",
+        descZh: "以語言驅動的推理識別環境風險並實現安全導航。",
       },
     ],
     keywords: [
@@ -206,16 +242,14 @@ const themes = {
       <h1
         class="text-5xl md:text-6xl font-heading font-bold mb-6 tracking-tight"
       >
-        Research Frontiers
+        <span data-lang-en>Research Frontiers</span><span data-lang-zh>研究前沿</span>
       </h1>
       <p
         class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed"
       >
-        Pioneering the future of <span class="text-blue-400 font-medium"
-          >Perception</span
-        >,
+        <span data-lang-en>Pioneering the future of <span class="text-blue-400 font-medium">Perception</span>,
         <span class="text-emerald-400 font-medium">Industry</span>, and
-        <span class="text-purple-400 font-medium">Embodied AI</span>.
+        <span class="text-purple-400 font-medium">Embodied AI</span>.</span><span data-lang-zh>引領 <span class="text-blue-400 font-medium">Perception</span>、<span class="text-emerald-400 font-medium">Industry</span> 與 <span class="text-purple-400 font-medium">Embodied AI</span> 的未來。</span>
       </p>
     </div>
   </section>
@@ -239,7 +273,7 @@ const themes = {
                 href={`#${area.id}`}
                 class={`px-4 py-2 rounded-full text-sm font-medium text-gray-500 transition-all duration-300 ${hoverTheme}`}
               >
-                {area.title.split("&")[0]}
+                <span data-lang-en>{area.title.split("&")[0]}</span><span data-lang-zh>{area.navZh}</span>
               </a>
             );
           })
@@ -290,16 +324,16 @@ const themes = {
                     <span
                       class={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase ${theme.bg} ${theme.subtext}`}
                     >
-                      Research Pillar 0{index + 1}
+                      <span data-lang-en>Research Pillar 0{index + 1}</span><span data-lang-zh>研究主軸 0{index + 1}</span>
                     </span>
                   </div>
 
                   <h2 class="text-4xl font-heading font-bold text-navy mb-6">
-                    {area.title}
+                    <span data-lang-en>{area.title}</span><span data-lang-zh>{area.titleZh}</span>
                   </h2>
 
                   <p class="text-lg text-gray-600 leading-relaxed mb-10 text-justify">
-                    {area.overview}
+                    <span data-lang-en>{area.overview}</span><span data-lang-zh>{area.overviewZh}</span>
                   </p>
 
                   {/* Interactive Topic Grid */}
@@ -311,10 +345,10 @@ const themes = {
                         <h4
                           class={`font-semibold text-lg mb-2 ${theme.text} group-hover:translate-x-1 transition-transform`}
                         >
-                          {topic.name}
+                          <span data-lang-en>{topic.name}</span><span data-lang-zh>{topic.nameZh}</span>
                         </h4>
                         <p class="text-sm text-gray-500 leading-relaxed text-justify">
-                          {topic.desc}
+                          <span data-lang-en>{topic.desc}</span><span data-lang-zh>{topic.descZh}</span>
                         </p>
                       </div>
                     ))}
@@ -326,7 +360,7 @@ const themes = {
                       <h4
                         class={`text-xs font-bold uppercase tracking-widest mb-4 ${theme.subtext} opacity-80`}
                       >
-                        Key Technologies
+                        <span data-lang-en>Key Technologies</span><span data-lang-zh>關鍵技術</span>
                       </h4>
                       <div class="flex flex-wrap gap-2">
                         {area.keywords.map((keyword) => (

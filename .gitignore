@@ -26,4 +26,5 @@ pnpm-debug.log*
 # AI tooling artifacts
 .agent/
 .shared/
+.claude/
 __pycache__/

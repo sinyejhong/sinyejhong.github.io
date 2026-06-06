@@ -67,6 +67,12 @@ const researchAreaConfig = {
 
 const areaConfig = researchArea ? researchAreaConfig[researchArea] : null;
 
+const typeLabelsZh: Record<string, string> = {
+    journal: "期刊",
+    conference: "會議",
+    patent: "專利",
+};
+
 // A publication is only linkable when it has a real URL (not the "#" placeholder)
 const hasLink = !!link && link !== "#";
 ---
@@ -122,7 +128,9 @@ const hasLink = !!link && link !== "#";
                         "bg-lime-50 text-lime-700 ring-1 ring-lime-100",
                 ]}
             >
-                {type.charAt(0).toUpperCase() + type.slice(1)}
+                <span data-lang-en
+                    >{type.charAt(0).toUpperCase() + type.slice(1)}</span
+                ><span data-lang-zh>{typeLabelsZh[type] || type}</span>
             </span>
 
             <!-- 4. Other Badges (Awards, Metrics) -->
@@ -162,7 +170,9 @@ const hasLink = !!link && link !== "#";
             {
                 highlight && (
                     <span class="badge bg-amber-100 text-amber-800 font-semibold ring-1 ring-amber-200">
-                        ★ Featured
+                        ★ <span data-lang-en>Featured</span><span data-lang-zh
+                            >精選</span
+                        >
                     </span>
                 )
             }

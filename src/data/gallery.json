@@ -8,7 +8,9 @@
         "title": "Best Paper Award at ITAC 2026",
         "description": "ASI² Lab team wins the Best Paper Award at the 2026 Information Technology and Applications Conference (ITAC 2026).",
         "category": "Activity",
-        "date": "2026-04-29"
+        "date": "2026-04-29",
+        "title_zh": "榮獲 ITAC 2026 最佳論文獎",
+        "description_zh": "ASI² Lab 團隊榮獲 2026 資訊科技應用國際學術研討會（ITAC 2026）最佳論文獎。"
     },
     {
         "id": 2,
@@ -20,7 +22,9 @@
         "title": "ITRI Delegation Visit",
         "description": "Industrial Technology Research Institute (ITRI) delegation visits TaiwanTech Hwa Hsia Campus, with the lab presenting research outcomes and project progress on behalf of the Smart Electric Vehicle (SEV) Research Center.",
         "category": "Activity",
-        "date": "2026-04-09"
+        "date": "2026-04-09",
+        "title_zh": "工業技術研究院參訪",
+        "description_zh": "工業技術研究院（ITRI）代表團蒞臨台科大華夏校區參訪，本實驗室代表智慧電動車（SEV）研究中心發表研究成果與計畫進度。"
     },
     {
         "id": 3,
@@ -30,7 +34,9 @@
         "title": "Lab Spring Banquet 2026",
         "description": "ASI² Lab members gather at Xin Dian Hotpot (辛殿麻辣鍋) for a Spring Banquet dinner, celebrating team achievements and strengthening lab camaraderie.",
         "category": "Activity",
-        "date": "2026-03-30"
+        "date": "2026-03-30",
+        "title_zh": "2026 實驗室春季聚餐",
+        "description_zh": "ASI² Lab 成員齊聚辛殿麻辣鍋，共享春季聚餐，慶祝團隊成果並增進實驗室向心力。"
     },
     {
         "id": 4,
@@ -43,7 +49,9 @@
         "title": "Multiple Awards at NEDCC 2026",
         "description": "ASI² Lab team wins Third Prize in Electronics, Honorable Mention in Information & Communication, and the IEEE Special Award (Grand Prize) at the National Electronic Design Creative Competition.",
         "category": "Activity",
-        "date": "2026-03-28"
+        "date": "2026-03-28",
+        "title_zh": "榮獲 NEDCC 2026 多項獎項",
+        "description_zh": "ASI² Lab 團隊於全國電子設計創意競賽中榮獲電子類第三名、資訊與通訊類佳作，並榮獲 IEEE 特別獎（大獎）。"
     },
     {
         "id": 5,
@@ -54,7 +62,9 @@
         "title": "Top Honors at Automation 2025",
         "description": "ASI² Lab team wins First Prize in the Best Student Paper Award and Second Prize in the Best Paper Award at the International Conference on Automation Technology (Automation).",
         "category": "Activity",
-        "date": "2025-11-30"
+        "date": "2025-11-30",
+        "title_zh": "榮獲 Automation 2025 論文獎項",
+        "description_zh": "ASI² Lab 團隊於國科會自動化學門國際研討會（Automation）榮獲最佳學生論文獎第一名及最佳論文獎第二名。"
     },
     {
         "id": 6,
@@ -65,7 +75,9 @@
         "title": "1st Place at NCHU Capstone Competition",
         "description": "ASI² Lab team wins 1st Place and NT$200,000 prize at the NCHU Capstone Competition for AI Empowerment and Robotics Applications in Manufacturing.",
         "category": "Activity",
-        "date": "2025-11-22"
+        "date": "2025-11-22",
+        "title_zh": "榮獲中興大學專題競賽第一名",
+        "description_zh": "ASI² Lab 團隊於中興大學 AI 賦能與智慧製造機器人應用專題競賽奪得第一名，並獲得新台幣 20 萬元獎金。"
     },
     {
         "id": 7,
@@ -76,7 +88,9 @@
         "title": "Best Paper Award at CACS 2025",
         "description": "ASI² Lab team wins Second Prize in the Best Paper Award at the International Automatic Control Conference (CACS).",
         "category": "Activity",
-        "date": "2025-11-08"
+        "date": "2025-11-08",
+        "title_zh": "榮獲 CACS 2025 最佳論文獎",
+        "description_zh": "ASI² Lab 團隊於國科會控制學門國際研討會（CACS）榮獲最佳論文獎第二名。"
     },
     {
         "id": 8,
@@ -87,7 +101,9 @@
         "title": "3rd Place at InnoServe Awards",
         "description": "ASI² Lab team secures 3rd Place in the Industry-Academia Collaboration category at the International ICT Innovative Services Awards.",
         "category": "Activity",
-        "date": "2025-11-01"
+        "date": "2025-11-01",
+        "title_zh": "榮獲資訊應用服務創新競賽第三名",
+        "description_zh": "ASI² Lab 團隊於資訊應用服務創新競賽（InnoServe Awards）產學合作組榮獲第三名。"
     },
     {
         "id": 9,
@@ -98,7 +114,9 @@
         "title": "Novatek Industry Visit",
         "description": "Novatek Technology representatives visit ASI² Lab for an industry insights and best practices sharing session, followed by a recruitment event offering internship opportunities and employee referrals to lab members.",
         "category": "Activity",
-        "date": "2025-10-28"
+        "date": "2025-10-28",
+        "title_zh": "聯詠科技業界參訪",
+        "description_zh": "聯詠科技代表蒞臨 ASI² Lab 進行產業洞見與最佳實務分享，並舉辦招募活動，提供實驗室成員實習機會及員工推薦管道。"
     },
     {
         "id": 10,
@@ -108,7 +126,9 @@
         "title": "Best Paper Honorable Mention at ARIS 2025",
         "description": "ASI² Lab team receives Honorable Mention in the Best Paper Award at the International Conference on Advanced Robotics and Intelligent Systems (ARIS).",
         "category": "Activity",
-        "date": "2025-08-19"
+        "date": "2025-08-19",
+        "title_zh": "榮獲 ARIS 2025 最佳論文佳作",
+        "description_zh": "ASI² Lab 團隊於先進機器人與智慧系統國際研討會（ARIS）榮獲最佳論文獎佳作。"
     },
     {
         "id": 11,
@@ -118,7 +138,9 @@
         "title": "Outstanding Presentation Award at IEEE AVSS 2025",
         "description": "ASI² Lab team wins the Outstanding Presentation Award at the IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS).",
         "category": "Activity",
-        "date": "2025-08-13"
+        "date": "2025-08-13",
+        "title_zh": "榮獲 IEEE AVSS 2025 傑出報告獎",
+        "description_zh": "ASI² Lab 團隊於 IEEE 先進視覺與訊號系統國際研討會（AVSS）榮獲傑出報告獎。"
     },
     {
         "id": 12,
@@ -128,7 +150,9 @@
         "title": "ASI² Lab Established",
         "description": "ASI² Lab officially established at the Graduate Institute of Intelligent Manufacturing Technology, NTUST.",
         "category": "Activity",
-        "date": "2025-08-01"
+        "date": "2025-08-01",
+        "title_zh": "ASI² Lab 正式成立",
+        "description_zh": "ASI² Lab 於國立臺灣科技大學智慧製造科技研究所正式成立。"
     },
     {
         "id": 13,
@@ -138,7 +162,9 @@
         "title": "Autonomous Mobile Robot (AMR)",
         "description": "Lab-developed Autonomous Mobile Robot for intelligent navigation and logistics automation research.",
         "category": "Equipment",
-        "date": "2025-08-01"
+        "date": "2025-08-01",
+        "title_zh": "自主移動機器人（AMR）",
+        "description_zh": "實驗室自主研發之自主移動機器人，用於智慧導航與物流自動化研究。"
     },
     {
         "id": 14,
@@ -148,6 +174,8 @@
         "title": "Intelligent Vehicle Platform",
         "description": "Smart vehicle developed in collaboration with ARTC (Automotive Research & Testing Center) for autonomous driving research.",
         "category": "Equipment",
-        "date": "2025-08-01"
+        "date": "2025-08-01",
+        "title_zh": "智慧車輛平台",
+        "description_zh": "與財團法人車輛研究測試中心（ARTC）合作開發之智慧車輛，用於自動駕駛研究。"
     }
 ]

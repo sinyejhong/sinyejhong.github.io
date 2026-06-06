@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+import LangBlock from "../components/i18n/LangBlock.astro";
 ---
 
 <BaseLayout
@@ -43,20 +44,24 @@ import SectionHeader from "../components/SectionHeader.astro";
             <span
                 class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-6 border border-accent/20 backdrop-blur-sm"
             >
-                Join the ASI² Lab
+                <span data-lang-en>Join the ASI² Lab</span><span data-lang-zh>加入 ASI² Lab</span>
             </span>
             <h1
                 class="text-5xl md:text-6xl font-heading font-bold mb-6 tracking-tight leading-tight"
             >
-                Shape the Future of <br />
+                <span data-lang-en>Shape the Future of <br />
                 <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light"
                     >Intelligent Systems</span
-                >
+                ></span><span data-lang-zh>共同塑造 <br />
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light"
+                    >智慧系統的未來</span
+                ></span>
             </h1>
             <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                We are looking for passionate researchers to pioneer
-                breakthroughs in Robotics, AI, and Industrial Automation.
+                <span data-lang-en>We are looking for passionate researchers to pioneer
+                breakthroughs in Robotics, AI, and Industrial Automation.</span><span data-lang-zh>我們正尋找充滿熱情的研究者，共同在 Robotics、AI 與 Industrial Automation 領域開創突破。</span>
             </p>
         </div>
     </section>
@@ -66,7 +71,9 @@ import SectionHeader from "../components/SectionHeader.astro";
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="Contact Information"
+                titleZh="聯絡資訊"
                 subtitle="Get in touch with us"
+                subtitleZh="歡迎與我們聯繫"
             />
 
             <div class="grid md:grid-cols-2 gap-8">
@@ -160,16 +167,19 @@ import SectionHeader from "../components/SectionHeader.astro";
                             </div>
                             <div class="flex-grow text-sm">
                                 <p class="font-medium text-base text-navy mb-1">
-                                    Lab Address
+                                    <span data-lang-en>Lab Address</span><span data-lang-zh>實驗室地址</span>
                                 </p>
-                                <p class="text-gray-600 leading-relaxed">
-                                    C216, 2F, General Education Building<br />
+                                <LangBlock as="p" class="text-gray-600 leading-relaxed">
+                                    <Fragment slot="en">C216, 2F, General Education Building<br />
                                     <span class="font-medium text-navy"
                                         >TaiwanTech Hwa Hsia Campus</span
                                     ><br />
                                     No.111, Gongzhuan Rd., Zhonghe Dist.,<br />
-                                    New Taipei City, Taiwan
-                                </p>
+                                    New Taipei City, Taiwan</Fragment>
+                                    <Fragment slot="zh">新北市 <span class="font-medium text-navy">國立臺灣科技大學 華夏校區</span><br />
+                                    通識教育大樓 2 樓 C216<br />
+                                    中和區公專路 111 號</Fragment>
+                                </LangBlock>
                             </div>
                         </div>
                     </div>
@@ -202,7 +212,7 @@ import SectionHeader from "../components/SectionHeader.astro";
                                 ></path></svg
                             >
                         </div>
-                        Lab Location
+                        <span data-lang-en>Lab Location</span><span data-lang-zh>實驗室位置</span>
                     </h3>
                     <div
                         class="aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden border border-gray-100 shadow-inner"
@@ -225,7 +235,9 @@ import SectionHeader from "../components/SectionHeader.astro";
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="Why Join ASI² Lab?"
+                titleZh="為什麼加入 ASI² Lab？"
                 subtitle="We provide a world-class research environment to help you achieve your academic and professional goals."
+                subtitleZh="我們提供世界級的研究環境，協助您實現學術與職涯目標。"
             />
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -250,12 +262,12 @@ import SectionHeader from "../components/SectionHeader.astro";
                         >
                     </div>
                     <h3 class="text-xl font-semibold text-navy mb-2">
-                        Cutting-edge Research
+                        <span data-lang-en>Cutting-edge Research</span><span data-lang-zh>尖端研究</span>
                     </h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        Work on state-of-the-art projects in Resilient
+                        <span data-lang-en>Work on state-of-the-art projects in Resilient
                         Perception, Industrial AIoT, and Embodied Intelligence
-                        funded by top agencies.
+                        funded by top agencies.</span><span data-lang-zh>參與由頂尖機構資助的最新 Resilient Perception、Industrial AIoT 與 Embodied Intelligence 專案。</span>
                     </p>
                 </div>
 
@@ -280,12 +292,12 @@ import SectionHeader from "../components/SectionHeader.astro";
                         >
                     </div>
                     <h3 class="text-xl font-semibold text-navy mb-2">
-                        Mentorship & Growth
+                        <span data-lang-en>Mentorship & Growth</span><span data-lang-zh>導師輔導與成長</span>
                     </h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        Receive personalized guidance from Dr. Jhong and regular
+                        <span data-lang-en>Receive personalized guidance from Dr. Jhong and regular
                         feedback to prepare you for top-tier academic or
-                        industrial careers.
+                        industrial careers.</span><span data-lang-zh>由 Dr. Jhong 提供個人化指導與定期回饋，協助您邁向頂尖學術或業界職涯。</span>
                     </p>
                 </div>
 
@@ -310,12 +322,12 @@ import SectionHeader from "../components/SectionHeader.astro";
                         >
                     </div>
                     <h3 class="text-xl font-semibold text-navy mb-2">
-                        Global Impact
+                        <span data-lang-en>Global Impact</span><span data-lang-zh>國際影響力</span>
                     </h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        Collaborate with international partners and publish your
+                        <span data-lang-en>Collaborate with international partners and publish your
                         work in prestigious journal and conference (e.g.,
-                        IEEE/ACM Trans., CVPR, ICRA).
+                        IEEE/ACM Trans., CVPR, ICRA).</span><span data-lang-zh>與國際夥伴合作，並在頂尖期刊與會議（如 IEEE/ACM Trans.、CVPR、ICRA）發表研究成果。</span>
                     </p>
                 </div>
             </div>
@@ -327,7 +339,9 @@ import SectionHeader from "../components/SectionHeader.astro";
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="Open Positions"
+                titleZh="開放職缺"
                 subtitle="We welcome talented individuals at all levels"
+                subtitleZh="我們歡迎各階段的優秀人才加入"
             />
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -368,21 +382,21 @@ import SectionHeader from "../components/SectionHeader.astro";
                         <h3
                             class="text-xl font-semibold text-navy mb-3 group-hover:text-accent transition-colors"
                         >
-                            Ph.D. Students
+                            <span data-lang-en>Ph.D. Students</span><span data-lang-zh>博士生</span>
                         </h3>
                         <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            We are looking for highly motivated Ph.D. candidates
+                            <span data-lang-en>We are looking for highly motivated Ph.D. candidates
                             with strong background in computer science,
-                            electrical engineering, or related fields.
+                            electrical engineering, or related fields.</span><span data-lang-zh>我們尋找具高度積極性、擁有資訊工程、電機工程或相關領域紮實背景的博士候選人。</span>
                         </p>
                         <div class="flex flex-wrap gap-2 mt-auto">
                             <span
                                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
-                                >Fully Funded</span
+                                ><span data-lang-en>Fully Funded</span><span data-lang-zh>全額獎學金</span></span
                             >
                             <span
                                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
-                                >RA Support</span
+                                ><span data-lang-en>RA Support</span><span data-lang-zh>研究助理補助</span></span
                             >
                         </div>
                     </div>
@@ -416,20 +430,20 @@ import SectionHeader from "../components/SectionHeader.astro";
                         <h3
                             class="text-xl font-semibold text-navy mb-3 group-hover:text-accent transition-colors"
                         >
-                            Master's Students
+                            <span data-lang-en>Master's Students</span><span data-lang-zh>碩士生</span>
                         </h3>
                         <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Opportunities to work on industry-sponsored projects
-                            and publish at top conferences in AI and robotics.
+                            <span data-lang-en>Opportunities to work on industry-sponsored projects
+                            and publish at top conferences in AI and robotics.</span><span data-lang-zh>有機會參與業界合作專案，並在 AI 與機器人領域頂尖會議發表論文。</span>
                         </p>
                         <div class="flex flex-wrap gap-2 mt-auto">
                             <span
                                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800"
-                                >Research Projects</span
+                                ><span data-lang-en>Research Projects</span><span data-lang-zh>研究專案</span></span
                             >
                             <span
                                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800"
-                                >Industry Collaboration</span
+                                ><span data-lang-en>Industry Collaboration</span><span data-lang-zh>產學合作</span></span
                             >
                         </div>
                     </div>
@@ -463,21 +477,21 @@ import SectionHeader from "../components/SectionHeader.astro";
                         <h3
                             class="text-xl font-semibold text-navy mb-3 group-hover:text-accent transition-colors"
                         >
-                            Undergrad Researchers
+                            <span data-lang-en>Undergrad Researchers</span><span data-lang-zh>大學部研究生</span>
                         </h3>
                         <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Join via independent study or research
+                            <span data-lang-en>Join via independent study or research
                             assistantship. Great opportunity to gain hands-on
-                            experience and prepare for graduate school.
+                            experience and prepare for graduate school.</span><span data-lang-zh>透過獨立研究或研究助理職位加入，累積實作經驗並為研究所做準備。</span>
                         </p>
                         <div class="flex flex-wrap gap-2 mt-auto">
                             <span
                                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800"
-                                >Independent Study</span
+                                ><span data-lang-en>Independent Study</span><span data-lang-zh>獨立研究</span></span
                             >
                             <span
                                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-800"
-                                >Capstone Projects</span
+                                ><span data-lang-en>Capstone Projects</span><span data-lang-zh>專題製作</span></span
                             >
                         </div>
                     </div>
@@ -491,83 +505,85 @@ import SectionHeader from "../components/SectionHeader.astro";
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="What We're Looking For"
+                titleZh="我們尋找的人才"
                 subtitle="Ideal candidate qualifications"
+                subtitleZh="理想候選人資格條件"
             />
 
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="space-y-4">
                     <h3 class="text-lg font-semibold text-navy mb-4">
-                        Technical Skills
+                        <span data-lang-en>Technical Skills</span><span data-lang-zh>技術能力</span>
                     </h3>
                     <ul class="space-y-3">
-                        {
-                            [
-                                "Strong programming skills (Python, C/C++)",
-                                "Experience with deep learning frameworks (PyTorch, TensorFlow)",
-                                "Background in computer vision or robotics",
-                                "Familiarity with Linux and version control (Git)",
-                                "Experience with ROS is a plus",
-                            ].map((item) => (
-                                <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
-                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
-                                        <svg
-                                            class="w-3.5 h-3.5"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="3"
-                                                d="M5 13l4 4L19 7"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <span class="text-gray-600 font-medium leading-relaxed">
-                                        {item}
-                                    </span>
-                                </li>
-                            ))
-                        }
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Strong programming skills (Python, C/C++)</span><span data-lang-zh>紮實的程式設計能力（Python、C/C++）</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Experience with deep learning frameworks (PyTorch, TensorFlow)</span><span data-lang-zh>熟悉深度學習框架（PyTorch、TensorFlow）</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Background in computer vision or robotics</span><span data-lang-zh>具備電腦視覺或機器人領域背景</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Familiarity with Linux and version control (Git)</span><span data-lang-zh>熟悉 Linux 及版本控制（Git）</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Experience with ROS is a plus</span><span data-lang-zh>具備 ROS 經驗者尤佳</span></span>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="space-y-4">
                     <h3 class="text-lg font-semibold text-navy mb-4">
-                        Personal Qualities
+                        <span data-lang-en>Personal Qualities</span><span data-lang-zh>個人特質</span>
                     </h3>
                     <ul class="space-y-3">
-                        {
-                            [
-                                "Self-motivated and passionate about research",
-                                "Strong problem-solving abilities",
-                                "Good communication skills in English",
-                                "Ability to work both independently and in teams",
-                                "Curiosity and willingness to learn new things",
-                            ].map((item) => (
-                                <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
-                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
-                                        <svg
-                                            class="w-3.5 h-3.5"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="3"
-                                                d="M5 13l4 4L19 7"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <span class="text-gray-600 font-medium leading-relaxed">
-                                        {item}
-                                    </span>
-                                </li>
-                            ))
-                        }
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Self-motivated and passionate about research</span><span data-lang-zh>自我驅動、對研究充滿熱情</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Strong problem-solving abilities</span><span data-lang-zh>優秀的問題解決能力</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Good communication skills in English</span><span data-lang-zh>良好的英文溝通能力</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Ability to work both independently and in teams</span><span data-lang-zh>能獨立作業也能融入團隊合作</span></span>
+                        </li>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5 text-accent">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-gray-600 font-medium leading-relaxed"><span data-lang-en>Curiosity and willingness to learn new things</span><span data-lang-zh>充滿好奇心，樂於持續學習新事物</span></span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -579,14 +595,17 @@ import SectionHeader from "../components/SectionHeader.astro";
         class="py-16 bg-gradient-to-br from-accent to-accent-dark text-white"
     >
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-heading font-bold mb-4">Ready to Join?</h2>
+            <h2 class="text-3xl font-heading font-bold mb-4"><span data-lang-en>Ready to Join?</span><span data-lang-zh>準備好加入了嗎？</span></h2>
             <p class="text-xl text-white/80 mb-8">
-                Send us your CV and a brief description of your research
-                interests
+                <span data-lang-en>Send us your CV and a brief description of your research
+                interests</span><span data-lang-zh>請寄送您的 CV 及簡短的研究興趣說明給我們</span>
             </p>
             <a
                 href="mailto:sinyejhong@mail.ntust.edu.tw?subject=Interested in Joining ASI² LAB"
                 class="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-semibold rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+                aria-label="Contact Dr. Jhong"
+                data-i18n-aria-en="Contact Dr. Jhong"
+                data-i18n-aria-zh="聯絡 Dr. Jhong"
             >
                 <svg
                     class="w-5 h-5"
@@ -601,7 +620,7 @@ import SectionHeader from "../components/SectionHeader.astro";
                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     ></path>
                 </svg>
-                Contact Dr. Jhong
+                <span data-lang-en>Contact Dr. Jhong</span><span data-lang-zh>聯絡 Dr. Jhong</span>
             </a>
         </div>
     </section>

@@ -12,6 +12,13 @@
         "pillar": "invited_talk",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 受邀在國立宜蘭大學電機資訊學院發表專題演講，題目為「從大二開始複利研究：選對指導教授、策略規劃，讓每一步成為下一個機會的跳板」",
+        "highlights_zh": [
+            "專題演講"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
         ]
     },
     {
@@ -31,7 +38,18 @@
         },
         "emphasis": [
             "Dr. Sin-Ye Jhong"
-        ]
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任 2026資訊科技應用國際學術研討會（ITAC 2026）「最佳論文獎競賽」議程主持人",
+        "highlights_zh": [
+            "議程主持人",
+            "最佳論文獎競賽"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "2026資訊科技應用國際學術研討會（ITAC 2026）": "https://itac2026.gm.cute.edu.tw/"
+        }
     },
     {
         "text": "Dr. Sin-Ye Jhong hosted a delegation from the Industrial Technology Research Institute (ITRI) [工業技術研究院] at TaiwanTech Hwa Hsia Campus, representing the Smart Electric Vehicle (SEV) Research Center to share lab research outcomes and ongoing project progress",
@@ -48,6 +66,14 @@
         "pillar": "lab_visit",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 在臺灣科技大學華夏校區接待工業技術研究院（ITRI）參訪團，代表智慧電動車（SEV）研究中心分享實驗室研究成果與進行中的計畫進度",
+        "highlights_zh": [
+            "工業技術研究院（ITRI）",
+            "智慧電動車（SEV）研究中心"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
         ]
     },
     {
@@ -63,6 +89,13 @@
         "pillar": "invited_talk",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 受邀在國立臺灣科技大學電子工程系發表專題演講，題目為「From Perception to Decision: How Generative AI and AI Agents Are Pioneering the New Era of Autonomous Driving」",
+        "highlights_zh": [
+            "專題演講"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
         ]
     },
     {
@@ -77,6 +110,13 @@
         ],
         "pillar": "invited_talk",
         "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 受邀在國立宜蘭大學資訊工程學系發表專題演講，題目為「From Perception to Decision: How Generative AI and AI Agents Are Pioneering the New Era of Autonomous Driving」",
+        "highlights_zh": [
+            "專題演講"
+        ],
+        "emphasis_zh": [
             "Dr. Sin-Ye Jhong"
         ]
     },
@@ -94,6 +134,14 @@
         "pillar": "lab_visit",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 在 ASI² Lab 接待聯詠科技代表，進行產業洞察與最佳實務分享，隨後舉辦招募茶敘，提供實驗室成員實習機會與員工推薦資訊",
+        "highlights_zh": [
+            "產業洞察",
+            "招募茶敘"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
         ]
     },
     {
@@ -110,6 +158,13 @@
         "pillar": "thesis_committee",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任國立臺灣科技大學電子工程系碩士論文口試委員",
+        "highlights_zh": [
+            "碩士論文口試委員"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
         ]
     },
     {
@@ -124,6 +179,13 @@
         ],
         "pillar": "thesis_committee",
         "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任國立宜蘭大學資訊工程學系碩士論文口試委員",
+        "highlights_zh": [
+            "碩士論文口試委員"
+        ],
+        "emphasis_zh": [
             "Dr. Sin-Ye Jhong"
         ]
     }

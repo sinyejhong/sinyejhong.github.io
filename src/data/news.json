@@ -15,7 +15,17 @@
         },
         "emphasis": [
             "ASI² Lab team"
-        ]
+        ],
+        "text_zh": "ASI² Lab 團隊在 2026資訊科技應用國際學術研討會（ITAC 2026）榮獲最佳論文獎",
+        "highlights_zh": [
+            "最佳論文獎"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "2026資訊科技應用國際學術研討會（ITAC 2026）": "https://itac2026.gm.cute.edu.tw/"
+        }
     },
     {
         "text": "ASI² Lab team wins Third Prize in the Electronics category, Honorable Mention in the Information & Communication category, and the Grand Prize of the IEEE Special Award at the National Electronic Design Creative Competition (全國電子設計創意競賽)",
@@ -38,7 +48,19 @@
         },
         "emphasis": [
             "ASI² Lab team"
-        ]
+        ],
+        "text_zh": "ASI² Lab 團隊在全國電子設計創意競賽中，於電子類榮獲第三名、資訊通訊類榮獲佳作，並榮獲 IEEE 特別獎（大獎）",
+        "highlights_zh": [
+            "第三名",
+            "佳作",
+            "IEEE 特別獎"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "全國電子設計創意競賽": "https://nedcc.nkust.edu.tw/"
+        }
     },
     {
         "text": "ASI² Lab team wins First Prize in the Best Student Paper Award and Second Prize in the Best Paper Award at the International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
@@ -59,7 +81,20 @@
         },
         "emphasis": [
             "ASI² Lab team"
-        ]
+        ],
+        "text_zh": "ASI² Lab 團隊在國科會自動化學門國際研討會（Automation）榮獲最佳學生論文獎第一名及最佳論文獎第二名",
+        "highlights_zh": [
+            "最佳學生論文獎",
+            "最佳論文獎",
+            "第一名",
+            "第二名"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "國科會自動化學門國際研討會（Automation）": "https://automation2025.nsysu.edu.tw/"
+        }
     },
     {
         "text": "ASI² Lab team wins 1st Place and NT$200,000 prize at the NCHU Capstone Competition for AI Empowerment and Robotics Applications in Manufacturing (AI賦能與機器人於智慧製造應用專題實作競賽)",
@@ -78,7 +113,17 @@
         },
         "emphasis": [
             "ASI² Lab team"
-        ]
+        ],
+        "text_zh": "ASI² Lab 團隊在 AI賦能與機器人於智慧製造應用專題實作競賽中榮獲第一名，並獲得新台幣 20 萬元獎金",
+        "highlights_zh": [
+            "第一名"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "AI賦能與機器人於智慧製造應用專題實作競賽": "https://reurl.cc/nlMRAD"
+        }
     },
     {
         "text": "ASI² Lab team wins Second Prize in the Best Paper Award at the International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
@@ -97,7 +142,18 @@
         },
         "emphasis": [
             "ASI² Lab team"
-        ]
+        ],
+        "text_zh": "ASI² Lab 團隊在國科會控制學門國際研討會（CACS）榮獲最佳論文獎第二名",
+        "highlights_zh": [
+            "最佳論文獎",
+            "第二名"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "國科會控制學門國際研討會（CACS）": "https://cacs2025.web.nycu.edu.tw/"
+        }
     },
     {
         "text": "ASI² Lab Director Dr. Sin-Ye Jhong honored with the Best Ph.D. Thesis Award by the IEEE Tainan Section",
@@ -115,7 +171,17 @@
         "pillar": "academic",
         "emphasis": [
             "Dr. Sin-Ye Jhong"
-        ]
+        ],
+        "text_zh": "ASI² Lab 主持人 Dr. Sin-Ye Jhong 榮獲 IEEE Tainan Section 頒發最佳博士論文獎",
+        "highlights_zh": [
+            "最佳博士論文獎"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "IEEE Tainan Section": "https://r10.ieee.org/tainan/award/"
+        }
     },
     {
         "text": "ASI² Lab team secures 3rd Place in the Industry-Academia Collaboration category at the International ICT Innovative Services Awards (資訊應用服務創新競賽)",
@@ -134,7 +200,18 @@
         },
         "emphasis": [
             "ASI² Lab team"
-        ]
+        ],
+        "text_zh": "ASI² Lab 團隊在資訊應用服務創新競賽的產學合作組榮獲第三名",
+        "highlights_zh": [
+            "第三名",
+            "產學合作"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "資訊應用服務創新競賽": "https://innoserve.tca.org.tw/"
+        }
     },
     {
         "text": "ASI² Lab Director Dr. Sin-Ye Jhong awarded the Ph.D. Thesis Merit Award by the IET Taipei Local Network",
@@ -152,7 +229,17 @@
         },
         "emphasis": [
             "Dr. Sin-Ye Jhong"
-        ]
+        ],
+        "text_zh": "ASI² Lab 主持人 Dr. Sin-Ye Jhong 榮獲 IET Taipei Local Network 頒發博士論文優秀獎",
+        "highlights_zh": [
+            "博士論文優秀獎"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "IET Taipei Local Network": "https://www.iettaiwan.org.tw/news_detail_78.htm"
+        }
     },
     {
         "text": "ASI² Lab team receives Honorable Mention in the Best Paper Award at the International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
@@ -170,7 +257,18 @@
         },
         "emphasis": [
             "ASI² Lab team"
-        ]
+        ],
+        "text_zh": "ASI² Lab 團隊在 International Conference on Advanced Robotics and Intelligent Systems（ARIS）的最佳論文獎中榮獲佳作",
+        "highlights_zh": [
+            "最佳論文獎",
+            "佳作"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "International Conference on Advanced Robotics and Intelligent Systems（ARIS）": "https://aris2025.nchu.edu.tw/"
+        }
     },
     {
         "text": "ASI² Lab team wins the Outstanding Presentation Award at the IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS)",
@@ -187,13 +285,24 @@
         },
         "emphasis": [
             "ASI² Lab team"
-        ]
+        ],
+        "text_zh": "ASI² Lab 團隊在 IEEE International Conference on Advanced Visual and Signal-Based Systems（AVSS）榮獲傑出報告獎",
+        "highlights_zh": [
+            "傑出報告獎"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "IEEE International Conference on Advanced Visual and Signal-Based Systems（AVSS）": "https://sites.google.com/view/avss2025-tw"
+        }
     },
     {
         "text": "ASI² Lab officially established at NTUST",
         "date": "2025-08-01",
         "images": [
             "/images/Logo2.png"
-        ]
+        ],
+        "text_zh": "ASI² Lab 正式於國立臺灣科技大學成立"
     }
 ]

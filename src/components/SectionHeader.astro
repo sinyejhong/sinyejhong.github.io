@@ -1,21 +1,47 @@
 ---
+// Section heading. Optionally bilingual: pass titleZh / subtitleZh and the
+// component renders both languages as sibling nodes (CSS hides the inactive
+// one via html[data-lang]). Without the *Zh props it behaves as before.
 interface Props {
     title: string;
+    titleZh?: string;
     subtitle?: string;
+    subtitleZh?: string;
     centered?: boolean;
 }
 
-const { title, subtitle, centered = true } = Astro.props;
+const { title, titleZh, subtitle, subtitleZh, centered = true } =
+    Astro.props;
 ---
 
 <div class:list={["mb-12", centered && "text-center"]}>
     <h2 class="text-3xl md:text-4xl font-heading font-bold text-navy mb-3">
-        <Fragment set:html={title} />
+        {
+            titleZh ? (
+                <>
+                    <span data-lang-en set:html={title} /><span
+                        data-lang-zh
+                        set:html={titleZh}
+                    />
+                </>
+            ) : (
+                <Fragment set:html={title} />
+            )
+        }
     </h2>
     <div class="w-20 h-1 bg-accent rounded-full mx-auto mb-4"></div>
     {
         subtitle && (
-            <p class="text-gray-text max-w-2xl mx-auto text-lg">{subtitle}</p>
+            <p class="text-gray-text max-w-2xl mx-auto text-lg">
+                {subtitleZh ? (
+                    <>
+                        <span data-lang-en>{subtitle}</span>
+                        <span data-lang-zh>{subtitleZh}</span>
+                    </>
+                ) : (
+                    subtitle
+                )}
+            </p>
         )
     }
 </div>

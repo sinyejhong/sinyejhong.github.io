@@ -1,0 +1,18 @@
+---
+// Localized block for content with inline markup (bold, links, multiple
+// paragraphs). Provide two named slots; CSS hides the inactive language.
+// `as` controls the wrapper tag (use "span" inside inline contexts).
+//
+//   <LangBlock>
+//     <Fragment slot="en">English <strong>markup</strong> here.</Fragment>
+//     <Fragment slot="zh">中文<strong>標記</strong>內容。</Fragment>
+//   </LangBlock>
+interface Props {
+  as?: "div" | "span" | "p" | "section" | "li";
+  class?: string;
+}
+
+const { as = "div", class: className } = Astro.props;
+const Tag = as as any;
+---
+<Tag data-lang-en class={className}><slot name="en" /></Tag><Tag data-lang-zh class={className}><slot name="zh" /></Tag>

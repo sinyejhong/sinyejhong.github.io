@@ -9,7 +9,10 @@
         "type": "government",
         "description": "Two-year roadmap integrating Environmental Robust Perception (event-RGB fusion via SSM) and Open-World Cognition (VLM with adaptive decomposed prompt tuning) for embodied AI in smart manufacturing and logistics.",
         "pillar": "robotics",
-        "logo": "/images/Logo/NSTC.png"
+        "logo": "/images/Logo/NSTC.png",
+        "role_zh": "主持人",
+        "funder_zh": "國家科學及技術委員會",
+        "description_zh": "兩年期計畫，整合環境韌性感知（透過 SSM 的 event-RGB 融合）與開放世界認知（具自適應分解提示調整的 VLM），應用於智慧製造與物流的具身 AI。"
     },
     {
         "id": 1,
@@ -21,7 +24,9 @@
         "type": "industry",
         "description": "Development of Advanced AI-Driven Automated Optical Inspection (AOI) Systems for PCBA Quality Assurance.",
         "pillar": "inspection",
-        "logo": "/images/Logo/AAEON.png"
+        "logo": "/images/Logo/AAEON.png",
+        "role_zh": "主持人",
+        "description_zh": "開發先進 AI 驅動之自動光學檢測（AOI）系統，用於 PCBA 品質保證。"
     },
     {
         "id": 2,
@@ -33,7 +38,9 @@
         "type": "industry",
         "description": "Optimization of AI-powered scalp analysis platform and deployment of cross-national cloud systems.",
         "pillar": "perception",
-        "logo": "/images/Logo/macrohi.png"
+        "logo": "/images/Logo/macrohi.png",
+        "role_zh": "共同主持人",
+        "description_zh": "優化 AI 驅動之頭皮分析平台，並建置跨國雲端系統。"
     },
     {
         "id": 3,
@@ -45,7 +52,9 @@
         "type": "industry",
         "description": "Integration of Large Language Models (LLM) for intelligent enterprise document processing.",
         "pillar": "robotics",
-        "logo": "/images/Logo/AAEON.png"
+        "logo": "/images/Logo/AAEON.png",
+        "role_zh": "共同主持人",
+        "description_zh": "導入大型語言模型（LLM），實現企業智慧文件處理。"
     },
     {
         "id": 4,
@@ -57,7 +66,10 @@
         "type": "government",
         "description": "Multi-sensor fusion (Camera + 4D Radar) for advanced driver assistance systems (ADAS).",
         "pillar": "perception",
-        "logo": "/images/Logo/ARTC.png"
+        "logo": "/images/Logo/ARTC.png",
+        "role_zh": "協同主持人",
+        "funder_zh": "財團法人車輛研究測試中心",
+        "description_zh": "多感測器融合（攝影機 + 4D 雷達），應用於先進駕駛輔助系統（ADAS）。"
     },
     {
         "id": 5,
@@ -69,7 +81,10 @@
         "type": "industry",
         "description": "AI-based predictive maintenance and monitoring for industrial infrastructure.",
         "pillar": "inspection",
-        "logo": "/images/Logo/CPC.png"
+        "logo": "/images/Logo/CPC.png",
+        "role_zh": "協同主持人",
+        "funder_zh": "台灣中油股份有限公司",
+        "description_zh": "基於 AI 的工業基礎設施預測性維護與監測。"
     },
     {
         "id": 6,
@@ -81,7 +96,9 @@
         "type": "industry",
         "description": "R&D of core algorithms for automated scalp health assessment.",
         "pillar": "perception",
-        "logo": "/images/Logo/macrohi.png"
+        "logo": "/images/Logo/macrohi.png",
+        "role_zh": "參與人員",
+        "description_zh": "研發自動化頭皮健康評估之核心演算法。"
     },
     {
         "id": 7,
@@ -93,7 +110,10 @@
         "type": "government",
         "description": "Research on multimodal Large Language Models and comprehensive AI Agent architectures.",
         "pillar": "robotics",
-        "logo": "/images/Logo/III.png"
+        "logo": "/images/Logo/III.png",
+        "role_zh": "參與人員",
+        "funder_zh": "財團法人資訊工業策進會",
+        "description_zh": "研究多模態大型語言模型與完整 AI Agent 架構。"
     },
     {
         "id": 8,
@@ -105,7 +125,9 @@
         "type": "industry",
         "description": "Development of robust scalp detection tech for retail and service industry data ecosystems.",
         "pillar": "perception",
-        "logo": "/images/Logo/macrohi.png"
+        "logo": "/images/Logo/macrohi.png",
+        "role_zh": "參與人員",
+        "description_zh": "為零售與服務業數據生態系開發穩健的頭皮檢測技術。"
     },
     {
         "id": 9,
@@ -117,7 +139,10 @@
         "type": "industry",
         "description": "SLAM algorithm development using Multi-View Stereo (MVS) for autonomous drones.",
         "pillar": "robotics",
-        "logo": "/images/Logo/novatek.png"
+        "logo": "/images/Logo/novatek.png",
+        "role_zh": "參與人員",
+        "funder_zh": "聯詠科技股份有限公司",
+        "description_zh": "利用多視角立體（MVS）為自主無人機開發 SLAM 演算法。"
     },
     {
         "id": 10,
@@ -129,6 +154,9 @@
         "type": "government",
         "description": "Sensor fusion module development for vehicle rear-side blind spot detection.",
         "pillar": "perception",
-        "logo": "/images/Logo/ARTC.png"
+        "logo": "/images/Logo/ARTC.png",
+        "role_zh": "參與人員",
+        "funder_zh": "財團法人車輛研究測試中心",
+        "description_zh": "開發車輛側後方盲點偵測感測器融合模組。"
     }
 ]
