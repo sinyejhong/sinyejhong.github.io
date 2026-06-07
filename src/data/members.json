@@ -127,5 +127,18 @@
         "email": "ycw23062@gmail.com",
         "research_group": "Embodied Intelligence",
         "research_group_zh": "具身智慧"
+    },
+    {
+        "id": 8,
+        "name": "Yin-Cheng Liu",
+        "photo": "/images/members/Yinchengliu.jpg",
+        "role": "Master's Student",
+        "role_zh": "碩士生",
+        "topic": "Industrial AIoT",
+        "topic_zh": "工業 AIoT",
+        "status": "current",
+        "email": "shutton1013@gmail.com",
+        "research_group": "Industrial AIoT",
+        "research_group_zh": "工業 AIoT"
     }
 ]
