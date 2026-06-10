@@ -13,7 +13,9 @@ const researchAreas = [
       "Achieving reliable autonomy in complex, dynamic, and unstructured environments. We develop robust perception architectures that function effectively under adverse weather opacity and low-light scenarios. Our strategy relies on multimodal sensor fusion (LiDAR, Radar, Camera, Thermal, DVS) to enhance safety and navigation precision for autonomous vehicles and UAVs.",
     overviewZh:
       "在複雜、動態且非結構化的環境中實現可靠自主性。我們開發在惡劣天候遮蔽與低光環境下仍能有效運作的韌性感知架構，並透過多模態感測器融合（LiDAR、Radar、Camera、Thermal、DVS）提升自動駕駛車輛與 UAV 的安全性與導航精度。",
-    image: "/images/research/research1.png",
+    image: "/images/research/research1.webp",
+    imageWidth: 1280,
+    imageHeight: 2294,
     topics: [
       {
         name: "Multimodal Sensor Fusion",
@@ -74,7 +76,9 @@ const researchAreas = [
       "Bridging high-performance algorithms with real-world deployment. We specialize in Industrial Inspection and Healthcare Diagnostics, utilizing lightweight deep learning and domain adaptation to solve data scarcity. Our work in Human-Centric Computing prioritizes trust, privacy, and explainable AI (XAI).",
     overviewZh:
       "將高效能演算法與真實場域部署相連結。我們專注於工業檢測與醫療診斷，運用輕量化 Deep Learning 與領域適應解決資料稀缺問題；以人為本的計算研究則以信任、隱私與可解釋 AI（XAI）為優先考量。",
-    image: "/images/research/research2.png",
+    image: "/images/research/research2.webp",
+    imageWidth: 1280,
+    imageHeight: 2059,
     topics: [
       {
         name: "Smart Diagnostics",
@@ -137,7 +141,9 @@ const researchAreas = [
       "Closing the semantic gap between human instructions and robot actions. By integrating LLMs and VLMs with robotic control, we empower agents to perform natural language navigation, hazard assessment, and multi-agent cooperation in human-centric environments.",
     overviewZh:
       "縮小人類指令與機器人行動之間的語意落差。透過將 LLMs 與 VLMs 整合至機器人控制，我們賦予代理人自然語言導航、危險評估以及在以人為本環境中多代理協作的能力。",
-    image: "/images/research/research3.png",
+    image: "/images/research/research3.webp",
+    imageWidth: 1280,
+    imageHeight: 2059,
     topics: [
       {
         name: "Vision-Language Nav",
@@ -255,11 +261,11 @@ const themes = {
   </section>
 
   <!-- Sticky Navigation -->
-  <nav class="sticky top-20 z-40 mx-auto w-fit">
+  <nav class="sticky top-20 z-40 mx-auto w-fit max-w-[calc(100%-2rem)]">
     <div
       class="bg-white/90 backdrop-blur-xl border border-white/40 ring-1 ring-black/5 shadow-lg rounded-full px-2 py-1.5"
     >
-      <div class="flex space-x-1">
+      <div class="flex flex-wrap justify-center gap-1">
         {
           researchAreas.map((area) => {
             const hoverTheme = {
@@ -290,7 +296,7 @@ const themes = {
         return (
           <section
             id={area.id}
-            class={`section-padding scroll-mt-24 ${index % 2 !== 0 ? "bg-gray-50/50" : "bg-white"}`}
+            class={`section-padding scroll-mt-32 ${index % 2 !== 0 ? "bg-gray-50/50" : "bg-white"}`}
           >
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="grid lg:grid-cols-2 gap-16 items-start">
@@ -305,6 +311,10 @@ const themes = {
                     <img
                       src={area.image}
                       alt={area.title}
+                      width={area.imageWidth}
+                      height={area.imageHeight}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      decoding="async"
                       class="w-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
@@ -342,11 +352,11 @@ const themes = {
                       <div
                         class={`p-5 rounded-2xl bg-white border ${theme.border} ${theme.hover} transition-all duration-300 group cursor-default`}
                       >
-                        <h4
+                        <h3
                           class={`font-semibold text-lg mb-2 ${theme.text} group-hover:translate-x-1 transition-transform`}
                         >
                           <span data-lang-en>{topic.name}</span><span data-lang-zh>{topic.nameZh}</span>
-                        </h4>
+                        </h3>
                         <p class="text-sm text-gray-500 leading-relaxed text-justify">
                           <span data-lang-en>{topic.desc}</span><span data-lang-zh>{topic.descZh}</span>
                         </p>
@@ -357,11 +367,11 @@ const themes = {
                   {/* Key Technologies Block */}
                   {area.keywords && (
                     <div class="mt-8">
-                      <h4
+                      <h3
                         class={`text-xs font-bold uppercase tracking-widest mb-4 ${theme.subtext} opacity-80`}
                       >
                         <span data-lang-en>Key Technologies</span><span data-lang-zh>關鍵技術</span>
-                      </h4>
+                      </h3>
                       <div class="flex flex-wrap gap-2">
                         {area.keywords.map((keyword) => (
                           <span

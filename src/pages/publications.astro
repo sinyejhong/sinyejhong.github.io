@@ -117,6 +117,9 @@ const jsonLd = {
                         type="text"
                         id="pub-search"
                         placeholder="Search by title, author, or keyword..."
+                        aria-label="Search publications"
+                        data-i18n-aria-en="Search publications"
+                        data-i18n-aria-zh="搜尋論文"
                         data-i18n-ph-en="Search by title, author, or keyword..."
                         data-i18n-ph-zh="以標題、作者或關鍵字搜尋…"
                         class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-sm"
@@ -181,7 +184,7 @@ const jsonLd = {
                     pubsByYear.map(({ year, pubs }) => (
                         <div class="year-group mb-8" data-year={year}>
                             <!-- Year Header -->
-                            <div class="year-header flex items-center gap-4 mb-6 sticky top-32 lg:top-36 z-30 bg-gray-bg py-2">
+                            <div class="year-header flex items-center gap-4 mb-6 md:sticky md:top-48 lg:top-52 z-30 bg-gray-bg py-2">
                                 <div class="text-2xl font-bold text-navy">{year}</div>
                                 <div class="flex-1 h-px bg-gradient-to-r from-accent/50 to-transparent"></div>
                                 <span class="text-sm text-gray-400 font-medium year-count">

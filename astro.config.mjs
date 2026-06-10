@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 import fs from 'node:fs';
 
 import tailwindcss from '@tailwindcss/vite';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 // Alias /sitemap.xml -> /sitemap-index.xml so crawlers/tools that probe the
@@ -34,5 +33,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [react(), sitemap(), sitemapAlias()]
+  integrations: [sitemap(), sitemapAlias()]
 });

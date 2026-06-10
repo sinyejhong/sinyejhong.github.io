@@ -309,6 +309,7 @@ function getMoonthAndDay(dateStr: string) {
                                 : "opacity-0 absolute z-0 pointer-events-none",
                         ]}
                         data-page={pageIndex}
+                        inert={pageIndex !== 0}
                     >
                         {data
                             .slice(
@@ -899,6 +900,7 @@ function getMoonthAndDay(dateStr: string) {
                         "pointer-events-none",
                     );
                     page.classList.add("opacity-100", "relative", "z-10");
+                    page.removeAttribute("inert");
                 } else {
                     page.classList.remove("opacity-100", "relative", "z-10");
                     page.classList.add(
@@ -907,6 +909,7 @@ function getMoonthAndDay(dateStr: string) {
                         "z-0",
                         "pointer-events-none",
                     );
+                    page.setAttribute("inert", "");
                 }
             });
 
