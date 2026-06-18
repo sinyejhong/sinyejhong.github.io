@@ -6,10 +6,10 @@
             "Master's Thesis Committee Member"
         ],
         "images": [
-            "/images/engagements/2026NIU_master_thesis_1.jpg",
             "/images/engagements/2026NIU_master_thesis_2.jpg",
             "/images/engagements/2026NIU_master_thesis_3.jpg",
-            "/images/engagements/2026NIU_master_thesis_4.jpg"
+            "/images/engagements/2026NIU_master_thesis_4.jpg",
+            "/images/engagements/2026NIU_master_thesis_1.jpg"
         ],
         "pillar": "thesis_committee",
         "emphasis": [
