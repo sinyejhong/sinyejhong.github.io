@@ -1,5 +1,23 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong served as a Master's Thesis Committee Member at the Dept. of Computer Science and Information Engineering, National Ilan University (NIU)",
+        "date": "2026-06-18",
+        "highlights": [
+            "Master's Thesis Committee Member"
+        ],
+        "pillar": "thesis_committee",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任國立宜蘭大學資訊工程學系碩士論文口試委員",
+        "highlights_zh": [
+            "碩士論文口試委員"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
         "text": "Dr. Sin-Ye Jhong delivered an invited talk titled \"Compounding Research from Sophomore Year: Choosing the Right Mentor, Planning Strategically, and Turning Each Step into the Next Opportunity\" at the College of Electrical Engineering and Computer Science, National Ilan University (NIU)",
         "date": "2026-04-30",
         "highlights": [
