@@ -80,24 +80,28 @@ const competitionAwards = sortedAwards.filter(
                 <button
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
+                    aria-pressed="true"
                 >
                     <span data-lang-en>All</span><span data-lang-zh>全部</span> ({sortedAwards.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="student_merit"
+                    aria-pressed="false"
                 >
                     🏅 <span data-lang-en>Student Merit Awards</span><span data-lang-zh>學生榮譽獎</span> ({meritAwards.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="paper"
+                    aria-pressed="false"
                 >
                     📄 <span data-lang-en>Paper Awards</span><span data-lang-zh>論文獎</span> ({paperAwards.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="competition"
+                    aria-pressed="false"
                 >
                     🏆 <span data-lang-en>Competition Awards</span><span data-lang-zh>競賽獎</span> ({competitionAwards.length})
                 </button>
@@ -121,7 +125,7 @@ const competitionAwards = sortedAwards.filter(
                                 <div class="text-2xl font-bold text-navy">{year}</div>
                                 <div class="flex-1 h-px bg-gradient-to-r from-accent/50 to-transparent"></div>
                                 <span class="text-sm text-gray-400 font-medium year-count">
-                                    {yearAwards.length} {yearAwards.length > 1 ? 'awards' : 'award'}
+                                    <span data-lang-en>{yearAwards.length} {yearAwards.length === 1 ? "award" : "awards"}</span><span data-lang-zh>{yearAwards.length} 個獎項</span>
                                 </span>
                             </div>
                             
@@ -211,6 +215,7 @@ const competitionAwards = sortedAwards.filter(
                     "text-gray-700",
                     "hover:bg-gray-200",
                 );
+                b.setAttribute("aria-pressed", "false");
             });
             btn.classList.add(
                 "active",
@@ -224,6 +229,7 @@ const competitionAwards = sortedAwards.filter(
                 "text-gray-700",
                 "hover:bg-gray-200",
             );
+            btn.setAttribute("aria-pressed", "true");
 
             applyFilter(btn.getAttribute("data-filter") || "all");
         });

@@ -586,7 +586,7 @@ function getMoonthAndDay(dateStr: string) {
                                                 )}
                                             <div class="text-xs text-gray-400 mb-3 font-medium flex items-center gap-2">
                                                 <span>{year}</span>
-                                                {/* New badge if recent (logic: within current year or first 2 items) */}
+                                                {/* NEW badge for items dated within the last 60 days (computed at build time) */}
                                                 {isRecent && (
                                                     <span class="px-2 py-0.5 bg-accent/10 text-accent rounded-full font-bold animate-pulse">
                                                         <span data-lang-en

@@ -37,12 +37,9 @@ const {
     isDirector = false,
 } = Astro.props;
 
-// Tailwind Safelist - these dynamic classes must be available at build time:
-// group-hover:border-blue-700 group-hover:border-emerald-700 group-hover:border-purple-700
-// group-hover:bg-blue-50/50 group-hover:bg-emerald-50/50 group-hover:bg-purple-50/50
-// group-hover:text-blue-900 group-hover:text-emerald-900 group-hover:text-purple-900
-// group-hover:text-blue-800 group-hover:text-emerald-800 group-hover:text-purple-800
-// group-hover:ring-blue-400/40 group-hover:ring-emerald-400/40 group-hover:ring-purple-400/40
+// All theme classes below are written as complete static literals so the
+// Tailwind scanner picks them up — never build class names by string
+// concatenation here (concatenated names get purged from the production CSS).
 
 // Split topics string into an array, robustly handling commas
 const topicTags = topic
@@ -76,9 +73,10 @@ const researchAreaConfig = {
         borderClass: "border-gray-200 group-hover:border-blue-700",
         // Text & UI Colors
         nameHover: "group-hover:text-blue-900",
-        roleColor: "text-blue-800",
+        roleHover: "group-hover:text-blue-800",
         emailHover: "group-hover:text-blue-800",
         bgTint: "group-hover:bg-blue-50/50",
+        coadvisorBadge: "group-hover:bg-blue-100 group-hover:text-blue-700",
     },
     aiot: {
         label: "Industrial AIoT",
@@ -101,9 +99,11 @@ const researchAreaConfig = {
         borderClass: "border-gray-200 group-hover:border-emerald-700",
         // Text & UI Colors
         nameHover: "group-hover:text-emerald-900",
-        roleColor: "text-emerald-800",
+        roleHover: "group-hover:text-emerald-800",
         emailHover: "group-hover:text-emerald-800",
         bgTint: "group-hover:bg-emerald-50/50",
+        coadvisorBadge:
+            "group-hover:bg-emerald-100 group-hover:text-emerald-700",
     },
     embodied: {
         label: "Embodied AI",
@@ -126,9 +126,11 @@ const researchAreaConfig = {
         borderClass: "border-gray-200 group-hover:border-purple-700",
         // Text & UI Colors
         nameHover: "group-hover:text-purple-900",
-        roleColor: "text-purple-800",
+        roleHover: "group-hover:text-purple-800",
         emailHover: "group-hover:text-purple-800",
         bgTint: "group-hover:bg-purple-50/50",
+        coadvisorBadge:
+            "group-hover:bg-purple-100 group-hover:text-purple-700",
     },
 };
 
@@ -444,7 +446,7 @@ const navLabelZh = isDirector
                         {/* Co-advisor Kicker */}
                         {coadvisor && (
                             <span
-                                class={`inline-block px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide mb-2 transition-colors bg-slate-100 text-slate-600 ${areaConfig ? `group-hover:bg-${areaConfig.bgClass.replace("bg-", "")} group-hover:text-${areaConfig.textClass.replace("text-", "")}` : ""}`}
+                                class={`inline-block px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide mb-2 transition-colors bg-slate-100 text-slate-600 ${areaConfig ? areaConfig.coadvisorBadge : ""}`}
                             >
                                 {coadvisorZh ? (
                                     <>
@@ -466,7 +468,7 @@ const navLabelZh = isDirector
 
                         {/* Role - Clear Text */}
                         <p
-                            class={`text-base font-medium mb-2 text-slate-500 transition-colors ${areaConfig ? areaConfig.roleColor.replace("text-", "group-hover:text-") : ""}`}
+                            class={`text-base font-medium mb-2 text-slate-500 transition-colors ${areaConfig ? areaConfig.roleHover : ""}`}
                         >
                             {roleZh ? (
                                 <>

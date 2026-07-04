@@ -183,6 +183,7 @@ const jsonLd = {
                         <a
                             href="/document/CV.pdf"
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all duration-200 cursor-pointer"
                         >
                             <svg
@@ -578,7 +579,7 @@ const jsonLd = {
                     organization="National Taiwan University of Science and Technology (NTUST)"
                     organizationZh="國立臺灣科技大學 (NTUST)"
                     organizationUrl="https://www.ntust.edu.tw/"
-                    period="2023 - 2025"
+                    period="2023 - 2024"
                     location="Taipei, Taiwan"
                     locationZh="台灣台北"
                     department="Smart Electric Vehicle (SEV) Research Center"
@@ -679,6 +680,7 @@ const jsonLd = {
                     <button
                         class="reviewer-filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                         data-filter="journal"
+                        aria-pressed="true"
                     >
                         <span data-lang-en>Journal</span><span data-lang-zh
                             >期刊</span
@@ -687,6 +689,7 @@ const jsonLd = {
                     <button
                         class="reviewer-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                         data-filter="conference"
+                        aria-pressed="false"
                     >
                         <span data-lang-en>Conference</span><span
                             data-lang-zh>會議</span
@@ -921,6 +924,7 @@ const jsonLd = {
                     <button
                         class="pa-filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                         data-filter="thesis"
+                        aria-pressed="true"
                     >
                         <span data-lang-en>Thesis Committee</span><span
                             data-lang-zh>口試委員</span
@@ -929,6 +933,7 @@ const jsonLd = {
                     <button
                         class="pa-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                         data-filter="conference"
+                        aria-pressed="false"
                     >
                         <span data-lang-en>Conference Organization</span><span
                             data-lang-zh>會議籌辦</span
@@ -937,6 +942,7 @@ const jsonLd = {
                     <button
                         class="pa-filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                         data-filter="talks"
+                        aria-pressed="false"
                     >
                         <span data-lang-en>Invited Talks</span><span
                             data-lang-zh>受邀演講</span
@@ -1200,10 +1206,12 @@ const jsonLd = {
                             >, <span data-lang-en>Dept. of Computer Science and Information Engineering, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 資訊工程學系</span></span
                         >
                     </div>
-                    <div
+                    <a
+                        href="https://www.technice.com.tw/rd_alternativer_service/164449/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300 group cursor-pointer"
                         data-category="talks"
-                        onclick="window.open('https://www.technice.com.tw/rd_alternativer_service/164449/', '_blank')"
                     >
                         <span
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
@@ -1231,7 +1239,7 @@ const jsonLd = {
                                 ></path>
                             </svg>, Tech Nice (科技島)
                         </span>
-                    </div>
+                    </a>
                     <div
                         class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-rose-500 hover:bg-gray-100 transition-all duration-300"
                         data-category="talks"
@@ -1373,6 +1381,7 @@ const jsonLd = {
                         "text-gray-700",
                         "hover:bg-gray-200",
                     );
+                    b.setAttribute("aria-pressed", "false");
                 });
                 btn.classList.add(
                     "active",
@@ -1386,6 +1395,7 @@ const jsonLd = {
                     "text-gray-700",
                     "hover:bg-gray-200",
                 );
+                btn.setAttribute("aria-pressed", "true");
 
                 // Filter items
                 const filter = btn.getAttribute("data-filter");
@@ -1446,6 +1456,7 @@ const jsonLd = {
                         "text-gray-700",
                         "hover:bg-gray-200",
                     );
+                    b.setAttribute("aria-pressed", "false");
                 });
                 btn.classList.add(
                     "active",
@@ -1459,6 +1470,7 @@ const jsonLd = {
                     "text-gray-700",
                     "hover:bg-gray-200",
                 );
+                btn.setAttribute("aria-pressed", "true");
 
                 // Filter items
                 const filter = btn.getAttribute("data-filter");
@@ -1512,6 +1524,7 @@ const jsonLd = {
                 <button
                     class="pi-filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30 cursor-pointer hover:-translate-y-0.5"
                     data-filter="all"
+                    aria-pressed="true"
                 >
                     <span class="filter-label"
                         ><span data-lang-en>All</span><span data-lang-zh
@@ -1522,6 +1535,7 @@ const jsonLd = {
                 <button
                     class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
                     data-filter="merit"
+                    aria-pressed="false"
                 >
                     <svg
                         class="w-4 h-4"
@@ -1542,6 +1556,7 @@ const jsonLd = {
                 <button
                     class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
                     data-filter="paper"
+                    aria-pressed="false"
                 >
                     <svg
                         class="w-4 h-4"
@@ -1565,6 +1580,7 @@ const jsonLd = {
                 <button
                     class="pi-filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer hover:-translate-y-0.5 flex items-center gap-1.5"
                     data-filter="competition"
+                    aria-pressed="false"
                 >
                     <svg
                         class="w-4 h-4"
@@ -1734,6 +1750,7 @@ const jsonLd = {
                         "text-gray-700",
                         "hover:bg-gray-200",
                     );
+                    b.setAttribute("aria-pressed", "false");
                 });
                 btn.classList.add(
                     "active",
@@ -1747,6 +1764,7 @@ const jsonLd = {
                     "text-gray-700",
                     "hover:bg-gray-200",
                 );
+                btn.setAttribute("aria-pressed", "true");
 
                 applyPiFilter(btn.getAttribute("data-filter") || "all");
             });

@@ -68,7 +68,7 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
     </style>
 
     <meta name="description" content={description} />
-    <meta name="author" content="Prof. Sin-Ye Jhong" />
+    <meta name="author" content="Dr. Sin-Ye Jhong" />
     <meta
       name="keywords"
       content="ASI Lab, Computer Vision, Deep Learning, Robotics, NTUST"
@@ -113,6 +113,12 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Loaded here (not via CSS @import) so the font CSS fetch starts in
+         parallel with the main stylesheet instead of after it. -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    />
   </head>
   <body class="min-h-screen flex flex-col bg-white">
     <a

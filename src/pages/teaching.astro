@@ -8,6 +8,7 @@ const courses = [
     {
         code: "SI5011701",
         name: "Multimedia Information Systems",
+        nameZh: "多媒體系統",
         level: "Graduate",
         levelZh: "研究所",
         semester: "Spring 2026",
@@ -20,6 +21,7 @@ const courses = [
     {
         code: "SI5102701",
         name: "AI-Based Visual Inspection",
+        nameZh: "智慧視覺檢測",
         level: "Graduate",
         levelZh: "研究所",
         semester: "Spring 2026",
@@ -32,6 +34,7 @@ const courses = [
     {
         code: "SI5033701",
         name: "Automated Sensing and Smart Data Acquisition",
+        nameZh: "自動化感測與智慧資料擷取",
         level: "Graduate",
         levelZh: "研究所",
         semester: "Fall 2025",
@@ -44,6 +47,7 @@ const courses = [
     {
         code: "SI5007701",
         name: "Deep Learning Based Image Recognition",
+        nameZh: "基於深度學習之影像辨識",
         level: "Graduate",
         levelZh: "研究所",
         semester: "Fall 2025",
@@ -114,7 +118,7 @@ const courses = [
                                 <div class="flex-grow">
                                     <div class="flex items-center justify-between mb-2">
                                         <h3 class="text-xl font-heading font-bold text-navy group-hover:text-accent transition-colors">
-                                            {course.name}
+                                            <span data-lang-en>{course.name}</span><span data-lang-zh>{course.nameZh}</span>
                                         </h3>
                                     </div>
                                     

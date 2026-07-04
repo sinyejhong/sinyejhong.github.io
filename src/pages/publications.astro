@@ -143,31 +143,35 @@ const jsonLd = {
                 <button
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
+                    aria-pressed="true"
                 >
                     <span data-lang-en>All</span><span data-lang-zh>全部</span> (<span class="filter-count">{sortedPubs.length}</span>)
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="journal"
+                    aria-pressed="false"
                 >
                     <span data-lang-en>Journals</span><span data-lang-zh>期刊</span> (<span class="filter-count">{journals.length}</span>)
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="conference"
+                    aria-pressed="false"
                 >
                     <span data-lang-en>Conferences</span><span data-lang-zh>會議</span> (<span class="filter-count">{conferences.length}</span>)
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="patent"
+                    aria-pressed="false"
                 >
                     <span data-lang-en>Patents</span><span data-lang-zh>專利</span> (<span class="filter-count">{patents.length}</span>)
                 </button>
             </div>
 
             <!-- Search Results Info -->
-            <div id="search-info" class="text-center mt-3 text-sm text-gray-500 hidden">
+            <div id="search-info" role="status" aria-live="polite" class="text-center mt-3 text-sm text-gray-500 hidden">
                 <span id="search-count">0</span>
                 <span id="search-label-en" data-lang-en>results found for</span><span data-lang-zh
                     >筆結果，符合</span
@@ -188,7 +192,7 @@ const jsonLd = {
                                 <div class="text-2xl font-bold text-navy">{year}</div>
                                 <div class="flex-1 h-px bg-gradient-to-r from-accent/50 to-transparent"></div>
                                 <span class="text-sm text-gray-400 font-medium year-count">
-                                    {pubs.length} publications
+                                    <span data-lang-en>{pubs.length} {pubs.length === 1 ? "publication" : "publications"}</span><span data-lang-zh>{pubs.length} 篇論文</span>
                                 </span>
                             </div>
 
@@ -226,7 +230,7 @@ const jsonLd = {
             </div>
 
             <!-- No Results Message -->
-            <div id="no-results" class="hidden text-center py-12">
+            <div id="no-results" role="status" class="hidden text-center py-12">
                 <svg class="w-16 h-16 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
@@ -373,6 +377,7 @@ const jsonLd = {
                     "text-gray-700",
                     "hover:bg-gray-200"
                 );
+                b.setAttribute("aria-pressed", "false");
             });
             btn.classList.add(
                 "active",
@@ -386,6 +391,7 @@ const jsonLd = {
                 "text-gray-700",
                 "hover:bg-gray-200"
             );
+            btn.setAttribute("aria-pressed", "true");
 
             currentFilter = btn.getAttribute("data-filter") || "all";
             updateView();

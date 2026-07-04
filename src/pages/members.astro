@@ -123,6 +123,7 @@ const alumni = members.filter((m) => m.status === "alumni");
                     id="filter-all"
                     class="gallery-filter active inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-slate-800 text-white border border-slate-800 cursor-pointer transition-all duration-200 hover:scale-105"
                     data-filter="all"
+                    aria-pressed="true"
                 >
                     <svg
                         class="w-4 h-4"
@@ -143,6 +144,7 @@ const alumni = members.filter((m) => m.status === "alumni");
                     id="filter-activity"
                     class="gallery-filter inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-amber-100 text-amber-800 border border-amber-200 cursor-pointer transition-all duration-200 hover:scale-105 hover:bg-amber-200"
                     data-filter="Activity"
+                    aria-pressed="false"
                 >
                     <svg
                         class="w-4 h-4"
@@ -163,6 +165,7 @@ const alumni = members.filter((m) => m.status === "alumni");
                     id="filter-equipment"
                     class="gallery-filter inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200 cursor-pointer transition-all duration-200 hover:scale-105 hover:bg-blue-200"
                     data-filter="Equipment"
+                    aria-pressed="false"
                 >
                     <svg
                         class="w-4 h-4"
@@ -220,6 +223,7 @@ const alumni = members.filter((m) => m.status === "alumni");
                     // Update active button styles
                     filterButtons.forEach((btn) => {
                         btn.classList.remove("active");
+                        btn.setAttribute("aria-pressed", "false");
                         if (btn.dataset.filter === "all") {
                             btn.classList.remove(
                                 "bg-slate-800",
@@ -235,6 +239,7 @@ const alumni = members.filter((m) => m.status === "alumni");
                     });
 
                     button.classList.add("active");
+                    button.setAttribute("aria-pressed", "true");
                     if (button.dataset.filter === "all") {
                         button.classList.remove(
                             "bg-slate-100",

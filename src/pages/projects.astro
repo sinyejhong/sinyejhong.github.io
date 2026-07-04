@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import LogoWall from "../components/LogoWall.astro";
 import LangText from "../components/i18n/LangText.astro";
 import projects from "../data/projects.json";
 
@@ -18,10 +17,7 @@ const calculateStatus = (duration: string) => {
 
         const [year, month] = endStr.split(".").map(Number);
 
-        // Create date for end of that month (approximate)
-        const endDate = new Date(year, month, 1); // Month is 0-indexed in JS Date? Wait, 2025.09 usually means Sept.
-        // Actually, let's just compare YYYY.MM numerically to Current YYYY.MM
-
+        // Compare YYYY.MM numerically against the current year/month
         const now = new Date();
         const currentYear = now.getFullYear();
         const currentMonth = now.getMonth() + 1; // 1-12
@@ -230,18 +226,21 @@ const govLogos = [
                 <button
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
+                    aria-pressed="true"
                 >
                     <span data-lang-en>All Projects</span><span data-lang-zh>全部計畫</span> ({sortedProjects.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="industry"
+                    aria-pressed="false"
                 >
                     🏭 <span data-lang-en>Industry</span><span data-lang-zh>產業</span> ({industryProjects.length})
                 </button>
                 <button
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="government"
+                    aria-pressed="false"
                 >
                     🏛️ <span data-lang-en>Gov / Research Center</span><span data-lang-zh>政府機構 / 研究中心</span> ({govProjects.length})
                 </button>
@@ -302,6 +301,7 @@ const govLogos = [
                     "text-gray-700",
                     "hover:bg-gray-200",
                 );
+                b.setAttribute("aria-pressed", "false");
             });
             btn.classList.add(
                 "active",
@@ -315,6 +315,7 @@ const govLogos = [
                 "text-gray-700",
                 "hover:bg-gray-200",
             );
+            btn.setAttribute("aria-pressed", "true");
 
             // Filter items
             const filter = btn.getAttribute("data-filter");
