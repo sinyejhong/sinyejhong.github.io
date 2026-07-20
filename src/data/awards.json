@@ -195,6 +195,17 @@
         "description_zh": "工業 AI 領域論文貢獻"
     },
     {
+        "id": 112,
+        "title": "Best Paper Award (Winner)",
+        "title_zh": "年度最佳論文獎（Winner）",
+        "event": "IEEE MultiMedia (IEEE Computer Society)",
+        "event_zh": "IEEE MultiMedia 期刊（IEEE Computer Society）",
+        "year": 2025,
+        "category": "paper",
+        "description": "The journal's sole 2025 Best Paper Award winner, selected by the IEEE Computer Society Publications Board (announced Jul. 2026)",
+        "description_zh": "IEEE Computer Society Publications Board 評選，全刊年度唯一得獎論文（2026 年 7 月公布）"
+    },
+    {
         "id": 109,
         "title": "Best Student Paper Award - First Place",
         "title_zh": "最佳學生論文獎—第一名",

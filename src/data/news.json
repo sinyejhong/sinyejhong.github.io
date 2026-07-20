@@ -1,5 +1,34 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong's co-authored paper \"Vision-Language-Guided Adaptive Cross-Modal Fusion for Multispectral Object Detection Under Adverse Weather Conditions\" is selected by the IEEE Computer Society Publications Board as the Winner of the 2025 Best Paper Award for IEEE MultiMedia — the journal's sole winning paper of the year",
+        "date": "2026-07-21",
+        "highlights": [
+            "Winner",
+            "sole winning paper"
+        ],
+        "images": [
+            "/images/news/2025BPA_Winner_Sin-Ye_Jhong.jpg"
+        ],
+        "pillar": "perception",
+        "links": {
+            "2025 Best Paper Award": "https://www.computer.org/publications/best-paper-awards-archive"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 合著論文 \"Vision-Language-Guided Adaptive Cross-Modal Fusion for Multispectral Object Detection Under Adverse Weather Conditions\" 經 IEEE Computer Society Publications Board 評選，榮獲 IEEE MultiMedia 期刊 2025 年度最佳論文獎（Winner），為該刊全年唯一獲獎論文",
+        "highlights_zh": [
+            "Winner",
+            "全年唯一獲獎論文"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "2025 年度最佳論文獎": "https://www.computer.org/publications/best-paper-awards-archive"
+        }
+    },
+    {
         "text": "ASI² Lab team wins the Best Paper Award at the 2026 Information Technology and Applications Conference (ITAC 2026) [2026資訊科技應用國際學術研討會]",
         "date": "2026-04-29",
         "highlights": [
