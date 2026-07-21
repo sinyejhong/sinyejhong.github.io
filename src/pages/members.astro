@@ -3,13 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import MemberCard from "../components/MemberCard.astro";
 import GalleryCard from "../components/GalleryCard.astro";
-import LangText from "../components/i18n/LangText.astro";
 import members from "../data/members.json";
 import galleryItems from "../data/gallery.json";
 
 const director = members.find((m) => m.status === "director");
 const currentMembers = members.filter((m) => m.status === "current");
-const alumni = members.filter((m) => m.status === "alumni");
 ---
 
 <BaseLayout title="Members" description="Meet the ASI² Lab team at NTUST — director Dr. Sin-Ye Jhong and graduate researchers in resilient perception, industrial AIoT, and embodied intelligence.">
@@ -30,12 +28,12 @@ const alumni = members.filter((m) => m.status === "alumni");
                 class="inline-flex items-center gap-3 px-8 py-4 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20"
             >
                 <div class="text-5xl font-heading font-bold text-accent">
-                    {currentMembers.length + 1}
+                    {(director ? 1 : 0) + currentMembers.length}
                 </div>
                 <div class="text-left">
                     <div class="text-xl font-semibold"><span data-lang-en>Team Members</span><span data-lang-zh>團隊成員</span></div>
                     <div class="text-gray-400 text-sm">
-                        <span data-lang-en>(Director + Current Students)</span><span data-lang-zh>（指導教授 + 現任學生）</span>
+                        <span data-lang-en>(Director + Current Members)</span><span data-lang-zh>（指導教授 + 現任成員）</span>
                     </div>
                 </div>
             </div>

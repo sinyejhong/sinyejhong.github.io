@@ -19,13 +19,11 @@ const { title, titleZh, subtitle, subtitleZh, centered = true } =
         {
             titleZh ? (
                 <>
-                    <span data-lang-en set:html={title} /><span
-                        data-lang-zh
-                        set:html={titleZh}
-                    />
+                    <span data-lang-en>{title}</span><span data-lang-zh
+                    >{titleZh}</span>
                 </>
             ) : (
-                <Fragment set:html={title} />
+                title
             )
         }
     </h2>

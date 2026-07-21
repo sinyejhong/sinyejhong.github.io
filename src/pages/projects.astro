@@ -36,11 +36,11 @@ const projectsWithStatus = projects.map((p) => ({
     status: calculateStatus(p.duration),
 }));
 
-// Sort: ongoing first, then by year
+// Sort: ongoing first, then by start date (duration begins with "YYYY.MM")
 const sortedProjects = [...projectsWithStatus].sort((a, b) => {
     if (a.status === "ongoing" && b.status !== "ongoing") return -1;
     if (a.status !== "ongoing" && b.status === "ongoing") return 1;
-    return 0;
+    return b.duration.localeCompare(a.duration);
 });
 
 const industryProjects = sortedProjects.filter((p) => p.type === "industry");

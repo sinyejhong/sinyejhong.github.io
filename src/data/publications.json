@@ -86,7 +86,7 @@
         "year": 2025,
         "type": "journal",
         "badges": [
-            "2025 Best Paper Award (Winner)",
+            "Best Paper Award (Winner)",
             "SCI",
             "CiteScore Rank: Q1"
         ],
@@ -980,25 +980,6 @@
         "researchArea": "aiot"
     },
     {
-        "year": 2019,
-        "link": "https://doi.org/10.1109/ISPACS48206.2019.8986298",
-        "id": 44,
-        "type": "conference",
-        "doi": "10.1109/ISPACS48206.2019.8986298",
-        "venueDetail": "Taipei, Taiwan, Dec. 3-6, 2019",
-        "authors": [
-            "Y.-Y. Chen*",
-            "S.-Y. Jhong",
-            "G.-Y. Li",
-            "P.-H. Chen"
-        ],
-        "highlight": false,
-        "title": "Thermal-Based Pedestrian Detection Using Faster R-CNN and Region Decomposition Branch",
-        "venue": "IEEE International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS)",
-        "badges": [],
-        "researchArea": "perception"
-    },
-    {
         "year": 2020,
         "link": "#",
         "id": 45,
@@ -1017,6 +998,25 @@
             "Best Paper Award"
         ],
         "researchArea": "aiot"
+    },
+    {
+        "year": 2019,
+        "link": "https://doi.org/10.1109/ISPACS48206.2019.8986298",
+        "id": 44,
+        "type": "conference",
+        "doi": "10.1109/ISPACS48206.2019.8986298",
+        "venueDetail": "Taipei, Taiwan, Dec. 3-6, 2019",
+        "authors": [
+            "Y.-Y. Chen*",
+            "S.-Y. Jhong",
+            "G.-Y. Li",
+            "P.-H. Chen"
+        ],
+        "highlight": false,
+        "title": "Thermal-Based Pedestrian Detection Using Faster R-CNN and Region Decomposition Branch",
+        "venue": "IEEE International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS)",
+        "badges": [],
+        "researchArea": "perception"
     },
     {
         "year": 2019,

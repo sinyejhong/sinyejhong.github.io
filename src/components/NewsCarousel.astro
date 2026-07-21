@@ -127,7 +127,7 @@ const pillarConfig: Record<
 > = {
     perception: {
         label: "Resilient Perception",
-        labelZh: "Resilient Perception",
+        labelZh: "韌性感知",
         text: "text-blue-700",
         href: "/research#perception",
         spacingClass: "space-y-1",
@@ -135,7 +135,7 @@ const pillarConfig: Record<
     },
     inspection: {
         label: "Industrial AIoT",
-        labelZh: "Industrial AIoT",
+        labelZh: "工業 AIoT",
         text: "text-emerald-700",
         href: "/research#inspection",
         spacingClass: "space-y-1",
@@ -143,7 +143,7 @@ const pillarConfig: Record<
     },
     robotics: {
         label: "Embodied AI",
-        labelZh: "Embodied AI",
+        labelZh: "具身智慧 AI",
         text: "text-purple-700",
         href: "/research#robotics",
         spacingClass: "space-y-1",
@@ -192,7 +192,7 @@ const pillarConfig: Record<
 };
 
 // Helper: Date Formatting
-function getMoonthAndDay(dateStr: string) {
+function getMonthAndDay(dateStr: string) {
     // Parse as UTC to avoid the date shifting a day in negative-offset timezones
     const [y, m, d] = dateStr.split("-").map(Number);
     const date = new Date(Date.UTC(y, m - 1, d));
@@ -324,7 +324,7 @@ function getMoonthAndDay(dateStr: string) {
                                     year,
                                     fullEn,
                                     fullZh,
-                                } = getMoonthAndDay(item.date);
+                                } = getMonthAndDay(item.date);
                                 const [iy, im, idd] = item.date
                                     .split("-")
                                     .map(Number);
@@ -414,6 +414,8 @@ function getMoonthAndDay(dateStr: string) {
                                                         ]}
                                                         onclick="event.stopPropagation()"
                                                         title={`Go to ${pillarConfig[item.pillar].label}`}
+                                                        data-i18n-title-en={`Go to ${pillarConfig[item.pillar].label}`}
+                                                        data-i18n-title-zh={`前往${pillarConfig[item.pillar].labelZh}`}
                                                     >
                                                         <div class="w-20 h-20 transform rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110">
                                                             {item.pillar ===
@@ -755,17 +757,18 @@ function getMoonthAndDay(dateStr: string) {
             const fullContentDiv = article.querySelector(".news-full-content");
             if (!fullContentDiv) return;
 
-            const rawText = fullContentDiv.querySelector(".news-raw-text").innerHTML;
+            const rawText =
+                fullContentDiv.querySelector(".news-raw-text")?.innerHTML ?? "";
             const dateDiv = fullContentDiv.querySelector(".news-meta-date");
             const pillarDiv = fullContentDiv.querySelector(".news-meta-pillar");
-            const pillar = pillarDiv.dataset.pillar;
+            const pillar = pillarDiv?.dataset.pillar;
             const images = fullContentDiv.querySelectorAll(".hidden-news-img");
 
             // Copy bilingual payloads verbatim; html[data-lang] CSS shows the
             // active language, so switching while the modal is open just works.
             detailModal.querySelector(".modal-text").innerHTML = rawText;
             detailModal.querySelector(".modal-date").innerHTML =
-                dateDiv.innerHTML;
+                dateDiv?.innerHTML ?? "";
 
             const pillarSpan = detailModal.querySelector(".modal-pillar");
             pillarSpan.className =
@@ -874,7 +877,11 @@ function getMoonthAndDay(dateStr: string) {
         });
 
         document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") {
+            if (
+                e.key === "Escape" &&
+                detailModal &&
+                !detailModal.classList.contains("hidden")
+            ) {
                 closeDetailModal();
             }
         });

@@ -28,3 +28,6 @@ pnpm-debug.log*
 .shared/
 .claude/
 __pycache__/
+
+# local pre-edit backups (never commit)
+.backup/

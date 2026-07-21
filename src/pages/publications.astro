@@ -1,9 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionHeader from "../components/SectionHeader.astro";
 import PublicationItem from "../components/PublicationItem.astro";
 import publications from "../data/publications.json";
-import LangText from "../components/i18n/LangText.astro";
 
 // Sort by year descending
 const sortedPubs = [...publications].sort((a, b) => b.year - a.year);

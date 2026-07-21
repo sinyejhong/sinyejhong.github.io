@@ -41,15 +41,6 @@ const {
 // Tailwind scanner picks them up — never build class names by string
 // concatenation here (concatenated names get purged from the production CSS).
 
-// Split topics string into an array, robustly handling commas
-const topicTags = topic
-    ? topic
-          .split(",")
-          .map((t) => t.trim())
-          .filter(Boolean)
-    : [];
-
-// Research area labels and styling (Copied from PublicationItem)
 // Research area labels and styling (Copied from PublicationItem)
 const researchAreaConfig = {
     perception: {

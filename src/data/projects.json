@@ -26,6 +26,7 @@
         "pillar": "inspection",
         "logo": "/images/Logo/AAEON.png",
         "role_zh": "主持人",
+        "funder_zh": "研揚科技股份有限公司",
         "description_zh": "開發先進 AI 驅動之自動光學檢測（AOI）系統，用於 PCBA 品質保證。"
     },
     {
@@ -34,12 +35,13 @@
         "funder": "MacroHi Ltd. (美科實業股份有限公司)",
         "duration": "2025.10 - 2026.06",
         "role": "Co-Principal Investigator (計畫共同主持人)",
-        "status": "ongoing",
+        "status": "completed",
         "type": "industry",
         "description": "Optimization of AI-powered scalp analysis platform and deployment of cross-national cloud systems.",
         "pillar": "perception",
         "logo": "/images/Logo/macrohi.png",
         "role_zh": "共同主持人",
+        "funder_zh": "美科實業股份有限公司",
         "description_zh": "優化 AI 驅動之頭皮分析平台，並建置跨國雲端系統。"
     },
     {
@@ -54,6 +56,7 @@
         "pillar": "robotics",
         "logo": "/images/Logo/AAEON.png",
         "role_zh": "共同主持人",
+        "funder_zh": "研揚科技股份有限公司",
         "description_zh": "導入大型語言模型（LLM），實現企業智慧文件處理。"
     },
     {
@@ -98,6 +101,7 @@
         "pillar": "perception",
         "logo": "/images/Logo/macrohi.png",
         "role_zh": "參與人員",
+        "funder_zh": "美科實業股份有限公司",
         "description_zh": "研發自動化頭皮健康評估之核心演算法。"
     },
     {
@@ -127,6 +131,7 @@
         "pillar": "perception",
         "logo": "/images/Logo/macrohi.png",
         "role_zh": "參與人員",
+        "funder_zh": "美科實業股份有限公司",
         "description_zh": "為零售與服務業數據生態系開發穩健的頭皮檢測技術。"
     },
     {

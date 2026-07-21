@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionHeader from "../components/SectionHeader.astro";
 import AwardCard from "../components/AwardCard.astro";
 import LangBlock from "../components/i18n/LangBlock.astro";
 import awards from "../data/awards.json";
@@ -33,7 +32,7 @@ const competitionAwards = sortedAwards.filter(
             <h1
                 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
             >
-                <span data-lang-en>Lab & Student Awards</span><span data-lang-zh>實驗室與學生獎項</span>
+                <span data-lang-en>Lab & Student Awards</span><span data-lang-zh>實驗室與學生獲獎</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
                 <span data-lang-en>Celebrating our students' excellence and team achievements under
@@ -51,7 +50,7 @@ const competitionAwards = sortedAwards.filter(
                     ASI² LAB 成員獲得的各項競賽與學術肯定。
                     主持人的個人學術榮譽請見
                     <a href="/about#honors" class="text-accent hover:underline"
-                        >Personal Honors & Awards</a
+                        >個人榮譽與獎項</a
                     >。
                 </Fragment>
             </LangBlock>
