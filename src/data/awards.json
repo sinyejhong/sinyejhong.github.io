@@ -1,16 +1,5 @@
 [
     {
-        "id": 103,
-        "title": "Ph.D. Scholarship",
-        "title_zh": "博士獎學金",
-        "event": "Ministry of Education (教育部)",
-        "event_zh": "教育部",
-        "year": 2025,
-        "category": "student_merit",
-        "description": "Recipient: Hui-Che Hsu (Grant: NT$480,000)",
-        "description_zh": "獲獎者：Hui-Che Hsu（獎助金：新台幣 480,000 元）"
-    },
-    {
         "id": 1,
         "title": "Best Ph.D. Thesis Award",
         "title_zh": "最佳博士論文獎",
@@ -192,7 +181,11 @@
         "year": 2026,
         "category": "paper",
         "description": "Recognition for outstanding paper contribution in industrial AI",
-        "description_zh": "工業 AI 領域論文貢獻"
+        "description_zh": "工業 AI 領域論文貢獻",
+        "images": [
+            "/images/news/2026ITAC_best_paper.jpg",
+            "/images/news/ITAC2026.jpg"
+        ]
     },
     {
         "id": 112,
@@ -203,7 +196,10 @@
         "year": 2025,
         "category": "paper",
         "description": "The journal's sole 2025 Best Paper Award winner, selected by the IEEE Computer Society Publications Board (announced Jul. 2026)",
-        "description_zh": "IEEE Computer Society Publications Board 評選，全刊年度唯一得獎論文（2026 年 7 月公布）"
+        "description_zh": "IEEE Computer Society Publications Board 評選，全刊年度唯一得獎論文（2026 年 7 月公布）",
+        "images": [
+            "/images/news/2025BPA_Winner_Sin-Ye_Jhong.jpg"
+        ]
     },
     {
         "id": 109,
@@ -214,7 +210,10 @@
         "year": 2025,
         "category": "paper",
         "description": "Recognition for outstanding student paper contribution",
-        "description_zh": "學生論文貢獻首獎"
+        "description_zh": "學生論文貢獻首獎",
+        "images": [
+            "/images/news/Automation2025_Student_1.jpg"
+        ]
     },
     {
         "id": 12,
@@ -225,7 +224,10 @@
         "year": 2025,
         "category": "paper",
         "description": "Recognition for outstanding paper contribution",
-        "description_zh": "論文貢獻第二名"
+        "description_zh": "論文貢獻第二名",
+        "images": [
+            "/images/news/Automation2025_Best_1.jpg"
+        ]
     },
     {
         "id": 13,
@@ -236,7 +238,11 @@
         "year": 2025,
         "category": "paper",
         "description": "Recognition for outstanding paper contribution",
-        "description_zh": "論文貢獻第二名"
+        "description_zh": "論文貢獻第二名",
+        "images": [
+            "/images/news/CACS2025_2.jpg",
+            "/images/news/CACS2025_1.jpg"
+        ]
     },
     {
         "id": 14,
@@ -246,7 +252,10 @@
         "year": 2025,
         "category": "paper",
         "description": "Recognition for outstanding paper contribution",
-        "description_zh": "論文貢獻佳作獎"
+        "description_zh": "論文貢獻佳作獎",
+        "images": [
+            "/images/news/ARIS2025_1.jpg"
+        ]
     },
     {
         "id": 15,
@@ -256,7 +265,10 @@
         "year": 2025,
         "category": "paper",
         "description": "Recognition for excellent presentation",
-        "description_zh": "口頭報告獎項"
+        "description_zh": "口頭報告獎項",
+        "images": [
+            "/images/news/AVSS2025_1.jpg"
+        ]
     },
     {
         "id": 16,
@@ -352,7 +364,11 @@
         "year": 2025,
         "category": "competition",
         "description": "First place in smart manufacturing capstone competition",
-        "description_zh": "智慧製造應用專題實作競賽第一名"
+        "description_zh": "智慧製造應用專題實作競賽第一名",
+        "images": [
+            "/images/news/NCHU2025_2.jpg",
+            "/images/news/NCHU2025_1.jpg"
+        ]
     },
     {
         "id": 101,
@@ -363,7 +379,11 @@
         "year": 2025,
         "category": "competition",
         "description": "Third place in international ICT innovation competition",
-        "description_zh": "資訊應用服務創新競賽第三名"
+        "description_zh": "資訊應用服務創新競賽第三名",
+        "images": [
+            "/images/news/InnoServe2025_2.jpg",
+            "/images/news/InnoServe2025_1.jpg"
+        ]
     },
     {
         "id": 110,
@@ -374,7 +394,13 @@
         "year": 2026,
         "category": "competition",
         "description": "Third place (Electronics), honorable mention (Information & Communication), and grand prize of IEEE special award",
-        "description_zh": "電子組第三名、資訊通訊組佳作，並獲 IEEE 特別獎（大獎）"
+        "description_zh": "電子組第三名、資訊通訊組佳作，並獲 IEEE 特別獎（大獎）",
+        "images": [
+            "/images/news/NECDE2026_third.jpg",
+            "/images/news/NECDE2026_honorable.jpg",
+            "/images/news/NECDE2026_IEEE.jpg",
+            "/images/news/NECDE2026_1.jpg"
+        ]
     },
     {
         "id": 102,
@@ -385,7 +411,11 @@
         "year": 2025,
         "category": "competition",
         "description": "Recognition and special award in electronics design competition",
-        "description_zh": "電子設計創意競賽佳作及 IEEE 特別獎"
+        "description_zh": "電子設計創意競賽佳作及 IEEE 特別獎",
+        "images": [
+            "/images/awards/NECDE2025_honorable.jpg",
+            "/images/awards/NECDE2025_IEEE.jpg"
+        ]
     },
     {
         "id": 24,
