@@ -1,5 +1,48 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong served as a Master's Thesis Committee Member at the Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)",
+        "date": "2026-07-23",
+        "highlights": [
+            "Master's Thesis Committee Member"
+        ],
+        "images": [
+            "/images/engagements/NTUST_ECE_master_thesis1.jpg",
+            "/images/engagements/NTUST_ECE_master_thesis2.jpg"
+        ],
+        "pillar": "thesis_committee",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任國立臺灣科技大學電子工程系碩士論文口試委員",
+        "highlights_zh": [
+            "碩士論文口試委員"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
+        "text": "Dr. Sin-Ye Jhong served as a Master's Thesis Committee Member at the Graduate Institute of Intelligent Manufacturing Technology, National Taiwan University of Science and Technology (NTUST)",
+        "date": "2026-07-22",
+        "highlights": [
+            "Master's Thesis Committee Member"
+        ],
+        "images": [
+            "/images/engagements/NTUST_GIMT_master_thesis.jpg"
+        ],
+        "pillar": "thesis_committee",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任國立臺灣科技大學智慧製造科技研究所碩士論文口試委員",
+        "highlights_zh": [
+            "碩士論文口試委員"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
         "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"Smart Systems and Their Applications\" at the 2026 IEEE International Conference on Consumer Electronics – Taiwan (ICCE-TW 2026)",
         "date": "2026-07-02",
         "highlights": [
