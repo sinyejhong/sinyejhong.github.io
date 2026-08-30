@@ -497,6 +497,47 @@
         "researchArea": "aiot"
     },
     {
+        "year": 2026,
+        "link": "#",
+        "id": 102,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Tainan, Taiwan, Aug. 24-26, 2026",
+        "authors": [
+            "S.-Y. Jhong",
+            "S.-L. Li",
+            "H.-A. Luo",
+            "B.-X. Lin",
+            "C.-C. Liao",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": true,
+        "title": "WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging",
+        "venue": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "badges": [
+            "Best Paper Award (Second Place)"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2026,
+        "link": "https://doi.org/10.1109/ICCE-Taiwan71481.2026.11652600",
+        "id": 103,
+        "type": "conference",
+        "doi": "10.1109/ICCE-Taiwan71481.2026.11652600",
+        "venueDetail": "Taoyuan, Taiwan, Jul. 1-3, 2026",
+        "authors": [
+            "S.-Y. Jhong",
+            "Y.-Y. Hsieh",
+            "P.-H. Chen"
+        ],
+        "highlight": false,
+        "title": "Enhancing Camera-Radar Perception Via Explicit BEV Alignment and Fusion",
+        "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
+        "badges": [],
+        "researchArea": "perception"
+    },
+    {
         "year": 2025,
         "link": "#",
         "id": 21,

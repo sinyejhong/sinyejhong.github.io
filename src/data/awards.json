@@ -173,6 +173,20 @@
         "description_zh": "學業成績獎學金（2015–2017）"
     },
     {
+        "id": 113,
+        "title": "Best Conference Paper Contest Award - Second Place",
+        "title_zh": "最佳會議論文競賽獎—第二名",
+        "event": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
+        "year": 2026,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution",
+        "description_zh": "論文貢獻第二名",
+        "images": [
+            "/images/news/ARIS2026_award_2.jpg",
+            "/images/news/ARIS2026_award_1.jpg"
+        ]
+    },
+    {
         "id": 111,
         "title": "Best Paper Award",
         "title_zh": "最佳論文獎",

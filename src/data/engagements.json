@@ -1,5 +1,36 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"SS01: Smart System and Its Applications\" at the 14th International Conference on Advanced Robotics and Intelligent Systems (ARIS 2026)",
+        "date": "2026-08-26",
+        "highlights": [
+            "Special Session Chair",
+            "SS01: Smart System and Its Applications"
+        ],
+        "images": [
+            "/images/engagements/ARIS2026_1.jpg",
+            "/images/engagements/ARIS2026_2.jpg",
+            "/images/engagements/ARIS2026_3.jpg"
+        ],
+        "pillar": "session_chair",
+        "links": {
+            "14th International Conference on Advanced Robotics and Intelligent Systems (ARIS 2026)": "https://aris2026.ncku.edu.tw/contribution/special-session"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任第 14 屆 International Conference on Advanced Robotics and Intelligent Systems（ARIS 2026）「SS01: Smart System and Its Applications」特別議程主持人",
+        "highlights_zh": [
+            "特別議程主持人",
+            "SS01: Smart System and Its Applications"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "International Conference on Advanced Robotics and Intelligent Systems（ARIS 2026）": "https://aris2026.ncku.edu.tw/contribution/special-session"
+        }
+    },
+    {
         "text": "Dr. Sin-Ye Jhong served as a Master's Thesis Committee Member at the Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)",
         "date": "2026-07-23",
         "highlights": [
@@ -213,7 +244,7 @@
         ]
     },
     {
-        "text": "Dr. Sin-Ye Jhong hosted Novatek Technology representatives at ASI² Lab for an industry insights and best practices sharing session, followed by a recruitment event with refreshments offering internship opportunities and employee referrals to lab members",
+        "text": "Dr. Sin-Ye Jhong hosted Novatek Microelectronics representatives at ASI² Lab for an industry insights and best practices sharing session, followed by a recruitment event with refreshments offering internship opportunities and employee referrals to lab members",
         "date": "2025-10-28",
         "highlights": [
             "industry insights",

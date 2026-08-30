@@ -1,5 +1,34 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong's first-authored paper \"WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging\" wins Second Place in the Best Conference Paper Contest Award at the 14th International Conference on Advanced Robotics and Intelligent Systems (ARIS 2026)",
+        "date": "2026-08-26",
+        "highlights": [
+            "Second Place",
+            "Best Conference Paper Contest Award"
+        ],
+        "images": [
+            "/images/news/ARIS2026_award_1.jpg",
+            "/images/news/ARIS2026_award_2.jpg"
+        ],
+        "pillar": "perception",
+        "links": {
+            "14th International Conference on Advanced Robotics and Intelligent Systems (ARIS 2026)": "https://aris2026.ncku.edu.tw/"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 第一作者論文 \"WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging\" 於第 14 屆 International Conference on Advanced Robotics and Intelligent Systems（ARIS 2026）榮獲最佳會議論文競賽獎第二名",
+        "highlights_zh": [
+            "最佳會議論文競賽獎第二名"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "International Conference on Advanced Robotics and Intelligent Systems（ARIS 2026）": "https://aris2026.ncku.edu.tw/"
+        }
+    },
+    {
         "text": "Dr. Sin-Ye Jhong's co-authored paper \"Vision-Language-Guided Adaptive Cross-Modal Fusion for Multispectral Object Detection Under Adverse Weather Conditions\" is selected by the IEEE Computer Society Publications Board as the Winner of the 2025 Best Paper Award for IEEE MultiMedia — the journal's sole winning paper of the year",
         "date": "2026-07-21",
         "highlights": [
