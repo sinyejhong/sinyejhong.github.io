@@ -85,7 +85,7 @@ import LangBlock from "../components/i18n/LangBlock.astro";
                     data-i18n-aria-en="View Dr. Jhong's profile"
                     data-i18n-aria-zh="查看鍾昕燁教授個人頁面"
                     onclick="if(!event.target.closest('a')) window.location.href='/about'"
-                    onkeydown="if((event.key==='Enter'||event.key===' ')&&!event.target.closest('a')){event.preventDefault();window.location.href='/about'}"
+                    onkeydown="if(event.key==='Enter'&&!event.target.closest('a')){event.preventDefault();window.location.href='/about'}"
                 >
                     <!-- Watermark Logo -->
                     <div
@@ -609,7 +609,7 @@ import LangBlock from "../components/i18n/LangBlock.astro";
                 interests</span><span data-lang-zh>請寄送您的 CV 及簡短的研究興趣說明給我們</span>
             </p>
             <a
-                href="mailto:sinyejhong@mail.ntust.edu.tw?subject=Interested in Joining ASI² LAB"
+                href="mailto:sinyejhong@mail.ntust.edu.tw?subject=Interested in Joining ASI² Lab"
                 class="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-semibold rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
                 aria-label="Contact Dr. Jhong"
                 data-i18n-aria-en="Contact Dr. Jhong"

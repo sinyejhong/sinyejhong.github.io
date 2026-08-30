@@ -40,14 +40,14 @@ const competitionAwards = sortedAwards.filter(
             </p>
             <LangBlock as="p" class="text-gray-400 max-w-2xl mx-auto mb-8">
                 <Fragment slot="en">
-                    Competition wins and recognitions achieved by ASI² LAB members.
+                    Competition wins and recognitions achieved by ASI² Lab members.
                     For the PI's personal academic honors, visit
                     <a href="/about#honors" class="text-accent hover:underline"
                         >Personal Honors & Awards</a
                     >.
                 </Fragment>
                 <Fragment slot="zh">
-                    ASI² LAB 成員獲得的各項競賽與學術肯定。
+                    ASI² Lab 成員獲得的各項競賽與學術肯定。
                     主持人的個人學術榮譽請見
                     <a href="/about#honors" class="text-accent hover:underline"
                         >個人榮譽與獎項</a
@@ -64,7 +64,7 @@ const competitionAwards = sortedAwards.filter(
                 </div>
                 <div class="text-left">
                     <div class="text-xl font-semibold"><span data-lang-en>Total Awards</span><span data-lang-zh>獎項總計</span></div>
-                    <div class="text-gray-400 text-sm">(2025 - Present)</div>
+                    <div class="text-gray-400 text-sm"><span data-lang-en>(2025 - Present)</span><span data-lang-zh>（2025 - 至今）</span></div>
                 </div>
             </div>
         </div>
@@ -83,27 +83,39 @@ const competitionAwards = sortedAwards.filter(
                 >
                     <span data-lang-en>All</span><span data-lang-zh>全部</span> ({sortedAwards.length})
                 </button>
-                <button
-                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    data-filter="student_merit"
-                    aria-pressed="false"
-                >
-                    🏅 <span data-lang-en>Student Merit Awards</span><span data-lang-zh>學生榮譽獎</span> ({meritAwards.length})
-                </button>
-                <button
-                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    data-filter="paper"
-                    aria-pressed="false"
-                >
-                    📄 <span data-lang-en>Paper Awards</span><span data-lang-zh>論文獎</span> ({paperAwards.length})
-                </button>
-                <button
-                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    data-filter="competition"
-                    aria-pressed="false"
-                >
-                    🏆 <span data-lang-en>Competition Awards</span><span data-lang-zh>競賽獎</span> ({competitionAwards.length})
-                </button>
+                {
+                    meritAwards.length > 0 && (
+                        <button
+                            class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            data-filter="student_merit"
+                            aria-pressed="false"
+                        >
+                            🏅 <span data-lang-en>Student Merit Awards</span><span data-lang-zh>學生榮譽獎</span> ({meritAwards.length})
+                        </button>
+                    )
+                }
+                {
+                    paperAwards.length > 0 && (
+                        <button
+                            class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            data-filter="paper"
+                            aria-pressed="false"
+                        >
+                            📄 <span data-lang-en>Paper Awards</span><span data-lang-zh>論文獎</span> ({paperAwards.length})
+                        </button>
+                    )
+                }
+                {
+                    competitionAwards.length > 0 && (
+                        <button
+                            class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            data-filter="competition"
+                            aria-pressed="false"
+                        >
+                            🏆 <span data-lang-en>Competition Awards</span><span data-lang-zh>競賽獎</span> ({competitionAwards.length})
+                        </button>
+                    )
+                }
             </div>
         </div>
     </section>
