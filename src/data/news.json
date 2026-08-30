@@ -1,10 +1,9 @@
 [
     {
-        "text": "ASI² Lab team wins Second Place in the Best Conference Paper Contest Award at the 14th International Conference on Advanced Robotics and Intelligent Systems (ARIS 2026) with the paper \"WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging\"",
+        "text": "ASI² Lab team wins the Best Paper Award - Second Place at the 14th International Conference on Advanced Robotics and Intelligent Systems (ARIS 2026) with the paper \"WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging\"",
         "date": "2026-08-26",
         "highlights": [
-            "Second Place",
-            "Best Conference Paper Contest Award"
+            "Best Paper Award - Second Place"
         ],
         "images": [
             "/images/news/ARIS2026_award_1.jpg",
@@ -17,9 +16,9 @@
         "emphasis": [
             "ASI² Lab team"
         ],
-        "text_zh": "ASI² Lab 團隊以論文 \"WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging\" 於第 14 屆 International Conference on Advanced Robotics and Intelligent Systems（ARIS 2026）榮獲最佳會議論文競賽獎第二名",
+        "text_zh": "ASI² Lab 團隊以論文 \"WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging\" 於第 14 屆 International Conference on Advanced Robotics and Intelligent Systems（ARIS 2026）榮獲最佳論文獎第二名",
         "highlights_zh": [
-            "最佳會議論文競賽獎第二名"
+            "最佳論文獎第二名"
         ],
         "emphasis_zh": [
             "ASI² Lab 團隊"
