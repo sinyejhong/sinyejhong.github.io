@@ -515,9 +515,9 @@
         "title": "WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging",
         "venue": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
         "badges": [
-            "Best Paper Award (Second Place)"
+            "Best Paper Award"
         ],
-        "researchArea": "perception"
+        "researchArea": "aiot"
     },
     {
         "year": 2026,
@@ -731,7 +731,7 @@
         "badges": [
             "Top Tier"
         ],
-        "researchArea": "perception"
+        "researchArea": "embodied"
     },
     {
         "year": 2024,
