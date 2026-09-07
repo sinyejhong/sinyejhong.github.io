@@ -1,5 +1,37 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"SS06: Advanced Multimodal AI and Foundation Models for Visual Perception and Understanding\" at the 39th Conference on Computer Vision, Graphics and Image Processing (CVGIP 2026)",
+        "date": "2026-08-31",
+        "highlights": [
+            "Special Session Chair",
+            "SS06: Advanced Multimodal AI and Foundation Models for Visual Perception and Understanding"
+        ],
+        "images": [
+            "/images/engagements/CVGIP2026_4.jpg",
+            "/images/engagements/CVGIP2026_1.jpg",
+            "/images/engagements/CVGIP2026_2.jpg",
+            "/images/engagements/CVGIP2026_3.jpg"
+        ],
+        "pillar": "session_chair",
+        "links": {
+            "39th Conference on Computer Vision, Graphics and Image Processing (CVGIP 2026)": "https://cvgip2026.stust.edu.tw/special-sessions"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任第 39 屆電腦視覺、圖學暨影像處理研討會（CVGIP 2026）「SS06: Advanced Multimodal AI and Foundation Models for Visual Perception and Understanding」特別議程主持人",
+        "highlights_zh": [
+            "特別議程主持人",
+            "SS06: Advanced Multimodal AI and Foundation Models for Visual Perception and Understanding"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "電腦視覺、圖學暨影像處理研討會（CVGIP 2026）": "https://cvgip2026.stust.edu.tw/special-sessions"
+        }
+    },
+    {
         "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"SS01: Smart System and Its Applications\" at the 14th International Conference on Advanced Robotics and Intelligent Systems (ARIS 2026)",
         "date": "2026-08-26",
         "highlights": [

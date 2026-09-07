@@ -527,7 +527,7 @@
         "doi": "10.1109/ICCE-Taiwan71481.2026.11652600",
         "venueDetail": "Taoyuan, Taiwan, Jul. 1-3, 2026",
         "authors": [
-            "S.-Y. Jhong",
+            "S.-Y. Jhong*",
             "Y.-Y. Hsieh",
             "P.-H. Chen"
         ],
@@ -747,7 +747,7 @@
             "S.-H. Lin",
             "S.-C. Chien",
             "K.-L. Hua",
-            "Y.-Y. Chen"
+            "Y.-Y. Chen*"
         ],
         "highlight": false,
         "title": "Camera-Radar-Based Adaptive Cross Attention Fusion for Multimodal Object Detection",
