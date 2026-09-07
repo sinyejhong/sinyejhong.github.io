@@ -1,5 +1,20 @@
 [
     {
+        "id": 12,
+        "title": "整合生成式AI與多模態感知技術之智慧雙臂機器人研發(1/2) (Development of an Intelligent Dual-Arm Robot by Integrating Generative AI and Multimodal Perception Technologies (1/2))",
+        "funder": "National Science and Technology Council (NSTC)",
+        "duration": "2026.08 - 2027.06",
+        "role": "Co-Principal Investigator",
+        "status": "ongoing",
+        "type": "government",
+        "description": "NSTC program with eight subprojects developing an autonomous dining-service robot (AMR base, dual arms, tactile dexterous hands) that integrates generative AI and multimodal large models for semantic understanding and task planning, with reinforcement/imitation learning and digital-twin sim-to-real transfer.",
+        "pillar": "robotics",
+        "logo": "/images/Logo/NSTC.png",
+        "role_zh": "共同主持人",
+        "funder_zh": "國家科學及技術委員會",
+        "description_zh": "含八項子計畫的國科會計畫，研發整合 AMR 底盤、雙臂與觸覺靈巧手的自主智慧餐飲服務機器人，結合生成式 AI 與多模態大型模型進行語意理解與任務規劃，並以強化／模仿學習與數位雙生技術實現虛實整合。"
+    },
+    {
         "id": 11,
         "title": "具備環境韌性與開放認知能力之語意驅動式自主移動載具研發 (Development of Semantic-Driven Autonomous Mobile Robots with Environmental Robustness and Open-World Cognition)",
         "funder": "National Science and Technology Council (NSTC)",

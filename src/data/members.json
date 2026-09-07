@@ -51,19 +51,6 @@
         "research_group_zh": "Resilient Perception"
     },
     {
-        "id": 2,
-        "name": "Jun-Guang Zhu",
-        "photo": "/images/members/Junguangzhu.jpg",
-        "role": "Master's Student",
-        "role_zh": "碩士生",
-        "topic": "Industrial AIoT",
-        "topic_zh": "工業 AIoT",
-        "status": "current",
-        "email": "zhuguang1010414@gmail.com",
-        "research_group": "Industrial AIoT",
-        "research_group_zh": "工業 AIoT"
-    },
-    {
         "id": 3,
         "name": "Pei-Yan Chou",
         "photo": "/images/members/Peiyanchou.jpg",
@@ -127,18 +114,5 @@
         "email": "ycw23062@gmail.com",
         "research_group": "Embodied AI",
         "research_group_zh": "具身智慧 AI"
-    },
-    {
-        "id": 8,
-        "name": "Yin-Cheng Liu",
-        "photo": "/images/members/Yinchengliu.jpg",
-        "role": "Master's Student",
-        "role_zh": "碩士生",
-        "topic": "Industrial AIoT",
-        "topic_zh": "工業 AIoT",
-        "status": "current",
-        "email": "shutton1013@gmail.com",
-        "research_group": "Industrial AIoT",
-        "research_group_zh": "工業 AIoT"
     }
 ]
