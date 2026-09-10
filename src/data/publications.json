@@ -498,6 +498,29 @@
     },
     {
         "year": 2026,
+        "link": "https://doi.org/10.1007/978-3-032-37211-6_7",
+        "id": 104,
+        "type": "conference",
+        "doi": "10.1007/978-3-032-37211-6_7",
+        "venueDetail": "Malmö, Sweden, Sep. 8-12, 2026",
+        "authors": [
+            "S.-Y. Lu",
+            "P.-T. Chen",
+            "H.-C. Hsu",
+            "S.-Y. Jhong",
+            "W.-H. Cheng*",
+            "Y.-Y. Chen"
+        ],
+        "highlight": true,
+        "title": "OVGGT: O(1) Constant-Cost Streaming Visual Geometry Transformer",
+        "venue": "European Conference on Computer Vision (ECCV)",
+        "badges": [
+            "Top Tier"
+        ],
+        "researchArea": "embodied"
+    },
+    {
+        "year": 2026,
         "link": "#",
         "id": 102,
         "type": "conference",
