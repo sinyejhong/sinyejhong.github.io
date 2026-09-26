@@ -1,5 +1,36 @@
 [
     {
+        "text": "ASI² Lab team presents the Spotlight paper \"OVGGT: O(1) Constant-Cost Streaming Visual Geometry Transformer\" at the European Conference on Computer Vision (ECCV 2026), one of the top-tier conferences in computer vision, held in Malmö, Sweden",
+        "date": "2026-09-11",
+        "highlights": [
+            "Spotlight",
+            "top-tier conferences in computer vision"
+        ],
+        "images": [
+            "/images/news/ECCV2026.jpg"
+        ],
+        "pillar": "robotics",
+        "links": {
+            "OVGGT: O(1) Constant-Cost Streaming Visual Geometry Transformer": "https://doi.org/10.1007/978-3-032-37211-6_7",
+            "European Conference on Computer Vision (ECCV 2026)": "https://eccv.ecva.net/Conferences/2026"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ],
+        "text_zh": "ASI² Lab 團隊於瑞典馬爾默舉行的電腦視覺頂尖會議 European Conference on Computer Vision（ECCV 2026）發表 Spotlight 論文 \"OVGGT: O(1) Constant-Cost Streaming Visual Geometry Transformer\"",
+        "highlights_zh": [
+            "Spotlight",
+            "電腦視覺頂尖會議"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "OVGGT: O(1) Constant-Cost Streaming Visual Geometry Transformer": "https://doi.org/10.1007/978-3-032-37211-6_7",
+            "European Conference on Computer Vision（ECCV 2026）": "https://eccv.ecva.net/Conferences/2026"
+        }
+    },
+    {
         "text": "ASI² Lab team wins the Best Paper Award - Second Place at the 14th International Conference on Advanced Robotics and Intelligent Systems (ARIS 2026) with the paper \"WDR-MoE: Frequency-Aware Mixture-of-Experts for Fracture Detection in AI-Assisted Medical Imaging\"",
         "date": "2026-08-26",
         "highlights": [
