@@ -59,6 +59,35 @@
         }
     },
     {
+        "text": "ASI² Lab team wins Honorable Mention in the Application Category at the 26th Macronix Golden Silicon Awards Semiconductor Design and Application Competition (旺宏金矽獎半導體設計與應用大賽)",
+        "date": "2026-07-25",
+        "highlights": [
+            "Honorable Mention",
+            "Application Category"
+        ],
+        "images": [
+            "/images/news/GoldenSilicon2026_honorable.jpg"
+        ],
+        "pillar": "inspection",
+        "links": {
+            "26th Macronix Golden Silicon Awards Semiconductor Design and Application Competition (旺宏金矽獎半導體設計與應用大賽)": "https://www.mxeduc.org.tw/siliconawards/"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ],
+        "text_zh": "ASI² Lab 團隊在第 26 屆旺宏金矽獎半導體設計與應用大賽中，於應用組榮獲優勝獎",
+        "highlights_zh": [
+            "優勝獎",
+            "應用組"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "第 26 屆旺宏金矽獎半導體設計與應用大賽": "https://www.mxeduc.org.tw/siliconawards/"
+        }
+    },
+    {
         "text": "Dr. Sin-Ye Jhong's co-authored paper \"Vision-Language-Guided Adaptive Cross-Modal Fusion for Multispectral Object Detection Under Adverse Weather Conditions\" is selected by the IEEE Computer Society Publications Board as the Winner of the 2025 Best Paper Award for IEEE MultiMedia — the journal's sole winning paper of the year",
         "date": "2026-07-21",
         "highlights": [

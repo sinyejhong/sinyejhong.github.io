@@ -400,6 +400,20 @@
         ]
     },
     {
+        "id": 114,
+        "title": "Honorable Mention",
+        "title_zh": "優勝獎",
+        "event": "Macronix Golden Silicon Awards Semiconductor Design and Application Competition (旺宏金矽獎半導體設計與應用大賽)",
+        "event_zh": "旺宏金矽獎半導體設計與應用大賽",
+        "year": 2026,
+        "category": "competition",
+        "description": "Honorable Mention in the Application Category of the semiconductor design and application competition",
+        "description_zh": "半導體設計與應用大賽應用組優勝獎",
+        "images": [
+            "/images/news/GoldenSilicon2026_honorable.jpg"
+        ]
+    },
+    {
         "id": 110,
         "title": "Third Prize, Honorable Mention & IEEE Special Award (Grand Prize)",
         "title_zh": "第三名、佳作暨 IEEE 特別獎（大獎）",
