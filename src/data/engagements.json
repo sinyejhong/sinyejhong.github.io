@@ -1,5 +1,26 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong served as a Ph.D. Thesis Committee Member at the Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)",
+        "date": "2026-10-15",
+        "highlights": [
+            "Ph.D. Thesis Committee Member"
+        ],
+        "images": [
+            "/images/engagements/NTUST_ECE_phd_thesis.jpg"
+        ],
+        "pillar": "thesis_committee",
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任國立臺灣科技大學電子工程系博士論文口試委員",
+        "highlights_zh": [
+            "博士論文口試委員"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ]
+    },
+    {
         "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"SS06: Advanced Multimodal AI and Foundation Models for Visual Perception and Understanding\" at the 39th Conference on Computer Vision, Graphics and Image Processing (CVGIP 2026)",
         "date": "2026-08-31",
         "highlights": [
