@@ -21,6 +21,40 @@
         ]
     },
     {
+        "text": "Dr. Sin-Ye Jhong served as an Associate Editor and Reviewer for the 2026 IEEE International Conference on Systems, Man, and Cybernetics (IEEE SMC 2026), a CORE Rank B conference (ICORE Conference Rankings), held in Bellevue, WA, USA, October 4–7, 2026",
+        "date": "2026-10-07",
+        "highlights": [
+            "Associate Editor",
+            "Reviewer",
+            "CORE Rank B"
+        ],
+        "images": [
+            "/images/engagements/SMC2026_AE.jpg",
+            "/images/engagements/SMC2026_reviewer.jpg"
+        ],
+        "pillar": "editorial_service",
+        "links": {
+            "2026 IEEE International Conference on Systems, Man, and Cybernetics (IEEE SMC 2026)": "https://www.ieeesmc2026.org/",
+            "ICORE Conference Rankings": "https://portal.core.edu.au/conf-ranks/611/"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任2026 IEEE International Conference on Systems, Man, and Cybernetics（IEEE SMC 2026）副主編（Associate Editor）及審稿人；該會議為 CORE Rank B 國際會議（ICORE Conference Rankings），2026 年 10 月 4–7 日於美國華盛頓州貝爾維尤舉行",
+        "highlights_zh": [
+            "副主編",
+            "審稿人",
+            "CORE Rank B"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "2026 IEEE International Conference on Systems, Man, and Cybernetics（IEEE SMC 2026）": "https://www.ieeesmc2026.org/",
+            "ICORE Conference Rankings": "https://portal.core.edu.au/conf-ranks/611/"
+        }
+    },
+    {
         "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"SS06: Advanced Multimodal AI and Foundation Models for Visual Perception and Understanding\" at the 39th Conference on Computer Vision, Graphics and Image Processing (CVGIP 2026)",
         "date": "2026-08-31",
         "highlights": [
