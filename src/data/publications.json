@@ -1,5 +1,26 @@
 [
     {
+        "id": 105,
+        "title": "Edge–Cloud Collaborative Framework for Density-Aware Hair Shaft and Follicle Segmentation in Distributed Hair-Loss Inspection",
+        "authors": [
+            "S.-Y. Jhong",
+            "Y.-C. Wu",
+            "C.-H. Hsia*"
+        ],
+        "venue": "IEEE Transactions on Instrumentation and Measurement",
+        "venueDetail": "vol. 75, Art. no. 5020116, Oct. 2026",
+        "year": 2026,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1109/TIM.2026.3744010",
+        "link": "https://doi.org/10.1109/TIM.2026.3744010",
+        "highlight": true,
+        "researchArea": "aiot"
+    },
+    {
         "id": 101,
         "title": "Robust Monocular Visual Odometry With Temporal Augmentation and Dynamic-Aware Attention",
         "authors": [
