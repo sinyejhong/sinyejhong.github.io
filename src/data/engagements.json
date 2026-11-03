@@ -1,5 +1,36 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"SS-IV: AI, Computer Vision, and Intelligent Analytics\" at the International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS 2026), held in Busan, Korea, October 27–30, 2026",
+        "date": "2026-10-29",
+        "highlights": [
+            "Special Session Chair",
+            "SS-IV: AI, Computer Vision, and Intelligent Analytics"
+        ],
+        "images": [
+            "/images/engagements/ISPACS2026_1.jpg",
+            "/images/engagements/ISPACS2026_2.jpg",
+            "/images/engagements/ISPACS2026_3.jpg"
+        ],
+        "pillar": "session_chair",
+        "links": {
+            "International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS 2026)": "https://ispacs2026.com/matrix"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任 International Symposium on Intelligent Signal Processing and Communication Systems（ISPACS 2026）「SS-IV: AI, Computer Vision, and Intelligent Analytics」特別議程主持人；該會議 2026 年 10 月 27–30 日於韓國釜山舉行",
+        "highlights_zh": [
+            "特別議程主持人",
+            "SS-IV: AI, Computer Vision, and Intelligent Analytics"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "International Symposium on Intelligent Signal Processing and Communication Systems（ISPACS 2026）": "https://ispacs2026.com/matrix"
+        }
+    },
+    {
         "text": "Dr. Sin-Ye Jhong served as a Ph.D. Thesis Committee Member at the Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)",
         "date": "2026-10-15",
         "highlights": [
