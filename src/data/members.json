@@ -6,12 +6,10 @@
         "role": "ASI² Lab Director",
         "role_zh": "實驗室主持人",
         "affiliations": [
-            "Assistant Professor, GIMT, NTUST",
-            "AI Application Consultant, Power Data Co., Ltd."
+            "Assistant Professor, GIMT, NTUST"
         ],
         "affiliations_zh": [
-            "助理教授，國立臺灣科技大學 智慧製造科技研究所",
-            "AI 應用顧問，勝力數智股份有限公司 (Power Data Co., Ltd.)"
+            "助理教授，國立臺灣科技大學 智慧製造科技研究所"
         ],
         "topic": "Computer Vision & Image Processing, Machine/Deep Learning, Multimodal Fusion, Robot Perception & Navigation, Human-Robot Interaction, Generative AI, Agentic AI, Smart IoT, Intelligent Unmanned Vehicles, Smart Manufacturing, Intelligent Robotics",
         "topic_zh": "電腦視覺與影像處理、機器／深度學習、多模態融合、機器人感知與導航、人機互動、生成式 AI、代理式 AI、智慧 IoT、智慧無人載具、智慧製造、智慧機器人",

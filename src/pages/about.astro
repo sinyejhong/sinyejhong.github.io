@@ -128,7 +128,7 @@ const jsonLd = {
                     >
                         Dr. Sin-Ye Jhong 鍾昕燁
                     </h1>
-                    <p class="text-lg mb-1">
+                    <p class="text-lg mb-6">
                         <span data-lang-en
                             ><span class="text-accent font-medium"
                                 >Assistant Professor</span
@@ -137,20 +137,6 @@ const jsonLd = {
                             ><span class="text-accent font-medium">助理教授</span
                             ><span class="text-gray-300"
                                 >，智慧製造科技研究所，國立臺灣科技大學</span
-                            ></span
-                        >
-                    </p>
-                    <p class="text-lg mb-6">
-                        <span data-lang-en
-                            ><span class="text-accent font-medium"
-                                >AI Application Consultant</span
-                            ><span class="text-gray-300"
-                                >, Power Data Co., Ltd.</span
-                            ></span
-                        ><span data-lang-zh
-                            ><span class="text-accent font-medium">AI 應用顧問</span
-                            ><span class="text-gray-300"
-                                >，勝力數智股份有限公司 (Power Data Co., Ltd.)</span
                             ></span
                         >
                     </p>
@@ -565,13 +551,27 @@ const jsonLd = {
                 />
 
                 <TimelineCard
+                    title="Director"
+                    titleZh="理事"
+                    organization="IET Taipei Local Network"
+                    organizationUrl="https://www.iettaiwan.org.tw/"
+                    period="2026 - Present"
+                    periodZh="2026 - 至今"
+                    location="Taipei, Taiwan"
+                    locationZh="台灣台北"
+                    iconType="leadership"
+                    isCurrent={true}
+                    category="work"
+                />
+
+                <TimelineCard
                     title="AI Application Consultant"
                     titleZh="AI 應用顧問"
                     organization="Power Data Co., Ltd."
                     organizationZh="勝力數智股份有限公司 (Power Data Co., Ltd.)"
                     organizationUrl="https://www.powerdata.com.tw/"
-                    period="2025 - Present"
-                    periodZh="2025 - 至今"
+                    period="2025 - 2026"
+                    periodZh="2025 - 2026"
                     location="Yunlin, Taiwan"
                     locationZh="台灣雲林"
                     department="Strategic Technical Advisory & Digital Transformation"
@@ -580,7 +580,6 @@ const jsonLd = {
                     certificateLabel="Appointment Letter"
                     certificateLabelZh="聘書"
                     iconType="industry"
-                    isCurrent={true}
                     category="work"
                 />
 
@@ -1119,6 +1118,36 @@ const jsonLd = {
                     </div>
 
                     <!-- Conference Organization -->
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2027</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                ><span data-lang-en>Technical Program Chair</span><span data-lang-zh>技術議程主席</span></span
+                            >, IET International Conference on Engineering
+                            Technologies and Applications (ICETA)</span
+                        >
+                    </div>
+                    <div
+                        class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
+                        data-category="conference"
+                    >
+                        <span
+                            class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
+                            >2027</span
+                        >
+                        <span class="text-gray-700 flex-1 text-justify"
+                            ><span class="font-semibold text-accent"
+                                ><span data-lang-en>Publication Chair</span><span data-lang-zh>出版主席</span></span
+                            >, International Conference on Mobile Computing
+                            and Ubiquitous Networking (ICMU)</span
+                        >
+                    </div>
                     <div
                         class="pa-item hidden flex items-center gap-4 p-4 bg-gray-50 rounded-lg border-l-4 border-l-amber-500 hover:bg-gray-100 transition-all duration-300"
                         data-category="conference"
