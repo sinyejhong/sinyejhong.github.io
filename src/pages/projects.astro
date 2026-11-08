@@ -36,11 +36,24 @@ const projectsWithStatus = projects.map((p) => ({
     status: calculateStatus(p.duration),
 }));
 
-// Sort: ongoing first, then by start date (duration begins with "YYYY.MM")
+// Sort: by end date (latest first), then by start date (latest first).
+// "Present" counts as the latest possible end date.
+const durationBounds = (duration: string) => {
+    const toNum = (s: string) => {
+        if (!s) return 0;
+        if (s.toLowerCase() === "present") return Number.MAX_SAFE_INTEGER;
+        const [year, month] = s.split(".").map(Number);
+        return (year || 0) * 100 + (month || 0);
+    };
+    const [startStr = "", endStr = ""] = duration
+        .split("-")
+        .map((s) => s.trim());
+    return { start: toNum(startStr), end: toNum(endStr) };
+};
 const sortedProjects = [...projectsWithStatus].sort((a, b) => {
-    if (a.status === "ongoing" && b.status !== "ongoing") return -1;
-    if (a.status !== "ongoing" && b.status === "ongoing") return 1;
-    return b.duration.localeCompare(a.duration);
+    const da = durationBounds(a.duration);
+    const db = durationBounds(b.duration);
+    return db.end - da.end || db.start - da.start;
 });
 
 const industryProjects = sortedProjects.filter((p) => p.type === "industry");
@@ -70,6 +83,11 @@ const industryLogos = [
         name: "Novatek",
         logo: "/images/Logo/novatek.png",
         url: "https://www.novatek.com.tw",
+    },
+    {
+        name: "ThroughTek",
+        logo: "/images/Logo/ThroughTek.png",
+        url: "https://www.throughtek.com",
     },
 ];
 
