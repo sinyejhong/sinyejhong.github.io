@@ -1,5 +1,32 @@
 [
     {
+        "text": "ASI² Lab team wins the Best Presentation Award at the 2026 International Automatic Control Conference (CACS 2026) [國科會控制學門國際研討會] with the paper \"Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios\"",
+        "date": "2026-10-24",
+        "highlights": [
+            "Best Presentation Award"
+        ],
+        "images": [
+            "/images/news/CACS2026_best_presentation.jpg"
+        ],
+        "pillar": "perception",
+        "links": {
+            "2026 International Automatic Control Conference (CACS 2026)": "https://cacs2026.fcu.edu.tw/"
+        },
+        "emphasis": [
+            "ASI² Lab team"
+        ],
+        "text_zh": "ASI² Lab 團隊以論文 \"Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios\" 於 2026 年國科會控制學門國際研討會（CACS 2026）榮獲最佳報告獎",
+        "highlights_zh": [
+            "最佳報告獎"
+        ],
+        "emphasis_zh": [
+            "ASI² Lab 團隊"
+        ],
+        "links_zh": {
+            "國科會控制學門國際研討會（CACS 2026）": "https://cacs2026.fcu.edu.tw/"
+        }
+    },
+    {
         "text": "ASI² Lab team presents the Spotlight paper \"OVGGT: O(1) Constant-Cost Streaming Visual Geometry Transformer\" at the European Conference on Computer Vision (ECCV 2026), one of the top-tier conferences in computer vision, held in Malmö, Sweden",
         "date": "2026-09-11",
         "highlights": [

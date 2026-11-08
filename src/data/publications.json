@@ -519,6 +519,27 @@
     },
     {
         "year": 2026,
+        "link": "#",
+        "id": 106,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Taichung, Taiwan, Oct. 21-24, 2026",
+        "authors": [
+            "S.-Y. Jhong",
+            "P. X. D. Doan",
+            "Y.-Y. Chen",
+            "C.-L. Yang"
+        ],
+        "highlight": true,
+        "title": "Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios",
+        "venue": "International Automatic Control Conference (CACS)",
+        "badges": [
+            "Best Presentation Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2026,
         "link": "https://doi.org/10.1007/978-3-032-37211-6_7",
         "id": 104,
         "type": "conference",

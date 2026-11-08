@@ -173,6 +173,20 @@
         "description_zh": "學業成績獎學金（2015–2017）"
     },
     {
+        "id": 115,
+        "title": "Best Presentation Award",
+        "title_zh": "最佳報告獎",
+        "event": "International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
+        "event_zh": "國科會控制學門國際研討會",
+        "year": 2026,
+        "category": "paper",
+        "description": "Recognition for outstanding paper presentation",
+        "description_zh": "會議論文報告獎項",
+        "images": [
+            "/images/news/CACS2026_best_presentation.jpg"
+        ]
+    },
+    {
         "id": 113,
         "title": "Best Paper Award - Second Place",
         "title_zh": "最佳論文獎—第二名",

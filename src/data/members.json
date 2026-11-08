@@ -49,6 +49,19 @@
         "research_group_zh": "Resilient Perception"
     },
     {
+        "id": 8,
+        "name": "Hou-Yeh Tao",
+        "photo": "/images/members/Houyehtao.jpg",
+        "role": "Ph.D. Student",
+        "role_zh": "博士生",
+        "topic": "Industrial AIoT",
+        "topic_zh": "工業 AIoT",
+        "status": "current",
+        "email": "hytao@cht.com.tw",
+        "research_group": "Industrial AIoT",
+        "research_group_zh": "工業 AIoT"
+    },
+    {
         "id": 3,
         "name": "Pei-Yan Chou",
         "photo": "/images/members/Peiyanchou.jpg",
