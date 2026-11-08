@@ -38,7 +38,7 @@
         "status": "ongoing",
         "type": "industry",
         "description": "Cloud-based proof of concept for bear detection in Japanese mountain areas: building field datasets and evaluation benchmarks for night-time infrared and snow conditions, comparing open-vocabulary object detection (OVOD) with few-shot adaptation against purely supervised detectors, then two rounds of field-feedback fine-tuning, reproducible pipeline packaging and handover to the company's R&D team for validation.",
-        "pillar": "perception",
+        "pillar": "inspection",
         "logo": "/images/Logo/ThroughTek.png",
         "role_zh": "主持人",
         "funder_zh": "物聯智慧股份有限公司",
