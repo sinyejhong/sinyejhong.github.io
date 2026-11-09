@@ -58,6 +58,9 @@ const sortedProjects = [...projectsWithStatus].sort((a, b) => {
 
 const industryProjects = sortedProjects.filter((p) => p.type === "industry");
 const govProjects = sortedProjects.filter((p) => p.type === "government");
+const universityProjects = sortedProjects.filter(
+    (p) => p.type === "university",
+);
 const ongoingCount = sortedProjects.filter(
     (p) => p.status === "ongoing",
 ).length;
@@ -128,8 +131,8 @@ const govLogos = [
                 <span data-lang-en>Projects</span><span data-lang-zh>計畫</span>
             </h1>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                <span data-lang-en>Industry collaborations and government-funded research
-                initiatives</span><span data-lang-zh>產業合作與政府補助研究計畫</span>
+                <span data-lang-en>Industry collaborations, government-funded and
+                university-funded research initiatives</span><span data-lang-zh>產業合作、政府補助與校內補助研究計畫</span>
             </p>
 
             <!-- Stats -->
@@ -157,6 +160,12 @@ const govLogos = [
                         >{govProjects.length}</span
                     >
                     <div class="text-gray-300 mt-1"><span data-lang-en>Government</span><span data-lang-zh>政府機構</span></div>
+                </div>
+                <div class="px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <span class="text-4xl font-bold text-purple-400"
+                        >{universityProjects.length}</span
+                    >
+                    <div class="text-gray-300 mt-1"><span data-lang-en>University</span><span data-lang-zh>校內</span></div>
                 </div>
             </div>
         </div>
@@ -261,6 +270,13 @@ const govLogos = [
                     aria-pressed="false"
                 >
                     🏛️ <span data-lang-en>Gov / Research Center</span><span data-lang-zh>政府機構 / 研究中心</span> ({govProjects.length})
+                </button>
+                <button
+                    class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    data-filter="university"
+                    aria-pressed="false"
+                >
+                    🎓 <span data-lang-en>University</span><span data-lang-zh>校內</span> ({universityProjects.length})
                 </button>
             </div>
         </div>

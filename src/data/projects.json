@@ -1,5 +1,20 @@
 [
     {
+        "id": 14,
+        "title": "企業級智慧資料管理與 AI Agent 應用：結合檢索增強生成、時序知識圖譜與多代理協作之企業文件理解與決策輔助系統 (Enterprise Intelligent Data Management and AI Agent Applications: An Enterprise Document Understanding and Decision-Support System Integrating Retrieval-Augmented Generation, Temporal Knowledge Graphs, and Multi-Agent Collaboration)",
+        "funder": "College of Industry-Academia Innovation, NTUST",
+        "duration": "2025.08 - 2028.07",
+        "role": "Principal Investigator",
+        "status": "ongoing",
+        "type": "university",
+        "description": "Intramural new-faculty research start-up grant developing an enterprise AI Agent system that structures multi-source heterogeneous enterprise data, combines temporal knowledge graphs with hybrid adaptive retrieval (KG-RAG), and adds tool use and multi-agent collaboration for document Q&A, anomaly analysis, workflow assistance, and decision support.",
+        "pillar": "robotics",
+        "logo": "/images/Logo/NTUST.png",
+        "role_zh": "主持人",
+        "funder_zh": "國立臺灣科技大學產學創新學院",
+        "description_zh": "產學創新學院新進教師研究啟動計畫，建構企業多源異質資料結構化萃取流程、結合時序知識圖譜與混合式自適應檢索的 KG-RAG 知識管理架構，以及具備工具調用與多代理協作能力的客製化 AI Agent 系統，應用於企業文件查詢、異常分析、流程輔助與決策支援。"
+    },
+    {
         "id": 11,
         "title": "具備環境韌性與開放認知能力之語意驅動式自主移動載具研發 (Development of Semantic-Driven Autonomous Mobile Robots with Environmental Robustness and Open-World Cognition)",
         "funder": "National Science and Technology Council (NSTC)",

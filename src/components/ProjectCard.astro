@@ -185,7 +185,9 @@ const pillarConfig: Record<
                     "badge",
                     type === "industry"
                         ? "bg-orange-100 text-orange-800"
-                        : "bg-cyan-100 text-cyan-800",
+                        : type === "university"
+                          ? "bg-purple-100 text-purple-800"
+                          : "bg-cyan-100 text-cyan-800",
                 ]}
             >
                 {
@@ -193,6 +195,11 @@ const pillarConfig: Record<
                         <>
                             <span data-lang-en>🏭 Industry</span>
                             <span data-lang-zh>🏭 產業</span>
+                        </>
+                    ) : type === "university" ? (
+                        <>
+                            <span data-lang-en>🎓 University</span>
+                            <span data-lang-zh>🎓 校內</span>
                         </>
                     ) : (
                         <>
