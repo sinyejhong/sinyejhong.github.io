@@ -161,7 +161,7 @@ const pillarConfig: Record<
         label: "Invited Talk",
         labelZh: "受邀演講",
         text: "text-rose-700",
-        href: "/about#professional-activities",
+        href: "/about#pa-talks",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -169,7 +169,7 @@ const pillarConfig: Record<
         label: "Session Chair",
         labelZh: "議程主持",
         text: "text-amber-700",
-        href: "/about#professional-activities",
+        href: "/about#pa-conference",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -177,7 +177,7 @@ const pillarConfig: Record<
         label: "Thesis Committee",
         labelZh: "口試委員",
         text: "text-sky-700",
-        href: "/about#professional-activities",
+        href: "/about#pa-thesis",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -193,7 +193,7 @@ const pillarConfig: Record<
         label: "Editorial Service",
         labelZh: "編輯與審稿",
         text: "text-teal-700",
-        href: "/about#professional-activities",
+        href: "/about#reviewer-conference",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -246,7 +246,7 @@ function getMonthAndDay(dateStr: string) {
                     }
                 </h2>
                 <div class="w-20 h-1 bg-accent rounded-full mb-4 mx-auto"></div>
-                <p class="text-gray-text text-lg max-w-2xl">
+                <p class="text-gray-600 text-lg max-w-2xl">
                     {
                         subtitleZh ? (
                             <>
@@ -263,6 +263,7 @@ function getMonthAndDay(dateStr: string) {
             <!-- Right Controls -->
             <div class="flex items-center gap-3 w-full md:w-auto md:flex-1 justify-center md:justify-end mt-4 md:mt-0">
                 <button
+                    type="button"
                     id={`${idPrefix}-prev`}
                     class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-md border-2 border-gray-200/80 flex items-center justify-center text-navy hover:bg-accent hover:text-white hover:border-accent hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy disabled:hover:scale-100 cursor-pointer"
                     aria-label="Previous page"
@@ -283,6 +284,7 @@ function getMonthAndDay(dateStr: string) {
                     </svg>
                 </button>
                 <button
+                    type="button"
                     id={`${idPrefix}-next`}
                     class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-md border-2 border-gray-200/80 flex items-center justify-center text-navy hover:bg-accent hover:text-white hover:border-accent hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy disabled:hover:scale-100 cursor-pointer"
                     aria-label="Next page"
@@ -306,7 +308,7 @@ function getMonthAndDay(dateStr: string) {
         </div>
 
         <!-- News Grid Carousel -->
-        <div class="relative min-h-[400px]" id={`${idPrefix}-container`}>
+        <div class="relative min-h-[400px] scroll-mt-20" id={`${idPrefix}-container`}>
             {
                 Array.from({ length: totalPages }).map((_, pageIndex) => (
                     <div
@@ -356,9 +358,7 @@ function getMonthAndDay(dateStr: string) {
                                             {coverImage ? (
                                                 <img
                                                     src={coverImage}
-                                                    alt="News cover"
-                                                    data-i18n-alt-en="News cover"
-                                                    data-i18n-alt-zh="新聞封面"
+                                                    alt=""
                                                     width="800"
                                                     height="600"
                                                     loading={pageIndex === 0 ? "eager" : "lazy"}
@@ -610,7 +610,7 @@ function getMonthAndDay(dateStr: string) {
                                                         </span>
                                                     </a>
                                                 )}
-                                            <div class="text-xs text-gray-400 mb-3 font-medium flex items-center gap-2">
+                                            <div class="text-xs text-gray-500 mb-3 font-medium flex items-center gap-2">
                                                 <span>{year}</span>
                                                 {/* NEW badge for items dated within the last 60 days (computed at build time) */}
                                                 {isRecent && (
@@ -645,9 +645,9 @@ function getMonthAndDay(dateStr: string) {
                                             <button
                                                 type="button"
                                                 class="news-open-detail self-start inline-flex items-center gap-1 text-sm font-bold text-accent hover:gap-2 transition-all mb-4"
-                                                aria-label={`Open news detail: ${item.text.slice(0, 70)}`}
-                                                data-i18n-aria-en={`Open news detail: ${item.text.slice(0, 70)}`}
-                                                data-i18n-aria-zh={`開啟最新消息：${(item.text_zh ?? item.text).slice(0, 40)}`}
+                                                aria-label={`Read more: ${item.text.slice(0, 70)}`}
+                                                data-i18n-aria-en={`Read more: ${item.text.slice(0, 70)}`}
+                                                data-i18n-aria-zh={`閱讀更多：${(item.text_zh ?? item.text).slice(0, 40)}`}
                                             >
                                                 <span data-lang-en>Read more</span><span data-lang-zh>閱讀更多</span>
                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -708,6 +708,8 @@ function getMonthAndDay(dateStr: string) {
             {
                 Array.from({ length: totalPages }).map((_, i) => (
                     <button
+                        type="button"
+                        aria-current={i === 0 ? "true" : undefined}
                         class="mobile-dot group p-2 cursor-pointer"
                         data-index={i}
                         aria-label={`Go to page ${i + 1}`}
@@ -727,15 +729,16 @@ function getMonthAndDay(dateStr: string) {
         class="fixed inset-0 z-[60] hidden flex items-center justify-center bg-navy/90 backdrop-blur-sm opacity-0 transition-opacity duration-300 px-4"
         role="dialog"
         aria-modal="true"
-        aria-label="News detail"
-        data-i18n-aria-en="News detail"
-        data-i18n-aria-zh="最新消息詳情"
+        aria-label="Item details"
+        data-i18n-aria-en="Item details"
+        data-i18n-aria-zh="詳細內容"
     >
         <div
             class="detail-content bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300 flex flex-col"
         >
              <!-- Close Button -->
             <button
+                type="button"
                 class="detail-close absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 hover:text-navy transition-colors z-20"
                 aria-label="Close news detail"
                 data-i18n-aria-en="Close news detail"
@@ -775,6 +778,8 @@ function getMonthAndDay(dateStr: string) {
 
         let currentPage = 0;
         let lastFocused = null;
+        let detailHideTimeout = null;
+        let detailOpeningFrame = null;
 
         function openDetailModal(article) {
             if (!detailModal) return;
@@ -834,10 +839,14 @@ function getMonthAndDay(dateStr: string) {
                 gallery.appendChild(newImg);
             });
 
-            lastFocused = document.activeElement;
+            clearTimeout(detailHideTimeout);
+            detailHideTimeout = null;
+            cancelAnimationFrame(detailOpeningFrame);
+            lastFocused = article.querySelector(".news-open-detail") || article;
             detailModal.classList.remove("hidden");
             document.body.style.overflow = "hidden";
-            requestAnimationFrame(() => {
+            detailOpeningFrame = requestAnimationFrame(() => {
+                detailOpeningFrame = null;
                 detailModal.classList.remove("opacity-0");
                 detailContent?.classList.remove("scale-95");
                 detailContent?.classList.add("scale-100");
@@ -846,13 +855,17 @@ function getMonthAndDay(dateStr: string) {
         }
 
         function closeDetailModal() {
-            if (!detailModal) return;
+            if (!detailModal || detailModal.classList.contains("hidden")) return;
+            clearTimeout(detailHideTimeout);
+            cancelAnimationFrame(detailOpeningFrame);
+            detailOpeningFrame = null;
             detailModal.classList.add("opacity-0");
             if (detailContent) {
                 detailContent.classList.remove("scale-100");
                 detailContent.classList.add("scale-95");
             }
-            setTimeout(() => {
+            detailHideTimeout = setTimeout(() => {
+                detailHideTimeout = null;
                 detailModal.classList.add("hidden");
                 document.body.style.overflow = "";
                 // Restore focus only after the dialog is fully hidden (a11y timing)
@@ -949,6 +962,8 @@ function getMonthAndDay(dateStr: string) {
             if (nextBtn) nextBtn.disabled = currentPage === totalPages - 1;
 
             mobileDots.forEach((dot, i) => {
+                if (i === currentPage) dot.setAttribute("aria-current", "true");
+                else dot.removeAttribute("aria-current");
                 const span = dot.querySelector("span");
                 if (span) {
                     span.setAttribute("data-active", i === currentPage ? "true" : "false");
@@ -956,15 +971,30 @@ function getMonthAndDay(dateStr: string) {
             });
         }
 
-        prevBtn?.addEventListener("click", () => updateView(currentPage - 1));
-        nextBtn?.addEventListener("click", () => updateView(currentPage + 1));
+        prevBtn?.addEventListener("click", () => {
+            handleUserInteraction();
+            updateView(currentPage - 1);
+        });
+        nextBtn?.addEventListener("click", () => {
+            handleUserInteraction();
+            updateView(currentPage + 1);
+        });
 
         mobileDots.forEach((dot) => {
             dot.addEventListener("click", (e) => {
                 const btn = e.target.closest(".mobile-dot");
                 if (btn) {
                     const index = parseInt(btn.dataset.index);
-                    if (!isNaN(index)) updateView(index);
+                    if (!isNaN(index)) {
+                        handleUserInteraction();
+                        updateView(index);
+                        if (e.detail > 0 && window.innerWidth < 768 && container && container.getBoundingClientRect().top < 0) {
+                            container.scrollIntoView({
+                                block: "start",
+                                behavior: prefersReducedMotion ? "auto" : "smooth",
+                            });
+                        }
+                    }
                 }
             });
         });
@@ -973,44 +1003,39 @@ function getMonthAndDay(dateStr: string) {
         const AUTO_CYCLE_INTERVAL = 10000;
         const AUTO_CYCLE_MAX_PAGE = 1;
         let autoPlayTimer = null;
-        let isPaused = false;
-        let interactionTimeout = null;
+        let hovering = false;
+        let focusWithin = false;
+        let userStopped = false;
 
         function startAutoCycle() {
             if (autoPlayTimer) clearInterval(autoPlayTimer);
             autoPlayTimer = setInterval(() => {
                 const isDetailOpen = detailModal && !detailModal.classList.contains("hidden");
-                if (isPaused || isDetailOpen) return;
+                if (hovering || focusWithin || userStopped || isDetailOpen) return;
                 const nextPage =
                     currentPage >= AUTO_CYCLE_MAX_PAGE ? 0 : currentPage + 1;
                 updateView(nextPage);
             }, AUTO_CYCLE_INTERVAL);
         }
 
-        function pauseAutoCycle() {
-            isPaused = true;
-        }
-
-        function resumeAutoCycle() {
-            if (!interactionTimeout) isPaused = false;
-        }
-
         function handleUserInteraction() {
-            isPaused = true;
-            if (interactionTimeout) clearTimeout(interactionTimeout);
-            interactionTimeout = setTimeout(() => {
-                isPaused = false;
-                interactionTimeout = null;
-            }, 15000);
+            userStopped = true;
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
         }
 
-        container?.addEventListener("mouseenter", pauseAutoCycle);
-        container?.addEventListener("mouseleave", resumeAutoCycle);
-        prevBtn?.addEventListener("click", handleUserInteraction);
-        nextBtn?.addEventListener("click", handleUserInteraction);
-        mobileDots.forEach((dot) =>
-            dot.addEventListener("click", handleUserInteraction),
-        );
+        container?.addEventListener("mouseenter", () => {
+            hovering = true;
+        });
+        container?.addEventListener("mouseleave", () => {
+            hovering = false;
+        });
+        root.addEventListener("focusin", () => {
+            focusWithin = true;
+        });
+        root.addEventListener("focusout", (e) => {
+            focusWithin = e.relatedTarget instanceof Node && root.contains(e.relatedTarget);
+        });
 
         const prefersReducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)",
@@ -1019,24 +1044,25 @@ function getMonthAndDay(dateStr: string) {
 
         // Touch swipe support
         let touchStartX = 0;
-        let touchEndX = 0;
+        let touchStartY = 0;
         const SWIPE_THRESHOLD = 50;
 
         container?.addEventListener(
             "touchstart",
             (e) => {
                 touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
             },
             { passive: true },
         );
 
         container?.addEventListener("touchend", (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > SWIPE_THRESHOLD) {
-                if (diff > 0) updateView(currentPage + 1);
-                else updateView(currentPage - 1);
+            const dx = touchStartX - e.changedTouches[0].screenX;
+            const dy = touchStartY - e.changedTouches[0].screenY;
+            if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy) * 1.5) {
                 handleUserInteraction();
+                if (dx > 0) updateView(currentPage + 1);
+                else updateView(currentPage - 1);
             }
         });
 

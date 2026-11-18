@@ -33,7 +33,7 @@ const currentMembers = members.filter((m) => m.status === "current");
                 <div class="text-left">
                     <div class="text-xl font-semibold"><span data-lang-en>Team Members</span><span data-lang-zh>團隊成員</span></div>
                     <div class="text-gray-400 text-sm">
-                        <span data-lang-en>(Director + Current Members)</span><span data-lang-zh>（指導教授 + 現任成員）</span>
+                        <span data-lang-en>(Director + Current Members)</span><span data-lang-zh>（主持人 + 現任成員）</span>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ const currentMembers = members.filter((m) => m.status === "current");
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
                 title="ASI² Lab Director"
-                titleZh="ASI² Lab 指導教授"
+                titleZh="ASI² Lab 主持人"
                 subtitle="Leading our research vision"
                 subtitleZh="帶領實驗室的研究願景"
             />
@@ -117,7 +117,7 @@ const currentMembers = members.filter((m) => m.status === "current");
 
             <!-- Category Filter Buttons -->
             <div class="flex flex-wrap justify-center gap-3 mb-8">
-                <button
+                <button type="button"
                     id="filter-all"
                     class="gallery-filter active inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-slate-800 text-white border border-slate-800 cursor-pointer transition-all duration-200 hover:scale-105"
                     data-filter="all"
@@ -138,7 +138,7 @@ const currentMembers = members.filter((m) => m.status === "current");
                     </svg>
                     <span data-lang-en>All</span><span data-lang-zh>全部</span>
                 </button>
-                <button
+                <button type="button"
                     id="filter-activity"
                     class="gallery-filter inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-amber-100 text-amber-800 border border-amber-200 cursor-pointer transition-all duration-200 hover:scale-105 hover:bg-amber-200"
                     data-filter="Activity"
@@ -159,7 +159,7 @@ const currentMembers = members.filter((m) => m.status === "current");
                     </svg>
                     <span data-lang-en>Activity / Event</span><span data-lang-zh>活動 / 事件</span>
                 </button>
-                <button
+                <button type="button"
                     id="filter-equipment"
                     class="gallery-filter inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200 cursor-pointer transition-all duration-200 hover:scale-105 hover:bg-blue-200"
                     data-filter="Equipment"

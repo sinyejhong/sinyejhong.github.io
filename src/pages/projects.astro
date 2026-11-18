@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import LangText from "../components/i18n/LangText.astro";
 import projects from "../data/projects.json";
 
 // Helper to calculate status from duration string "YYYY.MM - YYYY.MM"
@@ -243,35 +242,35 @@ const govLogos = [
 
     <!-- Filter Tabs -->
     <section
-        class="sticky top-12 lg:top-14 z-40 bg-white border-b border-gray-border shadow-sm"
+        class="md:sticky top-12 lg:top-14 z-40 bg-white border-b border-gray-border shadow-sm"
     >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div
                 class="flex flex-wrap justify-center gap-2"
                 id="project-filters"
             >
-                <button
+                <button type="button"
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
                     aria-pressed="true"
                 >
                     <span data-lang-en>All Projects</span><span data-lang-zh>全部計畫</span> ({sortedProjects.length})
                 </button>
-                <button
+                <button type="button"
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="industry"
                     aria-pressed="false"
                 >
                     🏭 <span data-lang-en>Industry</span><span data-lang-zh>產業</span> ({industryProjects.length})
                 </button>
-                <button
+                <button type="button"
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="government"
                     aria-pressed="false"
                 >
-                    🏛️ <span data-lang-en>Gov / Research Center</span><span data-lang-zh>政府機構 / 研究中心</span> ({govProjects.length})
+                    🏛️ <span data-lang-en>Government / Research Center</span><span data-lang-zh>政府機構 / 研究中心</span> ({govProjects.length})
                 </button>
-                <button
+                <button type="button"
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="university"
                     aria-pressed="false"

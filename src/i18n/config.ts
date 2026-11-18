@@ -5,9 +5,6 @@
 
 export type Lang = "en" | "zh";
 
-export const LANGS: Lang[] = ["en", "zh"];
-export const DEFAULT_LANG: Lang = "en";
-
 // NOTE: STORAGE_KEY and HTML_LANG are duplicated as literals in the is:inline
 // FOUC script in BaseLayout.astro (inline scripts cannot import). If you change
 // either value here, update that script too.

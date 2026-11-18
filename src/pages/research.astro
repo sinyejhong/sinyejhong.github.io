@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionHeader from "../components/SectionHeader.astro";
 
 const researchAreas = [
   {
@@ -27,7 +26,7 @@ const researchAreas = [
         name: "All-Weather Perception",
         nameZh: "全天候感知",
         desc: "Robust object detection algorithms designed specifically for rain, fog, and nighttime scenarios.",
-        descZh: "專為雨天、霧天與夜間場景設計的魯棒物件偵測演算法。",
+        descZh: "專為雨天、霧天與夜間場景設計的穩健物件偵測演算法。",
       },
       {
         name: "2D/3D Object Detection",
@@ -146,7 +145,7 @@ const researchAreas = [
     imageHeight: 2059,
     topics: [
       {
-        name: "Vision-Language Nav",
+        name: "Vision-Language Navigation",
         nameZh: "視覺語言導航",
         desc: "Semantic mapping and path planning based on natural language instructions (VLN).",
         descZh: "基於自然語言指令的語意地圖建構與路徑規劃（VLN）。",
@@ -238,7 +237,7 @@ const themes = {
 
 <BaseLayout
   title="Research Areas"
-  description="ASI² Lab research at NTUST: Resilient Perception, Industrial AIoT, and Embodied Intelligence — advancing AI, computer vision, and robotics."
+  description="ASI² Lab research at NTUST: Resilient Perception, Industrial AIoT, and Embodied AI — advancing AI, computer vision, and robotics."
 >
   <!-- Hero Section -->
   <section class="relative bg-navy text-white py-24 overflow-hidden">
@@ -265,7 +264,7 @@ const themes = {
     <div
       class="bg-white/90 backdrop-blur-xl border border-white/40 ring-1 ring-black/5 shadow-lg rounded-full px-2 py-1.5"
     >
-      <div class="flex flex-wrap justify-center gap-1">
+      <div class="flex flex-nowrap overflow-x-auto justify-start md:flex-wrap md:justify-center md:overflow-visible gap-1">
         {
           researchAreas.map((area) => {
             const hoverTheme = {
@@ -277,7 +276,7 @@ const themes = {
             return (
               <a
                 href={`#${area.id}`}
-                class={`px-4 py-2 rounded-full text-sm font-medium text-gray-500 transition-all duration-300 ${hoverTheme}`}
+                class={`px-4 py-2 rounded-full text-sm font-medium text-gray-500 transition-all duration-300 whitespace-nowrap shrink-0 md:whitespace-normal md:shrink ${hoverTheme}`}
               >
                 <span data-lang-en>{area.title.split("&")[0]}</span><span data-lang-zh>{area.navZh}</span>
               </a>
@@ -296,7 +295,7 @@ const themes = {
         return (
           <section
             id={area.id}
-            class={`section-padding scroll-mt-32 ${index % 2 !== 0 ? "bg-gray-50/50" : "bg-white"}`}
+            class={`section-padding scroll-mt-32 overflow-x-clip ${index % 2 !== 0 ? "bg-gray-50/50" : "bg-white"}`}
           >
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="grid lg:grid-cols-2 gap-16 items-start">
@@ -370,7 +369,7 @@ const themes = {
                   {area.keywords && (
                     <div class="mt-8">
                       <h3
-                        class={`text-xs font-bold uppercase tracking-widest mb-4 ${theme.subtext} opacity-80`}
+                        class={`text-xs font-bold uppercase tracking-widest mb-4 ${theme.subtext}`}
                       >
                         <span data-lang-en>Key Technologies</span><span data-lang-zh>關鍵技術</span>
                       </h3>

@@ -92,7 +92,8 @@ const jsonLd = {
 
     <!-- Search & Filter Bar -->
     <section
-        class="sticky top-12 lg:top-14 z-40 bg-white border-b border-gray-border shadow-sm"
+        id="pub-filter-bar"
+        class="md:sticky top-12 lg:top-14 z-40 bg-white border-b border-gray-border shadow-sm"
     >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <!-- Search Input -->
@@ -122,7 +123,7 @@ const jsonLd = {
                         data-i18n-ph-zh="以標題、作者或關鍵字搜尋…"
                         class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all text-sm"
                     />
-                    <button
+                    <button type="button"
                         id="search-clear"
                         aria-label="Clear search"
                         data-i18n-aria-en="Clear search"
@@ -138,28 +139,28 @@ const jsonLd = {
 
             <!-- Filter Tabs -->
             <div class="flex flex-wrap justify-center gap-2" id="pub-filters">
-                <button
+                <button type="button"
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
                     aria-pressed="true"
                 >
                     <span data-lang-en>All</span><span data-lang-zh>全部</span> (<span class="filter-count">{sortedPubs.length}</span>)
                 </button>
-                <button
+                <button type="button"
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="journal"
                     aria-pressed="false"
                 >
                     <span data-lang-en>Journals</span><span data-lang-zh>期刊</span> (<span class="filter-count">{journals.length}</span>)
                 </button>
-                <button
+                <button type="button"
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="conference"
                     aria-pressed="false"
                 >
                     <span data-lang-en>Conferences</span><span data-lang-zh>會議</span> (<span class="filter-count">{conferences.length}</span>)
                 </button>
-                <button
+                <button type="button"
                     class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                     data-filter="patent"
                     aria-pressed="false"
@@ -186,11 +187,11 @@ const jsonLd = {
                     pubsByYear.map(({ year, pubs }) => (
                         <div class="year-group mb-8" data-year={year}>
                             <!-- Year Header -->
-                            <div class="year-header flex items-center gap-4 mb-6 md:sticky md:top-48 lg:top-52 z-30 bg-gray-bg py-2">
-                                <div class="text-2xl font-bold text-navy">{year}</div>
+                            <div class="year-header flex items-center gap-4 mb-6 sticky top-12 md:top-[var(--pub-year-top,12rem)] lg:top-[var(--pub-year-top,13rem)] z-30 bg-gray-bg py-2">
+                                <h2 class="text-2xl font-bold text-navy">{year}</h2>
                                 <div class="flex-1 h-px bg-gradient-to-r from-accent/50 to-transparent"></div>
-                                <span class="text-sm text-gray-400 font-medium year-count">
-                                    <span data-lang-en>{pubs.length} {pubs.length === 1 ? "publication" : "publications"}</span><span data-lang-zh>{pubs.length} 篇論文</span>
+                                <span class="text-sm text-gray-600 font-medium year-count">
+                                    <span data-lang-en>{pubs.length} {pubs.length === 1 ? "publication" : "publications"}</span><span data-lang-zh>{pubs.length} 項</span>
                                 </span>
                             </div>
 
@@ -202,9 +203,15 @@ const jsonLd = {
                                         data-type={pub.type}
                                         data-year={pub.year}
                                         data-area={pub.researchArea || ""}
-                                        data-title={pub.title.toLowerCase()}
-                                        data-authors={pub.authors.join(" ").toLowerCase()}
-                                        data-venue={pub.venue.toLowerCase()}
+                                        data-search={[
+                                            pub.title,
+                                            ...pub.authors,
+                                            pub.venue,
+                                            pub.year,
+                                            pub.venueDetail,
+                                            ...(pub.badges || []),
+                                            pub.doi,
+                                        ].join(" ").toLowerCase()}
                                     >
                                         <PublicationItem
                                             title={pub.title}
@@ -233,7 +240,7 @@ const jsonLd = {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <p class="text-gray-500 text-lg"><span data-lang-en>No publications found matching your search.</span><span data-lang-zh>找不到符合搜尋的論文。</span></p>
-                <button id="clear-search" class="mt-4 text-accent hover:underline font-medium">
+                <button type="button" id="clear-search" class="mt-4 text-accent hover:underline font-medium">
                     <span data-lang-en>Clear search</span><span data-lang-zh
                         >清除搜尋</span
                     >
@@ -261,6 +268,11 @@ const jsonLd = {
     let currentFilter = "all";
     let currentSearch = "";
 
+
+    function matchesQuery(item: Element, query: string): boolean {
+        return !query || (item.getAttribute("data-search") || "").includes(query);
+    }
+
     function updateView() {
         let visibleCount = 0;
         const searchLower = currentSearch.toLowerCase();
@@ -268,16 +280,8 @@ const jsonLd = {
         // Filter items
         pubItems.forEach((item) => {
             const type = item.getAttribute("data-type");
-            const title = item.getAttribute("data-title") || "";
-            const authors = item.getAttribute("data-authors") || "";
-            const venue = item.getAttribute("data-venue") || "";
-
             const matchesFilter = currentFilter === "all" || type === currentFilter;
-            const matchesSearch =
-                !currentSearch ||
-                title.includes(searchLower) ||
-                authors.includes(searchLower) ||
-                venue.includes(searchLower);
+            const matchesSearch = matchesQuery(item, searchLower);
 
             if (matchesFilter && matchesSearch) {
                 item.classList.remove("hidden");
@@ -303,7 +307,7 @@ const jsonLd = {
                         visibleInGroup,
                         "publication",
                         "publications",
-                        "篇論文",
+                        "項",
                     );
                 }
             }
@@ -340,16 +344,8 @@ const jsonLd = {
             let count = 0;
             pubItems.forEach((item) => {
                 const type = item.getAttribute("data-type");
-                const title = item.getAttribute("data-title") || "";
-                const authors = item.getAttribute("data-authors") || "";
-                const venue = item.getAttribute("data-venue") || "";
-
                 const matchesFilter = filter === "all" || type === filter;
-                const matchesSearch =
-                    !currentSearch ||
-                    title.includes(searchLower) ||
-                    authors.includes(searchLower) ||
-                    venue.includes(searchLower);
+                const matchesSearch = matchesQuery(item, searchLower);
 
                 if (matchesFilter && matchesSearch) count++;
             });
@@ -408,14 +404,35 @@ const jsonLd = {
 
     // Clear search
     function clearSearch() {
+        clearTimeout(searchTimeout);
         if (searchInput) searchInput.value = "";
         currentSearch = "";
         updateView();
+        searchInput?.focus();
     }
 
     searchClear?.addEventListener("click", clearSearch);
     clearSearchBtn?.addEventListener("click", clearSearch);
 
+
+    const filterBar = document.getElementById("pub-filter-bar");
+
+    function updateYearHeaderTop() {
+        if (!filterBar) return;
+        const stickyTop = parseFloat(window.getComputedStyle(filterBar).top) || 0;
+        const offset = stickyTop + filterBar.getBoundingClientRect().height;
+        document.documentElement.style.setProperty("--pub-year-top", `${offset}px`);
+    }
+
+    if (filterBar) {
+        const filterBarObserver = new ResizeObserver(updateYearHeaderTop);
+        filterBarObserver.observe(filterBar);
+        window.addEventListener("resize", updateYearHeaderTop);
+    }
+
     // Re-render year counts in the active language (runs on load + langchange).
-    onLangChange(() => updateView());
+    onLangChange(() => {
+        updateView();
+        updateYearHeaderTop();
+    });
 </script>

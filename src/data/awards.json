@@ -103,8 +103,8 @@
         "event_zh": "國立臺北科技大學",
         "year": 2018,
         "category": "merit",
-        "description": "Scholarship for competition achievement (2018-2019)",
-        "description_zh": "競賽成績獎學金（2018–2019）"
+        "description": "Scholarship for competition achievement",
+        "description_zh": "競賽成績獎學金"
     },
     {
         "id": 105,
@@ -158,8 +158,8 @@
         "event_zh": "中國文化大學",
         "year": 2016,
         "category": "merit",
-        "description": "Scholarship for competition achievement (2016-2017)",
-        "description_zh": "競賽成績獎學金（2016–2017）"
+        "description": "Scholarship for competition achievement",
+        "description_zh": "競賽成績獎學金"
     },
     {
         "id": 11,
@@ -169,8 +169,8 @@
         "event_zh": "中國文化大學",
         "year": 2015,
         "category": "merit",
-        "description": "Scholarship for academic excellence (2015-2017)",
-        "description_zh": "學業成績獎學金（2015–2017）"
+        "description": "Scholarship for academic excellence",
+        "description_zh": "學業成績獎學金"
     },
     {
         "id": 115,
@@ -435,8 +435,8 @@
         "event_zh": "全國電子設計創意競賽",
         "year": 2026,
         "category": "competition",
-        "description": "Third place (Electronics), honorable mention (Information & Communication), and grand prize of IEEE special award",
-        "description_zh": "電子組第三名、資訊通訊組佳作，並獲 IEEE 特別獎（大獎）",
+        "description": "Third place (Electronics), honorable mention (Information & Communication), and grand prize of the IEEE Special Award",
+        "description_zh": "電子類第三名、資訊通訊類佳作，並獲 IEEE 特別獎（大獎）",
         "images": [
             "/images/news/NECDE2026_third.jpg",
             "/images/news/NECDE2026_honorable.jpg",

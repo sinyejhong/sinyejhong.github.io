@@ -5,6 +5,7 @@ interface Props {
   image?: string;
   type?: string;
   jsonLd?: unknown;
+  noindex?: boolean;
 }
 
 import "../styles/global.css";
@@ -19,6 +20,7 @@ const {
   image = "/images/og-default.jpg",
   type = "website",
   jsonLd,
+  noindex = false,
 } = Astro.props;
 
 const navItems: { href: string; key: UIKey }[] = [
@@ -73,7 +75,8 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
       name="keywords"
       content="ASI² Lab, Computer Vision, Deep Learning, Robotics, NTUST"
     />
-    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonicalURL} />}
 
     <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -91,7 +94,7 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
     <meta property="og:site_name" content="ASI² Lab — NTUST" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
+    {!noindex && <meta property="og:url" content={canonicalURL} />}
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:image:alt" content="ASI² Lab, NTUST" />
     <meta property="og:locale" content="en_US" />
@@ -146,11 +149,12 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
           <!-- Right cluster: nav + language toggle + mobile menu -->
           <div class="flex items-center gap-1">
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center gap-1">
+            <nav class="hidden xl:flex items-center gap-1" aria-label="Main navigation" data-i18n-aria-en="Main navigation" data-i18n-aria-zh="主要導覽">
               {
                 navItems.map((item) => (
                   <a
                     href={item.href}
+                    aria-current={currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href)) ? "page" : undefined}
                     class:list={[
                       "px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
                       currentPath === item.href ||
@@ -170,8 +174,9 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
 
             <!-- Mobile Menu Button -->
             <button
+              type="button"
               id="mobile-menu-btn"
-              class="lg:hidden p-3 rounded-lg text-navy hover:bg-gray-bg transition-colors"
+              class="xl:hidden p-3 rounded-lg text-navy hover:bg-gray-bg transition-colors"
               data-i18n-aria-en="Toggle menu"
               data-i18n-aria-zh="切換選單"
               aria-label="Toggle menu"
@@ -198,13 +203,17 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
       <!-- Mobile Navigation -->
       <nav
         id="mobile-menu"
-        class="hidden lg:hidden border-t border-gray-border bg-white"
+        class="hidden xl:hidden border-t border-gray-border bg-white max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain"
+        aria-label="Mobile navigation"
+        data-i18n-aria-en="Mobile navigation"
+        data-i18n-aria-zh="行動版導覽"
       >
         <div class="px-4 py-3 space-y-1">
           {
             navItems.map((item) => (
               <a
                 href={item.href}
+                aria-current={currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href)) ? "page" : undefined}
                 class:list={[
                   "block px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                   currentPath === item.href ||
@@ -377,6 +386,8 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
       aria-live="polite"
       class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900/90 text-white px-6 py-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none z-50 flex items-center gap-2 backdrop-blur-sm"
     >
+    </div>
+    <template id="copy-toast-content">
       <svg
         class="w-5 h-5 text-accent"
         fill="none"
@@ -390,7 +401,7 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
           d="M5 13l4 4L19 7"></path>
       </svg>
       <span class="font-medium"><LangText k="ui.emailCopied" /></span>
-    </div>
+    </template>
 
     <!-- i18n: bind language toggle + sync aria/islands on load -->
     <script>
@@ -403,10 +414,34 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
       const menuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
 
+      function setMenuOpen(open: boolean): void {
+        mobileMenu?.classList.toggle("hidden", !open);
+        menuBtn?.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
       menuBtn?.addEventListener("click", () => {
-        const isHidden = mobileMenu?.classList.toggle("hidden");
-        menuBtn.setAttribute("aria-expanded", isHidden ? "false" : "true");
+        setMenuOpen(mobileMenu?.classList.contains("hidden") ?? false);
       });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu && !mobileMenu.classList.contains("hidden")) {
+          setMenuOpen(false);
+          menuBtn?.focus();
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        const header = menuBtn?.closest("header");
+        if (e.target instanceof Node && header && !header.contains(e.target)) {
+          setMenuOpen(false);
+        }
+      });
+
+      window.matchMedia("(min-width: 1280px)").addEventListener("change", (e) => {
+        if (e.matches) setMenuOpen(false);
+      });
+
+      let copyToastTimer: ReturnType<typeof setTimeout> | undefined;
 
       // Mailto click handler: Copy email + Show toast
       document.addEventListener("click", async (e) => {
@@ -423,11 +458,16 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
 
               // Show toast
               const toast = document.getElementById("copy-toast");
-              if (toast) {
+              const template = document.getElementById("copy-toast-content");
+              if (toast && template instanceof HTMLTemplateElement) {
+                clearTimeout(copyToastTimer);
+                toast.replaceChildren(template.content.cloneNode(true));
                 toast.classList.remove("opacity-0");
-                // Hide after 3 seconds
-                setTimeout(() => {
+                // Hide and empty the live region after 3 seconds
+                copyToastTimer = setTimeout(() => {
                   toast.classList.add("opacity-0");
+                  toast.replaceChildren();
+                  copyToastTimer = undefined;
                 }, 3000);
               }
             } catch (err) {

@@ -1,6 +1,6 @@
 # ASI² LAB — Lab & Personal Website
 
-Official website of **ASI² LAB** — *Autonomous Systems and Intelligent Interaction Laboratory* (自主系統與智慧互動實驗室), directed by **Dr. Sin-Ye Jhong (鍾昕燁)** at the Graduate Institute of Intelligent Manufacturing Technology (GIMT), National Taiwan University of Science and Technology (NTUST).
+Official website of **ASI² Lab** — *Autonomous Systems and Intelligent Interaction Laboratory* (自主系統與智慧互動實驗室), directed by **Dr. Sin-Ye Jhong (鍾昕燁)** at the Graduate Institute of Intelligent Manufacturing Technology (GIMT), National Taiwan University of Science and Technology (NTUST).
 
 🔗 **Live site:** <https://sinyejhong.github.io>
 
@@ -8,13 +8,13 @@ Official website of **ASI² LAB** — *Autonomous Systems and Intelligent Intera
 
 ## About the Lab
 
-ASI² LAB conducts research at the intersection of **computer vision**, **deep learning**, and **embodied AI**, with a focus on building reliable autonomous systems for real-world deployment in smart manufacturing, mobility, and healthcare.
+ASI² Lab conducts research at the intersection of **computer vision**, **deep learning**, and **embodied AI**, with a focus on building reliable autonomous systems for real-world deployment in smart manufacturing, mobility, and healthcare.
 
 ### Research Pillars
 
-- 🛰️ **Resilient Perception & Multimodal Fusion** — All-weather autonomy through LiDAR / Radar / Camera / Thermal / DVS fusion; 2D/3D object detection; ADAS, V2X, and UAV perception.
-- 🔍 **Intelligent Visual Inspection & AIoT** — Industrial defect inspection, medical imaging, biometrics, edge–cloud collaboration, and generative defect synthesis (Diffusion-based).
-- 🤖 **Embodied AI & Human-Robot Interaction** — Semantic-driven autonomous mobile robots, VLM/LLM-based reasoning, open-world cognition, and human-in-the-loop reinforcement learning.
+- 🛰️ **Resilient Perception & Multimodal Fusion for Autonomous Systems** — All-weather autonomy through LiDAR / Radar / Camera / Thermal / DVS fusion; 2D/3D object detection; ADAS, V2X, and UAV perception.
+- 🔍 **Intelligent Visual Inspection & Human-Centric AIoT** — Industrial defect inspection, medical imaging, biometrics, edge–cloud collaboration, and generative defect synthesis (Diffusion-based).
+- 🤖 **Embodied Intelligence & Generative Robotics** — Semantic-driven autonomous mobile robots, VLM/LLM-based reasoning, open-world cognition, and human-in-the-loop reinforcement learning.
 
 ### Director
 
@@ -29,7 +29,7 @@ ASI² LAB conducts research at the intersection of **computer vision**, **deep l
 | Layer        | Technology                                       |
 | :----------- | :----------------------------------------------- |
 | Framework    | [Astro 5](https://astro.build/) (static site)    |
-| UI           | React 19 islands + [Tailwind CSS 4](https://tailwindcss.com/) |
+| UI           | Astro components + [Tailwind CSS 4](https://tailwindcss.com/) |
 | Content      | JSON-driven (`src/data/`)                        |
 | Hosting      | GitHub Pages                                     |
 
@@ -37,15 +37,17 @@ ASI² LAB conducts research at the intersection of **computer vision**, **deep l
 
 ```text
 src/
-├── components/    # Astro & React components (ProjectCard, NewsCarousel, AwardCard, ...)
-├── data/          # JSON content (news, awards, publications, projects, members, gallery)
+├── components/    # Astro components (ProjectCard, NewsCarousel, AwardCard, ...)
+├── data/          # JSON content (news, engagements, awards, publications, projects, members, gallery)
+├── i18n/          # Language config, UI dictionary, date/count formatting
 ├── layouts/       # Shared BaseLayout
 ├── pages/         # Routes: about, research, projects, publications, awards, members, ...
+├── scripts/       # Client-side language toggle
 └── styles/        # Global styles
 public/
 ├── images/        # News, member, partner, and research photos
 ├── videos/        # Hero background video
-└── document/      # CV PDF
+└── document/      # CV and supporting documents (PDF)
 ```
 
 ## Local Development
@@ -63,15 +65,18 @@ Most content is data-driven. Edit the JSON files under `src/data/` and the site 
 
 | File                          | Purpose                                                                             |
 | :---------------------------- | :---------------------------------------------------------------------------------- |
-| `src/data/news.json`          | Home-page news carousel & feed                                                      |
+| `src/data/news.json`          | Home-page "Latest News" carousel (team awards, honors, milestones)                  |
+| `src/data/engagements.json`   | Home-page "Talks & Engagements" carousel (talks, session chairs, thesis committees, visits, editorial service) |
 | `src/data/awards.json`        | Personal Honors & Lab/Student Awards (`merit` / `paper` / `competition` / `student_merit`) |
 | `src/data/publications.json`  | Publication list                                                                    |
-| `src/data/projects.json`      | Industry & government projects                                                      |
-| `src/data/members.json`       | Current and alumni members                                                          |
-| `src/data/gallery.json`       | Photo gallery                                                                       |
+| `src/data/projects.json`      | Industry, government, and university projects                                       |
+| `src/data/members.json`       | Director and current members                                                        |
+| `src/data/gallery.json`       | Lab Gallery (Members page)                                                          |
+
+The biography and service lists in `src/pages/about.astro` and the course list in `src/pages/teaching.astro` are hand-written; items that also appear in the JSON files (e.g. session chairs, thesis committees) must be updated in both places.
 
 Drop image files into `public/images/<section>/` and reference them as `/images/<section>/<file>`.
 
 ---
 
-© Sin-Ye Jhong · ASI² LAB. All content and images on this site are the property of ASI² LAB unless otherwise noted.
+© Sin-Ye Jhong · ASI² Lab. All content and images on this site are the property of ASI² Lab unless otherwise noted.

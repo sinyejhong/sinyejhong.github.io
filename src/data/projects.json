@@ -27,7 +27,7 @@
         "logo": "/images/Logo/NSTC.png",
         "role_zh": "主持人",
         "funder_zh": "國家科學及技術委員會",
-        "description_zh": "兩年期計畫，整合環境韌性感知（透過 SSM 的 event-RGB 融合）與開放世界認知（具自適應分解提示調整的 VLM），應用於智慧製造與物流的具身 AI。"
+        "description_zh": "兩年期計畫，整合環境韌性感知（透過 SSM 的 event-RGB 融合）與開放世界認知（具自適應分解提示調整的 VLM），應用於智慧製造與物流的具身智慧 AI。"
     },
     {
         "id": 12,

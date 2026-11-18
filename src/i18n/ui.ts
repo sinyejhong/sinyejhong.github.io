@@ -1,5 +1,3 @@
-import type { Lang } from "./config";
-
 // UI string dictionary (flat keys). Proper nouns / international identifiers
 // stay English per project policy; only interface wording is translated.
 // Extended phase-by-phase as more pages are localized.
@@ -34,7 +32,6 @@ export const ui = {
 
   // --- Common UI / a11y ---
   "ui.skipToContent": { en: "Skip to main content", zh: "跳至主要內容" },
-  "ui.toggleMenu": { en: "Toggle menu", zh: "切換選單" },
   "ui.emailCopied": {
     en: "Email copied to clipboard!",
     zh: "Email 已複製到剪貼簿！",
@@ -45,7 +42,7 @@ export const ui = {
   "common.viewFullProfile": { en: "View Full Profile", zh: "查看完整簡介" },
   "common.piTitleShort": {
     en: "Assistant Professor, GIMT, NTUST",
-    zh: "助理教授，智慧製造科技研究所，國立臺灣科技大學",
+    zh: "助理教授，國立臺灣科技大學 智慧製造科技研究所",
   },
 
   // --- Home page ---
@@ -56,14 +53,10 @@ export const ui = {
   "home.exploreResearch": { en: "Explore Research", zh: "探索研究" },
   "home.joinTeam": { en: "Join Our Team", zh: "加入團隊" },
   "home.director": { en: "Director", zh: "主持人" },
-  "home.statPublications": { en: "Publications", zh: "學術論文" },
+  "home.statPublications": { en: "Publications", zh: "學術著作" },
   "home.statProjects": { en: "Projects", zh: "研究計畫" },
   "home.statAwards": { en: "Awards", zh: "獲獎紀錄" },
   "home.statMembers": { en: "Team Members", zh: "團隊成員" },
 } as const;
 
 export type UIKey = keyof typeof ui;
-
-export function t(key: UIKey, lang: Lang): string {
-  return ui[key][lang];
-}

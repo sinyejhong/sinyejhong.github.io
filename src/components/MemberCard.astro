@@ -45,6 +45,7 @@ const {
 const researchAreaConfig = {
     perception: {
         label: "Resilient Perception",
+        ariaZh: "前往韌性感知研究領域",
         url: "/research#perception",
         bgClass: "bg-blue-100",
         textClass: "text-blue-700",
@@ -71,6 +72,7 @@ const researchAreaConfig = {
     },
     aiot: {
         label: "Industrial AIoT",
+        ariaZh: "前往工業 AIoT 研究領域",
         url: "/research#inspection",
         bgClass: "bg-emerald-100",
         textClass: "text-emerald-700",
@@ -98,6 +100,7 @@ const researchAreaConfig = {
     },
     embodied: {
         label: "Embodied AI",
+        ariaZh: "前往具身智慧 AI 研究領域",
         url: "/research#robotics",
         bgClass: "bg-purple-100",
         textClass: "text-purple-700",
@@ -144,14 +147,14 @@ const areaConfig = areaKey
 // students -> their research area). Otherwise it stays non-interactive.
 const navUrl = isDirector ? "/about" : areaConfig ? areaConfig.url : null;
 const navLabel = isDirector
-    ? "View lab director profile"
+    ? `${name} — View lab director profile`
     : areaConfig
-      ? `Go to ${areaConfig.label} research`
+      ? `${name} — go to ${areaConfig.label} research`
       : null;
 const navLabelZh = isDirector
-    ? "查看主持人簡介"
+    ? `${name}：查看主持人簡介`
     : areaConfig
-      ? `前往 ${areaConfig.label} 研究領域`
+      ? `${name}：${areaConfig.ariaZh}`
       : null;
 ---
 
@@ -296,7 +299,7 @@ const navLabelZh = isDirector
                         {email && (
                             <a
                                 href={`mailto:${email}`}
-                                class="flex items-center justify-center sm:justify-start gap-2 text-sm font-medium text-slate-400 transition-colors hover:underline group-hover:text-amber-800"
+                                class="flex items-center justify-center sm:justify-start gap-2 text-sm font-medium text-slate-600 transition-colors hover:underline group-hover:text-amber-800"
                             >
                                 <svg
                                     class="w-5 h-5 flex-shrink-0 text-slate-400 group-hover:text-amber-600 transition-colors"
@@ -323,7 +326,7 @@ const navLabelZh = isDirector
                                         href={link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        class="flex items-center gap-1.5 text-sm font-medium text-slate-400 transition-colors hover:underline group-hover:text-amber-800"
+                                        class="flex items-center gap-1.5 text-sm font-medium text-slate-600 transition-colors hover:underline group-hover:text-amber-800"
                                     >
                                         {/* Scholar Icon - Graduation Cap */}
                                         {link.icon === "scholar" && (
@@ -475,7 +478,7 @@ const navLabelZh = isDirector
                         {email && (
                             <a
                                 href={`mailto:${email}`}
-                                class={`flex items-center justify-center gap-2 text-sm font-medium text-slate-400 transition-colors group/link hover:underline ${areaConfig ? areaConfig.emailHover : "group-hover:text-slate-800"}`}
+                                class={`flex items-center justify-center gap-2 text-sm font-medium text-slate-600 transition-colors group/link hover:underline ${areaConfig ? areaConfig.emailHover : "group-hover:text-slate-800"}`}
                             >
                                 <svg
                                     class="w-4 h-4 transition-colors text-slate-400 group-hover/link:text-slate-600"

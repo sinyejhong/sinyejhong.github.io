@@ -61,7 +61,7 @@
         "category": "Activity",
         "date": "2026-04-09",
         "title_zh": "工業技術研究院參訪",
-        "description_zh": "工業技術研究院（ITRI）代表團蒞臨台科大華夏校區參訪，本實驗室代表智慧電動車（SEV）研究中心發表研究成果與計畫進度。"
+        "description_zh": "工業技術研究院（ITRI）代表團蒞臨國立臺灣科技大學華夏校區參訪，ASI² Lab 代表智慧電動車（SEV）研究中心發表研究成果與計畫進度。"
     },
     {
         "id": 3,
@@ -88,7 +88,7 @@
         "category": "Activity",
         "date": "2026-03-28",
         "title_zh": "榮獲 NEDCC 2026 多項獎項",
-        "description_zh": "ASI² Lab 團隊於全國電子設計創意競賽中榮獲電子類第三名、資訊與通訊類佳作，並榮獲 IEEE 特別獎（大獎）。"
+        "description_zh": "ASI² Lab 團隊於全國電子設計創意競賽中榮獲電子類第三名、資訊通訊類佳作，並榮獲 IEEE 特別獎（大獎）。"
     },
     {
         "id": 5,
@@ -153,7 +153,7 @@
         "category": "Activity",
         "date": "2025-10-28",
         "title_zh": "聯詠科技業界參訪",
-        "description_zh": "聯詠科技代表蒞臨 ASI² Lab 進行產業洞見與最佳實務分享，並舉辦招募活動，提供實驗室成員實習機會及員工推薦管道。"
+        "description_zh": "聯詠科技代表蒞臨 ASI² Lab 進行產業洞察與最佳實務分享，並舉辦招募茶敘，提供實驗室成員實習機會及員工推薦管道。"
     },
     {
         "id": 10,
@@ -165,7 +165,7 @@
         "category": "Activity",
         "date": "2025-08-19",
         "title_zh": "榮獲 ARIS 2025 最佳論文佳作",
-        "description_zh": "ASI² Lab 團隊於先進機器人與智慧系統國際研討會（ARIS）榮獲最佳論文獎佳作。"
+        "description_zh": "ASI² Lab 團隊於 International Conference on Advanced Robotics and Intelligent Systems（ARIS）榮獲最佳論文獎佳作。"
     },
     {
         "id": 11,
@@ -177,7 +177,7 @@
         "category": "Activity",
         "date": "2025-08-13",
         "title_zh": "榮獲 IEEE AVSS 2025 傑出報告獎",
-        "description_zh": "ASI² Lab 團隊於 IEEE 先進視覺與訊號系統國際研討會（AVSS）榮獲傑出報告獎。"
+        "description_zh": "ASI² Lab 團隊於 IEEE International Conference on Advanced Visual and Signal-Based Systems（AVSS）榮獲傑出報告獎。"
     },
     {
         "id": 12,

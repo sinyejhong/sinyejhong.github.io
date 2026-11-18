@@ -285,12 +285,14 @@ if (date) {
 <!-- Lightbox Modal (News Style) -->
 <dialog
     id={uniqueId}
+    aria-labelledby={`${uniqueId}-title`}
     class="lightbox-modal fixed inset-0 m-auto bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] p-0 overflow-hidden backdrop:bg-navy/90 backdrop:backdrop-blur-sm"
     onclick="var rect = this.getBoundingClientRect(); var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width); if (!isInDialog) { this.close(); }"
     onclose="document.body.style.overflow = ''"
 >
     <!-- Close Button -->
     <button
+        type="button"
         onclick={`document.getElementById('${uniqueId}').close()`}
         aria-label="Close"
         data-i18n-aria-en="Close"
@@ -394,6 +396,7 @@ if (date) {
 
         <!-- Title -->
         <h3
+            id={`${uniqueId}-title`}
             class="text-2xl md:text-3xl font-heading font-bold text-navy mb-6 leading-tight"
         >
             {

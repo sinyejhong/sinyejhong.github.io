@@ -72,11 +72,11 @@ const competitionAwards = sortedAwards.filter(
 
     <!-- Filter Tabs -->
     <section
-        class="sticky top-12 lg:top-14 z-40 bg-white border-b border-gray-border shadow-sm"
+        class="md:sticky top-12 lg:top-14 z-40 bg-white border-b border-gray-border shadow-sm"
     >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="flex flex-wrap justify-center gap-2" id="award-filters">
-                <button
+                <button type="button"
                     class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-accent text-white shadow-lg shadow-accent/30"
                     data-filter="all"
                     aria-pressed="true"
@@ -85,7 +85,7 @@ const competitionAwards = sortedAwards.filter(
                 </button>
                 {
                     meritAwards.length > 0 && (
-                        <button
+                        <button type="button"
                             class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                             data-filter="student_merit"
                             aria-pressed="false"
@@ -96,7 +96,7 @@ const competitionAwards = sortedAwards.filter(
                 }
                 {
                     paperAwards.length > 0 && (
-                        <button
+                        <button type="button"
                             class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                             data-filter="paper"
                             aria-pressed="false"
@@ -107,7 +107,7 @@ const competitionAwards = sortedAwards.filter(
                 }
                 {
                     competitionAwards.length > 0 && (
-                        <button
+                        <button type="button"
                             class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                             data-filter="competition"
                             aria-pressed="false"
@@ -133,9 +133,9 @@ const competitionAwards = sortedAwards.filter(
                         <div class="year-group mb-10 last:mb-0" data-year={year}>
                             <!-- Year Header (Publications Style) -->
                             <div class="year-header flex items-center gap-4 mb-6 py-2">
-                                <div class="text-2xl font-bold text-navy">{year}</div>
+                                <h2 class="text-2xl font-bold text-navy">{year}</h2>
                                 <div class="flex-1 h-px bg-gradient-to-r from-accent/50 to-transparent"></div>
-                                <span class="text-sm text-gray-400 font-medium year-count">
+                                <span class="text-sm text-gray-600 font-medium year-count">
                                     <span data-lang-en>{yearAwards.length} {yearAwards.length === 1 ? "award" : "awards"}</span><span data-lang-zh>{yearAwards.length} 個獎項</span>
                                 </span>
                             </div>

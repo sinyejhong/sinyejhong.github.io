@@ -75,7 +75,6 @@ const jsonLd = {
 		<div class="absolute inset-0">
 			<video
 				id="hero-video"
-				autoplay
 				muted
 				playsinline
 				class="w-full h-full object-cover"
@@ -257,7 +256,7 @@ const jsonLd = {
 								target="_blank"
 								rel="noopener noreferrer"
 								class="text-accent hover:underline transition-all"
-								>Power Data Co., Ltd. 的 AI 應用顧問</a
+								>勝力數智股份有限公司的 AI 應用顧問</a
 							>，將先進 AI 理論轉化為真實場域的部署。若您有意以研究生身分加入團隊，或在工業解決方案上合作，歡迎造訪我們的 <a
 								href="/joinus"
 								class="text-accent hover:underline transition-all"
@@ -783,13 +782,27 @@ const jsonLd = {
 				"hero-video",
 			) as HTMLVideoElement;
 			const heroContent = document.getElementById("hero-content");
+			const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 			const showContent = () => {
 				if (heroContent) {
+					if (reduceMotion) {
+						heroContent.classList.remove("transition-all");
+						heroContent.classList.add("transition-none");
+					}
 					heroContent.classList.remove("opacity-0", "translate-y-8");
-					heroContent.classList.add("animate-fade-in-up");
+					if (!reduceMotion) heroContent.classList.add("animate-fade-in-up");
 				}
 			};
+
+
+			if (reduceMotion) {
+				showContent();
+				document.querySelectorAll<HTMLElement>(".stat-number").forEach((stat) => {
+					stat.textContent = (stat.dataset.target || "0") + "+";
+				});
+				return;
+			}
 
 			// Statistics Count-Up Animation
 			const statObserver = new IntersectionObserver(

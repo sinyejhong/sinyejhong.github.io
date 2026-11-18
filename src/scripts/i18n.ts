@@ -10,16 +10,16 @@ function readLang(): Lang {
   return document.documentElement.dataset.lang === "zh" ? "zh" : "en";
 }
 
+function currentLang(): Lang {
+  return document.documentElement.dataset.lang === "zh" ? "zh" : "en";
+}
+
 // Apply a language across the document: data-lang (drives CSS), html lang,
-// toggle state, data-driven aria-labels/placeholders, and notify islands.
+// data-driven aria-labels/placeholders, and notify islands.
 function applyLanguage(lang: Lang): void {
   const html = document.documentElement;
   html.dataset.lang = lang;
   html.lang = HTML_LANG[lang];
-
-  document.querySelectorAll<HTMLElement>("[data-lang-toggle]").forEach((btn) => {
-    btn.setAttribute("aria-pressed", lang === "zh" ? "true" : "false");
-  });
 
   // Localized aria-labels declared via data-i18n-aria-en / -zh
   document.querySelectorAll<HTMLElement>("[data-i18n-aria-en]").forEach((el) => {
@@ -54,7 +54,7 @@ function applyLanguage(lang: Lang): void {
 }
 
 function toggleLanguage(): void {
-  const next: Lang = readLang() === "zh" ? "en" : "zh";
+  const next: Lang = currentLang() === "zh" ? "en" : "zh";
   try {
     localStorage.setItem(STORAGE_KEY, next);
   } catch {}
@@ -76,20 +76,29 @@ export function initLanguage(): void {
       toggleLanguage();
     }
   });
+  window.addEventListener("storage", (e) => {
+    const lang = e.newValue;
+    if (
+      e.key === STORAGE_KEY &&
+      (lang === "zh" || lang === "en") &&
+      lang !== document.documentElement.dataset.lang
+    ) {
+      applyLanguage(lang);
+    }
+  });
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) applyLanguage(readLang());
+  });
   applyLanguage(readLang());
-}
-
-export function getCurrentLang(): Lang {
-  return readLang();
 }
 
 // Run fn now and on every language switch. For islands whose text is generated
 // by JS (counts, search results, filter labels) where CSS node-swapping alone
 // can't localize.
 export function onLangChange(fn: (lang: Lang) => void): void {
-  fn(readLang());
+  fn(currentLang());
   document.addEventListener("langchange", (e) => {
-    const lang = (e as CustomEvent).detail?.lang ?? readLang();
+    const lang = (e as CustomEvent).detail?.lang ?? currentLang();
     fn(lang);
   });
 }
@@ -102,7 +111,7 @@ export function countUnit(
   enMany: string,
   zhUnit: string,
 ): string {
-  return readLang() === "zh"
+  return currentLang() === "zh"
     ? `${n} ${zhUnit}`
     : `${n} ${n === 1 ? enOne : enMany}`;
 }
