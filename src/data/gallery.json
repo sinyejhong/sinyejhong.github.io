@@ -1,5 +1,44 @@
 [
     {
+        "id": 18,
+        "images": [
+            "/images/news/Automation2026_1.jpg",
+            "/images/news/Automation2026_Best_1.jpg",
+            "/images/news/Automation2026_Student_1.jpg"
+        ],
+        "title": "Paper Awards at Automation 2026",
+        "description": "ASI² Lab team wins Third Prize in the Best Paper Award and Second Prize in the Best Student Paper Award at the International Conference on Automation Technology (Automation).",
+        "category": "Activity",
+        "date": "2026-11-21",
+        "title_zh": "榮獲 Automation 2026 論文獎項",
+        "description_zh": "ASI² Lab 團隊在國科會自動化學門國際研討會（Automation）榮獲最佳論文獎第三名及最佳學生論文獎第二名。"
+    },
+    {
+        "id": 19,
+        "images": [
+            "/images/news/NCIAIC2026_1.jpg",
+            "/images/news/NCIAIC2026_2.jpg"
+        ],
+        "title": "Second Prize at the Industry-Academia Innovation Competition",
+        "description": "ASI² Lab team wins Second Prize in the Artificial Intelligence and Its Applications category at the National College Industry-Academia Innovation Competition.",
+        "category": "Activity",
+        "date": "2026-11-19",
+        "title_zh": "榮獲全國大專院校產學創新實作競賽第二名",
+        "description_zh": "ASI² Lab 團隊在全國大專院校產學創新實作競賽中，於人工智慧及其應用組榮獲第二名。"
+    },
+    {
+        "id": 20,
+        "images": [
+            "/images/news/CACS2026_best_presentation.jpg"
+        ],
+        "title": "Best Presentation Award at CACS 2026",
+        "description": "ASI² Lab team wins the Best Presentation Award at the 2026 International Automatic Control Conference (CACS 2026) with the paper \"Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios\".",
+        "category": "Activity",
+        "date": "2026-10-24",
+        "title_zh": "榮獲 CACS 2026 最佳報告獎",
+        "description_zh": "ASI² Lab 團隊以論文 \"Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios\" 於 2026 年國科會控制學門國際研討會（CACS 2026）榮獲最佳報告獎。"
+    },
+    {
         "id": 15,
         "images": [
             "/images/news/ECCV2026.jpg"
