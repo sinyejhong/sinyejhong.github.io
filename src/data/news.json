@@ -59,7 +59,7 @@
         ]
     },
     {
-        "text": "ASI² Lab team wins the Best Presentation Award at the 2026 International Automatic Control Conference (CACS 2026) [國科會控制學門國際研討會] with the paper \"Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios\"",
+        "text": "ASI² Lab team wins the Best Presentation Award at the 2026 International Automatic Control Conference (CACS 2026) [國際自動控制研討會] with the paper \"Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios\"",
         "date": "2026-10-24",
         "highlights": [
             "Best Presentation Award"
@@ -74,7 +74,7 @@
         "emphasis": [
             "ASI² Lab team"
         ],
-        "text_zh": "ASI² Lab 團隊以論文 \"Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios\" 於 2026 年國科會控制學門國際研討會（CACS 2026）榮獲最佳報告獎",
+        "text_zh": "ASI² Lab 團隊以論文 \"Temporal State-Space Detector for RGB-Event Object Detection in Driving Scenarios\" 於 2026 年國際自動控制研討會（CACS 2026）榮獲最佳報告獎",
         "highlights_zh": [
             "最佳報告獎"
         ],
@@ -82,7 +82,7 @@
             "ASI² Lab 團隊"
         ],
         "links_zh": {
-            "國科會控制學門國際研討會（CACS 2026）": "https://cacs2026.fcu.edu.tw/"
+            "國際自動控制研討會（CACS 2026）": "https://cacs2026.fcu.edu.tw/"
         }
     },
     {
@@ -331,7 +331,7 @@
         }
     },
     {
-        "text": "ASI² Lab team wins Second Prize in the Best Paper Award at the International Automatic Control Conference (CACS) [國科會控制學門國際研討會]",
+        "text": "ASI² Lab team wins Second Prize in the Best Paper Award at the International Automatic Control Conference (CACS) [國際自動控制研討會]",
         "date": "2025-11-08",
         "highlights": [
             "Second Prize",
@@ -348,7 +348,7 @@
         "emphasis": [
             "ASI² Lab team"
         ],
-        "text_zh": "ASI² Lab 團隊在國科會控制學門國際研討會（CACS）榮獲最佳論文獎第二名",
+        "text_zh": "ASI² Lab 團隊在國際自動控制研討會（CACS）榮獲最佳論文獎第二名",
         "highlights_zh": [
             "最佳論文獎",
             "第二名"
@@ -357,7 +357,7 @@
             "ASI² Lab 團隊"
         ],
         "links_zh": {
-            "國科會控制學門國際研討會（CACS）": "https://cacs2025.web.nycu.edu.tw/"
+            "國際自動控制研討會（CACS）": "https://cacs2025.web.nycu.edu.tw/"
         }
     },
     {
