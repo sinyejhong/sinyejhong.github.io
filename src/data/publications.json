@@ -520,6 +520,53 @@
     {
         "year": 2026,
         "link": "#",
+        "id": 107,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Hsinchu, Taiwan, Nov. 20-22, 2026",
+        "authors": [
+            "Y.-Y. Hsieh",
+            "H.-C. Hsu",
+            "T.-Y. Chen",
+            "Y.-H. Sun",
+            "S.-Y. Jhong",
+            "J.-T. Tsai",
+            "Y.-Y. Chen"
+        ],
+        "highlight": true,
+        "title": "Ev-MEFormer: Evidential Uncertainty-Aware Multimodal 3D Object Detection for Robust Mobile Robot Perception",
+        "venue": "International Conference on Automation Technology (Automation)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "perception"
+    },
+    {
+        "year": 2026,
+        "link": "#",
+        "id": 108,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Hsinchu, Taiwan, Nov. 20-22, 2026",
+        "authors": [
+            "M.-J. Ou",
+            "S.-Y. Lu",
+            "S.-Y. Jhong",
+            "H.-C. Lin",
+            "J.-T. Tsai",
+            "Y.-Y. Chen"
+        ],
+        "highlight": true,
+        "title": "TiPTaP: A Modular Robot Manipulation System That Plans with Amodal Perception",
+        "venue": "International Conference on Automation Technology (Automation)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "embodied"
+    },
+    {
+        "year": 2026,
+        "link": "#",
         "id": 106,
         "type": "conference",
         "doi": null,

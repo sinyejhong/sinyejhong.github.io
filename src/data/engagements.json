@@ -1,5 +1,39 @@
 [
     {
+        "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"SS-05: Smart System and Its Applications\" and Session Chair for \"RS-01: Advanced Automation Technologies and Applications\" at the 23rd International Conference on Automation Technology (Automation 2026), and led ASI² Lab students in presenting their research at the conference",
+        "date": "2026-11-22",
+        "highlights": [
+            "Special Session Chair",
+            "SS-05: Smart System and Its Applications",
+            "RS-01: Advanced Automation Technologies and Applications"
+        ],
+        "images": [
+            "/images/engagements/Automation2026_SS_1.jpg",
+            "/images/engagements/Automation2026_SS_2.jpg",
+            "/images/engagements/Automation2026_SS_3.jpg",
+            "/images/engagements/Automation2026_SS_4.jpg"
+        ],
+        "pillar": "session_chair",
+        "links": {
+            "23rd International Conference on Automation Technology (Automation 2026)": "https://www.automation2026.org/"
+        },
+        "emphasis": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "text_zh": "Dr. Sin-Ye Jhong 擔任第 23 屆國科會自動化學門國際研討會（Automation 2026）「SS-05: Smart System and Its Applications」特別議程主持人及「RS-01: Advanced Automation Technologies and Applications」議程主持人，並帶領 ASI² Lab 學生參與論文發表",
+        "highlights_zh": [
+            "特別議程主持人",
+            "SS-05: Smart System and Its Applications",
+            "RS-01: Advanced Automation Technologies and Applications"
+        ],
+        "emphasis_zh": [
+            "Dr. Sin-Ye Jhong"
+        ],
+        "links_zh": {
+            "國科會自動化學門國際研討會（Automation 2026）": "https://www.automation2026.org/"
+        }
+    },
+    {
         "text": "Dr. Sin-Ye Jhong served as Special Session Chair for the Special Session \"SS-IV: AI, Computer Vision, and Intelligent Analytics\" at the International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS 2026), held in Busan, Korea, October 27–30, 2026",
         "date": "2026-10-29",
         "highlights": [

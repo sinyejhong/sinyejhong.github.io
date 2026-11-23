@@ -173,6 +173,35 @@
         "description_zh": "學業成績獎學金"
     },
     {
+        "id": 117,
+        "title": "Best Paper Award - Third Place",
+        "title_zh": "最佳論文獎—第三名",
+        "event": "International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
+        "event_zh": "國科會自動化學門國際研討會",
+        "year": 2026,
+        "category": "paper",
+        "description": "Recognition for outstanding paper contribution",
+        "description_zh": "論文貢獻第三名",
+        "images": [
+            "/images/news/Automation2026_Best_1.jpg"
+        ]
+    },
+    {
+        "id": 118,
+        "title": "Best Student Paper Award - Second Place",
+        "title_zh": "最佳學生論文獎—第二名",
+        "event": "International Conference on Automation Technology (Automation) [國科會自動化學門國際研討會]",
+        "event_zh": "國科會自動化學門國際研討會",
+        "year": 2026,
+        "category": "paper",
+        "description": "Recognition for outstanding student paper contribution",
+        "description_zh": "學生論文貢獻第二名",
+        "images": [
+            "/images/news/Automation2026_Student_1.jpg",
+            "/images/news/Automation2026_1.jpg"
+        ]
+    },
+    {
         "id": 115,
         "title": "Best Presentation Award",
         "title_zh": "最佳報告獎",
@@ -411,6 +440,21 @@
         "images": [
             "/images/news/InnoServe2025_2.jpg",
             "/images/news/InnoServe2025_1.jpg"
+        ]
+    },
+    {
+        "id": 116,
+        "title": "Second Prize",
+        "title_zh": "第二名",
+        "event": "National College Industry-Academia Innovation Competition (全國大專院校產學創新實作競賽)",
+        "event_zh": "全國大專院校產學創新實作競賽",
+        "year": 2026,
+        "category": "competition",
+        "description": "Second place in the Artificial Intelligence and Its Applications category of the industry-academia innovation competition",
+        "description_zh": "產學創新實作競賽人工智慧及其應用組第二名",
+        "images": [
+            "/images/news/NCIAIC2026_1.jpg",
+            "/images/news/NCIAIC2026_2.jpg"
         ]
     },
     {
