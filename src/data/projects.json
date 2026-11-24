@@ -60,6 +60,21 @@
         "description_zh": "以日本山區熊類偵測為核心，建立夜間紅外線與積雪場域資料及評估基準，比較開放詞彙物件偵測（OVOD）少樣本適應與純監督式模型兩條路線的雲端 POC，再依場域回饋完成兩輪微調、流程封裝與公司 RD 接手驗證。"
     },
     {
+        "id": 15,
+        "title": "ScalpX 3.0 智慧頭皮AI分析模組優化之開發 (Development of ScalpX 3.0 Smart Scalp AI Analysis Module Optimization)",
+        "funder": "MacroHi Ltd.",
+        "duration": "2026.11 - 2027.01",
+        "role": "Principal Investigator",
+        "status": "ongoing",
+        "type": "industry",
+        "description": "Performance optimization and systematic operation-and-maintenance research on the modules of ScalpX, the AI analysis system for scalp inspection products.",
+        "pillar": "perception",
+        "logo": "/images/Logo/macrohi.png",
+        "role_zh": "主持人",
+        "funder_zh": "美科實業股份有限公司",
+        "description_zh": "針對頭皮檢測產品之 AI 分析系統 ScalpX，進行模組性能優化與系統化維運研究。"
+    },
+    {
         "id": 1,
         "title": "AI瑕疵檢查系統開發 (AI Defect Inspection System Development)",
         "funder": "AAEON Technology Inc.",
