@@ -61,7 +61,7 @@ const pillarConfig: Record<
 ---
 
 <div
-    class="relative p-6 bg-white rounded-xl border border-gray-border shadow-sm hover:shadow-lg transition-all duration-300 card-hover overflow-hidden group"
+    class="relative p-6 bg-white rounded-2xl border border-gray-border shadow-sm hover:shadow-lg transition-all duration-300 card-hover overflow-hidden group"
 >
     {/* Watermark Pillar Graphic */}
     {
@@ -217,7 +217,7 @@ const pillarConfig: Record<
 
         <div class="space-y-2 text-sm flex-grow">
             <div class="flex items-center gap-2 text-gray-text">
-                <div
+                {!logo && <div
                     class="w-4 h-4 flex-shrink-0 flex items-center justify-center"
                 >
                     <span
@@ -226,18 +226,24 @@ const pillarConfig: Record<
                         data-i18n-title-en="Funder"
                         data-i18n-title-zh="資助單位">🏢</span
                     >
-                </div>
+                </div>}
                 {
                     logo ? (
-                        <div class="flex items-center gap-2">
+                        <div
+                            class="flex items-center gap-2"
+                            title="Funder"
+                            data-i18n-title-en="Funder"
+                            data-i18n-title-zh="資助單位"
+                        >
                             <img
                                 src={logo}
-                                alt={funder}
-                                data-i18n-alt-en={funder}
-                                data-i18n-alt-zh={funderZh || funder}
+                                alt=""
+                                loading="lazy"
+                                decoding="async"
                                 class="h-6 w-auto object-contain"
                             />
                             <span class="font-medium text-navy">
+                                <span class="sr-only"><span data-lang-en>Funder: </span><span data-lang-zh>資助單位：</span></span>
                             {funderZh ? (
                                 <>
                                     <span data-lang-en>{funder}</span>

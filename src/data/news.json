@@ -505,6 +505,7 @@
     {
         "text": "ASI² Lab officially established at NTUST",
         "date": "2025-08-01",
+        "coverFit": "contain",
         "images": [
             "/images/Logo2.png"
         ],

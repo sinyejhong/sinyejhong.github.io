@@ -82,7 +82,7 @@ const hasLink = !!link && link !== "#";
 
 <article
     class:list={[
-        "group relative p-6 rounded-xl border-2 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden",
+        "group relative p-6 rounded-2xl border-2 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden",
         highlight
             ? "border-yellow-400 bg-yellow-50 hover:border-yellow-500 hover:shadow-lg"
             : "border-gray-200 bg-white hover:border-accent/50 hover:shadow-lg",
@@ -158,7 +158,7 @@ const hasLink = !!link && link !== "#";
                                 "bg-sky-50 text-sky-700 ring-1 ring-sky-100",
                             badge === "Top Tier" &&
                                 "bg-violet-50 text-violet-700 font-semibold ring-1 ring-violet-100",
-                            badge.includes("Best Paper Award") &&
+                            (badge.includes("Best Paper Award") || badge.includes("Best Student Paper Award")) &&
                                 "bg-rose-50 text-rose-700 font-semibold ring-1 ring-rose-100",
                             badge.includes("Presentation Award") &&
                                 "bg-amber-50 text-amber-700 font-semibold ring-1 ring-amber-100",

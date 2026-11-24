@@ -73,6 +73,8 @@ Most content is data-driven. Edit the JSON files under `src/data/` and the site 
 | `src/data/members.json`       | Director and current members                                                        |
 | `src/data/gallery.json`       | Lab Gallery (Members page)                                                          |
 
+Optional fields: an item in `news.json` / `engagements.json` may set `coverPosition` (a CSS `object-position` value such as `"center 40%"`; default is centred) or `coverFit: "contain"` (show the whole image — e.g. a logo — instead of cropping it). Both apply only to the card cover (the item's first image), not to the detail gallery. A link in the director's `links` array in `members.json` may add `label_zh` for its Chinese label; without it the English `label` is shown in both languages.
+
 The biography and service lists in `src/pages/about.astro` and the course list in `src/pages/teaching.astro` are hand-written; items that also appear in the JSON files (e.g. session chairs, thesis committees) must be updated in both places.
 
 Drop image files into `public/images/<section>/` and reference them as `/images/<section>/<file>`.

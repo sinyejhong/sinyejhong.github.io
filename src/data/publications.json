@@ -70,7 +70,7 @@
     },
     {
         "id": 1,
-        "title": "A Small Traffic Sign Detection Model Based on Improved YOLOv7",
+        "title": "Small-traffic-sign Detection Model Based on Improved YOLOv7",
         "authors": [
             "H.-C. Lin",
             "Y.-Y. Chen",
@@ -208,7 +208,7 @@
     },
     {
         "id": 7,
-        "title": "iVehicles: Spatial Feature Aggregation Network for Lane Detection",
+        "title": "iVehicles: Spatial Feature Aggregation Network for Lane Detection Assistance System",
         "authors": [
             "S.-Y. Jhong",
             "Y.-Y. Chen",
@@ -292,6 +292,28 @@
         "researchArea": "aiot"
     },
     {
+        "id": 20,
+        "title": "Data Hiding Method for AMBTC Compressed Images",
+        "authors": [
+            "Y.-Y. Chen*",
+            "C.-H. Hsia",
+            "S.-Y. Jhong",
+            "H.-J. Lin"
+        ],
+        "venue": "Journal of Ambient Intelligence and Humanized Computing",
+        "venueDetail": "vol. 14, no. 11, pp. 14785-14793, Nov. 2023",
+        "year": 2023,
+        "type": "journal",
+        "badges": [
+            "SCI",
+            "CiteScore Rank: Q1"
+        ],
+        "doi": "10.1007/s12652-018-1048-0",
+        "link": "https://doi.org/10.1007/s12652-018-1048-0",
+        "highlight": false,
+        "researchArea": "aiot"
+    },
+    {
         "id": 11,
         "title": "Density-Aware and Semantic-Guided Fusion for 3D Object Detection Using LiDAR-Camera Sensors",
         "authors": [
@@ -347,7 +369,7 @@
             "C.-H. Hsia*"
         ],
         "venue": "ACM Transactions on Management Information Systems",
-        "venueDetail": "vol. 13, no. 4, pp. 47-67, Jan. 2023",
+        "venueDetail": "vol. 13, no. 4, Art. no. 47, pp. 1-21, Jan. 2023",
         "year": 2023,
         "type": "journal",
         "badges": [
@@ -385,7 +407,7 @@
     },
     {
         "id": 15,
-        "title": "An Expert Inspection System Using Deep Learning for Smart Scalp",
+        "title": "An Expert Smart Scalp Inspection System Using Deep Learning",
         "authors": [
             "S.-Y. Jhong",
             "P.-Y. Yang",
@@ -414,7 +436,7 @@
             "K.-L. Hua"
         ],
         "venue": "ACM Transactions on Multimedia Computing, Communications, and Applications",
-        "venueDetail": "vol. 17, no. 35, pp. 112-132, Nov. 2021",
+        "venueDetail": "vol. 17, no. 3s, Art. no. 112, pp. 1-21, Nov. 2021",
         "year": 2021,
         "type": "journal",
         "badges": [
@@ -438,7 +460,7 @@
             "C.-F. Lai*"
         ],
         "venue": "Journal of Real-Time Image Processing",
-        "venueDetail": "vol. 18, pp. 1141-1155, Aug. 2021",
+        "venueDetail": "vol. 18, no. 4, pp. 1141-1155, Aug. 2021",
         "year": 2021,
         "type": "journal",
         "badges": [
@@ -459,7 +481,7 @@
             "C.-H. Hsia*"
         ],
         "venue": "Journal of Information Science and Engineering",
-        "venueDetail": "vol. 37, pp. 809-825, Jul. 2021",
+        "venueDetail": "vol. 37, no. 4, pp. 809-825, Jul. 2021",
         "year": 2021,
         "type": "journal",
         "badges": [
@@ -473,7 +495,7 @@
     },
     {
         "id": 19,
-        "title": "Nighttime Pedestrian Detection Based on Thermal Imaging",
+        "title": "Nighttime Pedestrian Detection Based on Thermal Imaging and Convolutional Neural Networks",
         "authors": [
             "Y.-Y. Chen*",
             "G.-Y. Li",
@@ -496,28 +518,6 @@
         "researchArea": "perception"
     },
     {
-        "id": 20,
-        "title": "Data Hiding Method for AMBTC Compressed Images",
-        "authors": [
-            "Y.-Y. Chen*",
-            "C.-H. Hsia",
-            "S.-Y. Jhong",
-            "H.-J. Lin"
-        ],
-        "venue": "Journal of Ambient Intelligence and Humanized Computing",
-        "venueDetail": "vol. 14, pp. 1-9, Nov. 2018",
-        "year": 2018,
-        "type": "journal",
-        "badges": [
-            "SCI",
-            "CiteScore Rank: Q1"
-        ],
-        "doi": "10.1007/s12652-018-1048-0",
-        "link": "https://doi.org/10.1007/s12652-018-1048-0",
-        "highlight": false,
-        "researchArea": "aiot"
-    },
-    {
         "year": 2026,
         "link": "#",
         "id": 107,
@@ -531,7 +531,7 @@
             "Y.-H. Sun",
             "S.-Y. Jhong",
             "J.-T. Tsai",
-            "Y.-Y. Chen"
+            "Y.-Y. Chen*"
         ],
         "highlight": true,
         "title": "Ev-MEFormer: Evidential Uncertainty-Aware Multimodal 3D Object Detection for Robust Mobile Robot Perception",
@@ -554,13 +554,13 @@
             "S.-Y. Jhong",
             "H.-C. Lin",
             "J.-T. Tsai",
-            "Y.-Y. Chen"
+            "Y.-Y. Chen*"
         ],
         "highlight": true,
         "title": "TiPTaP: A Modular Robot Manipulation System That Plans with Amodal Perception",
         "venue": "International Conference on Automation Technology (Automation)",
         "badges": [
-            "Best Paper Award"
+            "Best Student Paper Award"
         ],
         "researchArea": "embodied"
     },
@@ -574,7 +574,7 @@
         "authors": [
             "S.-Y. Jhong",
             "P. X. D. Doan",
-            "Y.-Y. Chen",
+            "Y.-Y. Chen*",
             "C.-L. Yang"
         ],
         "highlight": true,
@@ -610,10 +610,10 @@
     },
     {
         "year": 2026,
-        "link": "#",
+        "link": "https://doi.org/10.1109/ARIS70457.2026.11734488",
         "id": 102,
         "type": "conference",
-        "doi": null,
+        "doi": "10.1109/ARIS70457.2026.11734488",
         "venueDetail": "Tainan, Taiwan, Aug. 24-26, 2026",
         "authors": [
             "S.-Y. Jhong",
@@ -651,16 +651,15 @@
     },
     {
         "year": 2025,
-        "link": "#",
+        "link": "https://doi.org/10.1109/AUTOMATION66991.2025.11389901",
         "id": 21,
         "type": "conference",
-        "doi": null,
+        "doi": "10.1109/AUTOMATION66991.2025.11389901",
         "venueDetail": "Kaohsiung, Taiwan, Nov. 28-30, 2025",
         "authors": [
-            "M. V. La",
+            "V.-M. La",
             "S.-Y. Jhong",
             "H.-C. Lin",
-            "S.-L. Li",
             "Y.-Y. Chen*",
             "C.-L. Yang"
         ],
@@ -674,10 +673,10 @@
     },
     {
         "year": 2025,
-        "link": "#",
+        "link": "https://doi.org/10.1109/AUTOMATION66991.2025.11389883",
         "id": 22,
         "type": "conference",
-        "doi": null,
+        "doi": "10.1109/AUTOMATION66991.2025.11389883",
         "venueDetail": "Kaohsiung, Taiwan, Nov. 28-30, 2025",
         "authors": [
             "C.-Y. Hsieh",
@@ -690,7 +689,7 @@
         "title": "Embodied Multi-Agent Planning with LLMs: A Best-of-N Strategy for Efficient Cooperation",
         "venue": "International Conference on Automation Technology (Automation)",
         "badges": [
-            "Best Paper Award"
+            "Best Student Paper Award"
         ],
         "researchArea": "embodied"
     },
@@ -1167,7 +1166,7 @@
         ],
         "highlight": false,
         "title": "Thermal-Based Pedestrian Detection Using Faster R-CNN and Region Decomposition Branch",
-        "venue": "IEEE International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS)",
+        "venue": "International Symposium on Intelligent Signal Processing and Communication Systems (ISPACS)",
         "badges": [],
         "researchArea": "perception"
     },

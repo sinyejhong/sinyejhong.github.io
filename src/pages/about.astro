@@ -252,7 +252,7 @@ const jsonLd = {
             <SectionHeader title="Biography" titleZh="個人簡介" />
 
             <div
-                class="bg-white rounded-xl p-8 shadow-sm text-base leading-relaxed text-gray-700 space-y-2 text-justify"
+                class="bg-white rounded-2xl p-8 shadow-sm text-base leading-relaxed text-gray-700 space-y-2 text-justify"
             >
                 <p data-lang-en>
                     <span class="font-bold text-navy">Sin-Ye Jhong</span> received
@@ -353,7 +353,7 @@ const jsonLd = {
                         class="text-blue-600 font-semibold">2025</span
                     > 年榮獲 <span class="text-[#d83d70] font-bold"
                         >四項最佳博士論文獎</span
-                    >，分別由 IEEE Tainan Section、IET Taipei Local Network、中華民國系統學會（TASSE）與中華民國消費電子學會（TCES）頒授。已於
+                    >，分別由 IEEE Tainan Section、IET Taipei Local Network、中華民國系統學會（TASSE）與中華民國消費電子學會（TCES）頒授。已於頂尖
                     SCI 期刊發表 <span class="text-[#d83d70] font-bold"
                         >逾 15 篇論文</span
                     >，包括 <span class="italic">IEEE Trans. Consumer Electronics</span
@@ -637,7 +637,6 @@ const jsonLd = {
                     titleZh="Computer Vision 研發實習生"
                     organization="Real Touch Corp. Ltd."
                     organizationZh="健中資訊股份有限公司 (Real Touch Corp. Ltd.)"
-                    organizationUrl="https://realtouchapp.com/"
                     period="2016 - 2017"
                     location="New Taipei, Taiwan"
                     locationZh="台灣新北"
@@ -667,7 +666,7 @@ const jsonLd = {
 
             <!-- Editorial & Reviewer Service (Tabbed Interface) -->
             <div
-                class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8"
+                class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8"
             >
                 <div class="p-4 border-b border-gray-100 bg-gray-50">
                     <h3
@@ -871,7 +870,7 @@ const jsonLd = {
                         data-category="conference"
                     >
                         <span class="text-gray-700"
-                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> IEEE International Symposium on
+                            ><span data-lang-en>Reviewer,</span><span data-lang-zh>審稿人，</span> International Symposium on
                             Intelligent Signal Processing and Communication
                             Systems (ISPACS)</span
                         >
@@ -890,7 +889,7 @@ const jsonLd = {
 
             <!-- Professional Memberships -->
             <div
-                class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8"
+                class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8"
             >
                 <div class="p-4 border-b border-gray-100 bg-gray-50">
                     <h3
@@ -954,7 +953,7 @@ const jsonLd = {
 
             <!-- Service & Engagement (Tabbed Interface) -->
             <div
-                class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8"
+                class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8"
             >
                 <div class="p-4 border-b border-gray-100 bg-gray-50">
                     <h3
@@ -1368,7 +1367,7 @@ const jsonLd = {
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
-                            >, "Deep Learning and Its Application", IEEE
+                            >, "Deep Learning and Its Application",
                             International Symposium on Intelligent Signal
                             Processing and Communication Systems (ISPACS)</span
                         >
@@ -1385,10 +1384,10 @@ const jsonLd = {
                         >
                         <span class="text-gray-700 flex-1 text-justify"
                             ><span class="font-semibold"
-                                >"Compounding Research from Sophomore Year:
+                                ><span data-lang-en>"Compounding Research from Sophomore Year:
                                 Choosing the Right Mentor, Planning
                                 Strategically, and Turning Each Step into the
-                                Next Opportunity"</span
+                                Next Opportunity"</span><span data-lang-zh>「從大二開始複利研究：選對指導教授、策略規劃，讓每一步成為下一個機會的跳板」</span></span
                             >, <span data-lang-en>College of Electrical Engineering and Computer Science, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 電機資訊學院</span></span
                         >
                     </div>
@@ -1793,7 +1792,7 @@ const jsonLd = {
                     </svg>
                     <span class="filter-label"
                         ><span data-lang-en>Merit Awards</span><span
-                            data-lang-zh>傑出獎</span
+                            data-lang-zh>榮譽獎</span
                         ></span
                     ><span class="filter-count"> ({meritAwards.length})</span>
                 </button>
@@ -2016,46 +2015,5 @@ const jsonLd = {
 
         // Re-render year counts in the active language (load + langchange).
         onLangChange(() => applyPiFilter(piCurrentFilter()));
-    </script>
-    <!-- Back to Top Button -->
-    <button type="button"
-        id="back-to-top"
-        class="fixed bottom-8 right-8 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50 hover:-translate-y-1 hover:shadow-accent/50 group"
-        aria-label="Back to Top"
-        data-i18n-aria-en="Back to Top"
-        data-i18n-aria-zh="回到頂部"
-    >
-        <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-        >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-        </svg>
-    </button>
-
-    <script>
-        // Back to Top Button Logic
-        const backToTopBtn = document.getElementById("back-to-top");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backToTopBtn?.classList.remove("opacity-0", "invisible");
-            } else {
-                backToTopBtn?.classList.add("opacity-0", "invisible");
-            }
-        });
-
-        backToTopBtn?.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-            });
-        });
     </script>
 </BaseLayout>

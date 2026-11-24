@@ -23,11 +23,13 @@
             },
             {
                 "label": "Faculty Profile",
+                "label_zh": "教師簡介",
                 "url": "https://innc.ntust.edu.tw/p/405-1111-137656,c11515.php?Lang=zh-tw",
                 "icon": "university"
             },
             {
                 "label": "NSTC Researcher",
+                "label_zh": "國科會研究人才",
                 "url": "https://arspb.nstc.gov.tw/NSCWebFront/modules/talentSearch/talentSearch.do?action=initBasic&rsNo=8ef9a4d44c0245c09942f8aa25de49df&LANG=chi",
                 "icon": "id-card"
             }

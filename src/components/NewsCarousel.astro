@@ -8,6 +8,8 @@ interface NewsItem {
     highlights?: string[];
     highlights_zh?: string[];
     images?: string[];
+    coverPosition?: string;
+    coverFit?: string;
     pillar?: string;
     links?: Record<string, string>;
     links_zh?: Record<string, string>;
@@ -348,13 +350,14 @@ function getMonthAndDay(dateStr: string) {
                                 const coverImage = hasImage
                                     ? item.images![0]
                                     : null;
+                                const containCover = item.coverFit === "contain";
 
                                 return (
                                     <article
                                         class="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full hover:-translate-y-1 read-more-btn cursor-pointer"
                                     >
                                         {/* Cover Image or Color Block */}
-                                        <div class="h-48 overflow-hidden relative bg-navy/5">
+                                        <div class={`h-48 overflow-hidden relative ${coverImage && containCover ? "bg-white" : "bg-navy/5"}`}>
                                             {coverImage ? (
                                                 <img
                                                     src={coverImage}
@@ -363,7 +366,8 @@ function getMonthAndDay(dateStr: string) {
                                                     height="600"
                                                     loading={pageIndex === 0 ? "eager" : "lazy"}
                                                     decoding="async"
-                                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    style={item.coverPosition ? `object-position: ${item.coverPosition}` : undefined}
+                                                    class={`w-full h-full ${containCover ? "object-contain px-16 py-6" : "object-cover"} group-hover:scale-110 transition-transform duration-500`}
                                                 />
                                             ) : (
                                                 <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-200">

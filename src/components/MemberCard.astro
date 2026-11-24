@@ -1,6 +1,7 @@
 ---
 interface LinkItem {
     label: string;
+    label_zh?: string;
     url: string;
     icon?: string;
 }
@@ -404,7 +405,13 @@ const navLabelZh = isDirector
                                                 />
                                             </svg>
                                         )}
-                                        {link.label}
+                                        {link.label_zh ? (
+                                            <>
+                                                <span data-lang-en>{link.label}</span><span data-lang-zh>{link.label_zh}</span>
+                                            </>
+                                        ) : (
+                                            link.label
+                                        )}
                                     </a>
                                 ))}
                             </div>
