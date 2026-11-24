@@ -650,6 +650,26 @@
         "researchArea": "perception"
     },
     {
+        "year": 2026,
+        "link": "#",
+        "id": 110,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Taipei, Taiwan, Apr. 29, 2026",
+        "authors": [
+            "鍾昕燁",
+            "徐偉玲",
+            "夏至賢*"
+        ],
+        "highlight": true,
+        "title": "FreGate：結合頻域分解與自適應門控之 Mamba-Transformer 網路於頭皮病徵分類研究",
+        "venue": "Information Technology and Applications Conference (ITAC)",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "aiot"
+    },
+    {
         "year": 2025,
         "link": "https://doi.org/10.1109/AUTOMATION66991.2025.11389901",
         "id": 21,
@@ -758,6 +778,26 @@
         "venue": "International Conference on Advanced Robotics and Intelligent Systems (ARIS)",
         "badges": [],
         "researchArea": "perception"
+    },
+    {
+        "year": 2025,
+        "link": "#",
+        "id": 109,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Tainan, Taiwan, Aug. 11-13, 2025",
+        "authors": [
+            "S.-Y. Jhong",
+            "W.-L. Xu",
+            "C.-H. Hsia*"
+        ],
+        "highlight": true,
+        "title": "ScalpAIoT: An Edge-Cloud Collaborative System for Scalp Health Inspection and Management",
+        "venue": "IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS)",
+        "badges": [
+            "Outstanding Presentation Award"
+        ],
+        "researchArea": "aiot"
     },
     {
         "year": 2025,
