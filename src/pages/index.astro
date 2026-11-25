@@ -11,6 +11,10 @@ import engagements from "../data/engagements.json";
 
 import projects from "../data/projects.json";
 import members from "../data/members.json";
+import { getImageSize } from "../utils/imageSize";
+
+const introPhoto = "/images/members/sinyejhong3.jpg";
+const introPhotoSize = await getImageSize(introPhoto);
 
 // Calculate dynamic counts
 const publicationCount = publications.length;
@@ -77,6 +81,7 @@ const jsonLd = {
 				id="hero-video"
 				muted
 				playsinline
+				preload="metadata"
 				class="w-full h-full object-cover"
 				poster="/images/hero_poster.jpg"
 				style="pointer-events: none;"
@@ -116,13 +121,13 @@ const jsonLd = {
 				</p>
 				<div class="flex flex-wrap justify-center gap-4">
 					<a
-						href="/research"
+						href="/research/"
 						class="px-8 py-3 bg-accent hover:bg-accent-light text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
 					>
 						<LangText k="home.exploreResearch" />
 					</a>
 					<a
-						href="/joinus"
+						href="/joinus/"
 						class="px-8 py-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium rounded-lg border border-white/40 transition-all duration-300 hover:-translate-y-0.5"
 					>
 						<LangText k="home.joinTeam" />
@@ -163,7 +168,7 @@ const jsonLd = {
 			<div class="grid lg:grid-cols-2 gap-12 text-lg">
 				<!-- Left Column: Text Content -->
 				<LangBlock
-					class="space-y-6 text-gray-text text-justify leading-relaxed"
+					class="space-y-6 text-gray-text sm:text-justify leading-relaxed"
 				>
 					<Fragment slot="en">
 						<p>
@@ -216,7 +221,7 @@ const jsonLd = {
 							deployments. If you are interested in joining our team as
 							a graduate student or collaborating on industrial solutions,
 							please visit our <a
-								href="/joinus"
+								href="/joinus/"
 								class="text-accent hover:underline transition-all"
 								>contact page</a
 							> for more information.
@@ -258,7 +263,7 @@ const jsonLd = {
 								class="text-accent hover:underline transition-all"
 								>勝力數智股份有限公司的 AI 應用顧問</a
 							>，將先進 AI 理論轉化為真實場域的部署。若您有意以研究生身分加入團隊，或在工業解決方案上合作，歡迎造訪我們的 <a
-								href="/joinus"
+								href="/joinus/"
 								class="text-accent hover:underline transition-all"
 								>聯絡頁面</a
 							>以了解更多。
@@ -270,14 +275,18 @@ const jsonLd = {
 				<div class="flex flex-col gap-8 justify-between h-full">
 					<!-- PI Profile Card -->
 					<a
-						href="/about"
+						href="/about/"
 						class="flex flex-col bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 hover:shadow-3xl hover:shadow-accent/20 transition-all duration-300 border border-gray-100/50 group relative overflow-hidden ring-1 ring-gray-50"
 					>
 						<!-- Full Width Image Section -->
 						<div class="relative w-full h-80 overflow-hidden">
 							<div class="absolute inset-0 bg-gray-200">
 								<img
-									src="/images/members/sinyejhong3.jpg"
+									src={introPhoto}
+									width={introPhotoSize?.width}
+									height={introPhotoSize?.height}
+									loading="lazy"
+									decoding="async"
 									alt="Dr. Sin-Ye Jhong 鍾昕燁"
 									class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
 									style="object-position: center 20%;"
@@ -355,7 +364,7 @@ const jsonLd = {
 					<!-- Key Statistics -->
 					<div class="grid grid-cols-2 gap-x-4 gap-y-4">
 						<a
-							href="/publications"
+							href="/publications/"
 							class="p-5 bg-white rounded-2xl text-center card-hover cursor-pointer group block border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300"
 						>
 							<div
@@ -371,7 +380,7 @@ const jsonLd = {
 							</div>
 						</a>
 						<a
-							href="/projects"
+							href="/projects/"
 							class="p-5 bg-white rounded-2xl text-center card-hover cursor-pointer group block border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300"
 						>
 							<div
@@ -387,7 +396,7 @@ const jsonLd = {
 							</div>
 						</a>
 						<a
-							href="/about#honors"
+							href="/about/#honors"
 							class="p-5 bg-white rounded-2xl text-center card-hover cursor-pointer group block border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300"
 						>
 							<div
@@ -403,7 +412,7 @@ const jsonLd = {
 							</div>
 						</a>
 						<a
-							href="/members"
+							href="/members/"
 							class="p-5 bg-white rounded-2xl text-center card-hover cursor-pointer group block border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300"
 						>
 							<div
@@ -436,7 +445,7 @@ const jsonLd = {
 
 			<div class="grid sm:grid-cols-1 lg:grid-cols-3 gap-6">
 				<a
-					href="/research#perception"
+					href="/research/#perception"
 					class="group p-6 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 card-hover relative overflow-hidden border border-gray-100 hover:border-accent/30"
 				>
 					<div
@@ -532,7 +541,7 @@ const jsonLd = {
 				</a>
 
 				<a
-					href="/research#inspection"
+					href="/research/#inspection"
 					class="group p-6 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 card-hover relative overflow-hidden border border-gray-100 hover:border-accent/30"
 				>
 					<div
@@ -638,7 +647,7 @@ const jsonLd = {
 				</a>
 
 				<a
-					href="/research#robotics"
+					href="/research/#robotics"
 					class="group p-6 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 card-hover relative overflow-hidden border border-gray-100 hover:border-accent/30"
 				>
 					<!-- Hover Gradient -->

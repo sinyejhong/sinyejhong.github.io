@@ -13,6 +13,7 @@ import LangText from "../components/i18n/LangText.astro";
 import LangBlock from "../components/i18n/LangBlock.astro";
 import LanguageToggle from "../components/i18n/LanguageToggle.astro";
 import type { UIKey } from "../i18n/ui";
+import { getImageSize } from "../utils/imageSize";
 
 const {
   title,
@@ -23,19 +24,29 @@ const {
   noindex = false,
 } = Astro.props;
 
+const navLogoSrc = "/images/logo.png";
+const navLogoSize = await getImageSize(navLogoSrc);
+
 const navItems: { href: string; key: UIKey }[] = [
   { href: "/", key: "nav.home" },
-  { href: "/about", key: "nav.about" },
-  { href: "/research", key: "nav.research" },
-  { href: "/publications", key: "nav.publications" },
-  { href: "/awards", key: "nav.awards" },
-  { href: "/projects", key: "nav.projects" },
-  { href: "/members", key: "nav.members" },
-  { href: "/teaching", key: "nav.teaching" },
-  { href: "/joinus", key: "nav.joinus" },
+  { href: "/about/", key: "nav.about" },
+  { href: "/research/", key: "nav.research" },
+  { href: "/publications/", key: "nav.publications" },
+  { href: "/awards/", key: "nav.awards" },
+  { href: "/projects/", key: "nav.projects" },
+  { href: "/members/", key: "nav.members" },
+  { href: "/teaching/", key: "nav.teaching" },
+  { href: "/joinus/", key: "nav.joinus" },
 ];
 
-const currentPath = Astro.url.pathname;
+const normalizePath = (pathname: string) => pathname.replace(/\/+$/, "") || "/";
+const currentPath = normalizePath(Astro.url.pathname);
+
+function isActiveNav(href: string) {
+  const itemPath = normalizePath(href);
+  return currentPath === itemPath ||
+    (itemPath !== "/" && currentPath.startsWith(`${itemPath}/`));
+}
 
 // Canonical URL (absolute, anchored to config `site`) — matches the URLs
 // emitted in sitemap-0.xml so Google sees a consistent canonical signal.
@@ -138,10 +149,10 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
           <!-- Logo -->
           <a href="/" class="flex items-center">
             <img
-              src="/images/logo.png"
+              src={navLogoSrc}
               alt="ASI² LAB"
-              width="802"
-              height="219"
+              width={navLogoSize?.width}
+              height={navLogoSize?.height}
               class="h-10 lg:h-12 w-auto"
             />
           </a>
@@ -154,11 +165,10 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
                 navItems.map((item) => (
                   <a
                     href={item.href}
-                    aria-current={currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href)) ? "page" : undefined}
+                    aria-current={isActiveNav(item.href) ? "page" : undefined}
                     class:list={[
                       "px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
-                      currentPath === item.href ||
-                      (item.href !== "/" && currentPath.startsWith(item.href))
+                      isActiveNav(item.href)
                         ? "text-accent bg-accent/10"
                         : "text-navy hover:text-accent hover:bg-gray-bg",
                     ]}
@@ -213,11 +223,10 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
             navItems.map((item) => (
               <a
                 href={item.href}
-                aria-current={currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href)) ? "page" : undefined}
+                aria-current={isActiveNav(item.href) ? "page" : undefined}
                 class:list={[
                   "block px-4 py-2 text-sm font-medium rounded-lg transition-colors",
-                  currentPath === item.href ||
-                  (item.href !== "/" && currentPath.startsWith(item.href))
+                  isActiveNav(item.href)
                     ? "text-accent bg-accent/10"
                     : "text-navy hover:text-accent hover:bg-gray-bg",
                 ]}
@@ -266,18 +275,18 @@ const fullTitle = `${title} | Dr. Sin-Ye Jhong 鍾昕燁 - ASI² Lab`;
             <div class="flex gap-8 text-sm text-gray-300">
               <ul class="space-y-2">
                 <li><a href="/" class="hover:text-accent transition-colors"><LangText k="nav.home" /></a></li>
-                <li><a href="/about" class="hover:text-accent transition-colors"><LangText k="nav.about" /></a></li>
-                <li><a href="/research" class="hover:text-accent transition-colors"><LangText k="nav.research" /></a></li>
+                <li><a href="/about/" class="hover:text-accent transition-colors"><LangText k="nav.about" /></a></li>
+                <li><a href="/research/" class="hover:text-accent transition-colors"><LangText k="nav.research" /></a></li>
               </ul>
               <ul class="space-y-2">
-                <li><a href="/publications" class="hover:text-accent transition-colors"><LangText k="nav.publications" /></a></li>
-                <li><a href="/awards" class="hover:text-accent transition-colors"><LangText k="nav.awards" /></a></li>
-                <li><a href="/projects" class="hover:text-accent transition-colors"><LangText k="nav.projects" /></a></li>
+                <li><a href="/publications/" class="hover:text-accent transition-colors"><LangText k="nav.publications" /></a></li>
+                <li><a href="/awards/" class="hover:text-accent transition-colors"><LangText k="nav.awards" /></a></li>
+                <li><a href="/projects/" class="hover:text-accent transition-colors"><LangText k="nav.projects" /></a></li>
               </ul>
               <ul class="space-y-2">
-                <li><a href="/members" class="hover:text-accent transition-colors"><LangText k="nav.members" /></a></li>
-                <li><a href="/teaching" class="hover:text-accent transition-colors"><LangText k="nav.teaching" /></a></li>
-                <li><a href="/joinus" class="hover:text-accent transition-colors"><LangText k="nav.joinus" /></a></li>
+                <li><a href="/members/" class="hover:text-accent transition-colors"><LangText k="nav.members" /></a></li>
+                <li><a href="/teaching/" class="hover:text-accent transition-colors"><LangText k="nav.teaching" /></a></li>
+                <li><a href="/joinus/" class="hover:text-accent transition-colors"><LangText k="nav.joinus" /></a></li>
               </ul>
             </div>
           </div>

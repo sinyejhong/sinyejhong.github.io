@@ -1,4 +1,6 @@
 ---
+import { getImageSize } from "../utils/imageSize";
+
 interface LinkItem {
     label: string;
     label_zh?: string;
@@ -38,6 +40,8 @@ const {
     isDirector = false,
 } = Astro.props;
 
+const photoSize = photo ? await getImageSize(photo) : undefined;
+
 // All theme classes below are written as complete static literals so the
 // Tailwind scanner picks them up — never build class names by string
 // concatenation here (concatenated names get purged from the production CSS).
@@ -47,7 +51,7 @@ const researchAreaConfig = {
     perception: {
         label: "Resilient Perception",
         ariaZh: "前往韌性感知研究領域",
-        url: "/research#perception",
+        url: "/research/#perception",
         bgClass: "bg-blue-100",
         textClass: "text-blue-700",
         spacingClass: "gap-1",
@@ -74,7 +78,7 @@ const researchAreaConfig = {
     aiot: {
         label: "Industrial AIoT",
         ariaZh: "前往工業 AIoT 研究領域",
-        url: "/research#inspection",
+        url: "/research/#inspection",
         bgClass: "bg-emerald-100",
         textClass: "text-emerald-700",
         spacingClass: "-space-y-2",
@@ -102,7 +106,7 @@ const researchAreaConfig = {
     embodied: {
         label: "Embodied AI",
         ariaZh: "前往具身智慧 AI 研究領域",
-        url: "/research#robotics",
+        url: "/research/#robotics",
         bgClass: "bg-purple-100",
         textClass: "text-purple-700",
         spacingClass: "gap-1",
@@ -144,9 +148,9 @@ const areaConfig = areaKey
     ? researchAreaConfig[areaKey as keyof typeof researchAreaConfig]
     : null;
 
-// Card is only navigable when there's a destination (director -> /about,
+// Card is only navigable when there's a destination (director -> /about/,
 // students -> their research area). Otherwise it stays non-interactive.
-const navUrl = isDirector ? "/about" : areaConfig ? areaConfig.url : null;
+const navUrl = isDirector ? "/about/" : areaConfig ? areaConfig.url : null;
 const navLabel = isDirector
     ? `${name} — View lab director profile`
     : areaConfig
@@ -244,8 +248,8 @@ const navLabelZh = isDirector
                                 <img
                                     src={photo}
                                     alt={name}
-                                    width="400"
-                                    height="400"
+                                    width={photoSize?.width}
+                                    height={photoSize?.height}
                                     class="w-full h-full object-cover"
                                     loading="eager"
                                 />
@@ -430,8 +434,8 @@ const navLabelZh = isDirector
                             <img
                                 src={photo}
                                 alt={name}
-                                width="400"
-                                height="400"
+                                width={photoSize?.width}
+                                height={photoSize?.height}
                                 class="w-full h-full object-cover"
                                 loading="lazy"
                             />

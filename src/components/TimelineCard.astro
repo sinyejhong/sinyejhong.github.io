@@ -1,4 +1,6 @@
 ---
+import { getImageSize } from "../utils/imageSize";
+
 interface Props {
     title: string;
     titleZh?: string;
@@ -50,6 +52,8 @@ const {
     watermarkLogo,
     watermarkOffset = { bottom: "0.5rem", right: "0.5rem" },
 } = Astro.props;
+
+const logoSize = watermarkLogo ? await getImageSize(watermarkLogo) : undefined;
 
 // Icon and color configuration based on type
 const iconConfig: Record<
@@ -121,6 +125,8 @@ const config = iconConfig[iconType] || iconConfig.research;
             >
                 <img
                     src={watermarkLogo}
+                    width={logoSize?.width}
+                    height={logoSize?.height}
                     alt=""
                     class="w-full h-full object-contain"
                     loading="lazy"

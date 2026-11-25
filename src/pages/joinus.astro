@@ -2,6 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import LangBlock from "../components/i18n/LangBlock.astro";
+import { getImageSize } from "../utils/imageSize";
+
+const watermarkLogo = "/images/Logo2.png";
+const watermarkLogoSize = await getImageSize(watermarkLogo);
 ---
 
 <BaseLayout
@@ -57,7 +61,9 @@ import LangBlock from "../components/i18n/LangBlock.astro";
                         class="absolute -z-10 -bottom-10 left-1/2 -translate-x-1/2 w-80 h-50 opacity-[0.50] group-hover/card:opacity-[0.80] transition-all duration-500 group-hover/card:scale-110 pointer-events-none"
                     >
                         <img
-                            src="/images/Logo2.png"
+                            src={watermarkLogo}
+                            width={watermarkLogoSize?.width}
+                            height={watermarkLogoSize?.height}
                             alt=""
                             class="w-full h-full object-contain"
                         />
@@ -82,7 +88,7 @@ import LangBlock from "../components/i18n/LangBlock.astro";
                                 ></path></svg
                             >
                         </span>
-                        <a href="/about"
+                        <a href="/about/"
                             class="group-hover/card:text-accent transition-colors duration-300 after:absolute after:inset-0 after:content-['']"
                             >Dr. Sin-Ye Jhong 鍾昕燁</a
                         >

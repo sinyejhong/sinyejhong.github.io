@@ -5,6 +5,10 @@ import LangBlock from "../components/i18n/LangBlock.astro";
 import PIAwardCard from "../components/PIAwardCard.astro";
 import TimelineCard from "../components/TimelineCard.astro";
 import awards from "../data/awards.json";
+import { getImageSize } from "../utils/imageSize";
+
+const profilePhoto = "/images/members/sinyejhong.jpg";
+const profilePhotoSize = await getImageSize(profilePhoto);
 
 // Sort awards by year descending and exclude student merit awards
 const sortedAwards = [...awards]
@@ -42,6 +46,8 @@ const jsonLd = {
             "https://scholar.google.com/citations?user=0aR6RcIAAAAJ&hl=zh-TW",
             "https://innc.ntust.edu.tw/p/405-1111-137656,c11515.php?Lang=zh-tw",
             "https://arspb.nstc.gov.tw/NSCWebFront/modules/talentSearch/talentSearch.do?action=initBasic&rsNo=8ef9a4d44c0245c09942f8aa25de49df&LANG=chi",
+            "https://orcid.org/0000-0003-4481-1633",
+            "https://www.linkedin.com/in/sin-ye-jhong-864593128",
         ],
     },
 };
@@ -78,10 +84,10 @@ const jsonLd = {
                         class="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-accent shadow-2xl group"
                     >
                         <img
-                            src="/images/members/sinyejhong.jpg"
+                            src={profilePhoto}
                             alt="Dr. Sin-Ye Jhong 鍾昕燁"
-                            width="875"
-                            height="1161"
+                            width={profilePhotoSize?.width}
+                            height={profilePhotoSize?.height}
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <!-- Subtle overlay on hover -->
@@ -252,7 +258,7 @@ const jsonLd = {
             <SectionHeader title="Biography" titleZh="個人簡介" />
 
             <div
-                class="bg-white rounded-2xl p-8 shadow-sm text-base leading-relaxed text-gray-700 space-y-2 text-justify"
+                class="bg-white rounded-2xl p-8 shadow-sm text-base leading-relaxed text-gray-700 space-y-2 sm:text-justify"
             >
                 <p data-lang-en>
                     <span class="font-bold text-navy">Sin-Ye Jhong</span> received
@@ -1011,7 +1017,7 @@ const jsonLd = {
                             class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
                             >2026.10.15</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="text-accent font-semibold"
                                 ><span data-lang-en>Ph.D. Thesis Committee Member</span><span data-lang-zh>博士論文口試委員</span></span
                             >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
@@ -1025,7 +1031,7 @@ const jsonLd = {
                             class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
                             >2026.07.23</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="text-accent font-semibold"
                                 ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
                             >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
@@ -1039,7 +1045,7 @@ const jsonLd = {
                             class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
                             >2026.07.22</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="text-accent font-semibold"
                                 ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
                             >, <span data-lang-en>Graduate Institute of Intelligent Manufacturing Technology, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 智慧製造科技研究所</span></span
@@ -1053,7 +1059,7 @@ const jsonLd = {
                             class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
                             >2026.06.18</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="text-accent font-semibold"
                                 ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
                             >, <span data-lang-en>Dept. of Computer Science and Information Engineering, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 資訊工程學系</span></span
@@ -1067,7 +1073,7 @@ const jsonLd = {
                             class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
                             >2025.07.21</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="text-accent font-semibold"
                                 ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
                             >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
@@ -1081,7 +1087,7 @@ const jsonLd = {
                             class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
                             >2025.07.09</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="text-accent font-semibold"
                                 ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
                             >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
@@ -1095,7 +1101,7 @@ const jsonLd = {
                             class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
                             >2025.07.07</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="text-accent font-semibold"
                                 ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
                             >, <span data-lang-en>Dept. of Electronic and Computer Engineering, National Taiwan University of Science and Technology (NTUST)</span><span data-lang-zh>國立臺灣科技大學 (NTUST) 電子工程系</span></span
@@ -1109,7 +1115,7 @@ const jsonLd = {
                             class="text-purple-600 font-bold text-sm whitespace-nowrap min-w-20"
                             >2025.06.09</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="text-accent font-semibold"
                                 ><span data-lang-en>Master's Thesis Committee Member</span><span data-lang-zh>碩士論文口試委員</span></span
                             >, <span data-lang-en>Dept. of Computer Science and Information Engineering, National Ilan University (NIU)</span><span data-lang-zh>國立宜蘭大學 (NIU) 資訊工程學系</span></span
@@ -1125,7 +1131,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2027</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Technical Program Chair</span><span data-lang-zh>技術議程主席</span></span
                             >, IET International Conference on Engineering
@@ -1140,7 +1146,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2027</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Publication Chair</span><span data-lang-zh>出版主席</span></span
                             >, International Conference on Mobile Computing
@@ -1155,7 +1161,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Smart System and Its Applications", International
@@ -1170,7 +1176,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Session Chair</span><span data-lang-zh>議程主持人</span></span
                             >, "Advanced Automation Technologies and Applications",
@@ -1186,7 +1192,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "AI, Computer Vision, and Intelligent Analytics",
@@ -1202,7 +1208,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Smart System and Its Applications", International
@@ -1217,7 +1223,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Advanced Multimodal AI and Foundation Models for
@@ -1234,7 +1240,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Smart System and Its Applications", International
@@ -1250,7 +1256,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Smart Systems and Their Applications", IEEE
@@ -1266,7 +1272,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Session Chair</span><span data-lang-zh>議程主持人</span></span
                             >, "Best Paper Award Contest", Information
@@ -1281,7 +1287,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2025</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Intelligent System and Its Application",
@@ -1297,7 +1303,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2025</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Smart Systems and Their Applications", IEEE
@@ -1313,7 +1319,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2024</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Intelligent System and Its Application",
@@ -1329,7 +1335,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2023</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Advanced Signal Processing in Consumer and
@@ -1346,7 +1352,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2021</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Public Announcement Chair</span><span data-lang-zh>公開宣傳主持人</span></span
                             >, IET International Conference on Engineering
@@ -1364,7 +1370,7 @@ const jsonLd = {
                             class="text-amber-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2019</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold text-accent"
                                 ><span data-lang-en>Special Session Chair</span><span data-lang-zh>特別議程主持人</span></span
                             >, "Deep Learning and Its Application",
@@ -1382,7 +1388,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 ><span data-lang-en>"Compounding Research from Sophomore Year:
                                 Choosing the Right Mentor, Planning
@@ -1399,7 +1405,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2026</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 >"From Perception to Decision: How Generative AI
                                 and AI Agents Are Pioneering the New Era of
@@ -1415,7 +1421,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2025</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 >"From Perception to Decision: How Generative AI
                                 and AI Agents Are Pioneering the New Era of
@@ -1434,7 +1440,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2025</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify">
+                        <span class="text-gray-700 flex-1 sm:text-justify">
                             <span
                                 class="font-semibold group-hover:text-rose-600 group-hover:underline decoration-rose-400 transition-colors"
                                 >"Building Research Capacity during R&D
@@ -1465,7 +1471,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2025</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 >"The Evolution Path and Future Challenges of
                                 Autonomous Driving Technology"</span
@@ -1480,7 +1486,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2024</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 >"Practical Experience Sharing on Key
                                 Technologies for Autonomous Vehicles"</span
@@ -1495,7 +1501,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2023</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 >"Efficient Project Thinking Under AI Innovation
                                 Technology"</span
@@ -1510,7 +1516,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2021</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 >"Python Workshop for Beginners"</span
                             >, Dept. of Health, Taipei City Government
@@ -1525,7 +1531,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2020</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 >"AI Practices and Applications"</span
                             >, Directorate General of Budget, Accounting &
@@ -1540,7 +1546,7 @@ const jsonLd = {
                             class="text-rose-600 font-bold text-sm whitespace-nowrap min-w-16"
                             >2020</span
                         >
-                        <span class="text-gray-700 flex-1 text-justify"
+                        <span class="text-gray-700 flex-1 sm:text-justify"
                             ><span class="font-semibold"
                                 >"AI Computer Vision in Practice"</span
                             >, Taiwan Network Information Center (TWNIC;
@@ -1743,7 +1749,7 @@ const jsonLd = {
                     <br class="hidden sm:block" />
                     For lab team achievements and student competition wins, please
                     visit <a
-                        href="/awards"
+                        href="/awards/"
                         class="text-accent hover:underline font-medium"
                         >Lab & Student Awards</a
                     >.</Fragment
@@ -1752,7 +1758,7 @@ const jsonLd = {
                     >實驗室主持人在學術成就、研究貢獻與研究表現上獲得的個人榮譽。
                     <br class="hidden sm:block" />
                     實驗室團隊成就與學生競賽獲獎，請見 <a
-                        href="/awards"
+                        href="/awards/"
                         class="text-accent hover:underline font-medium"
                         >實驗室與學生獲獎</a
                     >。</Fragment

@@ -191,6 +191,7 @@ const currentMembers = members.filter((m) => m.status === "current");
                     galleryItems.map((item) => (
                         <div class="gallery-item" data-category={item.category}>
                             <GalleryCard
+                                id={item.id}
                                 images={item.images}
                                 title={item.title}
                                 titleZh={item.title_zh}

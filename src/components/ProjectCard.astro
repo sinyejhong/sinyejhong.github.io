@@ -1,4 +1,6 @@
 ---
+import { getImageSize } from "../utils/imageSize";
+
 interface Props {
     title: string;
     funder: string;
@@ -28,6 +30,8 @@ const {
     pillar,
     logo,
 } = Astro.props;
+
+const logoSize = logo ? await getImageSize(logo) : undefined;
 
 const pillarConfig: Record<
     string,
@@ -237,6 +241,8 @@ const pillarConfig: Record<
                         >
                             <img
                                 src={logo}
+                                width={logoSize?.width}
+                                height={logoSize?.height}
                                 alt=""
                                 loading="lazy"
                                 decoding="async"

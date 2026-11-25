@@ -31,7 +31,18 @@ export default defineConfig({
   site: 'https://sinyejhong.github.io',
   output: 'static',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      // NewsCarousel's client script (about 5 KB, no imports) is inlined instead of being emitted
+      // as a separate module: an external module in the middle of the page delays every script
+      // after it (hero, mobile menu) until it has downloaded. Everything else keeps Vite's default.
+      // The component is used on the home page only; if another page starts using it, an external
+      // (cacheable) file may be the better trade-off again.
+      assetsInlineLimit: (filePath) =>
+        /(?:^|\/)NewsCarousel\.astro_astro_type_script_index_0_lang\.[\w-]+\.js$/.test(filePath)
+          ? true
+          : undefined,
+    },
   },
   integrations: [sitemap(), sitemapAlias()]
 });

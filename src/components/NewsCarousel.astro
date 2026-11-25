@@ -1,5 +1,6 @@
 ---
 import defaultNews from "../data/news.json";
+import { getImageSize } from "../utils/imageSize";
 
 interface NewsItem {
     text: string;
@@ -40,6 +41,11 @@ const {
 // Config: 3 items per page for a "Grid" feel
 const itemsPerPage = 3;
 const totalPages = Math.ceil(data.length / itemsPerPage);
+const imageSizes = await Promise.all(
+    data.map((item) =>
+        Promise.all((item.images ?? []).map((img) => (img ? getImageSize(img) : undefined))),
+    ),
+);
 
 // Helper: Highlight Text
 function escapeHtml(s: string): string {
@@ -131,7 +137,7 @@ const pillarConfig: Record<
         label: "Resilient Perception",
         labelZh: "韌性感知",
         text: "text-blue-700",
-        href: "/research#perception",
+        href: "/research/#perception",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -139,7 +145,7 @@ const pillarConfig: Record<
         label: "Industrial AIoT",
         labelZh: "工業 AIoT",
         text: "text-emerald-700",
-        href: "/research#inspection",
+        href: "/research/#inspection",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-0 -mt-3",
     },
@@ -147,7 +153,7 @@ const pillarConfig: Record<
         label: "Embodied AI",
         labelZh: "具身智慧 AI",
         text: "text-purple-700",
-        href: "/research#robotics",
+        href: "/research/#robotics",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -155,7 +161,7 @@ const pillarConfig: Record<
         label: "Academic",
         labelZh: "學術動態",
         text: "text-orange-700",
-        href: "/about",
+        href: "/about/",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -163,7 +169,7 @@ const pillarConfig: Record<
         label: "Invited Talk",
         labelZh: "受邀演講",
         text: "text-rose-700",
-        href: "/about#pa-talks",
+        href: "/about/#pa-talks",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -171,7 +177,7 @@ const pillarConfig: Record<
         label: "Session Chair",
         labelZh: "議程主持",
         text: "text-amber-700",
-        href: "/about#pa-conference",
+        href: "/about/#pa-conference",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -179,7 +185,7 @@ const pillarConfig: Record<
         label: "Thesis Committee",
         labelZh: "口試委員",
         text: "text-sky-700",
-        href: "/about#pa-thesis",
+        href: "/about/#pa-thesis",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -187,7 +193,7 @@ const pillarConfig: Record<
         label: "Lab Visit",
         labelZh: "實驗室參訪",
         text: "text-indigo-700",
-        href: "/about#professional-activities",
+        href: "/about/#professional-activities",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -195,7 +201,7 @@ const pillarConfig: Record<
         label: "Editorial Service",
         labelZh: "編輯與審稿",
         text: "text-teal-700",
-        href: "/about#reviewer-conference",
+        href: "/about/#reviewer-conference",
         spacingClass: "space-y-1",
         spacing: "pr-1 pb-1 -mt-2",
     },
@@ -224,7 +230,7 @@ function getMonthAndDay(dateStr: string) {
 }
 ---
 
-<section class:list={["section-padding", bg]} data-carousel-id={idPrefix}>
+<section class:list={["section-padding", bg]} data-carousel-id={idPrefix} data-total-pages={totalPages}>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="flex flex-col md:flex-row items-center md:items-end justify-between mb-10 gap-4">
@@ -267,6 +273,7 @@ function getMonthAndDay(dateStr: string) {
                 <button
                     type="button"
                     id={`${idPrefix}-prev`}
+                    disabled
                     class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-md border-2 border-gray-200/80 flex items-center justify-center text-navy hover:bg-accent hover:text-white hover:border-accent hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy disabled:hover:scale-100 cursor-pointer"
                     aria-label="Previous page"
                     data-i18n-aria-en="Previous page"
@@ -288,6 +295,7 @@ function getMonthAndDay(dateStr: string) {
                 <button
                     type="button"
                     id={`${idPrefix}-next`}
+                    disabled={totalPages <= 1}
                     class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/95 backdrop-blur-sm shadow-md border-2 border-gray-200/80 flex items-center justify-center text-navy hover:bg-accent hover:text-white hover:border-accent hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-navy disabled:hover:scale-100 cursor-pointer"
                     aria-label="Next page"
                     data-i18n-aria-en="Next page"
@@ -315,7 +323,7 @@ function getMonthAndDay(dateStr: string) {
                 Array.from({ length: totalPages }).map((_, pageIndex) => (
                     <div
                         class:list={[
-                            "carousel-page grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-500 absolute inset-0 w-full items-stretch",
+                            "carousel-page grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-500 inset-0 w-full items-stretch",
                             pageIndex === 0
                                 ? "opacity-100 relative z-10"
                                 : "opacity-0 absolute z-0 pointer-events-none",
@@ -351,6 +359,8 @@ function getMonthAndDay(dateStr: string) {
                                     ? item.images![0]
                                     : null;
                                 const containCover = item.coverFit === "contain";
+                                const sizes = imageSizes[pageIndex * itemsPerPage + i];
+                                const coverSize = sizes[0];
 
                                 return (
                                     <article
@@ -362,9 +372,9 @@ function getMonthAndDay(dateStr: string) {
                                                 <img
                                                     src={coverImage}
                                                     alt=""
-                                                    width="800"
-                                                    height="600"
-                                                    loading={pageIndex === 0 ? "eager" : "lazy"}
+                                                    width={coverSize?.width}
+                                                    height={coverSize?.height}
+                                                    loading="lazy"
                                                     decoding="async"
                                                     style={item.coverPosition ? `object-position: ${item.coverPosition}` : undefined}
                                                     class={`w-full h-full ${containCover ? "object-contain px-16 py-6" : "object-cover"} group-hover:scale-110 transition-transform duration-500`}
@@ -629,7 +639,7 @@ function getMonthAndDay(dateStr: string) {
                                             </div>
 
                                             <div
-                                                class="text-gray-700 leading-relaxed text-sm mb-4 line-clamp-4 min-h-[5rem] text-justify"
+                                                class="text-gray-700 leading-relaxed text-sm mb-4 line-clamp-4 min-h-[5rem] sm:text-justify"
                                             >
                                                 <span
                                                     data-lang-en
@@ -689,8 +699,8 @@ function getMonthAndDay(dateStr: string) {
                                                     )}
                                                 </div>
                                                 <div class="news-images">
-                                                    {item.images && item.images.map(img => (
-                                                        <span class="hidden-news-img" data-src={img}></span>
+                                                    {item.images && item.images.map((img, index) => (
+                                                        <span class="hidden-news-img" data-src={img} data-width={sizes[index]?.width} data-height={sizes[index]?.height}></span>
                                                     ))}
                                                 </div>
                                             </div>
@@ -771,45 +781,48 @@ function getMonthAndDay(dateStr: string) {
     </div>
 </section>
 
-<script define:vars={{ totalPages, idPrefix }}>
-    (function () {
-        const root = document.querySelector(`[data-carousel-id="${idPrefix}"]`);
-        if (!root) return;
+<script>
+    document.querySelectorAll<HTMLElement>("[data-carousel-id]").forEach((root) => {
+        const idPrefix = root.dataset.carouselId;
+        const totalPages = Number(root.dataset.totalPages);
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+        ).matches;
 
-        const detailModal = root.querySelector(`#${idPrefix}-detail-modal`);
-        const detailContent = detailModal?.querySelector(".detail-content");
-        const detailClose = detailModal?.querySelector(".detail-close");
+        const detailModal = root.querySelector<HTMLDivElement>(`#${idPrefix}-detail-modal`);
+        const detailContent = detailModal?.querySelector<HTMLDivElement>(".detail-content");
+        const detailClose = detailModal?.querySelector<HTMLButtonElement>(".detail-close");
 
         let currentPage = 0;
-        let lastFocused = null;
-        let detailHideTimeout = null;
-        let detailOpeningFrame = null;
+        let lastFocused: HTMLElement | null = null;
+        let detailHideTimeout: ReturnType<typeof setTimeout> | null = null;
+        let detailOpeningFrame: number | null = null;
 
-        function openDetailModal(article) {
+        function openDetailModal(article: HTMLElement) {
             if (!detailModal) return;
-            const fullContentDiv = article.querySelector(".news-full-content");
+            const fullContentDiv = article.querySelector<HTMLDivElement>(".news-full-content");
             if (!fullContentDiv) return;
 
             const rawText =
-                fullContentDiv.querySelector(".news-raw-text")?.innerHTML ?? "";
-            const dateDiv = fullContentDiv.querySelector(".news-meta-date");
-            const pillarDiv = fullContentDiv.querySelector(".news-meta-pillar");
+                fullContentDiv.querySelector<HTMLDivElement>(".news-raw-text")?.innerHTML ?? "";
+            const dateDiv = fullContentDiv.querySelector<HTMLDivElement>(".news-meta-date");
+            const pillarDiv = fullContentDiv.querySelector<HTMLDivElement>(".news-meta-pillar");
             const pillar = pillarDiv?.dataset.pillar;
-            const images = fullContentDiv.querySelectorAll(".hidden-news-img");
+            const images = fullContentDiv.querySelectorAll<HTMLSpanElement>(".hidden-news-img");
 
             // Copy bilingual payloads verbatim; html[data-lang] CSS shows the
             // active language, so switching while the modal is open just works.
-            detailModal.querySelector(".modal-text").innerHTML = rawText;
-            detailModal.querySelector(".modal-date").innerHTML =
+            detailModal.querySelector<HTMLDivElement>(".modal-text")!.innerHTML = rawText;
+            detailModal.querySelector<HTMLSpanElement>(".modal-date")!.innerHTML =
                 dateDiv?.innerHTML ?? "";
 
-            const pillarSpan = detailModal.querySelector(".modal-pillar");
+            const pillarSpan = detailModal.querySelector<HTMLSpanElement>(".modal-pillar")!;
             pillarSpan.className =
                 "modal-pillar hidden px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wide";
             if (pillar) {
                 pillarSpan.classList.remove("hidden");
-                pillarSpan.innerHTML = pillarDiv.innerHTML || pillar;
-                const pillarColors = {
+                pillarSpan.innerHTML = pillarDiv!.innerHTML || pillar;
+                const pillarColors: Record<string, string[] | undefined> = {
                     perception: ["bg-blue-100", "text-blue-700"],
                     inspection: ["bg-emerald-100", "text-emerald-700"],
                     robotics: ["bg-purple-100", "text-purple-700"],
@@ -829,7 +842,7 @@ function getMonthAndDay(dateStr: string) {
                 pillarSpan.classList.add("hidden");
             }
 
-            const gallery = detailModal.querySelector(".modal-gallery");
+            const gallery = detailModal.querySelector<HTMLDivElement>(".modal-gallery")!;
             gallery.innerHTML = "";
             images.forEach((el) => {
                 const src = el.dataset.src;
@@ -838,15 +851,20 @@ function getMonthAndDay(dateStr: string) {
                 newImg.src = src;
                 newImg.alt = "";
                 newImg.loading = "lazy";
+                const { width, height } = el.dataset;
+                if (width && height) {
+                    newImg.width = Number(width);
+                    newImg.height = Number(height);
+                }
                 newImg.className =
                     "w-full rounded-xl shadow-md border border-gray-100";
                 gallery.appendChild(newImg);
             });
 
-            clearTimeout(detailHideTimeout);
+            clearTimeout(detailHideTimeout!);
             detailHideTimeout = null;
-            cancelAnimationFrame(detailOpeningFrame);
-            lastFocused = article.querySelector(".news-open-detail") || article;
+            cancelAnimationFrame(detailOpeningFrame!);
+            lastFocused = article.querySelector<HTMLButtonElement>(".news-open-detail") || article;
             detailModal.classList.remove("hidden");
             document.body.style.overflow = "hidden";
             detailOpeningFrame = requestAnimationFrame(() => {
@@ -860,8 +878,8 @@ function getMonthAndDay(dateStr: string) {
 
         function closeDetailModal() {
             if (!detailModal || detailModal.classList.contains("hidden")) return;
-            clearTimeout(detailHideTimeout);
-            cancelAnimationFrame(detailOpeningFrame);
+            clearTimeout(detailHideTimeout!);
+            cancelAnimationFrame(detailOpeningFrame!);
             detailOpeningFrame = null;
             detailModal.classList.add("opacity-0");
             if (detailContent) {
@@ -889,7 +907,7 @@ function getMonthAndDay(dateStr: string) {
             if (e.target.closest("a")) return;
             const btn = e.target.closest(".read-more-btn");
             if (btn && root.contains(btn)) {
-                const article = btn.closest("article");
+                const article = btn.closest<HTMLElement>("article");
                 if (article) openDetailModal(article);
             }
         });
@@ -902,7 +920,7 @@ function getMonthAndDay(dateStr: string) {
         detailModal?.addEventListener("keydown", (e) => {
             if (e.key !== "Tab" || !detailModal) return;
             const focusables = [
-                ...detailModal.querySelectorAll(
+                ...detailModal.querySelectorAll<HTMLElement>(
                     'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
                 ),
             ].filter((el) => el.offsetParent !== null);
@@ -929,13 +947,13 @@ function getMonthAndDay(dateStr: string) {
         });
 
         // Carousel navigation (scoped to this carousel)
-        const container = root.querySelector(`#${idPrefix}-container`);
-        const pages = root.querySelectorAll(".carousel-page");
-        const prevBtn = root.querySelector(`#${idPrefix}-prev`);
-        const nextBtn = root.querySelector(`#${idPrefix}-next`);
-        const mobileDots = root.querySelectorAll(".mobile-dot");
+        const container = root.querySelector<HTMLDivElement>(`#${idPrefix}-container`);
+        const pages = root.querySelectorAll<HTMLDivElement>(".carousel-page");
+        const prevBtn = root.querySelector<HTMLButtonElement>(`#${idPrefix}-prev`);
+        const nextBtn = root.querySelector<HTMLButtonElement>(`#${idPrefix}-next`);
+        const mobileDots = root.querySelectorAll<HTMLButtonElement>(".mobile-dot");
 
-        function updateView(newIndex) {
+        function updateView(newIndex: number) {
             if (newIndex < 0 || newIndex >= totalPages) return;
             currentPage = newIndex;
 
@@ -986,9 +1004,9 @@ function getMonthAndDay(dateStr: string) {
 
         mobileDots.forEach((dot) => {
             dot.addEventListener("click", (e) => {
-                const btn = e.target.closest(".mobile-dot");
+                const btn = (e.target as Element).closest<HTMLButtonElement>(".mobile-dot");
                 if (btn) {
-                    const index = parseInt(btn.dataset.index);
+                    const index = parseInt(btn.dataset.index!);
                     if (!isNaN(index)) {
                         handleUserInteraction();
                         updateView(index);
@@ -1006,9 +1024,9 @@ function getMonthAndDay(dateStr: string) {
         // Auto-cycle (first 2 pages only)
         const AUTO_CYCLE_INTERVAL = 10000;
         const AUTO_CYCLE_MAX_PAGE = 1;
-        let autoPlayTimer = null;
-        let hovering = false;
-        let focusWithin = false;
+        let autoPlayTimer: ReturnType<typeof setInterval> | null = null;
+        let hovering = container?.matches(":hover") ?? false;
+        let focusWithin = root.contains(document.activeElement);
         let userStopped = false;
 
         function startAutoCycle() {
@@ -1024,7 +1042,7 @@ function getMonthAndDay(dateStr: string) {
 
         function handleUserInteraction() {
             userStopped = true;
-            clearInterval(autoPlayTimer);
+            clearInterval(autoPlayTimer!);
             autoPlayTimer = null;
         }
 
@@ -1041,28 +1059,43 @@ function getMonthAndDay(dateStr: string) {
             focusWithin = e.relatedTarget instanceof Node && root.contains(e.relatedTarget);
         });
 
-        const prefersReducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)",
-        ).matches;
         if (totalPages > 1 && !prefersReducedMotion) startAutoCycle();
 
         // Touch swipe support
         let touchStartX = 0;
         let touchStartY = 0;
+        let touchId: number | null = null;
         const SWIPE_THRESHOLD = 50;
+
+        document.addEventListener(
+            "touchstart",
+            (e) => {
+                if (e.touches.length > 1) touchId = null;
+            },
+            { passive: true, capture: true },
+        );
 
         container?.addEventListener(
             "touchstart",
             (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                touchStartY = e.changedTouches[0].screenY;
+                if (e.touches.length !== 1) {
+                    touchId = null;
+                    return;
+                }
+                const touch = e.changedTouches[0];
+                touchId = touch.identifier;
+                touchStartX = touch.screenX;
+                touchStartY = touch.screenY;
             },
             { passive: true },
         );
 
         container?.addEventListener("touchend", (e) => {
-            const dx = touchStartX - e.changedTouches[0].screenX;
-            const dy = touchStartY - e.changedTouches[0].screenY;
+            const touch = Array.from(e.changedTouches).find((touch) => touch.identifier === touchId);
+            if (e.touches.length === 0) touchId = null;
+            if (!touch) return;
+            const dx = touchStartX - touch.screenX;
+            const dy = touchStartY - touch.screenY;
             if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy) * 1.5) {
                 handleUserInteraction();
                 if (dx > 0) updateView(currentPage + 1);
@@ -1070,6 +1103,14 @@ function getMonthAndDay(dateStr: string) {
             }
         });
 
+        container?.addEventListener(
+            "touchcancel",
+            () => {
+                touchId = null;
+            },
+            { passive: true },
+        );
+
         updateView(0);
-    })();
+    });
 </script>

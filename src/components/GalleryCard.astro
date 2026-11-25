@@ -1,7 +1,9 @@
 ---
 import { formatDateParts, formatDateFull } from "../i18n/format";
+import { getImageSize } from "../utils/imageSize";
 
 interface Props {
+    id: number;
     images: string[];
     title: string;
     titleZh?: string;
@@ -11,10 +13,12 @@ interface Props {
     date?: string;
 }
 
-const { images, title, titleZh, description, descriptionZh, category, date } =
+const { id, images, title, titleZh, description, descriptionZh, category, date } =
     Astro.props;
 const coverImage = images[0];
 const photoCount = images.length;
+const imageSizes = await Promise.all(images.map(getImageSize));
+const coverSize = imageSizes[0];
 
 const categoryLabelsZh: Record<string, string> = {
     Activity: "活動",
@@ -42,7 +46,7 @@ const categoryColors: Record<
 };
 
 const colors = categoryColors[category] || categoryColors["Activity"];
-const uniqueId = `gallery-${Math.random().toString(36).substr(2, 9)}`;
+const uniqueId = `gallery-${id}`;
 
 // Date formatting (UTC-anchored to avoid timezone drift from "YYYY-MM-DD" strings)
 let dateShort: string | null = null;
@@ -95,8 +99,8 @@ if (date) {
             alt={title}
             data-i18n-alt-en={title}
             data-i18n-alt-zh={titleZh || title}
-            width="800"
-            height="600"
+            width={coverSize?.width}
+            height={coverSize?.height}
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             loading="lazy"
         />
@@ -434,6 +438,8 @@ if (date) {
                     <div class="rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm">
                         <img
                             src={img}
+                            width={imageSizes[i]?.width}
+                            height={imageSizes[i]?.height}
                             alt={
                                 photoCount > 1
                                     ? `${title} — photo ${i + 1} of ${photoCount}`

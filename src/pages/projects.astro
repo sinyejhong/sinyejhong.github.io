@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import projects from "../data/projects.json";
+import { getImageSize } from "../utils/imageSize";
 
 // Helper to calculate status from duration string "YYYY.MM - YYYY.MM"
 const calculateStatus = (duration: string) => {
@@ -110,6 +111,11 @@ const govLogos = [
         url: "https://www.nstc.gov.tw",
     },
 ];
+
+const [industryLogoSizes, govLogoSizes] = await Promise.all([
+    Promise.all(industryLogos.map(({ logo }) => getImageSize(logo))),
+    Promise.all(govLogos.map(({ logo }) => getImageSize(logo))),
+]);
 ---
 
 <BaseLayout
@@ -184,7 +190,7 @@ const govLogos = [
                     </h3>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         {
-                            industryLogos.map((logo) => (
+                            industryLogos.map((logo, index) => (
                                 <a
                                     href={logo.url}
                                     target="_blank"
@@ -195,6 +201,8 @@ const govLogos = [
                                     <div class="absolute inset-0 bg-gradient-to-br from-transparent to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     <img
                                         src={logo.logo}
+                                        width={industryLogoSizes[index]?.width}
+                                        height={industryLogoSizes[index]?.height}
                                         alt={logo.name}
                                         class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500 relative z-10"
                                     />
@@ -212,7 +220,7 @@ const govLogos = [
                     </h3>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         {
-                            govLogos.map((logo) => (
+                            govLogos.map((logo, index) => (
                                 <a
                                     href={logo.url}
                                     target="_blank"
@@ -223,6 +231,8 @@ const govLogos = [
                                     <div class="absolute inset-0 bg-gradient-to-br from-transparent to-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     <img
                                         src={logo.logo}
+                                        width={govLogoSizes[index]?.width}
+                                        height={govLogoSizes[index]?.height}
                                         alt={logo.name}
                                         class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500 relative z-10"
                                     />

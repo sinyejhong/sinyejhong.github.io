@@ -1,5 +1,8 @@
 ---
+import { getImageSize } from "../utils/imageSize";
+
 interface Props {
+    id: number;
     title: string;
     titleZh?: string;
     event: string;
@@ -12,6 +15,7 @@ interface Props {
 }
 
 const {
+    id,
     title,
     titleZh,
     event,
@@ -25,7 +29,9 @@ const {
 
 const photoCount = images.length;
 const coverImage = images[0];
-const uniqueId = `award-${Math.random().toString(36).substr(2, 9)}`;
+const imageSizes = await Promise.all(images.map(getImageSize));
+const coverSize = imageSizes[0];
+const uniqueId = `award-${id}`;
 
 // Enhanced category configuration with richer colors
 const categoryConfig: Record<
@@ -194,8 +200,8 @@ const categoryLabelsZh: Record<string, string> = {
                             alt={`${title} — certificate`}
                             data-i18n-alt-en={`${title} — certificate`}
                             data-i18n-alt-zh={`${titleZh || title} — 獎狀`}
-                            width="800"
-                            height="600"
+                            width={coverSize?.width}
+                            height={coverSize?.height}
                             class="w-full h-28 object-cover object-top transition-transform duration-500 group-hover/thumb:scale-105"
                             loading="lazy"
                         />
@@ -311,6 +317,8 @@ const categoryLabelsZh: Record<string, string> = {
                         <div class="rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm">
                             <img
                                 src={img}
+                                width={imageSizes[i]?.width}
+                                height={imageSizes[i]?.height}
                                 alt={
                                     photoCount > 1
                                         ? `${title} — certificate ${i + 1} of ${photoCount}`

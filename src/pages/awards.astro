@@ -42,14 +42,14 @@ const competitionAwards = sortedAwards.filter(
                 <Fragment slot="en">
                     Competition wins and recognitions achieved by ASI² Lab members.
                     For the PI's personal academic honors, visit
-                    <a href="/about#honors" class="text-accent hover:underline"
+                    <a href="/about/#honors" class="text-accent hover:underline"
                         >Personal Honors & Awards</a
                     >.
                 </Fragment>
                 <Fragment slot="zh">
                     ASI² Lab 成員獲得的各項競賽與學術肯定。
                     主持人的個人學術榮譽請見
-                    <a href="/about#honors" class="text-accent hover:underline"
+                    <a href="/about/#honors" class="text-accent hover:underline"
                         >個人榮譽與獎項</a
                     >。
                 </Fragment>
@@ -148,6 +148,7 @@ const competitionAwards = sortedAwards.filter(
                                         data-category={award.category}
                                     >
                                         <AwardCard
+                                            id={award.id}
                                             title={award.title}
                                             titleZh={award.title_zh}
                                             event={award.event}
