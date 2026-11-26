@@ -127,5 +127,18 @@
         "email": "ycw23062@gmail.com",
         "research_group": "Embodied AI",
         "research_group_zh": "具身智慧 AI"
+    },
+    {
+        "id": 9,
+        "name": "Yu-Tzu Chen",
+        "photo": "/images/members/Yutzuchen.jpg",
+        "role": "Master's Student",
+        "role_zh": "碩士生",
+        "topic": "Resilient Perception",
+        "topic_zh": "Resilient Perception",
+        "status": "current",
+        "email": "bellbellbell.chen@gmail.com",
+        "research_group": "Resilient Perception",
+        "research_group_zh": "Resilient Perception"
     }
 ]
