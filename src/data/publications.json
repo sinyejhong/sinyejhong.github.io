@@ -129,7 +129,7 @@
             "Y.-Y. Chen*"
         ],
         "venue": "IEEE Transactions on Instrumentation and Measurement",
-        "venueDetail": "vol. 74, pp. 1-11, Jun. 2025",
+        "venueDetail": "vol. 74, Art. no. 2538911, pp. 1-11, Jun. 2025",
         "year": 2025,
         "type": "journal",
         "badges": [
@@ -216,7 +216,7 @@
             "C.-F. Lai"
         ],
         "venue": "IEEE Sensors Letters",
-        "venueDetail": "vol. 8, no. 4, pp. 1-4, Apr. 2024",
+        "venueDetail": "vol. 8, no. 4, Art. no. 5501504, pp. 1-4, Apr. 2024",
         "year": 2024,
         "type": "journal",
         "badges": [
@@ -279,7 +279,7 @@
             "C.-F. Lai"
         ],
         "venue": "Electronics",
-        "venueDetail": "vol. 12, no. 22, p. 4625, Nov. 2023",
+        "venueDetail": "vol. 12, no. 22, Art. no. 4625, Nov. 2023",
         "year": 2023,
         "type": "journal",
         "badges": [
@@ -414,7 +414,7 @@
             "C.-H. Hsia*"
         ],
         "venue": "Sensors and Materials",
-        "venueDetail": "vol. 34, pp. 1265-1274, Apr. 2022",
+        "venueDetail": "vol. 34, no. 4, pp. 1265-1274, Apr. 2022",
         "year": 2022,
         "type": "journal",
         "badges": [
@@ -505,7 +505,7 @@
             "P.-H. Chen"
         ],
         "venue": "Sensors and Materials",
-        "venueDetail": "vol. 32, pp. 3157-3167, Oct. 2020",
+        "venueDetail": "vol. 32, no. 10, pp. 3157-3167, Oct. 2020",
         "year": 2020,
         "type": "journal",
         "badges": [
@@ -867,7 +867,7 @@
         "id": 29,
         "type": "conference",
         "doi": "10.1109/WACV61041.2025.00264",
-        "venueDetail": "Tucson, Arizona, USA, Feb. 28 - Mar. 4, 2025",
+        "venueDetail": "Tucson, AZ, USA, Feb. 28 - Mar. 4, 2025",
         "authors": [
             "S.-Y. Lu",
             "Y.-Y. Chen",
@@ -995,26 +995,6 @@
     },
     {
         "year": 2022,
-        "link": "https://doi.org/10.1109/ICSSE55923.2022.9948235",
-        "id": 35,
-        "type": "conference",
-        "doi": "10.1109/ICSSE55923.2022.9948235",
-        "venueDetail": "Taichung, Taiwan, May 26-29, 2022",
-        "authors": [
-            "S.-Y. Jhong",
-            "Y.-Q. Wang",
-            "W.-J. Cheng",
-            "H.-W. Hwang",
-            "Y.-Y. Chen*"
-        ],
-        "highlight": false,
-        "title": "LiDAR-Based Pedestrian Detection Using Multiple Features and Dimensionality Reduction Scheme",
-        "venue": "International Conference on System Science and Engineering (ICSSE)",
-        "badges": [],
-        "researchArea": "perception"
-    },
-    {
-        "year": 2022,
         "link": "https://doi.org/10.1109/CACS55319.2022.9969856",
         "id": 36,
         "type": "conference",
@@ -1071,6 +1051,26 @@
         "venue": "IEEE International Conference on Consumer Electronics - Taiwan (ICCE-TW)",
         "badges": [],
         "researchArea": "aiot"
+    },
+    {
+        "year": 2022,
+        "link": "https://doi.org/10.1109/ICSSE55923.2022.9948235",
+        "id": 35,
+        "type": "conference",
+        "doi": "10.1109/ICSSE55923.2022.9948235",
+        "venueDetail": "Taichung, Taiwan, May 26-29, 2022",
+        "authors": [
+            "S.-Y. Jhong",
+            "Y.-Q. Wang",
+            "W.-J. Cheng",
+            "H.-W. Hwang",
+            "Y.-Y. Chen*"
+        ],
+        "highlight": false,
+        "title": "LiDAR-Based Pedestrian Detection Using Multiple Features and Dimensionality Reduction Scheme",
+        "venue": "International Conference on System Science and Engineering (ICSSE)",
+        "badges": [],
+        "researchArea": "perception"
     },
     {
         "year": 2021,
@@ -1130,6 +1130,26 @@
     },
     {
         "year": 2020,
+        "link": "#",
+        "id": 45,
+        "type": "conference",
+        "doi": null,
+        "venueDetail": "Taipei, Taiwan, Nov. 2020",
+        "authors": [
+            "夏至賢*",
+            "陳稟翰",
+            "鍾昕燁"
+        ],
+        "highlight": true,
+        "title": "輕量化卷積神經網路於非接觸式多光譜掌靜脈辨識系統",
+        "venue": "Cyberspace Conference",
+        "badges": [
+            "Best Paper Award"
+        ],
+        "researchArea": "aiot"
+    },
+    {
+        "year": 2020,
         "link": "https://doi.org/10.1109/ARIS50834.2020.9205778",
         "id": 42,
         "type": "conference",
@@ -1169,26 +1189,6 @@
         "title": "Online Social Media Interaction and Offline Protest Movement: Patterns in 2019 Hong Kong",
         "venue": "Indo-Taiwan International Conference on Computing, Analytics and Networks (Indo-Taiwan ICAN)",
         "badges": [],
-        "researchArea": "aiot"
-    },
-    {
-        "year": 2020,
-        "link": "#",
-        "id": 45,
-        "type": "conference",
-        "doi": null,
-        "venueDetail": "Taipei, Taiwan, Nov. 2020",
-        "authors": [
-            "夏至賢*",
-            "陳稟翰",
-            "鍾昕燁"
-        ],
-        "highlight": true,
-        "title": "輕量化卷積神經網路於非接觸式多光譜掌靜脈辨識系統",
-        "venue": "Cyberspace Conference",
-        "badges": [
-            "Best Paper Award"
-        ],
         "researchArea": "aiot"
     },
     {
@@ -1252,7 +1252,7 @@
     },
     {
         "year": 2025,
-        "link": "https://patents.google.com/patent/TWI888949",
+        "link": "https://patents.google.com/patent/TWI888949B/zh",
         "id": 48,
         "type": "patent",
         "doi": null,
@@ -1277,7 +1277,7 @@
     },
     {
         "year": 2025,
-        "link": "https://patents.google.com/patent/TWI880479",
+        "link": "https://patents.google.com/patent/TWI880479B/zh",
         "id": 49,
         "type": "patent",
         "doi": null,
@@ -1316,7 +1316,7 @@
     },
     {
         "year": 2025,
-        "link": "https://patents.google.com/patent/TWI875423",
+        "link": "https://patents.google.com/patent/TWI875423B/zh",
         "id": 51,
         "type": "patent",
         "doi": null,
@@ -1343,7 +1343,7 @@
     },
     {
         "year": 2024,
-        "link": "https://patents.google.com/patent/TWI867559",
+        "link": "https://patents.google.com/patent/TWI867559B/zh",
         "id": 52,
         "type": "patent",
         "doi": null,
@@ -1386,7 +1386,7 @@
     },
     {
         "year": 2024,
-        "link": "https://patents.google.com/patent/TWI841402",
+        "link": "https://patents.google.com/patent/TWI841402B/zh",
         "id": 54,
         "type": "patent",
         "doi": null,
@@ -1512,7 +1512,7 @@
     },
     {
         "year": 2022,
-        "link": "https://patents.google.com/patent/TWI759156",
+        "link": "https://patents.google.com/patent/TWI759156B/zh",
         "id": 59,
         "type": "patent",
         "doi": null,
